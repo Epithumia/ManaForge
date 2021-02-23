@@ -351,12 +351,11 @@
                   Cards
                 </dt>
                 <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2 dark:text-night-100">
-                  {{ itemForged.item.IPRINT() }}<br>
-                  {{ itemForged.hidden.CPRINT() }}<br>
+                  ({{ itemForged.hidden.CPRINT() }})<br>
                   {{ itemForged.first.CPRINT() }}<br>
                   {{ itemForged.second.CPRINT() }}<br>
                   {{ itemForged.third.CPRINT() }}<br>
-                  {{ itemForged.leaving.CPRINT() }}
+                  {{ itemForged.leaving.CPRINT() }}-->
                 </dd>
               </div>
               <div class="bg-gray-50 dark:bg-night-500 px-4 py-2 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
