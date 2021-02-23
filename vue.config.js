@@ -12,5 +12,14 @@ module.exports = {
                 options.compilerOptions.whitespace = true;
                 return options;
             });
+        config.performance
+            .maxEntrypointSize(500000)
+            .maxAssetSize(500000);
+        config
+            .plugin('html')
+            .tap(args => {
+                args[0].title = "Mana Forge";
+                return args;
+            })
     }
 }

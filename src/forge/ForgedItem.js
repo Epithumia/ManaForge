@@ -11,7 +11,7 @@ import {
     Wolf
 } from "@/forge/cards";
 import {No_Item} from "@/forge/items";
-import {if_array, mat_props, power2} from "@/forge/lists";
+import {equip_props, if_array, mat_props, power2} from "@/forge/lists";
 
 class ForgedItem {
 
@@ -476,6 +476,133 @@ class ForgedItem {
 
     getEnergy() {
         return this.energy;
+    }
+
+    getPlunge1() {
+        return this.plunge1;
+    }
+
+    getPlunge2() {
+        return this.plunge2;
+    }
+
+    getPlunge3() {
+        return this.plunge3;
+    }
+
+    getAttack(){
+        const esgc = mat_props[this.material][0] + this.ESSTOTAL()
+        const denom = mat_props[this.material][0] * 128
+        let atk = 0
+        if (this.WEAPON()) {
+            atk = (this.sharp * equip_props[this.getEquip()][0]
+                + this.heavy * equip_props[this.getEquip()][1]
+                + this.force * equip_props[this.getEquip()][2]
+                + this.tech * equip_props[this.getEquip()][3])
+                * esgc / denom;
+            atk = Math.floor(atk)
+        }
+        return atk;
+    }
+
+    getDefenses(){
+        let def = []
+        if (this.ARMOR()){
+            def.push(Math.floor(this.strike * equip_props[this.getEquip()][0] / 64))
+            def.push(Math.floor(this.slash * equip_props[this.getEquip()][1] / 64))
+            def.push(Math.floor(this.thrust * equip_props[this.getEquip()][2] / 64))
+            def.push(Math.floor(this.magic * equip_props[this.getEquip()][3] / 64))
+        }
+        return def
+    }
+
+    /**
+     * @param imm : IMMUNITY
+     * @return {String}
+     */
+    getShortImmunity(imm) {
+        if (!this.ARMOR()) return ''
+
+        if ((this.getImmunity() & imm.value) > 0) return imm.code
+        return ''
+    }
+
+    getPrice() {
+        return equip_props[this.getEquip()][5] * mat_props[this.material][17] / 150 + this.card_price()
+    }
+
+    card_price() {
+        let price = 0
+        price += this.hidden.PRICE(price)
+        price += this.first.PRICE(price)
+        price += this.second.PRICE(price)
+        price += this.third.PRICE(price)
+
+        this.price = price
+        return price
+    }
+
+    /**
+     * @param ess : ESSENCE
+     * @return {String}
+     */
+    getMarker(ess) {
+        const level = equip_props[this.getEquip()][4];
+        if (this.WEAPON()) {
+            switch (ess) {
+                case ESSENCE.WISP:
+                    if (this.wi >= level) return "wi"
+                    return ""
+                case ESSENCE.SHADE:
+                    if (this.sh >= level) return "sh"
+                    return ""
+                case ESSENCE.DRYAD:
+                    if (this.dr >= level) return "dr"
+                    return ""
+                case ESSENCE.AURA:
+                    if (this.au >= level) return "au"
+                    return ""
+                case ESSENCE.SALA:
+                    if (this.sa >= level) return "sa"
+                    return ""
+                case ESSENCE.GNOME:
+                    if (this.gn >= level) return "gn"
+                    return ""
+                case ESSENCE.JINN:
+                    if (this.ji >= level) return "ji"
+                    return ""
+                case ESSENCE.UNDINE:
+                    if (this.un >= level) return "un"
+                    return ""
+            }
+        } else {
+            switch (ess) {
+                case ESSENCE.WISP:
+                    if (this.sh >= level) return "wi"
+                    return ""
+                case ESSENCE.SHADE:
+                    if (this.wi >= level) return "sh"
+                    return ""
+                case ESSENCE.DRYAD:
+                    if (this.au >= level) return "dr"
+                    return ""
+                case ESSENCE.AURA:
+                    if (this.dr >= level) return "au"
+                    return ""
+                case ESSENCE.SALA:
+                    if (this.gn >= level) return "sa"
+                    return ""
+                case ESSENCE.GNOME:
+                    if (this.ji >= level) return "gn"
+                    return ""
+                case ESSENCE.JINN:
+                    if (this.un >= level) return "ji"
+                    return ""
+                case ESSENCE.UNDINE:
+                    if (this.sa >= level) return "un"
+                    return ""
+            }
+        }
     }
 
     // Setters
