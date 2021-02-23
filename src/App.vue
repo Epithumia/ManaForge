@@ -23,6 +23,7 @@ export default {
 }
 </script>
 
+<!--suppress CssUnusedSymbol -->
 <style>
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
@@ -40,8 +41,9 @@ export default {
   @apply focus:shadow-outline hover:bg-gray-700 hover:text-gray-100
 }
 */
-
-divzzz {
+/* Debug : show the div boxes
+div {
   border: 1px solid #42b983;
 }
+*/
 </style>
