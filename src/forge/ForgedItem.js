@@ -305,7 +305,12 @@ class ForgedItem {
         this.setGnR(mat_props[this.material][14]);
         this.setJiR(mat_props[this.material][15]);
         this.setUnR(mat_props[this.material][16]);
+
+    }
+
+    check_type_effects() {
         if (this.BOW()
+            && !(this.hidden instanceof Witch || this.hidden instanceof Raven || this.hidden instanceof Wolf)
             && (this.first instanceof Witch || this.second instanceof Witch || this.third instanceof Witch)
             && (this.first instanceof Raven || this.second instanceof Raven || this.third instanceof Raven)
             && (this.first instanceof Wolf || this.second instanceof Wolf || this.third instanceof Wolf)) {
@@ -627,6 +632,12 @@ class ForgedItem {
     }
 
     /**
+     * @typedef PLUNGE1
+     * @type {object}
+     * @property {string} text - name
+     * @property {int} value - ID
+     */
+    /**
      * @param plunge1 : PLUNGE1
      * @constructor
      */
@@ -635,6 +646,12 @@ class ForgedItem {
     }
 
     /**
+     * @typedef PLUNGE2
+     * @type {object}
+     * @property {string} text - name
+     * @property {int} value - ID
+     */
+    /**
      * @param plunge2 : PLUNGE2
      * @constructor
      */
@@ -642,6 +659,12 @@ class ForgedItem {
         this.plunge2 = plunge2;
     }
 
+    /**
+     * @typedef PLUNGE3
+     * @type {object}
+     * @property {string} text - name
+     * @property {int} value - ID
+     */
     /**
      * @param plunge3 : PLUNGE3
      * @constructor
@@ -800,6 +823,13 @@ class ForgedItem {
     setEquip(equip) {
         this.equip = equip;
     }
+
+    /**
+     * @typedef SPECIAL
+     * @type {object}
+     * @property {string} text - name
+     * @property {int} value - ID
+     */
 
     /**
      * @param special : SPECIAL

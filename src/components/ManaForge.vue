@@ -462,6 +462,7 @@ export default {
       item.item_code()
       item.push_cards()
       item.activate_cards()
+      item.check_type_effects()
       item.increase_essences()
       item.calculate_stats()
     },

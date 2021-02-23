@@ -688,9 +688,10 @@ class Dying_Earth extends Card {
      */
     THIRD(f) {
         f.stat_limits(-5, 12, STAT.ALL);
-        if (!(f.first instanceof Enticed_Nymph)
-            && !(f.second instanceof Enticed_Nymph)
-            && !(f.third instanceof Enticed_Nymph)) {
+        if ((f.hidden instanceof Enticed_Nymph)
+            || (!(f.first instanceof Enticed_Nymph)
+                && !(f.second instanceof Enticed_Nymph)
+                && !(f.third instanceof Enticed_Nymph))) {
             f.decrease_stat(STAT.ALL);
         }
     }
