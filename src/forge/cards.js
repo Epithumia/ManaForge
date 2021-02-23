@@ -2597,31 +2597,33 @@ class Sorcerer extends Card {
             f.increase_stat(STAT.MAG);
             f.increase_stat(STAT.SPR);
             f.increase_stat(STAT.CHM);
-            f.setWiR(f.getWiR() / 2);
+            f.setWiR(Math.trunc(f.getWiR() / 2));
             if (f.getWiR() < 1)
                 f.setWiR(1);
-            f.setDrR(f.getDrR() / 2);
+            f.setDrR(Math.trunc(f.getDrR() / 2));
             if (f.getDrR() < 1)
                 f.setDrR(1);
-            f.setSaR(f.getSaR() / 2);
+            f.setSaR(Math.trunc(f.getSaR() / 2));
             if (f.getSaR() < 1)
                 f.setSaR(1);
-            f.setGnR(f.getGnR() / 2);
+            f.setGnR(Math.trunc(f.getGnR() / 2));
             if (f.getGnR() < 1)
                 f.setGnR(1);
         } else {
             f.stat_limits(-1, 3, STAT.ALL);
             f.increase_stat(STAT.MAG);
-            f.setWiR((f.getWiR() / 4) * 3);
+            f.setWiR(Math.trunc(f.getWiR() / 4) * 3);
             if (f.getWiR() < 1)
                 f.setWiR(1);
-            f.setDrR((f.getDrR() / 4) * 3);
+            f.setDrR(Math.trunc(f.getDrR() / 4) * 3);
             if (f.getDrR() < 1)
                 f.setDrR(1);
-            f.setSaR((f.getSaR() / 4) * 3);
+            console.log(f.getSaR())
+            f.setSaR(Math.trunc(f.getSaR() / 4) * 3);
             if (f.getSaR() < 1)
                 f.setSaR(1);
-            f.setGnR((f.getGnR() / 4) * 3);
+            console.log(f.getSaR())
+            f.setGnR(Math.trunc(f.getGnR() / 4) * 3);
             if (f.getGnR() < 1)
                 f.setGnR(1);
         }

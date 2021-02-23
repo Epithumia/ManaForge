@@ -508,10 +508,10 @@ class ForgedItem {
     getDefenses(){
         let def = []
         if (this.ARMOR()){
-            def.push(Math.floor(this.strike * equip_props[this.getEquip()][0] / 64))
-            def.push(Math.floor(this.slash * equip_props[this.getEquip()][1] / 64))
-            def.push(Math.floor(this.thrust * equip_props[this.getEquip()][2] / 64))
-            def.push(Math.floor(this.magic * equip_props[this.getEquip()][3] / 64))
+            def.push(Math.trunc(this.strike * equip_props[this.getEquip()][0] / 64))
+            def.push(Math.trunc(this.slash * equip_props[this.getEquip()][1] / 64))
+            def.push(Math.trunc(this.thrust * equip_props[this.getEquip()][2] / 64))
+            def.push(Math.trunc(this.magic * equip_props[this.getEquip()][3] / 64))
         }
         return def
     }
@@ -528,7 +528,7 @@ class ForgedItem {
     }
 
     getPrice() {
-        return equip_props[this.getEquip()][5] * mat_props[this.material][17] / 150 + this.card_price()
+        return Math.trunc(equip_props[this.getEquip()][5] * mat_props[this.material][17] / 150) + this.card_price()
     }
 
     card_price() {
@@ -693,7 +693,7 @@ class ForgedItem {
     }
 
     setGnR(gnR) {
-        this.gnR = gnR;
+        this.gnR = Math.trunc(gnR);
     }
 
     setJiR(jiR) {
@@ -701,7 +701,7 @@ class ForgedItem {
     }
 
     setSaR(saR) {
-        this.saR = saR;
+        this.saR = Math.trunc(saR);
     }
 
     setShR(shR) {
@@ -1131,7 +1131,7 @@ class ForgedItem {
      * @returns {number}
      */
     perc150(num) {
-        num = num * 3 / 2;
+        num = Math.trunc(num * 3 / 2);
         if (num > 255) {
             num = 255;
         }
@@ -1143,7 +1143,7 @@ class ForgedItem {
      * @returns {number}
      */
     perc125(num) {
-        num = num * 5 / 4;
+        num = Math.trunc(num * 5 / 4);
         if (num > 255) {
             num = 255;
         }
@@ -1155,7 +1155,7 @@ class ForgedItem {
      * @returns {number}
      */
     perc75(num) {
-        num = num / 4 * 3;
+        num = Math.trunc(num / 4 * 3);
         return num;
     }
 
@@ -1164,7 +1164,7 @@ class ForgedItem {
      * @returns {number}
      */
     perc50(num) {
-        num = num / 2;
+        num = Math.trunc(num / 2);
         return num;
     }
 
