@@ -3,31 +3,31 @@
     <!--<div><h1>Header</h1></div>-->
     <flash-message class="popup"></flash-message>
     <div class="grid grid-cols-3 flex-1 space-x-1">
-      <div class="col-span-2 flex flex-col bg-white shadow overflow-hidden sm:rounded-lg">
+      <div class="col-span-2 flex flex-col bg-white dark:bg-night-900 dark:text-night-100 shadow overflow-hidden sm:rounded-lg">
         <div class="px-4 py-2">
-          <h3 class="text-lg leading-4 font-medium text-gray-900">
+          <h3 class="text-lg leading-4 font-medium text-gray-900 dark:text-night-100">
             Ingredients
           </h3>
         </div>
         <div class="flex px-4 py-2">
           <div class="flex-auto">
-            <label for="material" class="block text-sm font-medium text-gray-700">Material</label>
+            <label for="material" class="block text-sm font-medium text-gray-700 dark:text-night-100">Material</label>
             <select v-model="selected_material" id="material" name="material" autocomplete="material"
-                    class="mt-1 block w-full py-1 px-2 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
+                    class="mt-1 block w-full py-1 px-2 border border-gray-300 dark:border-night-100 bg-white dark:bg-night-900 dark:text-night-100 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
               <option v-for="option in MATERIAL" v-bind:value="option" v-bind:key="option.value">{{ option.text }}
               </option>
             </select>
           </div>
           <div class="flex-auto">
-            <label for="equip" class="block text-sm font-medium text-gray-700">Equipment</label>
+            <label for="equip" class="block text-sm font-medium text-gray-700 dark:text-night-100">Equipment</label>
             <select v-model="selected_object" id="equip" name="equip" autocomplete="equip"
-                    class="mt-1 block w-full py-1 px-2 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
+                    class="mt-1 block w-full py-1 px-2 border border-gray-300 dark:border-night-100 bg-white dark:bg-night-900 dark:text-night-100 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
               <option v-for="option in EQUIP" v-bind:value="option" v-bind:key="option.value">{{ option.text }}</option>
             </select>
           </div>
         </div>
         <div class="flex-1 px-4 py-2">
-          <fieldset class="border border-solid text-sm rounded-md">
+          <fieldset class="border border-solid dark:border-night-100 text-sm rounded-md">
             <legend>Coins</legend>
             <div class="grid grid-rows-2 grid-cols-8 grid-flow-col">
               <ItemButton v-bind:item="ITEM.WispGold" v-on:add-item="add_item($event)"></ItemButton>
@@ -48,7 +48,7 @@
               <ItemButton v-bind:item="ITEM.UndineSilver" v-on:add-item="add_item($event)"></ItemButton>
             </div>
           </fieldset>
-          <fieldset class="border border-solid text-sm rounded-md">
+          <fieldset class="border border-solid dark:border-night-100 text-sm rounded-md">
             <legend>Stones and Crystals</legend>
             <div class="grid grid-rows-1 grid-cols-8 grid-flow-col">
               <ItemButton v-bind:item="ITEM.FireStone" v-on:add-item="add_item($event)"></ItemButton>
@@ -61,7 +61,7 @@
               <ItemButton v-bind:item="ITEM.ChaosCrystal" v-on:add-item="add_item($event)"></ItemButton>
             </div>
           </fieldset>
-          <fieldset class="border border-solid text-sm rounded-md">
+          <fieldset class="border border-solid dark:border-night-100 text-sm rounded-md">
             <legend>Seeds</legend>
             <div class="grid grid-rows-1 grid-cols-8 grid-flow-col">
               <ItemButton v-bind:item="ITEM.RoundSeed" v-on:add-item="add_item($event)"></ItemButton>
@@ -74,7 +74,7 @@
               <ItemButton v-bind:item="ITEM.SpinySeed" v-on:add-item="add_item($event)"></ItemButton>
             </div>
           </fieldset>
-          <fieldset class="border border-solid text-sm rounded-md">
+          <fieldset class="border border-solid dark:border-night-100 text-sm rounded-md">
             <legend>Produce & Meat</legend>
             <div class="grid grid-rows-5 grid-cols-8 grid-flow-col-dense">
               <ItemButton v-bind:item="ITEM.Bellgrapes" v-on:add-item="add_item($event)"></ItemButton>
@@ -117,7 +117,7 @@
               <ItemButton v-bind:item="ITEM.AllMeat" v-on:add-item="add_item($event)"></ItemButton>
             </div>
           </fieldset>
-          <fieldset class="border border-solid text-sm rounded-md">
+          <fieldset class="border border-solid dark:border-night-100 text-sm rounded-md">
             <legend>Fangs & Claws</legend>
             <div class="grid grid-rows-1 grid-cols-8 grid-flow-col">
               <ItemButton v-bind:item="ITEM.SharpClaw" v-on:add-item="add_item($event)"></ItemButton>
@@ -129,7 +129,7 @@
               <ItemButton v-bind:item="ITEM.VampireFang" v-on:add-item="add_item($event)"></ItemButton>
             </div>
           </fieldset>
-          <fieldset class="border border-solid text-sm rounded-md">
+          <fieldset class="border border-solid dark:border-night-100 text-sm rounded-md">
             <legend>Eyes</legend>
             <div class="grid grid-rows-1 grid-cols-8 grid-flow-col">
               <ItemButton v-bind:item="ITEM.LittleEye" v-on:add-item="add_item($event)"></ItemButton>
@@ -142,7 +142,7 @@
               <ItemButton v-bind:item="ITEM.CreepyEye" v-on:add-item="add_item($event)"></ItemButton>
             </div>
           </fieldset>
-          <fieldset class="border border-solid text-sm rounded-md">
+          <fieldset class="border border-solid dark:border-night-100 text-sm rounded-md">
             <legend>Wings & Feathers</legend>
             <div class="grid grid-rows-1 grid-cols-8 grid-flow-col">
               <ItemButton v-bind:item="ITEM.AngelFeather" v-on:add-item="add_item($event)"></ItemButton>
@@ -153,7 +153,7 @@
               <ItemButton v-bind:item="ITEM.WhiteFeather" v-on:add-item="add_item($event)"></ItemButton>
             </div>
           </fieldset>
-          <fieldset class="border border-solid text-sm rounded-md">
+          <fieldset class="border border-solid dark:border-night-100 text-sm rounded-md">
             <legend>Misc.</legend>
             <div class="grid grid-rows-4 grid-cols-8 grid-flow-col">
               <ItemButton v-bind:item="ITEM.AromaOil" v-on:add-item="add_item($event)"></ItemButton>
@@ -202,9 +202,9 @@
             </svg>
           </div>
           <div class="self-center">
-            <label for="step" class="text-xs">Step:</label>
+            <label for="step" class="text-xs dark:bg-night-900 dark:text-night-100">Step:</label>
             <input id="step"
-                   class="text-xs mt-1 py-1 w-8 px-2 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+                   class="dark:bg-night-900 dark:text-night-100 text-xs mt-1 py-1 w-8 px-2 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
                    type="text" v-model="step">
           </div>
           <div class="self-center" @click="step++">
@@ -222,15 +222,15 @@
         </div>
       </div>
       <div class="flex flex-col">
-        <div class="bg-white shadow overflow-hidden sm:rounded-lg">
+        <div class="bg-white dark:bg-night-700 dark:text-night-100 shadow overflow-hidden sm:rounded-lg">
           <div class="px-4 py-5 sm:px-6 items-center flex flex-col">
-            <h3 class="text-lg leading-4 font-medium text-gray-900">
+            <h3 class="text-lg leading-4 font-medium text-gray-900 dark:text-night-100">
               Statistics
             </h3>
             <div class="mt-1 flex flex-col sm:flex-row sm:flex-wrap sm:mt-0 sm:space-x-6">
-              <div class="mt-2 flex items-center text-sm text-gray-500">
+              <div class="mt-2 flex items-center text-sm text-gray-500 dark:text-night-300">
                 <!-- Heroicon name: cog -->
-                <svg class="flex-shrink-0 mr-1.5 h-5 w-5 text-gray-400" xmlns="http://www.w3.org/2000/svg" fill="none"
+                <svg class="flex-shrink-0 mr-1.5 h-5 w-5 text-gray-400 dark:text-night-300" xmlns="http://www.w3.org/2000/svg" fill="none"
                      viewBox="0 0 24 24" stroke="currentColor">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                         d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z"/>
@@ -239,29 +239,29 @@
               </div>
             </div>
           </div>
-          <div class="border-t border-gray-200">
+          <div class="border-t border-gray-200 dark:border-black dark:bg-night-900">
             <dl>
-              <div class="bg-gray-50 px-4 py-2 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
-                <dt class="text-sm font-medium text-gray-500">
+              <div class="bg-gray-50 dark:bg-night-500 px-4 py-2 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+                <dt class="text-sm font-medium text-gray-500 dark:text-night-100">
                   Price
                 </dt>
-                <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
+                <dd class="mt-1 text-sm text-gray-900 dark:text-night-100 sm:mt-0 sm:col-span-2">
                   {{ itemForged.getPrice() }}
                 </dd>
               </div>
-              <div class="bg-white px-4 py-2 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
-                <dt class="text-sm font-medium text-gray-500">
+              <div class="bg-white dark:bg-night-700 px-4 py-2 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+                <dt class="text-sm font-medium text-gray-500 dark:text-night-100">
                   <span v-if="selected_object.value<=11">Attack</span>
                   <span v-else>Defenses</span>
                 </dt>
-                <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2" v-if="selected_object.value<=11">
+                <dd class="mt-1 text-sm text-gray-900 dark:text-night-100 sm:mt-0 sm:col-span-2" v-if="selected_object.value<=11">
                   {{ itemForged.getAttack() }}
                 </dd>
-                <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2" v-else>
+                <dd class="mt-1 text-sm text-gray-900 dark:text-night-100 sm:mt-0 sm:col-span-2" v-else>
                   {{ itemForged.getDefenses() }}
                 </dd>
               </div>
-              <div class="bg-gray-50 px-4 py-2 flex flex-col">
+              <div class="bg-gray-50 dark:bg-night-500 px-4 py-2 flex flex-col">
                 <div class="grid grid-cols-10 grid-rows-2 flex-1">
                   <!-- headers -->
                   <div class="col-span-2"></div>
@@ -286,7 +286,7 @@
                   <div>{{ itemForged.getLck() }}</div>
 
                 </div>
-                <div class="bg-white px-4 py-2 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+                <div class="bg-white dark:bg-night-500 px-4 py-2 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
 
                 </div>
                 <div class="grid grid-cols-10 grid-rows-5 flex-1">
@@ -346,11 +346,11 @@
                   <div></div>
                 </div>
               </div>
-              <div class="bg-white px-4 py-2 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
-                <dt class="text-sm font-medium text-gray-500">
+              <div class="bg-white dark:bg-night-700 px-4 py-2 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+                <dt class="text-sm font-medium text-gray-500 dark:text-night-100">
                   Cards
                 </dt>
-                <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
+                <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2 dark:text-night-100">
                   {{ itemForged.item.IPRINT() }}<br>
                   {{ itemForged.hidden.CPRINT() }}<br>
                   {{ itemForged.first.CPRINT() }}<br>
@@ -359,16 +359,16 @@
                   {{ itemForged.leaving.CPRINT() }}
                 </dd>
               </div>
-              <div class="bg-gray-50 px-4 py-2 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
-                <dt class="text-sm font-medium text-gray-500">
+              <div class="bg-gray-50 dark:bg-night-500 px-4 py-2 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+                <dt class="text-sm font-medium text-gray-500 dark:text-night-100">
                   Effects
                 </dt>
-                <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2" v-if="selected_object.value<=11">
+                <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2 dark:text-night-100" v-if="selected_object.value<=11">
                   Plunge Attack 1 : {{ itemForged.getPlunge1().text }}<br>
                   Plunge Attack 2 : {{ itemForged.getPlunge2().text }}<br>
                   Plunge Attack 3 : {{ itemForged.getPlunge3().text }}<br>
                 </dd>
-                <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2" v-else>
+                <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2 dark:text-night-100" v-else>
                   Special : {{ itemForged.getSpecial().text }}
                 </dd>
               </div>
@@ -378,25 +378,25 @@
         <div class="flex-grow">
 
         </div>
-        <div class="bg-white shadow overflow-hidden sm:rounded-lg align-bottom">
+        <div class="bg-white dark:bg-night-700 dark:text-night-100 shadow overflow-hidden sm:rounded-lg align-bottom">
           <div class="px-4 py-5 sm:px-6 items-center flex flex-col">
-            <h3 class="text-lg leading-4 font-medium text-gray-900">
+            <h3 class="text-lg leading-4 font-medium text-gray-900 dark:text-night-100">
               Menu
             </h3>
           </div>
-          <div class="border-t border-gray-200">
+          <div class="border-t border-gray-200 dark:border-black dark:bg-night-700">
             <dl>
-              <div class="bg-gray-50 px-4 py-2 sm:grid sm:grid-cols-1 sm:gap-4 sm:px-6">
-                <button class="mt-1 text-sm text-gray-900 sm:mt-0">Import (N/A)</button>
+              <div class="bg-gray-50 dark:bg-night-500 px-4 py-2 sm:grid sm:grid-cols-1 sm:gap-4 sm:px-6">
+                <button class="mt-1 text-sm text-gray-900 sm:mt-0 dark:text-night-100">Import (N/A)</button>
               </div>
-              <div class="bg-white px-4 py-2 sm:grid sm:grid-cols-1 sm:gap-4 sm:px-6">
-                <button class="mt-1 text-sm text-gray-900 sm:mt-0" @click="copy_source">Copy to clipboard (source)</button>
+              <div class="bg-white dark:bg-night-700 px-4 py-2 sm:grid sm:grid-cols-1 sm:gap-4 sm:px-6">
+                <button class="mt-1 text-sm text-gray-900 sm:mt-0 dark:text-night-100" @click="copy_source">Copy to clipboard (source)</button>
               </div>
-              <div class="bg-gray-50 px-4 py-2 sm:grid sm:grid-cols-1 sm:gap-4 sm:px-6">
-                <button class="mt-1 text-sm text-gray-900 sm:mt-0" @click="copy_text">Copy to clipboard (text)</button>
+              <div class="bg-gray-50 dark:bg-night-500 px-4 py-2 sm:grid sm:grid-cols-1 sm:gap-4 sm:px-6">
+                <button class="mt-1 text-sm text-gray-900 sm:mt-0 dark:text-night-100" @click="copy_text">Copy to clipboard (text)</button>
               </div>
-              <div class="bg-white px-4 py-2 sm:grid sm:grid-cols-1 sm:gap-4 sm:px-6">
-                <button class="mt-1 text-sm text-gray-900 sm:mt-0">Edit recipe (N/A)</button>
+              <div class="bg-white dark:bg-night-700 px-4 py-2 sm:grid sm:grid-cols-1 sm:gap-4 sm:px-6">
+                <button class="mt-1 text-sm text-gray-900 sm:mt-0 dark:text-night-100">Edit recipe (N/A)</button>
               </div>
             </dl>
           </div>

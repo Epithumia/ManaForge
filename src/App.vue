@@ -1,12 +1,12 @@
 <template>
   <div id="app" class="flex flex-col h-screen">
-    <header class="py-4 bg-gray-700 text-white text-center">
+    <header class="py-4 bg-gray-700 dark:bg-night-700 text-white text-center">
       Legend Of Mana Forge Simulator
     </header>
     <main class="flex flex-1 overflow-y-auto p-5">
       <ManaForge/>
     </main>
-    <footer class="py-4 bg-gray-700 text-center text-white">
+    <footer class="py-4 bg-gray-700 dark:bg-night-700 text-center text-white">
       v0.1 - Epithumia
     </footer>
   </div>
@@ -33,7 +33,7 @@ export default {
   color: #2c3e50;
 }
 .manaforgeBase {
-  @apply bg-white
+  @apply bg-white dark:bg-night-900
 }
 /*
 .itemButton {
