@@ -8,13 +8,15 @@
     "lint": "vue-cli-service lint"
   },
   "dependencies": {
+    "@tailwindcss/forms": "^0.2.1",
     "copy-text-to-clipboard": "^3.0.1",
     "core-js": "^3.6.5",
+    "tailwindcss": "npm:@tailwindcss/postcss7-compat@^2.0.3",
     "vue": "^2.6.12",
-    "vue-flash-message": "^0.7.2"
+    "vue-flash-message": "^0.7.2",
+    "vuedraggable": "^2.24.3"
   },
   "devDependencies": {
-    "@tailwindcss/forms": "^0.2.1",
     "@tailwindcss/postcss7-compat": "^2.0.3",
     "@vue/cli-plugin-babel": "~4.4.0",
     "@vue/cli-plugin-eslint": "~4.4.0",
@@ -30,7 +32,6 @@
     "postcss": "^7.0.35",
     "sass": "^1.19.0",
     "sass-loader": "^8.0.0",
-    "tailwindcss": "npm:@tailwindcss/postcss7-compat@^2.0.3",
     "vue-template-compiler": "^2.6.12"
   },
   "eslintConfig": {
