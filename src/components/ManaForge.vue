@@ -430,7 +430,7 @@ export default {
       card2: new Sacrificed_Nymph(),
 
       /**
-       * @type Item
+       * @type Item | No_Item
        */
       item: new No_Item(),
 

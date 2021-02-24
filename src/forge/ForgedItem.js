@@ -41,6 +41,7 @@ class ForgedItem {
                     this.item_code();
                     this.push_cards();
                     this.activate_cards();
+                    this.calculate_stats()
                     this.increase_essences();
                     this.calculate_stats();
                 }
@@ -183,7 +184,7 @@ class ForgedItem {
      */
     leaving = null
     /**
-     * @type Item
+     * @type Item | No_Item
      */
     item = null
 
@@ -193,16 +194,6 @@ class ForgedItem {
 
 
     // INITS
-    init_witem() {
-        this.init_essences();
-        this.init_cards();
-        this.init_stats();
-        this.init_item();
-        this.init_special();
-        this.init_stat_limits();
-        this.sub_init_cards();
-        this.material_init();
-    }
 
     init_item() {
         this.item = new No_Item();
@@ -331,13 +322,6 @@ class ForgedItem {
      */
     getEquip() {
         return this.equip;
-    }
-
-    /**
-     * @returns int
-     */
-    getMaterial() {
-        return this.material;
     }
 
     getDrR() {
@@ -521,6 +505,13 @@ class ForgedItem {
         return def
     }
 
+    /**
+     * @typedef IMMUNITY
+     * @type {object}
+     * @property {string} text - name
+     * @property {string} code - short name
+     * @property {int} value - ID
+     */
     /**
      * @param imm : IMMUNITY
      * @return {String}
@@ -739,6 +730,7 @@ class ForgedItem {
         this.wiR = wiR;
     }
 
+    /* Unused
     setWi(wi) {
         this.wi = wi;
     }
@@ -765,7 +757,7 @@ class ForgedItem {
 
     setJi(ji) {
         this.ji = ji;
-    }
+    }*/
 
     setPwr(pwr) {
         this.pwr = pwr;
@@ -1250,65 +1242,6 @@ class ForgedItem {
                 this.stat_min(min, STAT.SPR);
                 this.stat_min(min, STAT.CHM);
                 this.stat_min(min, STAT.LCK);
-                break;
-        }
-    }
-
-    /**
-     * @param max : int
-     * @param stat : STAT
-     */
-    stat_max(max, stat) {
-        switch (stat) {
-            case STAT.PWR:
-                if (max > this.hpwr) {
-                    this.hpwr = max;
-                }
-                break;
-            case STAT.SKL:
-                if (max > this.hskl) {
-                    this.hskl = max;
-                }
-                break;
-            case STAT.DEF:
-                if (max > this.hdef) {
-                    this.hdef = max;
-                }
-                break;
-            case STAT.MAG:
-                if (max > this.hmag) {
-                    this.hmag = max;
-                }
-                break;
-            case STAT.HP:
-                if (max > this.hhp) {
-                    this.hhp = max;
-                }
-                break;
-            case STAT.SPR:
-                if (max > this.hspr) {
-                    this.hspr = max;
-                }
-                break;
-            case STAT.CHM:
-                if (max > this.hchm) {
-                    this.hchm = max;
-                }
-                break;
-            case STAT.LCK:
-                if (max > this.hlck) {
-                    this.hlck = max;
-                }
-                break;
-            case STAT.ALL:
-                this.stat_max(max, STAT.PWR);
-                this.stat_max(max, STAT.SKL);
-                this.stat_max(max, STAT.DEF);
-                this.stat_max(max, STAT.MAG);
-                this.stat_max(max, STAT.HP);
-                this.stat_max(max, STAT.SPR);
-                this.stat_max(max, STAT.CHM);
-                this.stat_max(max, STAT.LCK);
                 break;
         }
     }
