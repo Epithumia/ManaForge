@@ -1,15 +1,16 @@
 <template>
   <div class="manaforge flex flex-col flex-1">
-    <!--<div><h1>Header</h1></div>-->
     <flash-message class="popup"></flash-message>
-    <div class="grid grid-cols-3 flex-1 space-x-1">
-      <div class="col-span-2 flex flex-col bg-white dark:bg-night-900 dark:text-night-100 shadow overflow-hidden sm:rounded-lg">
-        <div class="px-4 py-2">
+    <div class="grid grid-cols-8 flex-1 space-x-1 h-full">
+      <div
+          class="flex flex-col bg-white dark:bg-night-900 dark:text-night-100 shadow overflow-hidden sm:rounded-lg"
+          v-bind:class="{'col-span-5': showRecipe, 'col-span-6': !showRecipe}">
+        <div class="px-4 py-2 dark:bg-night-700">
           <h3 class="text-lg leading-4 font-medium text-gray-900 dark:text-night-100">
             Ingredients
           </h3>
         </div>
-        <div class="flex px-4 py-2">
+        <div class="flex dark:bg-night-700 px-4 py-2">
           <div class="flex-auto">
             <label for="material" class="block text-sm font-medium text-gray-700 dark:text-night-100">Material</label>
             <select v-model="selected_material" id="material" name="material" autocomplete="material"
@@ -220,8 +221,45 @@
             </svg>
           </div>
         </div>
+      </div
+      >
+      <div class="flex flex-col h-auto overflow-hidden" v-if="showRecipe">
+        <div class="flex flex-col bg-white shadow h-auto overflow-hidden sm:rounded-lg dark:bg-night-700 dark:text-night-100">
+          <div class="px-4 py-5 sm:px-6 items-center flex flex-col">
+            <h3 class="text-lg leading-4 font-medium text-gray-900 dark:text-night-100">
+              Recipe
+            </h3>
+          </div>
+          <div class="text-sm border-t border-gray-200 overflow-scroll dark:border-night-700 dark:bg-night-500">
+            <draggable tag="ul" v-model="history" class="list-group">
+              <li
+                  class="list-group-item border rounded-full border-solid"
+                  v-for="(element, idx) in history"
+                  v-bind:class="{'dark:border-night-100': idx+1===step, 'dark:border-night-500': idx+1!==step}"
+                  :key="element.name"
+              >
+                <i class="handle">
+                  <svg class="flex-shrink-0 mr-1.5 h-5 w-5 text-gray-400 dark:text-night-300"
+                       xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+                  </svg>
+                </i>
+
+                <span class="text">{{ element.text }}</span>
+
+                <i class="close" @click="removeAt(idx)">
+                  <svg class="flex-shrink-0 mr-1.5 h-5 w-5 text-gray-400 dark:text-night-300"
+                       xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                          d="M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                  </svg>
+                </i>
+              </li>
+            </draggable>
+          </div>
+        </div>
       </div>
-      <div class="flex flex-col">
+      <div class="flex col-span-2 flex-col">
         <div class="bg-white dark:bg-night-700 dark:text-night-100 shadow overflow-hidden sm:rounded-lg">
           <div class="px-4 py-5 sm:px-6 items-center flex flex-col">
             <h3 class="text-lg leading-4 font-medium text-gray-900 dark:text-night-100">
@@ -230,7 +268,8 @@
             <div class="mt-1 flex flex-col sm:flex-row sm:flex-wrap sm:mt-0 sm:space-x-6">
               <div class="mt-2 flex items-center text-sm text-gray-500 dark:text-night-300">
                 <!-- Heroicon name: cog -->
-                <svg class="flex-shrink-0 mr-1.5 h-5 w-5 text-gray-400 dark:text-night-300" xmlns="http://www.w3.org/2000/svg" fill="none"
+                <svg class="flex-shrink-0 mr-1.5 h-5 w-5 text-gray-400 dark:text-night-300"
+                     xmlns="http://www.w3.org/2000/svg" fill="none"
                      viewBox="0 0 24 24" stroke="currentColor">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                         d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z"/>
@@ -239,7 +278,7 @@
               </div>
             </div>
           </div>
-          <div class="border-t border-gray-200 dark:border-black dark:bg-night-900">
+          <div class="border-t border-gray-200 dark:border-night-700 dark:bg-night-900">
             <dl>
               <div class="bg-gray-50 dark:bg-night-500 px-4 py-2 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
                 <dt class="text-sm font-medium text-gray-500 dark:text-night-100">
@@ -254,14 +293,15 @@
                   <span v-if="selected_object.value<=11">Attack</span>
                   <span v-else>Defenses</span>
                 </dt>
-                <dd class="mt-1 text-sm text-gray-900 dark:text-night-100 sm:mt-0 sm:col-span-2" v-if="selected_object.value<=11">
+                <dd class="mt-1 text-sm text-gray-900 dark:text-night-100 sm:mt-0 sm:col-span-2"
+                    v-if="selected_object.value<=11">
                   {{ itemForged.getAttack() }}
                 </dd>
                 <dd class="mt-1 text-sm text-gray-900 dark:text-night-100 sm:mt-0 sm:col-span-2" v-else>
                   {{ itemForged.getDefenses() }}
                 </dd>
               </div>
-              <div class="bg-gray-50 dark:bg-night-500 px-4 py-2 flex flex-col">
+              <div class="text-sm bg-gray-50 dark:bg-night-500 px-4 py-2 flex flex-col">
                 <div class="grid grid-cols-10 grid-rows-2 flex-1">
                   <!-- headers -->
                   <div class="col-span-2"></div>
@@ -362,7 +402,8 @@
                 <dt class="text-sm font-medium text-gray-500 dark:text-night-100">
                   Effects
                 </dt>
-                <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2 dark:text-night-100" v-if="selected_object.value<=11">
+                <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2 dark:text-night-100"
+                    v-if="selected_object.value<=11">
                   Plunge Attack 1 : {{ itemForged.getPlunge1().text }}<br>
                   Plunge Attack 2 : {{ itemForged.getPlunge2().text }}<br>
                   Plunge Attack 3 : {{ itemForged.getPlunge3().text }}<br>
@@ -383,19 +424,29 @@
               Menu
             </h3>
           </div>
-          <div class="border-t border-gray-200 dark:border-black dark:bg-night-700">
+          <div class="border-t border-gray-200 dark:border-night-700 dark:bg-night-700">
             <dl>
               <div class="bg-gray-50 dark:bg-night-500 px-4 py-2 sm:grid sm:grid-cols-1 sm:gap-4 sm:px-6">
                 <button class="mt-1 text-sm text-gray-900 sm:mt-0 dark:text-night-100">Import (N/A)</button>
               </div>
               <div class="bg-white dark:bg-night-700 px-4 py-2 sm:grid sm:grid-cols-1 sm:gap-4 sm:px-6">
-                <button class="mt-1 text-sm text-gray-900 sm:mt-0 dark:text-night-100" @click="copy_source">Copy to clipboard (source)</button>
+                <button class="mt-1 text-sm text-gray-900 sm:mt-0 dark:text-night-100" @click="copy_source">Copy to
+                  clipboard (source)
+                </button>
               </div>
               <div class="bg-gray-50 dark:bg-night-500 px-4 py-2 sm:grid sm:grid-cols-1 sm:gap-4 sm:px-6">
-                <button class="mt-1 text-sm text-gray-900 sm:mt-0 dark:text-night-100" @click="copy_text">Copy to clipboard (text)</button>
+                <button class="mt-1 text-sm text-gray-900 sm:mt-0 dark:text-night-100" @click="copy_text">Copy to
+                  clipboard (text)
+                </button>
               </div>
               <div class="bg-white dark:bg-night-700 px-4 py-2 sm:grid sm:grid-cols-1 sm:gap-4 sm:px-6">
-                <button class="mt-1 text-sm text-gray-900 sm:mt-0 dark:text-night-100">Edit recipe (N/A)</button>
+                <button class="mt-1 text-sm text-gray-900 sm:mt-0 dark:text-night-100" v-if="!showRecipe"
+                        @click="toggle_recipe">
+                  Show Recipe
+                </button>
+                <button class="mt-1 text-sm text-gray-900 sm:mt-0 dark:text-night-100" v-else @click="toggle_recipe">
+                  Hide Recipe
+                </button>
               </div>
             </dl>
           </div>
@@ -414,10 +465,11 @@ import {No_Item} from "@/forge/items";
 import {ForgedItem} from "@/forge/ForgedItem";
 import ItemButton from "@/components/ItemButton";
 import copy from 'copy-text-to-clipboard';
+import draggable from "vuedraggable";
 
 export default {
   name: 'ManaForge',
-  components: {ItemButton},
+  components: {ItemButton, draggable},
   props: {},
   data() {
     return {
@@ -433,7 +485,7 @@ export default {
        * @type Item | No_Item
        */
       item: new No_Item(),
-
+      showRecipe: true,
       count: 0,
       step: 0,
       ITEM: ITEM,
@@ -443,10 +495,21 @@ export default {
       selected_material: MATERIAL.MenosBronze,
       selected_object: EQUIP.Knife,
       itemForged: new ForgedItem([EQUIP.Pendant.value, MATERIAL.MenosBronze.value]),
+      /**
+       * @type [ITEM]
+       */
       history: []
     }
   },
   methods: {
+    removeAt(idx) {
+      this.history.splice(idx, 1);
+      if (this.step>this.history.length) this.step = this.history.length
+    },
+    toggle_recipe() {
+      this.showRecipe = !this.showRecipe
+    },
+
     /**
      * @param i : int
      */
@@ -468,14 +531,14 @@ export default {
     },
     add_item(i) {
       if (i > 0) {
-        this.history.push(i)
+        this.history.push(this.find_item_by_val(i))
         this.step = this.history.length
       }
     },
     rebuild() {
       this.itemForged = new ForgedItem([this.selected_object.value, this.selected_material.value])
       for (let i = 0; i < Math.min(this.history.length, this.step); i++) {
-        this.forge(this.history[i])
+        this.forge(this.history[i].value)
       }
     },
     copy_source() {
@@ -483,7 +546,7 @@ export default {
       src += this.selected_object.value
       src += '\n' + this.selected_material.value
       for (let i = 0; i < this.history.length; i++) {
-        src += '\n' + this.history[i]
+        src += '\n' + this.history[i].value
       }
       if (copy(src)) {
         this.flashSuccess('Copied to clipboard!')
@@ -491,9 +554,13 @@ export default {
         this.flashError('Could not copy to clipboard')
       }
     },
-    find_item_by_val(i){
-      for(const [, item] of Object.entries(ITEM)){
-        if(item.value === i) return item
+    /**
+     * @param i
+     * @return ITEM | NoItem
+     */
+    find_item_by_val(i) {
+      for (const [, item] of Object.entries(ITEM)) {
+        if (item.value === i) return item
       }
       return ITEM.NoItem
     },
@@ -502,7 +569,7 @@ export default {
       src += this.selected_object.text
       src += '\n' + this.selected_material.text
       for (let i = 0; i < this.history.length; i++) {
-        src += '\n' + this.find_item_by_val(this.history[i]).text
+        src += '\n' + this.history[i].text
       }
       if (copy(src)) {
         this.flashSuccess('Copied to clipboard!')
@@ -512,6 +579,9 @@ export default {
     }
   },
   watch: {
+    history: function () {
+      this.rebuild()
+    },
     step: function (newV) {
       if (newV > this.history.length) {
         this.step = this.history.length
@@ -543,8 +613,21 @@ export default {
   top: 40px;
   margin-left: auto;
   margin-right: auto;
-  left:0;
-  right:0;
+  left: 0;
+  right: 0;
+}
+
+.list-group-item {
+  cursor: move;
+}
+
+.handle {
+  float: left;
+}
+
+.close {
+  float: right;
+  cursor: pointer;
 }
 
 </style>

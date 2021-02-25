@@ -3479,7 +3479,7 @@ class Witch extends Card {
             f.increase_stat(STAT.MAG);
             f.increase_stat(STAT.SPR);
             f.increase_stat(STAT.CHM);
-            f.setShR(f.getShR() / 2);
+            f.setShR(Math.trunc(f.getShR() / 2));
             if (f.getShR() < 1)
                 f.setShR(1);
             f.setAuR(f.getAuR() / 2);
@@ -3494,16 +3494,16 @@ class Witch extends Card {
         } else {
             f.stat_limits(-1, 3, STAT.ALL);
             f.increase_stat(STAT.MAG);
-            f.setShR((f.getShR() / 4) * 3);
+            f.setShR(Math.trunc(f.getShR() / 4) * 3);
             if (f.getShR() < 1)
                 f.setShR(1);
-            f.setAuR((f.getAuR() / 4) * 3);
+            f.setAuR(Math.trunc(f.getAuR() / 4) * 3);
             if (f.getAuR() < 1)
                 f.setAuR(1);
-            f.setJiR((f.getJiR() / 4) * 3);
+            f.setJiR(Math.trunc(f.getJiR() / 4) * 3);
             if (f.getJiR() < 1)
                 f.setJiR(1);
-            f.setUnR((f.getUnR() / 4) * 3);
+            f.setUnR(Math.trunc(f.getUnR() / 4) * 3);
             if (f.getUnR() < 1)
                 f.setUnR(1);
         }
