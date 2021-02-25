@@ -1,6 +1,7 @@
 <template>
   <div class="manaforge flex flex-col flex-1">
     <flash-message class="popup"></flash-message>
+    <import-modal v-on:submit-recipe="import_recipe($event)" v-bind:recipe="recipe"/>
     <div class="grid grid-cols-8 flex-1 space-x-1 h-full">
       <div
           class="flex flex-col bg-white dark:bg-night-900 dark:text-night-100 shadow overflow-hidden sm:rounded-lg"
@@ -224,7 +225,8 @@
       </div
       >
       <div class="flex flex-col h-auto overflow-hidden" v-if="showRecipe">
-        <div class="flex flex-col bg-white shadow h-auto overflow-hidden sm:rounded-lg dark:bg-night-700 dark:text-night-100">
+        <div
+            class="flex flex-col bg-white shadow h-auto overflow-hidden sm:rounded-lg dark:bg-night-700 dark:text-night-100">
           <div class="px-4 py-5 sm:px-6 items-center flex flex-col">
             <h3 class="text-lg leading-4 font-medium text-gray-900 dark:text-night-100">
               Recipe
@@ -427,7 +429,9 @@
           <div class="border-t border-gray-200 dark:border-night-700 dark:bg-night-700">
             <dl>
               <div class="bg-gray-50 dark:bg-night-500 px-4 py-2 sm:grid sm:grid-cols-1 sm:gap-4 sm:px-6">
-                <button class="mt-1 text-sm text-gray-900 sm:mt-0 dark:text-night-100">Import (N/A)</button>
+                <button class="mt-1 text-sm text-gray-900 sm:mt-0 dark:text-night-100"
+                        @click="$modal.show('recipe-input')">Import
+                </button>
               </div>
               <div class="bg-white dark:bg-night-700 px-4 py-2 sm:grid sm:grid-cols-1 sm:gap-4 sm:px-6">
                 <button class="mt-1 text-sm text-gray-900 sm:mt-0 dark:text-night-100" @click="copy_source">Copy to
@@ -466,10 +470,11 @@ import {ForgedItem} from "@/forge/ForgedItem";
 import ItemButton from "@/components/ItemButton";
 import copy from 'copy-text-to-clipboard';
 import draggable from "vuedraggable";
+import importModal from '@/components/importModal'
 
 export default {
   name: 'ManaForge',
-  components: {ItemButton, draggable},
+  components: {ItemButton, draggable, importModal},
   props: {},
   data() {
     return {
@@ -498,13 +503,14 @@ export default {
       /**
        * @type [ITEM]
        */
-      history: []
+      history: [],
+      recipe: ''
     }
   },
   methods: {
     removeAt(idx) {
       this.history.splice(idx, 1);
-      if (this.step>this.history.length) this.step = this.history.length
+      if (this.step > this.history.length) this.step = this.history.length
     },
     toggle_recipe() {
       this.showRecipe = !this.showRecipe
@@ -564,6 +570,18 @@ export default {
       }
       return ITEM.NoItem
     },
+    find_object_by_val(i) {
+      for (const [, item] of Object.entries(EQUIP)) {
+        if (item.value === i) return item
+      }
+      return EQUIP.Knife
+    },
+    find_mat_by_val(i) {
+      for (const [, item] of Object.entries(MATERIAL)) {
+        if (item.value === i) return item
+      }
+      return MATERIAL.MenosBronze
+    },
     copy_text() {
       let src = ''
       src += this.selected_object.text
@@ -576,6 +594,54 @@ export default {
       } else {
         this.flashError('Could not copy to clipboard')
       }
+    },
+    import_recipe(recipe) {
+      this.recipe = recipe
+      let pre_recipe = recipe.split(/[\s,]+/).map(Number)
+      pre_recipe = this.filter_array(pre_recipe)
+      if (pre_recipe.length > 1) {
+        if (pre_recipe[0] > 0 && pre_recipe[0] < 24 && pre_recipe[1] > 0 && pre_recipe[1] < 56) {
+          for (let i = 2; i < pre_recipe.length; i++) {
+            if (pre_recipe[i] < 0 || pre_recipe[i] > 120) {
+              this.flashError('Error in recipe on step ' + (i + 1))
+              return false
+            }
+          }
+          console.log('Reste à vérifier')
+        } else {
+          this.flashError('Error: invalid Object or Material.')
+          return false
+        }
+      } else {
+        this.flashError('Error: recipe too short.')
+        return false
+      }
+      this.selected_object = this.find_object_by_val(pre_recipe[0])
+      this.selected_material = this.find_mat_by_val(pre_recipe[1])
+      this.history = []
+      for (let i = 2; i < pre_recipe.length; i++) {
+        this.history.push(this.find_item_by_val(pre_recipe[i]))
+      }
+      this.step = this.history.length
+      this.flashSuccess('Recipe successfully imported!')
+      this.$modal.hide('recipe-input')
+      return true
+    },
+    filter_array(test_array) {
+      let index = -1,
+          arr_length = test_array ? test_array.length : 0,
+          resIndex = -1,
+          result = [];
+
+      while (++index < arr_length) {
+        const value = test_array[index];
+
+        if (value) {
+          result[++resIndex] = Math.trunc(value);
+        }
+      }
+
+      return result;
     }
   },
   watch: {

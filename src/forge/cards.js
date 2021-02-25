@@ -2619,11 +2619,9 @@ class Sorcerer extends Card {
             f.setDrR(Math.trunc(f.getDrR() / 4) * 3);
             if (f.getDrR() < 1)
                 f.setDrR(1);
-            console.log(f.getSaR())
             f.setSaR(Math.trunc(f.getSaR() / 4) * 3);
             if (f.getSaR() < 1)
                 f.setSaR(1);
-            console.log(f.getSaR())
             f.setGnR(Math.trunc(f.getGnR() / 4) * 3);
             if (f.getGnR() < 1)
                 f.setGnR(1);
