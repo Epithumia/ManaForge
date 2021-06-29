@@ -862,7 +862,7 @@ class Fertility_Goddess extends Card {
     THIRD(f) {
         f.stat_limits(-5, 10, STAT.HP);
         f.stat_min(10, STAT.HP);
-        f.setImmunity(f.getImmunity() | IMMUNITY.Petrify);
+        f.setImmunity(f.getImmunity() | IMMUNITY.Petrify.value);
         if (f.RING()) {
             f.setSpecial(SPECIAL.Share_Exp);
         }
@@ -954,7 +954,7 @@ class God_Of_Destruction extends Card {
         if (f.SWORD()) {
             f.setPlunge2(PLUNGE2.Flame_Tongue);
         }
-        f.setImmunity(f.getImmunity() | IMMUNITY.Freeze);
+        f.setImmunity(f.getImmunity() | IMMUNITY.Freeze.value);
     }
 
     // eslint-disable-next-line no-unused-vars
@@ -1413,7 +1413,7 @@ class Metropolis extends Card {
     THIRD(f) {
         if (f.ROBE()) {
             f.setMagic(f.perc150(f.getMagic()));
-            f.setImmunity(f.getImmunity() | IMMUNITY.Confusion);
+            f.setImmunity(f.getImmunity() | IMMUNITY.Confusion.value);
         } else {
             f.setMagic(f.perc125(f.getMagic()));
         }
@@ -1753,7 +1753,7 @@ class Ocean_God extends Card {
         if (f.SPEAR()) {
             f.setPlunge1(PLUNGE1.Trident);
         }
-        f.setImmunity(f.getImmunity() | IMMUNITY.Flameburst);
+        f.setImmunity(f.getImmunity() | IMMUNITY.Flameburst.value);
     }
 
     // eslint-disable-next-line no-unused-vars
@@ -2425,7 +2425,7 @@ class Sacrificed_Nymph extends Card {
      */
     THIRD(f) {
         if (f.PENDANT()) {
-            f.setImmunity(f.getImmunity() | IMMUNITY.Petrify);
+            f.setImmunity(f.getImmunity() | IMMUNITY.Petrify.value);
         }
     }
 
@@ -2717,7 +2717,7 @@ class Spirit_Of_Housework extends Card {
     THIRD(f) {
         f.increase_stat(STAT.LCK);
         if (f.MANTLE()) {
-            f.setImmunity(f.getImmunity() | IMMUNITY.Sleep);
+            f.setImmunity(f.getImmunity() | IMMUNITY.Sleep.value);
         }
         if (f.RING()) {
             f.setSpecial(SPECIAL.Extra_Lucre);
@@ -2813,7 +2813,7 @@ class Spirit_Of_Ocean extends Card {
     THIRD(f) {
         f.increase_stat(STAT.CHM);
         if (f.HAT()) {
-            f.setImmunity(f.getImmunity() | IMMUNITY.Confusion);
+            f.setImmunity(f.getImmunity() | IMMUNITY.Confusion.value);
         }
     }
 
@@ -2859,7 +2859,7 @@ class Spirit_Of_Shoes extends Card {
     THIRD(f) {
         f.increase_stat(STAT.SKL);
         if (f.BOOTS()) {
-            f.setImmunity(f.getImmunity() | IMMUNITY.Paralysis);
+            f.setImmunity(f.getImmunity() | IMMUNITY.Paralysis.value);
         }
         if (f.SHOES()) {
             f.setSpecial(SPECIAL.Extra_Exp);
@@ -2908,10 +2908,10 @@ class Spring extends Card {
     THIRD(f) {
         f.stat_limits(-3, 5, STAT.ALL);
         if (f.ROBE()) {
-            f.setImmunity(f.getImmunity() | IMMUNITY.Flameburst);
+            f.setImmunity(f.getImmunity() | IMMUNITY.Flameburst.value);
         }
         if (f.PENDANT()) {
-            f.setImmunity(f.getImmunity() | IMMUNITY.Sleep);
+            f.setImmunity(f.getImmunity() | IMMUNITY.Sleep.value);
         }
     }
 
@@ -3191,7 +3191,7 @@ class Volcano extends Card {
             f.setPlunge3(PLUNGE3.Magma_Hammer);
         }
         if (f.HAUBERK()) {
-            f.setImmunity(f.getImmunity() | IMMUNITY.Freeze);
+            f.setImmunity(f.getImmunity() | IMMUNITY.Freeze.value);
         }
     }
 
@@ -3293,7 +3293,7 @@ class Wind_God extends Card {
             f.setSlash(f.getSlash() + 10);
             f.setThrust(f.getThrust() + 10);
             f.setMagic(f.getMagic() + 10);
-            f.setImmunity(f.getImmunity() | IMMUNITY.Paralysis);
+            f.setImmunity(f.getImmunity() | IMMUNITY.Paralysis.value);
         }
     }
 

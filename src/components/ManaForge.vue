@@ -378,14 +378,14 @@
 
                   <!-- Immunities -->
                   <div class="col-span-2">Immunity</div>
-                  <div></div>
-                  <div></div>
-                  <div></div>
-                  <div></div>
-                  <div></div>
-                  <div></div>
-                  <div></div>
-                  <div></div>
+                  <div>{{ itemForged.getShortImmunity(IMMUNITY.Sleep) }}</div>
+                  <div>{{ itemForged.getShortImmunity(IMMUNITY.Poison) }}</div>
+                  <div>{{ itemForged.getShortImmunity(IMMUNITY.Paralysis) }}</div>
+                  <div>{{ itemForged.getShortImmunity(IMMUNITY.Confusion) }}</div>
+                  <div>{{ itemForged.getShortImmunity(IMMUNITY.Darkness) }}</div>
+                  <div>{{ itemForged.getShortImmunity(IMMUNITY.Petrify) }}</div>
+                  <div>{{ itemForged.getShortImmunity(IMMUNITY.Flameburst) }}</div>
+                  <div>{{ itemForged.getShortImmunity(IMMUNITY.Freeze) }}</div>
                 </div>
               </div>
               <div class="bg-white dark:bg-night-700 px-4 py-2 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
@@ -462,7 +462,7 @@
 </template>
 
 <script>
-import {EQUIP, MATERIAL, STAT, ESSENCE, ITEM} from '@/forge/enums'
+import {EQUIP, MATERIAL, STAT, ESSENCE, ITEM, IMMUNITY} from '@/forge/enums'
 import {mat_word} from '@/forge/lists'
 import {Ancient_Moon, Sacrificed_Nymph} from "@/forge/cards";
 import {No_Item} from "@/forge/items";
@@ -497,6 +497,7 @@ export default {
       EQUIP: EQUIP,
       MATERIAL: MATERIAL,
       ESSENCE: ESSENCE,
+      IMMUNITY:IMMUNITY,
       selected_material: MATERIAL.MenosBronze,
       selected_object: EQUIP.Knife,
       itemForged: new ForgedItem([EQUIP.Pendant.value, MATERIAL.MenosBronze.value]),
@@ -607,7 +608,6 @@ export default {
               return false
             }
           }
-          console.log('Reste à vérifier')
         } else {
           this.flashError('Error: invalid Object or Material.')
           return false

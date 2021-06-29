@@ -357,7 +357,7 @@ class Baked_Roach extends Item {
 
     CODE(f) {
         if (f.ROBE()) {
-            f.setImmunity(f.getImmunity() | IMMUNITY.Poison);
+            f.setImmunity(f.getImmunity() | IMMUNITY.Poison.value);
         }
     }
 
@@ -420,7 +420,7 @@ class Blackened_Bat extends Item {
 
     CODE(f) {
         if (f.PENDANT()) {
-            f.setImmunity(f.getImmunity() | IMMUNITY.Darkness);
+            f.setImmunity(f.getImmunity() | IMMUNITY.Darkness.value);
         }
         if (0 === f.getWi() && f.getSh() >= 5 && f.getEnergy() >= 8) {
             f.prehidden = new Wings_Of_Darkness();
@@ -1265,7 +1265,7 @@ class Healing_Claw extends Item {
 
     CODE(f) {
         if (f.SHIELD()) {
-            f.setImmunity(f.getImmunity() | IMMUNITY.Poison);
+            f.setImmunity(f.getImmunity() | IMMUNITY.Poison.value);
         }
         if (0 === f.getSa() && f.getWi() > 0 && f.getEnergy() >= 8) {
             f.prehidden = new Tower();
@@ -1648,7 +1648,7 @@ class Moss extends Item {
 
     CODE(f) {
         if (f.HELM()) {
-            f.setImmunity(f.getImmunity() | IMMUNITY.Darkness);
+            f.setImmunity(f.getImmunity() | IMMUNITY.Darkness.value);
         }
     }
 
@@ -1878,7 +1878,7 @@ class Pine_Oclock extends Item {
 
 
     CODE(f) {
-        f.setImmunity(IMMUNITY.Sleep);
+        f.setImmunity(IMMUNITY.Sleep.value);
         if (f.getSa() * f.getGn() * f.getJi() * f.getUn() > 0
             && f.getEnergy() >= 8) {
             f.prehidden = new Ragnarok();
@@ -1974,7 +1974,7 @@ class Rhinoloupe extends Item {
 
     CODE(f) {
         f.setSharp(f.perc125(f.getSharp()));
-        f.setImmunity(IMMUNITY.Poison);
+        f.setImmunity(IMMUNITY.Poison.value);
     }
 
 }
@@ -2384,8 +2384,8 @@ class Stinky_Breath extends Item {
 
 
     CODE(f) {
-        f.setImmunity(IMMUNITY.Poison
-            | IMMUNITY.Confusion);
+        f.setImmunity(IMMUNITY.Poison.value
+            | IMMUNITY.Confusion.value);
         if (f.getEnergy() >= 4) {
             f.prehidden = new Pixie_Of_Lust();
         }
@@ -2782,7 +2782,7 @@ class Zombie_Claw extends Item {
 
     CODE(f) {
         if (f.PENDANT()) {
-            f.setImmunity(f.getImmunity() | IMMUNITY.Paralysis);
+            f.setImmunity(f.getImmunity() | IMMUNITY.Paralysis.value);
         }
     }
 
