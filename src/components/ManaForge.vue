@@ -224,9 +224,9 @@
         </div>
       </div
       >
-      <div class="flex flex-col h-auto overflow-hidden" v-if="showRecipe">
+      <div class="flex flex-col h-auto overflow-hidden shadow sm:rounded-lg" v-if="showRecipe">
         <div
-            class="flex flex-col bg-white shadow h-auto overflow-hidden sm:rounded-lg dark:bg-night-700 dark:text-night-100">
+            class="flex flex-col bg-white h-auto overflow-hidden dark:bg-night-700 dark:text-night-100">
           <div class="px-4 py-5 sm:px-6 items-center flex flex-col">
             <h3 class="text-lg leading-4 font-medium text-gray-900 dark:text-night-100">
               Recipe
@@ -237,7 +237,7 @@
               <li
                   class="list-group-item border rounded-full border-solid"
                   v-for="(element, idx) in history"
-                  v-bind:class="{'dark:border-night-100': idx+1===step, 'dark:border-night-500': idx+1!==step}"
+                  v-bind:class="{'border-night-100': idx+1===step, 'dark:border-night-300': idx+1!==step}"
                   :key="element.name"
               >
                 <i class="handle">
