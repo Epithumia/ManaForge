@@ -1852,7 +1852,7 @@ class Pixie_Of_Gluttony extends Card {
                     f.first = new Leviathan();
                 }
             }
-            f.find_and_run_s13(Leviathan.class);
+            f.find_and_run_s13(Leviathan);
         } else {
             f.stat_limits(-1, 3, STAT.ALL);
             f.decrease_stat(STAT.ALL);
@@ -1905,7 +1905,7 @@ class Pixie_Of_Greed extends Card {
                     f.first = new Beast_Headed_God();
                 }
             }
-            f.find_and_run_s13(Beast_Headed_God.class);
+            f.find_and_run_s13(Beast_Headed_God);
         } else {
             f.stat_limits(-1, 3, STAT.ALL);
             f.decrease_stat(STAT.ALL);
@@ -1958,7 +1958,7 @@ class Pixie_Of_Jealousy extends Card {
                     f.first = new Lord_Of_Flies();
                 }
             }
-            f.find_and_run_s13(Lord_Of_Flies.class);
+            f.find_and_run_s13(Lord_Of_Flies);
         } else {
             f.stat_limits(-1, 3, STAT.ALL);
             f.decrease_stat(STAT.ALL);
@@ -2012,7 +2012,7 @@ class Pixie_Of_Laziness extends Card {
                     f.first = new Witch_Of_Moon();
                 }
             }
-            f.find_and_run_s13(Witch_Of_Moon.class);
+            f.find_and_run_s13(Witch_Of_Moon);
         } else {
             f.stat_limits(-1, 3, STAT.ALL);
             f.decrease_stat(STAT.ALL);
@@ -2067,7 +2067,7 @@ class Pixie_Of_Lust extends Card {
                     f.first = new Wings_Of_Darkness();
                 }
             }
-            f.find_and_run_s13(Wings_Of_Darkness.class);
+            f.find_and_run_s13(Wings_Of_Darkness);
         } else {
             f.stat_limits(-1, 3, STAT.ALL);
             f.decrease_stat(STAT.ALL);
@@ -2120,7 +2120,7 @@ class Pixie_Of_Pride extends Card {
                     f.first = new Fallen_Angel();
                 }
             }
-            f.find_and_run_s13(Fallen_Angel.class);
+            f.find_and_run_s13(Fallen_Angel);
         } else {
             f.stat_limits(-1, 3, STAT.ALL);
             f.decrease_stat(STAT.ALL);
@@ -2175,7 +2175,7 @@ class Pixie_Of_Rage extends Card {
                     f.first = new God_Of_Destruction();
                 }
             }
-            f.find_and_run_s13(God_Of_Destruction.class);
+            f.find_and_run_s13(God_Of_Destruction);
         } else {
             f.stat_limits(-1, 3, STAT.ALL);
             f.decrease_stat(STAT.ALL);

@@ -479,6 +479,15 @@ class ForgedItem {
         return this.plunge3;
     }
 
+    // noinspection JSUnusedGlobalSymbols
+    getEquipProps() { // Convenience function in preparation for proper logging
+        let props = []
+        for (let i=0;i<4;i++){
+            props.push(equip_props[this.getEquip()][i])
+        }
+        return props;
+    }
+
     getAttack(){
         const esgc = mat_props[this.material][0] + this.ESSTOTAL()
         const denom = mat_props[this.material][0] * 128
