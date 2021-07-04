@@ -291,9 +291,11 @@
                 </dd>
               </div>
               <div class="bg-white dark:bg-night-700 px-4 py-2 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
-                <dt class="text-sm font-medium text-gray-500 dark:text-night-100">
-                  <span v-if="selected_object.value<=11">Attack</span>
-                  <span v-else>Defenses</span>
+                <dt class="text-sm font-medium text-gray-500 dark:text-night-100" v-if="selected_object.value<=11">
+                  <span>Attack</span>
+                </dt>
+                <dt class="text-sm font-medium text-gray-500 dark:text-night-100" v-else>
+                  <span>Defenses</span>
                 </dt>
                 <dd class="mt-1 text-sm text-gray-900 dark:text-night-100 sm:mt-0 sm:col-span-2"
                     v-if="selected_object.value<=11">
@@ -301,6 +303,13 @@
                 </dd>
                 <dd class="mt-1 text-sm text-gray-900 dark:text-night-100 sm:mt-0 sm:col-span-2" v-else>
                   {{ itemForged.getDefenses() }}
+                </dd>
+                <dt class="text-sm font-medium text-gray-500 dark:text-night-100" v-if="selected_object.value<=11">
+                  <span>Sh/He/Fo/Te</span>
+                </dt>
+                <dd class="mt-1 text-sm text-gray-900 dark:text-night-100 sm:mt-0 sm:col-span-2"
+                    v-if="selected_object.value<=11">
+                  {{ itemForged.getSharp() }} / {{ itemForged.getHeavy() }} / {{ itemForged.getForce() }} / {{ itemForged.getTech() }}
                 </dd>
               </div>
               <div class="text-sm bg-gray-50 dark:bg-night-500 px-4 py-2 flex flex-col">
@@ -328,6 +337,7 @@
                   <div>{{ itemForged.getLck() }}</div>
 
                 </div>
+
                 <div class="bg-white dark:bg-night-500 px-4 py-2 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
 
                 </div>
