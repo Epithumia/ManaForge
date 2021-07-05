@@ -26,3 +26,8 @@
 
 - Bug fixes:
   - Fix Aerolites not starting with 4 Sala as they should
+
+### v0.1.4
+
+- Improvements:
+  - "No Revive" is now labeled as "Move Regen (No Revive)"

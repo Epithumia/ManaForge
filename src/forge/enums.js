@@ -108,7 +108,7 @@ const SPECIAL = Object.freeze(
     {
         No_Effect: {text: 'No Effect', value: 1},
         No_Regen: {text: 'No Regen', value: 2},
-        No_Revive: {text: 'No Revive', value: 3},
+        No_Revive: {text: 'Move Regen (No Revive)', value: 3},
         Auto_Revive: {text: 'Auto Revive', value: 4},
         Fast_Revive: {text: 'Fast Revive', value: 5},
         Extra_Exp: {text: 'Extra Exp', value: 6},
