@@ -18,3 +18,11 @@
 - Bug fixes:
   - Fix Pixies/Evil Gods breaking the forge
   - Fix some CSS (highlighting the current step in the recipe)
+
+### v0.1.3
+
+- Improvements:
+  - Use the remaster's terms for stats (HP-->Con for example)
+
+- Bug fixes:
+  - Fix Aerolites not starting with 4 Sala as they should

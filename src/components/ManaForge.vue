@@ -317,11 +317,11 @@
                   <!-- headers -->
                   <div class="col-span-2"></div>
                   <div>Pwr</div>
-                  <div>Skl</div>
+                  <div>Dex</div>
                   <div>Def</div>
                   <div>Mag</div>
-                  <div>HP</div>
-                  <div>Spr</div>
+                  <div>Con</div>
+                  <div>Mnd</div>
                   <div>Chm</div>
                   <div>Lck</div>
 
@@ -414,11 +414,11 @@
                 <dt class="text-sm font-medium text-gray-500 dark:text-night-100">
                   Effects
                 </dt>
-                <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2 dark:text-night-100"
+                <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2 dark:text-night-100" style="text-align: left"
                     v-if="selected_object.value<=11">
-                  Plunge Attack 1 : {{ itemForged.getPlunge1().text }}<br>
-                  Plunge Attack 2 : {{ itemForged.getPlunge2().text }}<br>
-                  Plunge Attack 3 : {{ itemForged.getPlunge3().text }}<br>
+                  Master Move 1 : {{ itemForged.getPlunge1().text }}<br>
+                  Master Move 2 : {{ itemForged.getPlunge2().text }}<br>
+                  Master Move 3 : {{ itemForged.getPlunge3().text }}<br>
                 </dd>
                 <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2 dark:text-night-100" v-else>
                   Special : {{ itemForged.getSpecial().text }}

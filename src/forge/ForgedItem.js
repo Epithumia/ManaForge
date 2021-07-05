@@ -227,6 +227,7 @@ class ForgedItem {
         this.gnLR = 0;
         this.jiLR = 0;
         this.unLR = 0;
+        if (this.AEROLITE()) this.sa = 4;
     }
 
     init_special() {
@@ -739,6 +740,10 @@ class ForgedItem {
         this.wiR = wiR;
     }
 
+    setSa(sa) {
+        this.sa = sa;
+    }
+
     /* Unused
     setWi(wi) {
         this.wi = wi;
@@ -756,9 +761,7 @@ class ForgedItem {
         this.au = au;
     }
 
-    setSa(sa) {
-        this.sa = sa;
-    }
+
 
     setGn(gn) {
         this.gn = gn;
