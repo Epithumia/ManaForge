@@ -548,8 +548,8 @@ export default {
     },
     add_item(i) {
       if (i > 0) {
-        this.history.push(this.find_item_by_val(i))
-        this.step = this.history.length
+        this.history.splice(this.step, 0, this.find_item_by_val(i))
+        this.step++
       }
     },
     rebuild() {
