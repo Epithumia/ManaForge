@@ -31,3 +31,11 @@
 
 - Improvements:
   - "No Revive" is now labeled as "Move Regen (No Revive)"
+  
+### v0.1.5
+
+- Improvements:
+  - Items are new added at the next step of the recipe instead of the end
+
+- Bug fixes:
+  - Fix Spiny Seed incorrectly adding two Dryad taint points
