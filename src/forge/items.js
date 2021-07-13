@@ -2315,7 +2315,6 @@ class Spiny_Seed extends Item {
     }
 
     CODE(f) {
-        f.taint(ESSENCE.DRYAD);
         if (f.getDr() >= 5 && f.getEnergy() >= 8) {
             f.prehidden = new Yggdrasil();
         }
