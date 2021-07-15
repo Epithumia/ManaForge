@@ -7,7 +7,7 @@
       <ManaForge/>
     </main>
     <footer class="py-4 bg-gray-700 dark:bg-night-700 text-center text-white">
-      v0.1.5 - Epithumia with thanks to biqutS and Myst Erik Ery for the original code and sim
+      v0.1.6 - Epithumia with thanks to biqutS and Myst Erik Ery for the original code and sim
     </footer>
   </div>
 </template>

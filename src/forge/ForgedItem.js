@@ -27,6 +27,7 @@ class ForgedItem {
             this.init_stat_limits();
             this.sub_init_cards();
             this.material_init();
+            this.check_type_effects();
         }
         if (seq.length > 2) {
             for (let i = 2; i < seq.length; i++) {
@@ -35,13 +36,13 @@ class ForgedItem {
                     this.init_stat_limits();
                     this.sub_init_cards();
                     this.material_init();
+                    this.check_type_effects();
                     this.set_active_world_card();
                     this.item_energy();
                     this.material_code();
                     this.item_code();
                     this.push_cards();
                     this.activate_cards();
-                    this.calculate_stats()
                     this.increase_essences();
                     this.calculate_stats();
                 }

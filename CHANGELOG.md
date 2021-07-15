@@ -39,3 +39,9 @@
 
 - Bug fixes:
   - Fix Spiny Seed incorrectly adding two Dryad taint points
+
+### v0.1.6
+
+- Bug fixes:
+  - Fix price calculation/display
+  - Fix order of operations in import and ui.
