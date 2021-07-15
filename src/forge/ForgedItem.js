@@ -539,10 +539,11 @@ class ForgedItem {
 
     card_price() {
         let price = 0
-        price += this.hidden.PRICE(price)
-        price += this.first.PRICE(price)
-        price += this.second.PRICE(price)
-        price += this.third.PRICE(price)
+
+        price = this.hidden.PRICE(price)
+        price = this.first.PRICE(price)
+        price = this.second.PRICE(price)
+        price = this.third.PRICE(price)
 
         this.price = price
         return price
