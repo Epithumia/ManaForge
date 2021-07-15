@@ -44,4 +44,4 @@
 
 - Bug fixes:
   - Fix price calculation/display
-  - Fix order of operations in import and ui.
+  - Fix order of operations in import.
