@@ -45,3 +45,9 @@
 - Bug fixes:
   - Fix price calculation/display
   - Fix order of operations in import.
+  
+### v0.1.7
+
+- Improvements:
+  - Source export is more compact
+  - Text export is compact (uses multipliers when you use the same item multiple times in a row)

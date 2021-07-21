@@ -561,11 +561,11 @@ export default {
     copy_source() {
       let src = ''
       src += this.selected_object.value
-      src += '\n' + this.selected_material.value
+      src += '\n' + this.selected_material.value + '\n'
       for (let i = 0; i < this.history.length; i++) {
-        src += '\n' + this.history[i].value
+        src += this.history[i].value + ' '
       }
-      if (copy(src)) {
+      if (copy(src.trim())) {
         this.flashSuccess('Copied to clipboard!')
       } else {
         this.flashError('Could not copy to clipboard')
@@ -597,8 +597,27 @@ export default {
       let src = ''
       src += this.selected_object.text
       src += '\n' + this.selected_material.text
+      let buffer = ''
+      let count = 0
       for (let i = 0; i < this.history.length; i++) {
-        src += '\n' + this.history[i].text
+        if (buffer === '') {
+          buffer = this.history[i].text
+          count++
+        }
+        else if (buffer === this.history[i].text) {
+          count++
+        } else {
+          src += '\n' + buffer
+          if (count > 1) src += ' x' + count
+          count = 1
+          buffer = this.history[i].text
+        }
+        //src += '\n' + this.history[i].text
+      }
+      if (buffer) {
+        src += '\n' + buffer
+        if (count > 1) src += ' x' + count
+        count = 0
       }
       if (copy(src)) {
         this.flashSuccess('Copied to clipboard!')
