@@ -1,6 +1,6 @@
 <template>
   <button class="itemButton" v-on:click="$emit('add-item', item.value)">
-    {{item.text}}
+    {{get_text(item)}}
   </button>
 </template>
 
@@ -8,7 +8,16 @@
 export default {
   name: "ItemButton",
   props: {
-    item: Object
+    item: Object,
+    classic: Boolean
+  },
+  methods: {
+    get_text(o) {
+      if (this.classic && 'psxtext' in o) {
+        return o.psxtext
+      }
+      return o.text
+    }
   }
 }
 </script>

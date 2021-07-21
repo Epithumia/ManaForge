@@ -16,7 +16,7 @@
             <label for="material" class="block text-sm font-medium text-gray-700 dark:text-night-100">Material</label>
             <select v-model="selected_material" id="material" name="material" autocomplete="material"
                     class="mt-1 block w-full py-1 px-2 border border-gray-300 dark:border-night-100 bg-white dark:bg-night-900 dark:text-night-100 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
-              <option v-for="option in MATERIAL" v-bind:value="option" v-bind:key="option.value">{{ option.text }}
+              <option v-for="option in MATERIAL" v-bind:value="option" v-bind:key="option.value">{{ get_text(option) }}
               </option>
             </select>
           </div>
@@ -24,7 +24,7 @@
             <label for="equip" class="block text-sm font-medium text-gray-700 dark:text-night-100">Equipment</label>
             <select v-model="selected_object" id="equip" name="equip" autocomplete="equip"
                     class="mt-1 block w-full py-1 px-2 border border-gray-300 dark:border-night-100 bg-white dark:bg-night-900 dark:text-night-100 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
-              <option v-for="option in EQUIP" v-bind:value="option" v-bind:key="option.value">{{ option.text }}</option>
+              <option v-for="option in EQUIP" v-bind:value="option" v-bind:key="option.value">{{ get_text(option) }}</option>
             </select>
           </div>
         </div>
@@ -32,161 +32,161 @@
           <fieldset class="border border-solid dark:border-night-100 text-sm rounded-md">
             <legend>Coins</legend>
             <div class="grid grid-rows-2 grid-cols-8 grid-flow-col">
-              <ItemButton v-bind:item="ITEM.WispGold" v-on:add-item="add_item($event)"></ItemButton>
-              <ItemButton v-bind:item="ITEM.WispSilver" v-on:add-item="add_item($event)"></ItemButton>
-              <ItemButton v-bind:item="ITEM.ShadeGold" v-on:add-item="add_item($event)"></ItemButton>
-              <ItemButton v-bind:item="ITEM.ShadeSilver" v-on:add-item="add_item($event)"></ItemButton>
-              <ItemButton v-bind:item="ITEM.DryadGold" v-on:add-item="add_item($event)"></ItemButton>
-              <ItemButton v-bind:item="ITEM.DryadSilver" v-on:add-item="add_item($event)"></ItemButton>
-              <ItemButton v-bind:item="ITEM.AuraGold" v-on:add-item="add_item($event)"></ItemButton>
-              <ItemButton v-bind:item="ITEM.AuraSilver" v-on:add-item="add_item($event)"></ItemButton>
-              <ItemButton v-bind:item="ITEM.SalaGold" v-on:add-item="add_item($event)"></ItemButton>
-              <ItemButton v-bind:item="ITEM.SalaSilver" v-on:add-item="add_item($event)"></ItemButton>
-              <ItemButton v-bind:item="ITEM.GnomeGold" v-on:add-item="add_item($event)"></ItemButton>
-              <ItemButton v-bind:item="ITEM.GnomeSilver" v-on:add-item="add_item($event)"></ItemButton>
-              <ItemButton v-bind:item="ITEM.JinnGold" v-on:add-item="add_item($event)"></ItemButton>
-              <ItemButton v-bind:item="ITEM.JinnSilver" v-on:add-item="add_item($event)"></ItemButton>
-              <ItemButton v-bind:item="ITEM.UndineGold" v-on:add-item="add_item($event)"></ItemButton>
-              <ItemButton v-bind:item="ITEM.UndineSilver" v-on:add-item="add_item($event)"></ItemButton>
+              <ItemButton v-bind:item="ITEM.WispGold" v-bind:classic="classic" v-on:add-item="add_item($event)"></ItemButton>
+              <ItemButton v-bind:item="ITEM.WispSilver" v-bind:classic="classic" v-on:add-item="add_item($event)"></ItemButton>
+              <ItemButton v-bind:item="ITEM.ShadeGold" v-bind:classic="classic" v-on:add-item="add_item($event)"></ItemButton>
+              <ItemButton v-bind:item="ITEM.ShadeSilver" v-bind:classic="classic" v-on:add-item="add_item($event)"></ItemButton>
+              <ItemButton v-bind:item="ITEM.DryadGold" v-bind:classic="classic" v-on:add-item="add_item($event)"></ItemButton>
+              <ItemButton v-bind:item="ITEM.DryadSilver" v-bind:classic="classic" v-on:add-item="add_item($event)"></ItemButton>
+              <ItemButton v-bind:item="ITEM.AuraGold" v-bind:classic="classic" v-on:add-item="add_item($event)"></ItemButton>
+              <ItemButton v-bind:item="ITEM.AuraSilver" v-bind:classic="classic" v-on:add-item="add_item($event)"></ItemButton>
+              <ItemButton v-bind:item="ITEM.SalaGold" v-bind:classic="classic" v-on:add-item="add_item($event)"></ItemButton>
+              <ItemButton v-bind:item="ITEM.SalaSilver" v-bind:classic="classic" v-on:add-item="add_item($event)"></ItemButton>
+              <ItemButton v-bind:item="ITEM.GnomeGold" v-bind:classic="classic" v-on:add-item="add_item($event)"></ItemButton>
+              <ItemButton v-bind:item="ITEM.GnomeSilver" v-bind:classic="classic" v-on:add-item="add_item($event)"></ItemButton>
+              <ItemButton v-bind:item="ITEM.JinnGold" v-bind:classic="classic" v-on:add-item="add_item($event)"></ItemButton>
+              <ItemButton v-bind:item="ITEM.JinnSilver" v-bind:classic="classic" v-on:add-item="add_item($event)"></ItemButton>
+              <ItemButton v-bind:item="ITEM.UndineGold" v-bind:classic="classic" v-on:add-item="add_item($event)"></ItemButton>
+              <ItemButton v-bind:item="ITEM.UndineSilver" v-bind:classic="classic" v-on:add-item="add_item($event)"></ItemButton>
             </div>
           </fieldset>
           <fieldset class="border border-solid dark:border-night-100 text-sm rounded-md">
             <legend>Stones and Crystals</legend>
             <div class="grid grid-rows-1 grid-cols-8 grid-flow-col">
-              <ItemButton v-bind:item="ITEM.FireStone" v-on:add-item="add_item($event)"></ItemButton>
-              <ItemButton v-bind:item="ITEM.EarthStone" v-on:add-item="add_item($event)"></ItemButton>
-              <ItemButton v-bind:item="ITEM.WindStone" v-on:add-item="add_item($event)"></ItemButton>
-              <ItemButton v-bind:item="ITEM.WaterStone" v-on:add-item="add_item($event)"></ItemButton>
-              <ItemButton v-bind:item="ITEM.SunCrystal" v-on:add-item="add_item($event)"></ItemButton>
-              <ItemButton v-bind:item="ITEM.MoonCrystal" v-on:add-item="add_item($event)"></ItemButton>
-              <ItemButton v-bind:item="ITEM.GlowCrystal" v-on:add-item="add_item($event)"></ItemButton>
-              <ItemButton v-bind:item="ITEM.ChaosCrystal" v-on:add-item="add_item($event)"></ItemButton>
+              <ItemButton v-bind:item="ITEM.FireStone" v-bind:classic="classic" v-on:add-item="add_item($event)"></ItemButton>
+              <ItemButton v-bind:item="ITEM.EarthStone" v-bind:classic="classic" v-on:add-item="add_item($event)"></ItemButton>
+              <ItemButton v-bind:item="ITEM.WindStone" v-bind:classic="classic" v-on:add-item="add_item($event)"></ItemButton>
+              <ItemButton v-bind:item="ITEM.WaterStone" v-bind:classic="classic" v-on:add-item="add_item($event)"></ItemButton>
+              <ItemButton v-bind:item="ITEM.SunCrystal" v-bind:classic="classic" v-on:add-item="add_item($event)"></ItemButton>
+              <ItemButton v-bind:item="ITEM.MoonCrystal" v-bind:classic="classic" v-on:add-item="add_item($event)"></ItemButton>
+              <ItemButton v-bind:item="ITEM.GlowCrystal" v-bind:classic="classic" v-on:add-item="add_item($event)"></ItemButton>
+              <ItemButton v-bind:item="ITEM.ChaosCrystal" v-bind:classic="classic" v-on:add-item="add_item($event)"></ItemButton>
             </div>
           </fieldset>
           <fieldset class="border border-solid dark:border-night-100 text-sm rounded-md">
             <legend>Seeds</legend>
             <div class="grid grid-rows-1 grid-cols-8 grid-flow-col">
-              <ItemButton v-bind:item="ITEM.RoundSeed" v-on:add-item="add_item($event)"></ItemButton>
-              <ItemButton v-bind:item="ITEM.OblongSeed" v-on:add-item="add_item($event)"></ItemButton>
-              <ItemButton v-bind:item="ITEM.CrookedSeed" v-on:add-item="add_item($event)"></ItemButton>
-              <ItemButton v-bind:item="ITEM.BigSeed" v-on:add-item="add_item($event)"></ItemButton>
-              <ItemButton v-bind:item="ITEM.SmallSeed" v-on:add-item="add_item($event)"></ItemButton>
-              <ItemButton v-bind:item="ITEM.LongSeed" v-on:add-item="add_item($event)"></ItemButton>
-              <ItemButton v-bind:item="ITEM.FlatSeed" v-on:add-item="add_item($event)"></ItemButton>
-              <ItemButton v-bind:item="ITEM.SpinySeed" v-on:add-item="add_item($event)"></ItemButton>
+              <ItemButton v-bind:item="ITEM.RoundSeed" v-bind:classic="classic" v-on:add-item="add_item($event)"></ItemButton>
+              <ItemButton v-bind:item="ITEM.OblongSeed" v-bind:classic="classic" v-on:add-item="add_item($event)"></ItemButton>
+              <ItemButton v-bind:item="ITEM.CrookedSeed" v-bind:classic="classic" v-on:add-item="add_item($event)"></ItemButton>
+              <ItemButton v-bind:item="ITEM.BigSeed" v-bind:classic="classic" v-on:add-item="add_item($event)"></ItemButton>
+              <ItemButton v-bind:item="ITEM.SmallSeed" v-bind:classic="classic" v-on:add-item="add_item($event)"></ItemButton>
+              <ItemButton v-bind:item="ITEM.LongSeed" v-bind:classic="classic" v-on:add-item="add_item($event)"></ItemButton>
+              <ItemButton v-bind:item="ITEM.FlatSeed" v-bind:classic="classic" v-on:add-item="add_item($event)"></ItemButton>
+              <ItemButton v-bind:item="ITEM.SpinySeed" v-bind:classic="classic" v-on:add-item="add_item($event)"></ItemButton>
             </div>
           </fieldset>
           <fieldset class="border border-solid dark:border-night-100 text-sm rounded-md">
             <legend>Produce & Meat</legend>
             <div class="grid grid-rows-5 grid-cols-8 grid-flow-col-dense">
-              <ItemButton v-bind:item="ITEM.Bellgrapes" v-on:add-item="add_item($event)"></ItemButton>
-              <ItemButton v-bind:item="ITEM.Diceberry" v-on:add-item="add_item($event)"></ItemButton>
-              <ItemButton v-bind:item="ITEM.Mangoelephant" v-on:add-item="add_item($event)"></ItemButton>
-              <ItemButton v-bind:item="ITEM.LoquatShoes" v-on:add-item="add_item($event)"></ItemButton>
-              <ItemButton v-bind:item="ITEM.PearOheels" v-on:add-item="add_item($event)"></ItemButton>
-              <ItemButton v-bind:item="ITEM.Squalphin" v-on:add-item="add_item($event)"></ItemButton>
-              <ItemButton v-bind:item="ITEM.Citrisquid" v-on:add-item="add_item($event)"></ItemButton>
-              <ItemButton v-bind:item="ITEM.Springanana" v-on:add-item="add_item($event)"></ItemButton>
-              <ItemButton v-bind:item="ITEM.PeachPuppy" v-on:add-item="add_item($event)"></ItemButton>
-              <ItemButton v-bind:item="ITEM.Apricat" v-on:add-item="add_item($event)"></ItemButton>
-              <ItemButton v-bind:item="ITEM.Applesocks" v-on:add-item="add_item($event)"></ItemButton>
-              <ItemButton v-bind:item="ITEM.Whalamato" v-on:add-item="add_item($event)"></ItemButton>
-              <ItemButton v-bind:item="ITEM.PineOclock" v-on:add-item="add_item($event)"></ItemButton>
-              <ItemButton v-bind:item="ITEM.FishyFruit" v-on:add-item="add_item($event)"></ItemButton>
-              <ItemButton v-bind:item="ITEM.Boarmelon" v-on:add-item="add_item($event)"></ItemButton>
-              <ItemButton v-bind:item="ITEM.Rhinoloupe" v-on:add-item="add_item($event)"></ItemButton>
-              <ItemButton v-bind:item="ITEM.Orcaplant" v-on:add-item="add_item($event)"></ItemButton>
-              <ItemButton v-bind:item="ITEM.Garlicrown" v-on:add-item="add_item($event)"></ItemButton>
-              <ItemButton v-bind:item="ITEM.HoneyOnion" v-on:add-item="add_item($event)"></ItemButton>
-              <ItemButton v-bind:item="ITEM.SweetMoai" v-on:add-item="add_item($event)"></ItemButton>
-              <ItemButton v-bind:item="ITEM.SpinyCarrot" v-on:add-item="add_item($event)"></ItemButton>
-              <ItemButton v-bind:item="ITEM.Conchurnip" v-on:add-item="add_item($event)"></ItemButton>
-              <ItemButton v-bind:item="ITEM.Cornflower" v-on:add-item="add_item($event)"></ItemButton>
-              <ItemButton v-bind:item="ITEM.Cabadillo" v-on:add-item="add_item($event)"></ItemButton>
-              <ItemButton v-bind:item="ITEM.Needlettuce" v-on:add-item="add_item($event)"></ItemButton>
-              <ItemButton v-bind:item="ITEM.CherryBombs" v-on:add-item="add_item($event)"></ItemButton>
-              <ItemButton v-bind:item="ITEM.MaskedPotato" v-on:add-item="add_item($event)"></ItemButton>
-              <ItemButton v-bind:item="ITEM.Lilipods" v-on:add-item="add_item($event)"></ItemButton>
-              <ItemButton v-bind:item="ITEM.RocketPapaya" v-on:add-item="add_item($event)"></ItemButton>
-              <ItemButton v-bind:item="ITEM.Orangeopus" v-on:add-item="add_item($event)"></ItemButton>
-              <ItemButton v-bind:item="ITEM.Bumpkin" v-on:add-item="add_item($event)"></ItemButton>
-              <ItemButton v-bind:item="ITEM.HeartMint" v-on:add-item="add_item($event)"></ItemButton>
-              <ItemButton v-bind:item="ITEM.SpadeBasil" v-on:add-item="add_item($event)"></ItemButton>
-              <ItemButton v-bind:item="ITEM.Dialaurel" v-on:add-item="add_item($event)"></ItemButton>
-              <ItemButton v-bind:item="ITEM.GoldClover" v-on:add-item="add_item($event)"></ItemButton>
-              <ItemButton v-bind:item="ITEM.MushInABox" v-on:add-item="add_item($event)"></ItemButton>
-              <ItemButton v-bind:item="ITEM.Toadstoolshed" v-on:add-item="add_item($event)"></ItemButton>
-              <ItemButton v-bind:item="ITEM.AllMeat" v-on:add-item="add_item($event)"></ItemButton>
+              <ItemButton v-bind:item="ITEM.Bellgrapes" v-bind:classic="classic" v-on:add-item="add_item($event)"></ItemButton>
+              <ItemButton v-bind:item="ITEM.Diceberry" v-bind:classic="classic" v-on:add-item="add_item($event)"></ItemButton>
+              <ItemButton v-bind:item="ITEM.Mangoelephant" v-bind:classic="classic" v-on:add-item="add_item($event)"></ItemButton>
+              <ItemButton v-bind:item="ITEM.LoquatShoes" v-bind:classic="classic" v-on:add-item="add_item($event)"></ItemButton>
+              <ItemButton v-bind:item="ITEM.PearOheels" v-bind:classic="classic" v-on:add-item="add_item($event)"></ItemButton>
+              <ItemButton v-bind:item="ITEM.Squalphin" v-bind:classic="classic" v-on:add-item="add_item($event)"></ItemButton>
+              <ItemButton v-bind:item="ITEM.Citrisquid" v-bind:classic="classic" v-on:add-item="add_item($event)"></ItemButton>
+              <ItemButton v-bind:item="ITEM.Springanana" v-bind:classic="classic" v-on:add-item="add_item($event)"></ItemButton>
+              <ItemButton v-bind:item="ITEM.PeachPuppy" v-bind:classic="classic" v-on:add-item="add_item($event)"></ItemButton>
+              <ItemButton v-bind:item="ITEM.Apricat" v-bind:classic="classic" v-on:add-item="add_item($event)"></ItemButton>
+              <ItemButton v-bind:item="ITEM.Applesocks" v-bind:classic="classic" v-on:add-item="add_item($event)"></ItemButton>
+              <ItemButton v-bind:item="ITEM.Whalamato" v-bind:classic="classic" v-on:add-item="add_item($event)"></ItemButton>
+              <ItemButton v-bind:item="ITEM.PineOclock" v-bind:classic="classic" v-on:add-item="add_item($event)"></ItemButton>
+              <ItemButton v-bind:item="ITEM.FishyFruit" v-bind:classic="classic" v-on:add-item="add_item($event)"></ItemButton>
+              <ItemButton v-bind:item="ITEM.Boarmelon" v-bind:classic="classic" v-on:add-item="add_item($event)"></ItemButton>
+              <ItemButton v-bind:item="ITEM.Rhinoloupe" v-bind:classic="classic" v-on:add-item="add_item($event)"></ItemButton>
+              <ItemButton v-bind:item="ITEM.Orcaplant" v-bind:classic="classic" v-on:add-item="add_item($event)"></ItemButton>
+              <ItemButton v-bind:item="ITEM.Garlicrown" v-bind:classic="classic" v-on:add-item="add_item($event)"></ItemButton>
+              <ItemButton v-bind:item="ITEM.HoneyOnion" v-bind:classic="classic" v-on:add-item="add_item($event)"></ItemButton>
+              <ItemButton v-bind:item="ITEM.SweetMoai" v-bind:classic="classic" v-on:add-item="add_item($event)"></ItemButton>
+              <ItemButton v-bind:item="ITEM.SpinyCarrot" v-bind:classic="classic" v-on:add-item="add_item($event)"></ItemButton>
+              <ItemButton v-bind:item="ITEM.Conchurnip" v-bind:classic="classic" v-on:add-item="add_item($event)"></ItemButton>
+              <ItemButton v-bind:item="ITEM.Cornflower" v-bind:classic="classic" v-on:add-item="add_item($event)"></ItemButton>
+              <ItemButton v-bind:item="ITEM.Cabadillo" v-bind:classic="classic" v-on:add-item="add_item($event)"></ItemButton>
+              <ItemButton v-bind:item="ITEM.Needlettuce" v-bind:classic="classic" v-on:add-item="add_item($event)"></ItemButton>
+              <ItemButton v-bind:item="ITEM.CherryBombs" v-bind:classic="classic" v-on:add-item="add_item($event)"></ItemButton>
+              <ItemButton v-bind:item="ITEM.MaskedPotato" v-bind:classic="classic" v-on:add-item="add_item($event)"></ItemButton>
+              <ItemButton v-bind:item="ITEM.Lilipods" v-bind:classic="classic" v-on:add-item="add_item($event)"></ItemButton>
+              <ItemButton v-bind:item="ITEM.RocketPapaya" v-bind:classic="classic" v-on:add-item="add_item($event)"></ItemButton>
+              <ItemButton v-bind:item="ITEM.Orangeopus" v-bind:classic="classic" v-on:add-item="add_item($event)"></ItemButton>
+              <ItemButton v-bind:item="ITEM.Bumpkin" v-bind:classic="classic" v-on:add-item="add_item($event)"></ItemButton>
+              <ItemButton v-bind:item="ITEM.HeartMint" v-bind:classic="classic" v-on:add-item="add_item($event)"></ItemButton>
+              <ItemButton v-bind:item="ITEM.SpadeBasil" v-bind:classic="classic" v-on:add-item="add_item($event)"></ItemButton>
+              <ItemButton v-bind:item="ITEM.Dialaurel" v-bind:classic="classic" v-on:add-item="add_item($event)"></ItemButton>
+              <ItemButton v-bind:item="ITEM.GoldClover" v-bind:classic="classic" v-on:add-item="add_item($event)"></ItemButton>
+              <ItemButton v-bind:item="ITEM.MushInABox" v-bind:classic="classic" v-on:add-item="add_item($event)"></ItemButton>
+              <ItemButton v-bind:item="ITEM.Toadstoolshed" v-bind:classic="classic" v-on:add-item="add_item($event)"></ItemButton>
+              <ItemButton v-bind:item="ITEM.AllMeat" v-bind:classic="classic" v-on:add-item="add_item($event)"></ItemButton>
             </div>
           </fieldset>
           <fieldset class="border border-solid dark:border-night-100 text-sm rounded-md">
             <legend>Fangs & Claws</legend>
             <div class="grid grid-rows-1 grid-cols-8 grid-flow-col">
-              <ItemButton v-bind:item="ITEM.SharpClaw" v-on:add-item="add_item($event)"></ItemButton>
-              <ItemButton v-bind:item="ITEM.PoisonFang" v-on:add-item="add_item($event)"></ItemButton>
-              <ItemButton v-bind:item="ITEM.GiantsHorn" v-on:add-item="add_item($event)"></ItemButton>
-              <ItemButton v-bind:item="ITEM.Scissors" v-on:add-item="add_item($event)"></ItemButton>
-              <ItemButton v-bind:item="ITEM.HealingClaw" v-on:add-item="add_item($event)"></ItemButton>
-              <ItemButton v-bind:item="ITEM.ZombieClaw" v-on:add-item="add_item($event)"></ItemButton>
-              <ItemButton v-bind:item="ITEM.VampireFang" v-on:add-item="add_item($event)"></ItemButton>
+              <ItemButton v-bind:item="ITEM.SharpClaw" v-bind:classic="classic" v-on:add-item="add_item($event)"></ItemButton>
+              <ItemButton v-bind:item="ITEM.PoisonFang" v-bind:classic="classic" v-on:add-item="add_item($event)"></ItemButton>
+              <ItemButton v-bind:item="ITEM.GiantsHorn" v-bind:classic="classic" v-on:add-item="add_item($event)"></ItemButton>
+              <ItemButton v-bind:item="ITEM.Scissors" v-bind:classic="classic" v-on:add-item="add_item($event)"></ItemButton>
+              <ItemButton v-bind:item="ITEM.HealingClaw" v-bind:classic="classic" v-on:add-item="add_item($event)"></ItemButton>
+              <ItemButton v-bind:item="ITEM.ZombieClaw" v-bind:classic="classic" v-on:add-item="add_item($event)"></ItemButton>
+              <ItemButton v-bind:item="ITEM.VampireFang" v-bind:classic="classic" v-on:add-item="add_item($event)"></ItemButton>
             </div>
           </fieldset>
           <fieldset class="border border-solid dark:border-night-100 text-sm rounded-md">
             <legend>Eyes</legend>
             <div class="grid grid-rows-1 grid-cols-8 grid-flow-col">
-              <ItemButton v-bind:item="ITEM.LittleEye" v-on:add-item="add_item($event)"></ItemButton>
-              <ItemButton v-bind:item="ITEM.SleepyEye" v-on:add-item="add_item($event)"></ItemButton>
-              <ItemButton v-bind:item="ITEM.SillyEye" v-on:add-item="add_item($event)"></ItemButton>
-              <ItemButton v-bind:item="ITEM.DangerousEye" v-on:add-item="add_item($event)"></ItemButton>
-              <ItemButton v-bind:item="ITEM.AngryEye" v-on:add-item="add_item($event)"></ItemButton>
-              <ItemButton v-bind:item="ITEM.BlankEye" v-on:add-item="add_item($event)"></ItemButton>
-              <ItemButton v-bind:item="ITEM.WickedEye" v-on:add-item="add_item($event)"></ItemButton>
-              <ItemButton v-bind:item="ITEM.CreepyEye" v-on:add-item="add_item($event)"></ItemButton>
+              <ItemButton v-bind:item="ITEM.LittleEye" v-bind:classic="classic" v-on:add-item="add_item($event)"></ItemButton>
+              <ItemButton v-bind:item="ITEM.SleepyEye" v-bind:classic="classic" v-on:add-item="add_item($event)"></ItemButton>
+              <ItemButton v-bind:item="ITEM.SillyEye" v-bind:classic="classic" v-on:add-item="add_item($event)"></ItemButton>
+              <ItemButton v-bind:item="ITEM.DangerousEye" v-bind:classic="classic" v-on:add-item="add_item($event)"></ItemButton>
+              <ItemButton v-bind:item="ITEM.AngryEye" v-bind:classic="classic" v-on:add-item="add_item($event)"></ItemButton>
+              <ItemButton v-bind:item="ITEM.BlankEye" v-bind:classic="classic" v-on:add-item="add_item($event)"></ItemButton>
+              <ItemButton v-bind:item="ITEM.WickedEye" v-bind:classic="classic" v-on:add-item="add_item($event)"></ItemButton>
+              <ItemButton v-bind:item="ITEM.CreepyEye" v-bind:classic="classic" v-on:add-item="add_item($event)"></ItemButton>
             </div>
           </fieldset>
           <fieldset class="border border-solid dark:border-night-100 text-sm rounded-md">
             <legend>Wings & Feathers</legend>
             <div class="grid grid-rows-1 grid-cols-8 grid-flow-col">
-              <ItemButton v-bind:item="ITEM.AngelFeather" v-on:add-item="add_item($event)"></ItemButton>
-              <ItemButton v-bind:item="ITEM.RavenFeather" v-on:add-item="add_item($event)"></ItemButton>
-              <ItemButton v-bind:item="ITEM.ClearFeather" v-on:add-item="add_item($event)"></ItemButton>
-              <ItemButton v-bind:item="ITEM.MothWing" v-on:add-item="add_item($event)"></ItemButton>
-              <ItemButton v-bind:item="ITEM.FlamingQuill" v-on:add-item="add_item($event)"></ItemButton>
-              <ItemButton v-bind:item="ITEM.WhiteFeather" v-on:add-item="add_item($event)"></ItemButton>
+              <ItemButton v-bind:item="ITEM.AngelFeather" v-bind:classic="classic" v-on:add-item="add_item($event)"></ItemButton>
+              <ItemButton v-bind:item="ITEM.RavenFeather" v-bind:classic="classic" v-on:add-item="add_item($event)"></ItemButton>
+              <ItemButton v-bind:item="ITEM.ClearFeather" v-bind:classic="classic" v-on:add-item="add_item($event)"></ItemButton>
+              <ItemButton v-bind:item="ITEM.MothWing" v-bind:classic="classic" v-on:add-item="add_item($event)"></ItemButton>
+              <ItemButton v-bind:item="ITEM.FlamingQuill" v-bind:classic="classic" v-on:add-item="add_item($event)"></ItemButton>
+              <ItemButton v-bind:item="ITEM.WhiteFeather" v-bind:classic="classic" v-on:add-item="add_item($event)"></ItemButton>
             </div>
           </fieldset>
           <fieldset class="border border-solid dark:border-night-100 text-sm rounded-md">
             <legend>Misc.</legend>
             <div class="grid grid-rows-4 grid-cols-8 grid-flow-col">
-              <ItemButton v-bind:item="ITEM.AromaOil" v-on:add-item="add_item($event)"></ItemButton>
-              <ItemButton v-bind:item="ITEM.DragonBlood" v-on:add-item="add_item($event)"></ItemButton>
-              <ItemButton v-bind:item="ITEM.Acid" v-on:add-item="add_item($event)"></ItemButton>
-              <ItemButton v-bind:item="ITEM.HolyWater" v-on:add-item="add_item($event)"></ItemButton>
-              <ItemButton v-bind:item="ITEM.Ether" v-on:add-item="add_item($event)"></ItemButton>
-              <ItemButton v-bind:item="ITEM.Mercury" v-on:add-item="add_item($event)"></ItemButton>
-              <ItemButton v-bind:item="ITEM.StinkyBreath" v-on:add-item="add_item($event)"></ItemButton>
-              <ItemButton v-bind:item="ITEM.GhostsHowl" v-on:add-item="add_item($event)"></ItemButton>
-              <ItemButton v-bind:item="ITEM.DragonsBreath" v-on:add-item="add_item($event)"></ItemButton>
-              <ItemButton v-bind:item="ITEM.VirginsSigh" v-on:add-item="add_item($event)"></ItemButton>
-              <ItemButton v-bind:item="ITEM.Electricity" v-on:add-item="add_item($event)"></ItemButton>
-              <ItemButton v-bind:item="ITEM.Moss" v-on:add-item="add_item($event)"></ItemButton>
-              <ItemButton v-bind:item="ITEM.EarOfWheat" v-on:add-item="add_item($event)"></ItemButton>
-              <ItemButton v-bind:item="ITEM.BakedRoach" v-on:add-item="add_item($event)"></ItemButton>
-              <ItemButton v-bind:item="ITEM.BlackenedBat" v-on:add-item="add_item($event)"></ItemButton>
-              <ItemButton v-bind:item="ITEM.Sulpher" v-on:add-item="add_item($event)"></ItemButton>
-              <ItemButton v-bind:item="ITEM.PoisonPowder" v-on:add-item="add_item($event)"></ItemButton>
-              <ItemButton v-bind:item="ITEM.SleepyPowder" v-on:add-item="add_item($event)"></ItemButton>
-              <ItemButton v-bind:item="ITEM.KnockoutDust" v-on:add-item="add_item($event)"></ItemButton>
-              <ItemButton v-bind:item="ITEM.Rust" v-on:add-item="add_item($event)"></ItemButton>
-              <ItemButton v-bind:item="ITEM.GraveDirt" v-on:add-item="add_item($event)"></ItemButton>
-              <ItemButton v-bind:item="ITEM.Ash" v-on:add-item="add_item($event)"></ItemButton>
-              <ItemButton v-bind:item="ITEM.Hairball" v-on:add-item="add_item($event)"></ItemButton>
-              <ItemButton v-bind:item="ITEM.Needle" v-on:add-item="add_item($event)"></ItemButton>
-              <ItemButton v-bind:item="ITEM.MirrorPiece" v-on:add-item="add_item($event)"></ItemButton>
-              <ItemButton v-bind:item="ITEM.WadOfWool" v-on:add-item="add_item($event)"></ItemButton>
-              <ItemButton v-bind:item="ITEM.MessyScroll" v-on:add-item="add_item($event)"></ItemButton>
-              <ItemButton v-bind:item="ITEM.GreenballBun" v-on:add-item="add_item($event)"></ItemButton>
-              <ItemButton v-bind:item="ITEM.TakoBug" v-on:add-item="add_item($event)"></ItemButton>
+              <ItemButton v-bind:item="ITEM.AromaOil" v-bind:classic="classic" v-on:add-item="add_item($event)"></ItemButton>
+              <ItemButton v-bind:item="ITEM.DragonBlood" v-bind:classic="classic" v-on:add-item="add_item($event)"></ItemButton>
+              <ItemButton v-bind:item="ITEM.Acid" v-bind:classic="classic" v-on:add-item="add_item($event)"></ItemButton>
+              <ItemButton v-bind:item="ITEM.HolyWater" v-bind:classic="classic" v-on:add-item="add_item($event)"></ItemButton>
+              <ItemButton v-bind:item="ITEM.Ether" v-bind:classic="classic" v-on:add-item="add_item($event)"></ItemButton>
+              <ItemButton v-bind:item="ITEM.Mercury" v-bind:classic="classic" v-on:add-item="add_item($event)"></ItemButton>
+              <ItemButton v-bind:item="ITEM.StinkyBreath" v-bind:classic="classic" v-on:add-item="add_item($event)"></ItemButton>
+              <ItemButton v-bind:item="ITEM.GhostsHowl" v-bind:classic="classic" v-on:add-item="add_item($event)"></ItemButton>
+              <ItemButton v-bind:item="ITEM.DragonsBreath" v-bind:classic="classic" v-on:add-item="add_item($event)"></ItemButton>
+              <ItemButton v-bind:item="ITEM.VirginsSigh" v-bind:classic="classic" v-on:add-item="add_item($event)"></ItemButton>
+              <ItemButton v-bind:item="ITEM.Electricity" v-bind:classic="classic" v-on:add-item="add_item($event)"></ItemButton>
+              <ItemButton v-bind:item="ITEM.Moss" v-bind:classic="classic" v-on:add-item="add_item($event)"></ItemButton>
+              <ItemButton v-bind:item="ITEM.EarOfWheat" v-bind:classic="classic" v-on:add-item="add_item($event)"></ItemButton>
+              <ItemButton v-bind:item="ITEM.BakedRoach" v-bind:classic="classic" v-on:add-item="add_item($event)"></ItemButton>
+              <ItemButton v-bind:item="ITEM.BlackenedBat" v-bind:classic="classic" v-on:add-item="add_item($event)"></ItemButton>
+              <ItemButton v-bind:item="ITEM.Sulpher" v-bind:classic="classic" v-on:add-item="add_item($event)"></ItemButton>
+              <ItemButton v-bind:item="ITEM.PoisonPowder" v-bind:classic="classic" v-on:add-item="add_item($event)"></ItemButton>
+              <ItemButton v-bind:item="ITEM.SleepyPowder" v-bind:classic="classic" v-on:add-item="add_item($event)"></ItemButton>
+              <ItemButton v-bind:item="ITEM.KnockoutDust" v-bind:classic="classic" v-on:add-item="add_item($event)"></ItemButton>
+              <ItemButton v-bind:item="ITEM.Rust" v-bind:classic="classic" v-on:add-item="add_item($event)"></ItemButton>
+              <ItemButton v-bind:item="ITEM.GraveDirt" v-bind:classic="classic" v-on:add-item="add_item($event)"></ItemButton>
+              <ItemButton v-bind:item="ITEM.Ash" v-bind:classic="classic" v-on:add-item="add_item($event)"></ItemButton>
+              <ItemButton v-bind:item="ITEM.Hairball" v-bind:classic="classic" v-on:add-item="add_item($event)"></ItemButton>
+              <ItemButton v-bind:item="ITEM.Needle" v-bind:classic="classic" v-on:add-item="add_item($event)"></ItemButton>
+              <ItemButton v-bind:item="ITEM.MirrorPiece" v-bind:classic="classic" v-on:add-item="add_item($event)"></ItemButton>
+              <ItemButton v-bind:item="ITEM.WadOfWool" v-bind:classic="classic" v-on:add-item="add_item($event)"></ItemButton>
+              <ItemButton v-bind:item="ITEM.MessyScroll" v-bind:classic="classic" v-on:add-item="add_item($event)"></ItemButton>
+              <ItemButton v-bind:item="ITEM.GreenballBun" v-bind:classic="classic" v-on:add-item="add_item($event)"></ItemButton>
+              <ItemButton v-bind:item="ITEM.TakoBug" v-bind:classic="classic" v-on:add-item="add_item($event)"></ItemButton>
             </div>
           </fieldset>
         </div>
@@ -247,7 +247,7 @@
                   </svg>
                 </i>
 
-                <span class="text">{{ element.text }}</span>
+                <span class="text">{{ get_text(element) }}</span>
 
                 <i class="close" @click="removeAt(idx)">
                   <svg class="flex-shrink-0 mr-1.5 h-5 w-5 text-gray-400 dark:text-night-300"
@@ -276,7 +276,7 @@
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                         d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z"/>
                 </svg>
-                {{ selected_material.text }} {{ selected_object.text }}
+                {{ get_text(selected_material) }} {{ get_text(selected_object) }}
               </div>
             </div>
           </div>
@@ -320,7 +320,7 @@
                   <div>Dex</div>
                   <div>Def</div>
                   <div>Mag</div>
-                  <div>Con</div>
+                  <div>{{classic ? 'HP': 'Con'}}</div>
                   <div>Mnd</div>
                   <div>Chm</div>
                   <div>Lck</div>
@@ -416,12 +416,12 @@
                 </dt>
                 <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2 dark:text-night-100" style="text-align: left"
                     v-if="selected_object.value<=11">
-                  Master Move 1 : {{ itemForged.getPlunge1().text }}<br>
-                  Master Move 2 : {{ itemForged.getPlunge2().text }}<br>
-                  Master Move 3 : {{ itemForged.getPlunge3().text }}<br>
+                  Master Move 1 : {{ get_text(itemForged.getPlunge1()) }}<br>
+                  Master Move 2 : {{ get_text(itemForged.getPlunge2()) }}<br>
+                  Master Move 3 : {{ get_text(itemForged.getPlunge3()) }}<br>
                 </dd>
                 <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2 dark:text-night-100" v-else>
-                  Special : {{ itemForged.getSpecial().text }}
+                  Special : {{ get_text(itemForged.getSpecial()) }}
                 </dd>
               </div>
             </dl>
@@ -461,6 +461,14 @@
                 <button class="mt-1 text-sm text-gray-900 sm:mt-0 dark:text-night-100" v-else @click="toggle_recipe">
                   Hide Recipe
                 </button>
+              </div>
+              <div class="bg-gray-50 dark:bg-night-500 px-4 py-2 sm:grid sm:grid-cols-12 items-center sm:gap-4 sm:px-6">
+                <div class="flex w-10 z-0 self-center items-center" @click="classic = !classic">
+                  <div class="w-16 h-4 flex items-center bg-gray-300 rounded-full p-1 duration-300 ease-in-out" :class="{ 'bg-green-400': classic}">
+                    <div class="bg-white w-4 h-4 rounded-full shadow-md transform duration-300 ease-in-out" :class="{ 'translate-x-4': classic,}"></div>
+                  </div>
+                </div>
+                <div class="z-10 col-span-11 text-sm text-gray-900 dark:text-night-100">Switch back to classic names</div>
               </div>
             </dl>
           </div>
@@ -515,7 +523,8 @@ export default {
        * @type [ITEM]
        */
       history: [],
-      recipe: ''
+      recipe: '',
+      classic: false
     }
   },
   methods: {
@@ -595,24 +604,23 @@ export default {
     },
     copy_text() {
       let src = ''
-      src += this.selected_object.text
-      src += '\n' + this.selected_material.text
+      src += this.get_text(this.selected_object)
+      src += '\n' + this.get_text(this.selected_material)
       let buffer = ''
       let count = 0
       for (let i = 0; i < this.history.length; i++) {
         if (buffer === '') {
-          buffer = this.history[i].text
+          buffer = this.get_text(this.history[i])
           count++
         }
-        else if (buffer === this.history[i].text) {
+        else if (buffer === this.get_text(this.history[i])) {
           count++
         } else {
           src += '\n' + buffer
           if (count > 1) src += ' x' + count
           count = 1
-          buffer = this.history[i].text
+          buffer = this.get_text(this.history[i])
         }
-        //src += '\n' + this.history[i].text
       }
       if (buffer) {
         src += '\n' + buffer
@@ -671,6 +679,12 @@ export default {
       }
 
       return result;
+    },
+    get_text(o) {
+      if (this.classic && 'psxtext' in o) {
+        return o.psxtext
+      }
+      return o.text
     }
   },
   watch: {

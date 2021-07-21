@@ -48,6 +48,9 @@
   
 ### v0.1.7
 
+- New features:
+  - Toggle between remaster and classic names
+
 - Improvements:
   - Source export is more compact
   - Text export is compact (uses multipliers when you use the same item multiple times in a row)
