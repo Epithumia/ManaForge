@@ -13,6 +13,8 @@ import {
 import {No_Item} from "@/forge/items";
 import {equip_props, if_array, mat_props, power2} from "@/forge/lists";
 
+// TODO: https://github.com/aberonni/nightwatch-test-coverage-example
+
 class ForgedItem {
 
     constructor(seq) {
