@@ -41,7 +41,7 @@ const WORLD_CARD = Object.freeze(
 const PLUNGE1 = Object.freeze(
     {
         Thrust: {text: 'Thrust', value: 1, psxtext: 'Thrust'},
-        Shot: {text: 'Shot', value: 2, psxtext: 'Shot'},
+        Double_Shot: {text: 'Double Shot', value: 2, psxtext: 'Double Shot'},
         Caduceus: {text: 'Caduceus', value: 3, psxtext: 'Caduceus'},
         Chaotic_Avenger: {text: 'Chaotic Avenger', value: 4, psxtext: 'Chaotic Avenger'},
         Green_Princess: {text: 'Green Princess', value: 5, psxtext: 'Green Princess'},
@@ -60,7 +60,7 @@ const PLUNGE1 = Object.freeze(
 const PLUNGE2 = Object.freeze(
     {
         Uppercut: {text: 'Uppercut', value: 1, psxtext: 'Uppercut'},
-        Double_Shot: {text: 'Double Shot', value: 2, psxtext: 'Double Shot'},
+        Shot: {text: 'Shot', value: 2, psxtext: 'Shot'},
         Dragonslayer: {text: 'Dragonslayer', value: 3, psxtext: 'Dragonslayer'},
         Elven_Archer: {text: 'Elven Archer', value: 4, psxtext: 'Elven Archer'},
         Flame_Tongue: {text: 'Flame Tongue', value: 5, psxtext: 'Flame Tongue'},

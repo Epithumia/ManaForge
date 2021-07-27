@@ -419,8 +419,8 @@ class ForgedItem {
         this.setPlunge2(PLUNGE2.Uppercut);
         this.setPlunge3(PLUNGE3.Jump);
         if (this.BOW()) {
-            this.setPlunge1(PLUNGE1.Shot);
-            this.setPlunge2(PLUNGE2.Double_Shot);
+            this.setPlunge1(PLUNGE1.Double_Shot);
+            this.setPlunge2(PLUNGE2.Shot);
         }
     }
 
