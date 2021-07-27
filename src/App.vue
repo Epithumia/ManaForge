@@ -1,5 +1,5 @@
 <template>
-  <div id="app" class="flex flex-col h-screen">
+  <div id="app" class="flex flex-col min-h-screen sm:h-screen">
     <header class="py-4 bg-gray-700 dark:bg-night-700 text-white text-center">
       Legend Of Mana Forge Simulator
     </header>
