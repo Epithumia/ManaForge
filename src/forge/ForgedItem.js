@@ -1743,7 +1743,7 @@ class ForgedItem {
      * @returns {number}
      */
     perc75(num) {
-        num = Math.trunc(num / 4 * 3);
+        num = Math.trunc(num / 4) * 3;
         return num;
     }
 
