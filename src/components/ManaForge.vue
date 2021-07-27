@@ -937,11 +937,17 @@ export default {
     },
     copy_text() {
       let src = ''
+      const cart = new Map();
       src += this.get_text(this.selected_object)
       src += '\n' + this.get_text(this.selected_material)
       let buffer = ''
       let count = 0
       for (let i = 0; i < this.history.length; i++) {
+        if (cart.has(this.get_text(this.history[i]))) {
+          cart.set(this.get_text(this.history[i]), cart.get(this.get_text(this.history[i])) + 1)
+        } else {
+          cart.set(this.get_text(this.history[i]), 1)
+        }
         if (buffer === '') {
           buffer = this.get_text(this.history[i])
           count++
@@ -959,6 +965,11 @@ export default {
         if (count > 1) src += ' x' + count
         count = 0
       }
+
+      src += '\n\n\nShopping Cart\n-------------'
+      src += '\n' + this.get_text(this.selected_material) + '\n'
+      cart.forEach((val, key) => {src+= '\n' + key.padEnd(20) + ' -> ' + val;})
+
       if (copy(src)) {
         this.flashSuccess('Copied to clipboard!')
       } else {
