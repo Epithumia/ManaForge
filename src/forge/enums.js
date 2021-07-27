@@ -344,6 +344,24 @@ const ITEM = Object.freeze(
     }
 )
 
+const DEBUG_STEPS = Object.freeze(
+    {
+            NODEBUG: {text: '--', value: 0},
+            INITSTATITEM: {text: 'Initialize item stats', value: 1},
+            INITCARDS: {text: 'Initialize cards', value: 2},
+            MATERIALINIT: {text: 'Initialize material', value: 3},
+            SETACTIVEWORLDCARD: {text: 'Set active World Card', value: 4},
+            ITEMENERGY: {text: 'Calculate item energy', value: 5},
+            MATERIALCODE: {text: 'Apply material code', value: 6},
+            ITEMCODE: {text: 'Apply item code', value: 7},
+            PUSHCARDS: {text: 'Push cards', value: 8},
+            ACTIVATECARDS: {text: 'Activate cards', value: 9},
+            CHECKTYPEEFFECTS: {text: 'Check type effects', value: 10},
+            INCREASEESSENCES: {text: 'Increase essences', value: 11},
+            CALCULATESTATS: {text: 'Calculate stats', value: 12}
+    }
+)
+
 export {
     ESSENCE,
     IMMUNITY,
@@ -356,5 +374,6 @@ export {
     WORLD_CARD,
     MATERIAL,
     EQUIP,
-    ITEM
+    ITEM,
+    DEBUG_STEPS
 }
