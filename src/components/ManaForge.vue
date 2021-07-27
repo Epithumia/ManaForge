@@ -489,9 +489,9 @@
             <draggable tag="ul" v-model="history" class="list-group" id="drag_list" ref="drag_list"
             :delay="250" :delay-on-touch-only="true">
               <li
-                  class="list-group-item border rounded-full border-solid"
+                  class="list-group-item border-2 rounded-full border-solid"
                   v-for="(element, idx) in history"
-                  v-bind:class="{'border-night-100': idx+1===step, 'dark:border-night-300': idx+1!==step}"
+                  v-bind:class="{'border-night-100': idx+1===step, 'dark:border-night-300 text-night-300': idx+1!==step}"
                   :key="element.name"
                   @dblclick="removeAt(idx)"
               >
