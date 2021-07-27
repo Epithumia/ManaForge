@@ -485,13 +485,16 @@
               Recipe
             </h3>
           </div>
-          <div class="text-sm border-t border-gray-200 overflow-auto overflow-x-hidden dark:border-night-700 dark:bg-night-500">
+          <div class="text-sm border-t border-gray-200
+          overflow-auto overflow-x-hidden dark:border-night-700
+          dark:bg-night-900">
             <draggable tag="ul" v-model="history" class="list-group" id="drag_list" ref="drag_list"
             :delay="250" :delay-on-touch-only="true">
               <li
                   class="list-group-item border-2 rounded-full border-solid"
                   v-for="(element, idx) in history"
-                  v-bind:class="{'border-night-100': idx+1===step, 'dark:border-night-300 text-night-300': idx+1!==step}"
+                  v-bind:class="{'border-night-100 dark:bg-night-500 bg-gray-100': idx+1===step,
+                  'dark:bg-night-900 dark:border-night-300 text-night-300': idx+1!==step}"
                   :key="element.name"
                   @dblclick="removeAt(idx)"
               >
