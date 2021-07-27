@@ -156,7 +156,7 @@ class Ancient_Moon extends Card {
      */
     HIDDEN(f) {
         if (f.awc !== WORLD_CARD.NONE && f.awc !== WORLD_CARD.BED_OF_THORN) {
-            f.hidden = new No_Card();
+            f.setHidden(new No_Card());
         }
     }
 
@@ -301,11 +301,11 @@ class Beast_Headed_God extends Card {
      */
     LEAVING(f) {
         if (f.third instanceof Sacrificed_Nymph) {
-            f.third = this;
+            f.setThird(this);
         } else if (f.second instanceof Sacrificed_Nymph) {
-            f.second = this;
+            f.setSecond(this);
         } else if (f.first instanceof Sacrificed_Nymph) {
-            f.first = this;
+            f.setFirst(this);
         }
     }
 
@@ -702,7 +702,7 @@ class Dying_Earth extends Card {
      */
     HIDDEN(f) {
         if (f.awc !== WORLD_CARD.NONE && f.awc !== WORLD_CARD.BED_OF_THORN) {
-            f.hidden = new No_Card();
+            f.setHidden(new No_Card());
         }
     }
 
@@ -824,11 +824,11 @@ class Fallen_Angel extends Card {
      */
     LEAVING(f) {
         if (f.third instanceof Sacrificed_Nymph) {
-            f.third = this;
+            f.setThird(this);
         } else if (f.second instanceof Sacrificed_Nymph) {
-            f.second = this;
+            f.setSecond(this);
         } else if (f.first instanceof Sacrificed_Nymph) {
-            f.first = this;
+            f.setFirst(this);
         }
     }
 
@@ -964,11 +964,11 @@ class God_Of_Destruction extends Card {
 
     LEAVING(f) {
         if (f.third instanceof Sacrificed_Nymph) {
-            f.third = this;
+            f.setThird(this);
         } else if (f.second instanceof Sacrificed_Nymph) {
-            f.second = this;
+            f.setSecond(this);
         } else if (f.first instanceof Sacrificed_Nymph) {
-            f.first = this;
+            f.setFirst(this);
         }
     }
 
@@ -1103,7 +1103,7 @@ class Heavens_Scale extends Card {
 
     HIDDEN(f) {
         if (f.awc !== WORLD_CARD.NONE && f.awc !== WORLD_CARD.BED_OF_THORN) {
-            f.hidden = new No_Card();
+            f.setHidden(new No_Card());
         }
     }
 
@@ -1253,11 +1253,11 @@ class Leviathan extends Card {
 
     LEAVING(f) {
         if (f.third instanceof Sacrificed_Nymph) {
-            f.third = this;
+            f.setThird(this);
         } else if (f.second instanceof Sacrificed_Nymph) {
-            f.second = this;
+            f.setSecond(this);
         } else if (f.first instanceof Sacrificed_Nymph) {
-            f.first = this;
+            f.setFirst(this);
         }
     }
 
@@ -1308,11 +1308,11 @@ class Lord_Of_Flies extends Card {
 
     LEAVING(f) {
         if (f.third instanceof Sacrificed_Nymph) {
-            f.third = this;
+            f.setThird(this);
         } else if (f.second instanceof Sacrificed_Nymph) {
-            f.second = this;
+            f.setSecond(this);
         } else if (f.first instanceof Sacrificed_Nymph) {
-            f.first = this;
+            f.setFirst(this);
         }
     }
 
@@ -1461,7 +1461,7 @@ class Mirrored_World extends Card {
 
     HIDDEN(f) {
         if (f.awc !== WORLD_CARD.NONE && f.awc !== WORLD_CARD.BED_OF_THORN) {
-            f.hidden = new No_Card();
+            f.setHidden(new No_Card());
         }
     }
 
@@ -1607,9 +1607,9 @@ class Nymph_Of_Dawn extends Card {
     THIRD(f) {
         if (f.getEnergy() <= 24) {
             if (f.third instanceof Nymph_Of_Dawn) {
-                f.third = new No_Card();
+                f.setThird(new No_Card());
             } else if (f.second instanceof Nymph_Of_Dawn) {
-                f.second = new No_Card();
+                f.setSecond(new No_Card());
             }
             f.setEnergy(f.getEnergy() + 192);
         }
@@ -1845,11 +1845,11 @@ class Pixie_Of_Gluttony extends Card {
         if (WORLD_CARD.RAGNAROK === f.awc) {
             if (f.getEnergy() >= 8) {
                 if (f.third instanceof Pixie_Of_Gluttony) {
-                    f.third = new Leviathan();
+                    f.setThird(new Leviathan());
                 } else if (f.second instanceof Pixie_Of_Gluttony) {
-                    f.second = new Leviathan();
+                    f.setSecond(new Leviathan());
                 } else if (f.first instanceof Pixie_Of_Gluttony) {
-                    f.first = new Leviathan();
+                    f.setFirst(new Leviathan());
                 }
             }
             f.find_and_run_s13(Leviathan);
@@ -1898,11 +1898,11 @@ class Pixie_Of_Greed extends Card {
         if (WORLD_CARD.RAGNAROK === f.awc) {
             if (f.getEnergy() >= 8) {
                 if (f.third instanceof Pixie_Of_Greed) {
-                    f.third = new Beast_Headed_God();
+                    f.setThird(new Beast_Headed_God());
                 } else if (f.second instanceof Pixie_Of_Greed) {
-                    f.second = new Beast_Headed_God();
+                    f.setSecond(new Beast_Headed_God());
                 } else if (f.first instanceof Pixie_Of_Greed) {
-                    f.first = new Beast_Headed_God();
+                    f.setFirst(new Beast_Headed_God());
                 }
             }
             f.find_and_run_s13(Beast_Headed_God);
@@ -1951,11 +1951,11 @@ class Pixie_Of_Jealousy extends Card {
         if (WORLD_CARD.RAGNAROK === f.awc) {
             if (f.getEnergy() >= 8) {
                 if (f.third instanceof Pixie_Of_Jealousy) {
-                    f.third = new Lord_Of_Flies();
+                    f.setThird(new Lord_Of_Flies());
                 } else if (f.second instanceof Pixie_Of_Jealousy) {
-                    f.second = new Lord_Of_Flies();
+                    f.setSecond(new Lord_Of_Flies());
                 } else if (f.first instanceof Pixie_Of_Jealousy) {
-                    f.first = new Lord_Of_Flies();
+                    f.setFirst(new Lord_Of_Flies());
                 }
             }
             f.find_and_run_s13(Lord_Of_Flies);
@@ -2005,11 +2005,11 @@ class Pixie_Of_Laziness extends Card {
         if (WORLD_CARD.RAGNAROK === f.awc) {
             if (f.getEnergy() >= 8) {
                 if (f.third instanceof Pixie_Of_Laziness) {
-                    f.third = new Witch_Of_Moon();
+                    f.setThird(new Witch_Of_Moon());
                 } else if (f.second instanceof Pixie_Of_Laziness) {
-                    f.second = new Witch_Of_Moon();
+                    f.setSecond(new Witch_Of_Moon());
                 } else if (f.first instanceof Pixie_Of_Laziness) {
-                    f.first = new Witch_Of_Moon();
+                    f.setFirst(new Witch_Of_Moon());
                 }
             }
             f.find_and_run_s13(Witch_Of_Moon);
@@ -2060,11 +2060,11 @@ class Pixie_Of_Lust extends Card {
         if (WORLD_CARD.RAGNAROK === f.awc) {
             if (f.getEnergy() >= 8) {
                 if (f.third instanceof Pixie_Of_Lust) {
-                    f.third = new Wings_Of_Darkness();
+                    f.setThird(new Wings_Of_Darkness());
                 } else if (f.second instanceof Pixie_Of_Lust) {
-                    f.second = new Wings_Of_Darkness();
+                    f.setSecond(new Wings_Of_Darkness());
                 } else if (f.first instanceof Pixie_Of_Lust) {
-                    f.first = new Wings_Of_Darkness();
+                    f.setFirst(new Wings_Of_Darkness());
                 }
             }
             f.find_and_run_s13(Wings_Of_Darkness);
@@ -2113,11 +2113,11 @@ class Pixie_Of_Pride extends Card {
         if (WORLD_CARD.RAGNAROK === f.awc) {
             if (f.getEnergy() >= 8) {
                 if (f.third instanceof Pixie_Of_Pride) {
-                    f.third = new Fallen_Angel();
+                    f.setThird(new Fallen_Angel());
                 } else if (f.second instanceof Pixie_Of_Pride) {
-                    f.second = new Fallen_Angel();
+                    f.setSecond(new Fallen_Angel());
                 } else if (f.first instanceof Pixie_Of_Pride) {
-                    f.first = new Fallen_Angel();
+                    f.setFirst(new Fallen_Angel());
                 }
             }
             f.find_and_run_s13(Fallen_Angel);
@@ -2168,11 +2168,11 @@ class Pixie_Of_Rage extends Card {
         if (WORLD_CARD.RAGNAROK === f.awc) {
             if (f.getEnergy() >= 8) {
                 if (f.third instanceof Pixie_Of_Rage) {
-                    f.third = new God_Of_Destruction();
+                    f.setThird(new God_Of_Destruction());
                 } else if (f.second instanceof Pixie_Of_Rage) {
-                    f.second = new God_Of_Destruction();
+                    f.setSecond(new God_Of_Destruction());
                 } else if (f.first instanceof Pixie_Of_Rage) {
-                    f.first = new God_Of_Destruction();
+                    f.setFirst(new God_Of_Destruction());
                 }
             }
             f.find_and_run_s13(God_Of_Destruction);
@@ -2277,7 +2277,7 @@ class Ragnarok extends Card {
 
     HIDDEN(f) {
         if (f.awc !== WORLD_CARD.NONE && f.awc !== WORLD_CARD.BED_OF_THORN) {
-            f.hidden = new No_Card();
+            f.setHidden(new No_Card());
         }
     }
 
@@ -3351,11 +3351,11 @@ class Wings_Of_Darkness extends Card {
 
     LEAVING(f) {
         if (f.third instanceof Sacrificed_Nymph) {
-            f.third = this;
+            f.setThird(this);
         } else if (f.second instanceof Sacrificed_Nymph) {
-            f.second = this;
+            f.setSecond(this);
         } else if (f.first instanceof Sacrificed_Nymph) {
-            f.first = this;
+            f.setFirst(this);
         }
     }
 
@@ -3562,11 +3562,11 @@ class Witch_Of_Moon extends Card {
 
     LEAVING(f) {
         if (f.third instanceof Sacrificed_Nymph) {
-            f.third = this;
+            f.setThird(this);
         } else if (f.second instanceof Sacrificed_Nymph) {
-            f.second = this;
+            f.setSecond(this);
         } else if (f.first instanceof Sacrificed_Nymph) {
-            f.first = this;
+            f.setFirst(this);
         }
     }
 
@@ -3656,7 +3656,7 @@ class Yggdrasil extends Card {
 
     HIDDEN(f) {
         if (f.awc !== WORLD_CARD.NONE && f.awc !== WORLD_CARD.BED_OF_THORN) {
-            f.hidden = new No_Card();
+            f.setHidden(new No_Card());
         }
     }
 

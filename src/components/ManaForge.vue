@@ -417,36 +417,63 @@
             </div>
           </fieldset>
         </div>
-        <div class="flex-0 flex justify-center">
-          <div class="self-center" @click="step=0">
-            <svg class="flex-shrink-0 mr-1.5 h-5 w-5 text-gray-400" xmlns="http://www.w3.org/2000/svg" fill="none"
-                 viewBox="0 0 24 24" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 19l-7-7 7-7m8 14l-7-7 7-7"/>
-            </svg>
+        <div class="flex-0 flex flex-col justify-center">
+          <div class="self-center flex flex-0">
+            <div class="self-center" @click="step=0">
+              <svg class="flex-shrink-0 mr-1.5 h-5 w-5 text-gray-400" xmlns="http://www.w3.org/2000/svg" fill="none"
+                   viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                      d="M11 19l-7-7 7-7m8 14l-7-7 7-7"/>
+              </svg>
+            </div>
+            <div class="self-center" @click="step--">
+              <svg class="flex-shrink-0 mr-1.5 h-5 w-5 text-gray-400" xmlns="http://www.w3.org/2000/svg" fill="none"
+                   viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/>
+              </svg>
+            </div>
+            <div class="self-center">
+              <label for="step_ex" class="text-xs dark:bg-night-900 dark:text-night-100">Step:</label>
+              <input id="step_ex"
+                     class="dark:bg-night-900 dark:text-night-100 text-xxs mt-1 py-1 w-12 px-2 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-xs"
+                     type="text" v-model="step">
+            </div>
+            <div class="self-center" @click="step++">
+              <svg class="flex-shrink-0 mr-1.5 h-5 w-5 text-gray-400" xmlns="http://www.w3.org/2000/svg" fill="none"
+                   viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+              </svg>
+            </div>
+            <div class="self-center" @click="step=history.length">
+              <svg class="flex-shrink-0 mr-1.5 h-5 w-5 text-gray-400" xmlns="http://www.w3.org/2000/svg" fill="none"
+                   viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 5l7 7-7 7M5 5l7 7-7 7"/>
+              </svg>
+            </div>
           </div>
-          <div class="self-center" @click="step--">
-            <svg class="flex-shrink-0 mr-1.5 h-5 w-5 text-gray-400" xmlns="http://www.w3.org/2000/svg" fill="none"
-                 viewBox="0 0 24 24" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/>
-            </svg>
-          </div>
-          <div class="self-center">
-            <label for="step" class="text-xs dark:bg-night-900 dark:text-night-100">Step:</label>
-            <input id="step"
-                   class="dark:bg-night-900 dark:text-night-100 text-xs mt-1 py-1 w-8 px-2 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
-                   type="text" v-model="step">
-          </div>
-          <div class="self-center" @click="step++">
-            <svg class="flex-shrink-0 mr-1.5 h-5 w-5 text-gray-400" xmlns="http://www.w3.org/2000/svg" fill="none"
-                 viewBox="0 0 24 24" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
-            </svg>
-          </div>
-          <div class="self-center" @click="step=history.length">
-            <svg class="flex-shrink-0 mr-1.5 h-5 w-5 text-gray-400" xmlns="http://www.w3.org/2000/svg" fill="none"
-                 viewBox="0 0 24 24" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 5l7 7-7 7M5 5l7 7-7 7"/>
-            </svg>
+          <div class="self-center flex flex-0">
+            <div class="self-center" @click="debug_step--">
+              <svg class="flex-shrink-0 mr-1.5 h-5 w-5 text-gray-400" xmlns="http://www.w3.org/2000/svg" fill="none"
+                   viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/>
+              </svg>
+            </div>
+            <div class="self-center">
+              <label for="debug_step_ex" class="text-xs dark:bg-night-900 dark:text-night-100">Sub-step:</label>
+              <select id="debug_step_ex"
+                      class="dark:bg-night-900 dark:text-night-100 text-xs mt-1 py-1 px-2 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+                      v-model="debug_step">
+                <option v-for="option in DEBUG_STEPS" v-bind:value="option.value" v-bind:key="option.value">
+                  {{ option.text }}
+                </option>
+              </select>
+            </div>
+            <div class="self-center" @click="debug_step++">
+              <svg class="flex-shrink-0 mr-1.5 h-5 w-5 text-gray-400" xmlns="http://www.w3.org/2000/svg" fill="none"
+                   viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+              </svg>
+            </div>
           </div>
         </div>
       </div>
@@ -466,6 +493,7 @@
                   v-for="(element, idx) in history"
                   v-bind:class="{'border-night-100': idx+1===step, 'dark:border-night-300': idx+1!==step}"
                   :key="element.name"
+                  @dblclick="removeAt(idx)"
               >
                 <i class="handle">
                   <svg class="flex-shrink-0 mr-1.5 h-5 w-5 text-gray-400 dark:text-night-300"
@@ -540,7 +568,10 @@
                 </dt>
                 <dd class="mt-1 text-xs md:text-sm text-gray-900 dark:text-night-100 sm:mt-0 sm:col-span-2"
                     v-if="selected_object.value<=11">
-                  {{ itemForged.getSharp() }} / {{ itemForged.getHeavy() }} / {{ itemForged.getForce() }} / {{ itemForged.getTech() }}
+                  <span class="inline-block" :class="debug_step ? itemForged.highlight_sharp:null">{{ itemForged.getSharp() }}</span> /
+                  <span class="inline-block" :class="debug_step ? itemForged.highlight_heavy:null">{{ itemForged.getHeavy() }}</span> /
+                  <span class="inline-block" :class="debug_step ? itemForged.highlight_force:null">{{ itemForged.getForce() }}</span> /
+                  <span class="inline-block" :class="debug_step ? itemForged.highlight_tech:null">{{ itemForged.getTech() }}</span>
                 </dd>
               </div>
               <div class="text-xs md:text-sm bg-gray-50 dark:bg-night-500 px-4 py-2 flex flex-col">
@@ -558,14 +589,14 @@
 
                   <!-- Stats -->
                   <div class="col-span-2">Stats</div>
-                  <div>{{ itemForged.getPwr() }}</div>
-                  <div>{{ itemForged.getSkl() }}</div>
-                  <div>{{ itemForged.getDef() }}</div>
-                  <div>{{ itemForged.getMag() }}</div>
-                  <div>{{ itemForged.getHp() }}</div>
-                  <div>{{ itemForged.getSpr() }}</div>
-                  <div>{{ itemForged.getChm() }}</div>
-                  <div>{{ itemForged.getLck() }}</div>
+                  <div :class="debug_step ? itemForged.highlight_pwr:null">{{ itemForged.getPwr() }}</div>
+                  <div :class="debug_step ? itemForged.highlight_skl:null">{{ itemForged.getSkl() }}</div>
+                  <div :class="debug_step ? itemForged.highlight_def:null">{{ itemForged.getDef() }}</div>
+                  <div :class="debug_step ? itemForged.highlight_mag:null">{{ itemForged.getMag() }}</div>
+                  <div :class="debug_step ? itemForged.highlight_hp:null">{{ itemForged.getHp() }}</div>
+                  <div :class="debug_step ? itemForged.highlight_spr:null">{{ itemForged.getSpr() }}</div>
+                  <div :class="debug_step ? itemForged.highlight_chm:null">{{ itemForged.getChm() }}</div>
+                  <div :class="debug_step ? itemForged.highlight_lck:null">{{ itemForged.getLck() }}</div>
 
                 </div>
 
@@ -586,25 +617,36 @@
 
                   <!-- Resists -->
                   <div class="col-span-2">Resists</div>
-                  <div>{{ itemForged.getWiR() }}</div>
-                  <div>{{ itemForged.getShR() }}</div>
-                  <div>{{ itemForged.getDrR() }}</div>
-                  <div>{{ itemForged.getAuR() }}</div>
-                  <div>{{ itemForged.getSaR() }}</div>
-                  <div>{{ itemForged.getGnR() }}</div>
-                  <div>{{ itemForged.getJiR() }}</div>
-                  <div>{{ itemForged.getUnR() }}</div>
+                  <div :class="debug_step ? itemForged.highlight_wiR:null">{{ itemForged.getWiR() }}</div>
+                  <div :class="debug_step ? itemForged.highlight_shR:null">{{ itemForged.getShR() }}</div>
+                  <div :class="debug_step ? itemForged.highlight_drR:null">{{ itemForged.getDrR() }}</div>
+                  <div :class="debug_step ? itemForged.highlight_auR:null">{{ itemForged.getAuR() }}</div>
+                  <div :class="debug_step ? itemForged.highlight_saR:null">{{ itemForged.getSaR() }}</div>
+                  <div :class="debug_step ? itemForged.highlight_gnR:null">{{ itemForged.getGnR() }}</div>
+                  <div :class="debug_step ? itemForged.highlight_jiR:null">{{ itemForged.getJiR() }}</div>
+                  <div :class="debug_step ? itemForged.highlight_unR:null">{{ itemForged.getUnR() }}</div>
 
                   <!-- Essences -->
                   <div class="col-span-2">Essence</div>
-                  <div>{{ itemForged.getWi() }}</div>
-                  <div>{{ itemForged.getSh() }}</div>
-                  <div>{{ itemForged.getDr() }}</div>
-                  <div>{{ itemForged.getAu() }}</div>
-                  <div>{{ itemForged.getSa() }}</div>
-                  <div>{{ itemForged.getGn() }}</div>
-                  <div>{{ itemForged.getJi() }}</div>
-                  <div>{{ itemForged.getUn() }}</div>
+                  <div :class="debug_step ? itemForged.highlight_wi:null">{{ itemForged.getWi() }}</div>
+                  <div :class="debug_step ? itemForged.highlight_sh:null">{{ itemForged.getSh() }}</div>
+                  <div :class="debug_step ? itemForged.highlight_dr:null">{{ itemForged.getDr() }}</div>
+                  <div :class="debug_step ? itemForged.highlight_au:null">{{ itemForged.getAu() }}</div>
+                  <div :class="debug_step ? itemForged.highlight_sa:null">{{ itemForged.getSa() }}</div>
+                  <div :class="debug_step ? itemForged.highlight_gn:null">{{ itemForged.getGn() }}</div>
+                  <div :class="debug_step ? itemForged.highlight_ji:null">{{ itemForged.getJi() }}</div>
+                  <div :class="debug_step ? itemForged.highlight_un:null">{{ itemForged.getUn() }}</div>
+
+                  <!-- Taint points -->
+                  <div class="col-span-2">T. Points</div>
+                  <div></div>
+                  <div></div>
+                  <div :class="debug_step ? itemForged.highlight_drLR:null">{{ itemForged.getDrLR() }}</div>
+                  <div :class="debug_step ? itemForged.highlight_auLR:null">{{ itemForged.getAuLR() }}</div>
+                  <div :class="debug_step ? itemForged.highlight_saLR:null">{{ itemForged.getSaLR() }}</div>
+                  <div :class="debug_step ? itemForged.highlight_gnLR:null">{{ itemForged.getGnLR() }}</div>
+                  <div :class="debug_step ? itemForged.highlight_jiLR:null">{{ itemForged.getJiLR() }}</div>
+                  <div :class="debug_step ? itemForged.highlight_unLR:null">{{ itemForged.getUnLR() }}</div>
 
                   <!-- Markers -->
                   <div class="col-span-2">Markers</div>
@@ -619,26 +661,32 @@
 
                   <!-- Immunities -->
                   <div class="col-span-2">Immunity</div>
-                  <div>{{ itemForged.getShortImmunity(IMMUNITY.Sleep) }}</div>
-                  <div>{{ itemForged.getShortImmunity(IMMUNITY.Poison) }}</div>
-                  <div>{{ itemForged.getShortImmunity(IMMUNITY.Paralysis) }}</div>
-                  <div>{{ itemForged.getShortImmunity(IMMUNITY.Confusion) }}</div>
-                  <div>{{ itemForged.getShortImmunity(IMMUNITY.Darkness) }}</div>
-                  <div>{{ itemForged.getShortImmunity(IMMUNITY.Petrify) }}</div>
-                  <div>{{ itemForged.getShortImmunity(IMMUNITY.Flameburst) }}</div>
-                  <div>{{ itemForged.getShortImmunity(IMMUNITY.Freeze) }}</div>
+                  <div :class="debug_step ? itemForged.highlight_immunity_sleep:null">{{ itemForged.getShortImmunity(IMMUNITY.Sleep) }}</div>
+                  <div :class="debug_step ? itemForged.highlight_immunity_poison:null">{{ itemForged.getShortImmunity(IMMUNITY.Poison) }}</div>
+                  <div :class="debug_step ? itemForged.highlight_immunity_paralysis:null">{{ itemForged.getShortImmunity(IMMUNITY.Paralysis) }}</div>
+                  <div :class="debug_step ? itemForged.highlight_immunity_confusion:null">{{ itemForged.getShortImmunity(IMMUNITY.Confusion) }}</div>
+                  <div :class="debug_step ? itemForged.highlight_immunity_darkness:null">{{ itemForged.getShortImmunity(IMMUNITY.Darkness) }}</div>
+                  <div :class="debug_step ? itemForged.highlight_immunity_petrify:null">{{ itemForged.getShortImmunity(IMMUNITY.Petrify) }}</div>
+                  <div :class="debug_step ? itemForged.highlight_immunity_flameburst:null">{{ itemForged.getShortImmunity(IMMUNITY.Flameburst) }}</div>
+                  <div :class="debug_step ? itemForged.highlight_immunity_freeze:null">{{ itemForged.getShortImmunity(IMMUNITY.Freeze) }}</div>
                 </div>
               </div>
               <div class="bg-white dark:bg-night-700 px-4 py-2 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
-                <dt class="text-sm font-medium text-gray-500 dark:text-night-100">
-                  Cards
+                <dt class="text-xs md:text-sm font-medium text-gray-500 dark:text-night-100">
+                  Energy
                 </dt>
                 <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2 dark:text-night-100">
-                  ({{ itemForged.hidden.CPRINT() }})<br>
-                  {{ itemForged.first.CPRINT() }}<br>
-                  {{ itemForged.second.CPRINT() }}<br>
-                  {{ itemForged.third.CPRINT() }}<br>
-                  {{ itemForged.leaving.CPRINT() }}-->
+                  <div ><span class="inline-block" :class="debug_step ? itemForged.highlight_energy:null">{{ itemForged.energy }}</span></div>
+                </dd>
+                <dt class="text-xs md:text-sm font-medium text-gray-500 dark:text-night-100">
+                  Cards
+                </dt>
+                <dd class="mt-1 text-xs md:text-sm text-gray-900 sm:mt-0 sm:col-span-2 dark:text-night-100">
+                  (<span class="inline-block" :class="debug_step ? itemForged.highlight_hidden:null">{{ itemForged.hidden.CPRINT() }}</span>)<br>
+                  <span class="inline-block" :class="debug_step ? itemForged.highlight_first:null">{{ itemForged.first.CPRINT() }}</span><br>
+                  <span class="inline-block" :class="debug_step ? itemForged.highlight_second:null">{{ itemForged.second.CPRINT() }}</span><br>
+                  <span class="inline-block" :class="debug_step ? itemForged.highlight_third:null">{{ itemForged.third.CPRINT() }}</span><br>
+                  &nbsp;&nbsp;&nbsp;<span class="inline-block" :class="debug_step ? itemForged.highlight_leaving:null">{{ itemForged.leaving.CPRINT() }}</span>-->
                 </dd>
               </div>
               <div class="bg-gray-50 dark:bg-night-500 px-4 py-2 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
@@ -648,12 +696,12 @@
                 <dd class="mt-1 text-xs md:text-sm text-gray-900 sm:mt-0 sm:col-span-2 dark:text-night-100"
                     style="text-align: left"
                     v-if="selected_object.value<=11">
-                  Master Move 1 : {{ get_text(itemForged.getPlunge1()) }}<br>
-                  Master Move 2 : {{ get_text(itemForged.getPlunge2()) }}<br>
-                  Master Move 3 : {{ get_text(itemForged.getPlunge3()) }}<br>
+                  {{ classic ? 'Plunge Attack' : 'Master Move' }} 1 : <span class="inline-block" :class="debug_step ? itemForged.highlight_plunge1:null">{{ get_text(itemForged.getPlunge1()) }}</span><br>
+                  {{ classic ? 'Plunge Attack' : 'Master Move' }} 2 : <span class="inline-block" :class="debug_step ? itemForged.highlight_plunge2:null">{{ get_text(itemForged.getPlunge2()) }}</span><br>
+                  {{ classic ? 'Plunge Attack' : 'Master Move' }} 3 : <span class="inline-block" :class="debug_step ? itemForged.highlight_plunge3:null">{{ get_text(itemForged.getPlunge3()) }}</span><br>
                 </dd>
-                <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2 dark:text-night-100" v-else>
-                  Special : {{ get_text(itemForged.getSpecial()) }}
+                <dd class="mt-1 text-xs md:text-sm text-gray-900 sm:mt-0 sm:col-span-2 dark:text-night-100" v-else>
+                  Special : <span class="inline-block" :class="debug_step ? itemForged.highlight_special:null">{{ get_text(itemForged.getSpecial()) }}</span>
                 </dd>
               </div>
             </dl>
@@ -691,7 +739,16 @@
                   Hide Recipe
                 </button>
               </div>
-              <div class="bg-gray-50 dark:bg-night-500 px-4 py-2 sm:grid sm:grid-cols-12 items-center sm:gap-4 sm:px-6">
+              <div class="bg-gray-50 dark:bg-night-500 px-4 py-2 sm:grid sm:grid-cols-1 sm:gap-4 sm:px-6">
+                <button class="mt-1 text-sm text-gray-900 sm:mt-0 dark:text-night-100" v-if="show_materials"
+                        @click="toggle_materials">
+                  What's going on?
+                </button>
+                <button class="mt-1 text-sm text-gray-900 sm:mt-0 dark:text-night-100" v-else @click="toggle_materials">
+                  Show materials
+                </button>
+              </div>
+              <div class="bg-white dark:bg-night-700 px-4 py-2 grid grid-cols-12 items-center sm:gap-4 sm:px-6">
                 <div class="flex w-10 z-0 self-center items-center" @click="classic = !classic">
                   <div class="w-16 h-4 flex items-center bg-gray-300 rounded-full p-1 duration-300 ease-in-out"
                        :class="{ 'bg-green-400': classic}">
@@ -712,7 +769,7 @@
 </template>
 
 <script>
-import {EQUIP, MATERIAL, STAT, ESSENCE, ITEM, IMMUNITY} from '@/forge/enums'
+import {EQUIP, MATERIAL, STAT, ESSENCE, ITEM, IMMUNITY, DEBUG_STEPS} from '@/forge/enums'
 import {mat_word} from '@/forge/lists'
 import {Ancient_Moon, Sacrificed_Nymph} from "@/forge/cards";
 import {No_Item} from "@/forge/items";
@@ -747,7 +804,8 @@ export default {
       EQUIP: EQUIP,
       MATERIAL: MATERIAL,
       ESSENCE: ESSENCE,
-      IMMUNITY:IMMUNITY,
+      IMMUNITY: IMMUNITY,
+      DEBUG_STEPS: DEBUG_STEPS,
       selected_material: MATERIAL.MenosBronze,
       selected_object: EQUIP.Knife,
       itemForged: new ForgedItem([EQUIP.Pendant.value, MATERIAL.MenosBronze.value]),
@@ -756,7 +814,20 @@ export default {
        */
       history: [],
       recipe: '',
-      classic: false
+      classic: false,
+      debug_step: 0,
+      show_materials: true,
+      explanation: "You need to select one of the sub-steps below.",
+      window_width: 0,
+      coins_visible: false,
+      stones_visible: false,
+      seeds_visible: false,
+      produce_visible: false,
+      fangs_visible: false,
+      eyes_visible: false,
+      wings_visible: false,
+      misc_visible: false
+
     }
   },
   methods: {
@@ -766,6 +837,9 @@ export default {
     },
     toggle_recipe() {
       this.showRecipe = !this.showRecipe
+    },
+    toggle_materials() {
+      this.show_materials = !this.show_materials
     },
 
     /**
@@ -787,6 +861,25 @@ export default {
       item.increase_essences()
       item.calculate_stats()
     },
+
+    step_forge(i) {
+      let item = this.itemForged
+      const ds = this.debug_step
+      item.set_item(i)
+      if (ds >= 1) item.init_stat_limits()
+      if (ds >= 2) item.sub_init_cards()
+      if (ds >= 3) item.material_init()
+      if (ds >= 4) item.set_active_world_card()
+      if (ds >= 5) item.item_energy()
+      if (ds >= 6) item.material_code()
+      if (ds >= 7) item.item_code()
+      if (ds >= 8) item.push_cards()
+      if (ds >= 9) item.activate_cards()
+      if (ds >= 10) item.check_type_effects()
+      if (ds >= 11) item.increase_essences()
+      if (ds >= 12) item.calculate_stats()
+    },
+
     add_item(i) {
       if (i > 0) {
         this.history.splice(this.step, 0, this.find_item_by_val(i))
@@ -794,9 +887,17 @@ export default {
       }
     },
     rebuild() {
+      let i = 0
       this.itemForged = new ForgedItem([this.selected_object.value, this.selected_material.value])
-      for (let i = 0; i < Math.min(this.history.length, this.step); i++) {
+      for (i = 0; i < Math.min(this.history.length, this.step) - 1; i++) {
         this.forge(this.history[i].value)
+      }
+      if (this.step > 0) {
+        if (this.debug_step > 0) {
+          this.step_forge(this.history[i].value)
+        } else {
+          this.forge(this.history[i].value)
+        }
       }
     },
     copy_source() {
@@ -844,8 +945,7 @@ export default {
         if (buffer === '') {
           buffer = this.get_text(this.history[i])
           count++
-        }
-        else if (buffer === this.get_text(this.history[i])) {
+        } else if (buffer === this.get_text(this.history[i])) {
           count++
         } else {
           src += '\n' + buffer
@@ -933,6 +1033,16 @@ export default {
         this.step = 0
       } else {
         this.step = newV
+      }
+      this.rebuild()
+    },
+    debug_step: function (newV) {
+      if (newV > DEBUG_STEPS.CALCULATESTATS.value) {
+        this.debug_step = DEBUG_STEPS.CALCULATESTATS.value
+      } else if (newV < 0) {
+        this.debug_step = 0
+      } else {
+        this.debug_step = newV
       }
       this.rebuild()
     },
