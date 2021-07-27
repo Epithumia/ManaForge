@@ -1121,22 +1121,22 @@ export default {
 }
 
 .highlight-up {
-  @apply rounded-full bg-green-300 dark:bg-green-700;
+  @apply rounded-full bg-green-300 dark:bg-green-700 dark:text-white px-1;
   min-width: 1.25rem;
 }
 
 .highlight-down {
-  @apply rounded-full bg-red-300 dark:bg-red-700;
+  @apply rounded-full bg-red-300 dark:bg-red-700 dark:text-white px-1;
   min-width: 1.25rem;
 }
 
 .highlight-change {
-  @apply rounded-full bg-yellow-300 dark:bg-yellow-600;
+  @apply rounded-full bg-blue-300 dark:bg-blue-900 dark:text-white px-1;
   min-width: 1.25rem;
 }
 
 .highlight-sticky {
-  @apply rounded-full bg-purple-300 dark:bg-purple-700;
+  @apply rounded-full bg-purple-300 dark:bg-purple-900 dark:text-white px-1;
   min-width: 1.25rem;
 }
 
