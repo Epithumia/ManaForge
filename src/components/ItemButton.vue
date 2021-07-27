@@ -9,7 +9,9 @@ export default {
   name: "ItemButton",
   props: {
     item: Object,
-    classic: Boolean
+    classic: Boolean,
+    color: String,
+    icon: String
   },
   methods: {
     get_text(o) {
