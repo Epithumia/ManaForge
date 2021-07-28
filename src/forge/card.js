@@ -41,7 +41,8 @@ class Card {
         }
     }
 
-    CPRINT() {
+    // eslint-disable-next-line no-unused-vars
+    CPRINT(language) {
     }
 
     // eslint-disable-next-line no-unused-vars
@@ -73,170 +74,6 @@ class Card {
     } //f : ForgedItem
 }
 
-class No_Card extends Card {
-    constructor() {
-        super();
-    }
-
-    CPRINT() {
-        return "--";
-    }
-
-    /**
-     *
-     * @param price : int
-     * @constructor
-     */
-    PRICE(price) {
-        price += 0;
-        return price;
-    }
-
-    // eslint-disable-next-line no-unused-vars
-    FIRST(f) {
-    }
-
-    // eslint-disable-next-line no-unused-vars
-    SECOND(f) {
-    }
-
-    // eslint-disable-next-line no-unused-vars
-    THIRD(f) {
-    }
-
-    // eslint-disable-next-line no-unused-vars
-    HIDDEN(f) {
-    }
-
-    // eslint-disable-next-line no-unused-vars
-    LEAVING(f) {
-    }
-
-    // eslint-disable-next-line no-unused-vars
-    WORLD(f) {
-    }
-}
-
-
-class Ancient_Moon extends Card {
-    constructor() {
-        super();
-    }
-
-    CPRINT() {
-        return "Ancient Moon";
-    }
-
-    /**
-     *
-     * @param price : int
-     * @constructor
-     */
-    PRICE(price) {
-        price += 2200;
-        return price;
-    }
-
-    // eslint-disable-next-line no-unused-vars
-    FIRST(f) {
-    }
-
-    // eslint-disable-next-line no-unused-vars
-    SECOND(f) {
-    }
-
-    // eslint-disable-next-line no-unused-vars
-    THIRD(f) {
-    }
-
-    /**
-     *
-     * @param f : ForgedItem
-     * @constructor
-     */
-    HIDDEN(f) {
-        if (f.awc !== WORLD_CARD.NONE && f.awc !== WORLD_CARD.BED_OF_THORN) {
-            f.setHidden(new No_Card());
-        }
-    }
-
-    // eslint-disable-next-line no-unused-vars
-    LEAVING(f) {
-    }
-
-    /**
-     *
-     * @param f : ForgedItem
-     * @constructor
-     */
-    WORLD(f) {
-        if (f.awc === WORLD_CARD.NONE) {
-            f.awc = WORLD_CARD.ANCIENT_MOON;
-        }
-    }
-
-}
-
-class Aura extends Card {
-    constructor() {
-        super();
-    }
-
-    CPRINT() {
-        return "Aura";
-    }
-
-    /**
-     *
-     * @param price : int
-     * @constructor
-     */
-    PRICE(price) {
-        price += 250;
-        return price;
-    }
-
-    /**
-     *
-     * @param f : ForgedItem
-     * @constructor
-     */
-    FIRST(f) {
-        this.SECOND(f);
-    }
-
-    /**
-     *
-     * @param f : ForgedItem
-     * @constructor
-     */
-    SECOND(f) {
-        this.THIRD(f);
-    }
-
-    /**
-     *
-     * @param f : ForgedItem
-     * @constructor
-     */
-    THIRD(f) {
-        f.increase_stat(STAT.LCK);
-        f.taint(ESSENCE.AURA);
-    }
-
-    // eslint-disable-next-line no-unused-vars
-    HIDDEN(f) {
-    }
-
-    // eslint-disable-next-line no-unused-vars
-    LEAVING(f) {
-    }
-
-    // eslint-disable-next-line no-unused-vars
-    WORLD(f) {
-    }
-
-}
 
 class Beast_Headed_God extends Card {
     constructor() {
@@ -311,70 +148,6 @@ class Beast_Headed_God extends Card {
 
     // eslint-disable-next-line no-unused-vars
     WORLD(f) {
-    }
-
-}
-
-class Bed_Of_Thorn extends Card {
-    constructor() {
-        super();
-    }
-
-    CPRINT() {
-        return "Bed of Thorn";
-    }
-
-    /**
-     *
-     * @param price : int
-     * @constructor
-     */
-    PRICE(price) {
-        price += 1500;
-        return price;
-    }
-
-
-    FIRST(f) {
-        this.SECOND(f);
-    }
-
-
-    SECOND(f) {
-        this.THIRD(f);
-    }
-
-    /**
-     *
-     * @param f : ForgedItem
-     * @constructor
-     */
-    THIRD(f) {
-        f.stat_limits(-1, 3, STAT.ALL);
-        f.setSpecial(SPECIAL.No_Regen);
-        f.setStrike(f.perc150(f.getStrike()));
-        f.setSlash(f.perc150(f.getSlash()));
-        f.setThrust(f.perc150(f.getThrust()));
-        f.setMagic(f.perc150(f.getMagic()));
-    }
-
-    // eslint-disable-next-line no-unused-vars
-    HIDDEN(f) {
-    }
-
-    // eslint-disable-next-line no-unused-vars
-    LEAVING(f) {
-    }
-
-    /**
-     *
-     * @param f : ForgedItem
-     * @constructor
-     */
-    WORLD(f) {
-        if (f.awc === WORLD_CARD.NONE) {
-            f.awc = WORLD_CARD.BED_OF_THORN;
-        }
     }
 
 }
@@ -645,80 +418,6 @@ class Dryad extends Card {
     WORLD(f) {
     }
 
-}
-
-class Dying_Earth extends Card {
-    constructor() {
-        super();
-    }
-
-    CPRINT() {
-        return "Dying Earth";
-    }
-
-    /**
-     * @param price : int
-     * @return int
-     * @constructor
-     */
-    PRICE(price) {
-        price += 2600;
-        return price;
-    }
-
-    /**
-     * @param f : ForgedItem
-     * @constructor
-     */
-    FIRST(f) {
-        this.SECOND(f);
-    }
-
-    /**
-     * @param f : ForgedItem
-     * @constructor
-     */
-    SECOND(f) {
-        this.THIRD(f);
-    }
-
-    /**
-     * @param f : ForgedItem
-     * @constructor
-     */
-    THIRD(f) {
-        f.stat_limits(-5, 12, STAT.ALL);
-        if ((f.hidden instanceof Enticed_Nymph)
-            || (!(f.first instanceof Enticed_Nymph)
-                && !(f.second instanceof Enticed_Nymph)
-                && !(f.third instanceof Enticed_Nymph))) {
-            f.decrease_stat(STAT.ALL);
-        }
-    }
-
-    /**
-     * @param f : ForgedItem
-     * @constructor
-     */
-    HIDDEN(f) {
-        if (f.awc !== WORLD_CARD.NONE && f.awc !== WORLD_CARD.BED_OF_THORN) {
-            f.setHidden(new No_Card());
-        }
-    }
-
-    // eslint-disable-next-line no-unused-vars
-    LEAVING(f) {
-    }
-
-    /**
-     * @param f : ForgedItem
-     * @constructor
-     */
-    WORLD(f) {
-        if (f.awc === WORLD_CARD.NONE) {
-            f.awc = WORLD_CARD.DYING_EARTH;
-        }
-    }
 }
 
 class Enticed_Nymph extends Card {
@@ -1072,54 +771,6 @@ class Goddess_Of_Love extends Card {
 
 }
 
-class Heavens_Scale extends Card {
-
-
-    CPRINT() {
-        return "Heaven's Scale";
-    }
-
-
-    PRICE(price) {
-        price += 1800;
-        return price;
-    }
-
-
-    FIRST(f) {
-        this.SECOND(f);
-    }
-
-
-    SECOND(f) {
-        this.THIRD(f);
-    }
-
-
-    THIRD(f) {
-        f.setSpecial(SPECIAL.No_Revive);
-    }
-
-
-    HIDDEN(f) {
-        if (f.awc !== WORLD_CARD.NONE && f.awc !== WORLD_CARD.BED_OF_THORN) {
-            f.setHidden(new No_Card());
-        }
-    }
-
-    // eslint-disable-next-line no-unused-vars
-    LEAVING(f) {
-    }
-
-
-    WORLD(f) {
-        if (f.awc === WORLD_CARD.NONE) {
-            f.awc = WORLD_CARD.HEAVENS_SCALE;
-        }
-    }
-
-}
-
 
 class Jinn extends Card {
 
@@ -1323,164 +974,10 @@ class Lord_Of_Flies extends Card {
 }
 
 
-class Man_Of_Valor extends Card {
-
-
-    CPRINT() {
-        return "Man of Valor";
-    }
-
-
-    PRICE(price) {
-        price += 1000;
-        return price;
-    }
-
-
-    FIRST(f) {
-        this.SECOND(f);
-    }
-
-
-    SECOND(f) {
-        this.THIRD(f);
-    }
-
-
-    THIRD(f) {
-        f.stat_limits(-3, 5, STAT.ALL);
-        f.increase_stat(STAT.PWR);
-        f.increase_stat(STAT.HP);
-        if (f.SPEAR()) {
-            f.setPlunge1(PLUNGE1.Spear_of_Light);
-        }
-    }
-
-    // eslint-disable-next-line no-unused-vars
-    HIDDEN(f) {
-    }
-
-    // eslint-disable-next-line no-unused-vars
-    LEAVING(f) {
-    }
-
-    // eslint-disable-next-line no-unused-vars
-    WORLD(f) {
-    }
-
-}
-
-
-class Metropolis extends Card {
+class Moon_Goddess extends Card {
     constructor() {
         super();
     }
-
-    CPRINT() {
-        return "Metropolis";
-    }
-
-    /**
-     * @param price : int
-     * @returns int
-     * @constructor
-     */
-    PRICE(price) {
-        price += 1500;
-        return price;
-    }
-
-    /**
-     * @param f : ForgedItem
-     * @constructor
-     */
-    FIRST(f) {
-        this.SECOND(f);
-    }
-
-    /**
-     * @param f : ForgedItem
-     * @constructor
-     */
-    SECOND(f) {
-        this.THIRD(f);
-    }
-
-    /**
-     * @param f : ForgedItem
-     * @constructor
-     */
-    THIRD(f) {
-        if (f.ROBE()) {
-            f.setMagic(f.perc150(f.getMagic()));
-            f.setImmunity(f.getImmunity() | IMMUNITY.Confusion.value);
-        } else {
-            f.setMagic(f.perc125(f.getMagic()));
-        }
-    }
-
-    // eslint-disable-next-line no-unused-vars
-    HIDDEN(f) {
-    }
-
-    // eslint-disable-next-line no-unused-vars
-    LEAVING(f) {
-    }
-
-    // eslint-disable-next-line no-unused-vars
-    WORLD(f) {
-    }
-}
-
-
-class Mirrored_World extends Card {
-
-
-    CPRINT() {
-        return "Mirrored World";
-    }
-
-
-    PRICE(price) {
-        price += 2200;
-        return price;
-    }
-
-    // eslint-disable-next-line no-unused-vars
-    FIRST(f) {
-    }
-
-    // eslint-disable-next-line no-unused-vars
-    SECOND(f) {
-    }
-
-    // eslint-disable-next-line no-unused-vars
-    THIRD(f) {
-    }
-
-
-    HIDDEN(f) {
-        if (f.awc !== WORLD_CARD.NONE && f.awc !== WORLD_CARD.BED_OF_THORN) {
-            f.setHidden(new No_Card());
-        }
-    }
-
-    // eslint-disable-next-line no-unused-vars
-    LEAVING(f) {
-    }
-
-
-    WORLD(f) {
-        if (f.awc === WORLD_CARD.NONE) {
-            f.awc = WORLD_CARD.MIRRORED_WORLD;
-        }
-    }
-
-}
-
-
-class Moon_Goddess extends Card {
-
 
     CPRINT() {
         return "Moon Goddess";
@@ -1529,7 +1026,9 @@ class Moon_Goddess extends Card {
 
 
 class Mother_Of_Gods extends Card {
-
+    constructor() {
+        super();
+    }
 
     CPRINT() {
         return "Mother of Gods";
@@ -1582,7 +1081,9 @@ class Mother_Of_Gods extends Card {
 
 
 class Nymph_Of_Dawn extends Card {
-
+    constructor() {
+        super();
+    }
 
     CPRINT() {
         return "Nymph of Dawn";
@@ -1632,7 +1133,9 @@ class Nymph_Of_Dawn extends Card {
 
 
 class Nymph_Of_Orchards extends Card {
-
+    constructor() {
+        super();
+    }
 
     CPRINT() {
         return "Nymph of Orchards";
@@ -1677,7 +1180,9 @@ class Nymph_Of_Orchards extends Card {
 
 
 class Nymph_Of_The_Sky extends Card {
-
+    constructor() {
+        super();
+    }
 
     CPRINT() {
         return "Nymph of the Sky";
@@ -1754,55 +1259,6 @@ class Ocean_God extends Card {
             f.setPlunge1(PLUNGE1.Trident);
         }
         f.setImmunity(f.getImmunity() | IMMUNITY.Flameburst.value);
-    }
-
-    // eslint-disable-next-line no-unused-vars
-    HIDDEN(f) {
-    }
-
-    // eslint-disable-next-line no-unused-vars
-    LEAVING(f) {
-    }
-
-    // eslint-disable-next-line no-unused-vars
-    WORLD(f) {
-    }
-
-}
-
-
-class Phoenix extends Card {
-
-    CPRINT() {
-        return "Phoenix";
-    }
-
-    PRICE(price) {
-        price += 2500;
-        return price;
-    }
-
-
-    FIRST(f) {
-        this.SECOND(f);
-    }
-
-
-    SECOND(f) {
-        this.THIRD(f);
-    }
-
-    THIRD(f) {
-        f.stat_limits(-3, 5, STAT.PWR);
-        f.stat_limits(-3, 5, STAT.SKL);
-        f.stat_min(3, STAT.PWR);
-        f.stat_min(3, STAT.SKL);
-        if (f.RING() || f.PENDANT()) {
-            if ((f.first instanceof Volcano || f.second instanceof Volcano
-                || f.third instanceof Volcano) && !(f.hidden instanceof Volcano)) {
-                f.setSpecial(SPECIAL.Auto_Revive);
-            }
-        }
     }
 
     // eslint-disable-next-line no-unused-vars
@@ -2244,57 +1700,6 @@ class Princess extends Card {
 }
 
 
-class Ragnarok extends Card {
-
-
-    CPRINT() {
-        return "Ragnarok";
-    }
-
-
-    PRICE(price) {
-        price += 10000;
-        return price;
-    }
-
-
-    FIRST(f) {
-        this.SECOND(f);
-    }
-
-
-    SECOND(f) {
-        this.THIRD(f);
-    }
-
-
-    THIRD(f) {
-        if (f.THSWORD()) {
-            f.setPlunge3(PLUNGE3.Ragnarok);
-        }
-    }
-
-
-    HIDDEN(f) {
-        if (f.awc !== WORLD_CARD.NONE && f.awc !== WORLD_CARD.BED_OF_THORN) {
-            f.setHidden(new No_Card());
-        }
-    }
-
-    // eslint-disable-next-line no-unused-vars
-    LEAVING(f) {
-    }
-
-
-    WORLD(f) {
-        if (f.awc === WORLD_CARD.NONE) {
-            f.awc = WORLD_CARD.RAGNAROK;
-        }
-    }
-
-}
-
-
 class Raven extends Card {
 
     CPRINT() {
@@ -2389,7 +1794,6 @@ class Ruler_Of_The_Sky extends Card {
 }
 
 
-
 class Sacrificed_Nymph extends Card {
     constructor() {
         super();
@@ -2426,53 +1830,6 @@ class Sacrificed_Nymph extends Card {
     THIRD(f) {
         if (f.PENDANT()) {
             f.setImmunity(f.getImmunity() | IMMUNITY.Petrify.value);
-        }
-    }
-
-    // eslint-disable-next-line no-unused-vars
-    HIDDEN(f) {
-    }
-
-    // eslint-disable-next-line no-unused-vars
-    LEAVING(f) {
-    }
-
-    // eslint-disable-next-line no-unused-vars
-    WORLD(f) {
-    }
-
-}
-
-class Sage extends Card {
-
-
-    CPRINT() {
-        return "Sage";
-    }
-
-
-    PRICE(price) {
-        price += 1000;
-        return price;
-    }
-
-
-    FIRST(f) {
-        this.SECOND(f);
-    }
-
-
-    SECOND(f) {
-        this.THIRD(f);
-    }
-
-
-    THIRD(f) {
-        f.stat_limits(-3, 5, STAT.ALL);
-        f.increase_stat(STAT.MAG);
-        f.increase_stat(STAT.DEF);
-        if (f.BOW()) {
-            f.setPlunge1(PLUNGE1.Phoenix_Falling);
         }
     }
 
@@ -2881,55 +2238,6 @@ class Spirit_Of_Shoes extends Card {
 }
 
 
-class Spring extends Card {
-
-
-    CPRINT() {
-        return "Spring";
-    }
-
-
-    PRICE(price) {
-        price += 1500;
-        return price;
-    }
-
-
-    FIRST(f) {
-        this.SECOND(f);
-    }
-
-
-    SECOND(f) {
-        this.THIRD(f);
-    }
-
-
-    THIRD(f) {
-        f.stat_limits(-3, 5, STAT.ALL);
-        if (f.ROBE()) {
-            f.setImmunity(f.getImmunity() | IMMUNITY.Flameburst.value);
-        }
-        if (f.PENDANT()) {
-            f.setImmunity(f.getImmunity() | IMMUNITY.Sleep.value);
-        }
-    }
-
-    // eslint-disable-next-line no-unused-vars
-    HIDDEN(f) {
-    }
-
-    // eslint-disable-next-line no-unused-vars
-    LEAVING(f) {
-    }
-
-    // eslint-disable-next-line no-unused-vars
-    WORLD(f) {
-    }
-
-}
-
-
 class Sun_God extends Card {
 
 
@@ -3030,47 +2338,6 @@ class Thunder_God extends Card {
 }
 
 
-class Tower extends Card {
-
-    CPRINT() {
-        return "Tower";
-    }
-
-    PRICE(price) {
-        price += 1500;
-        return price;
-    }
-
-
-    FIRST(f) {
-        this.SECOND(f);
-    }
-
-
-    SECOND(f) {
-        this.THIRD(f);
-    }
-
-
-    THIRD(f) {
-        f.stat_limits(-3, 5, STAT.ALL);
-    }
-
-    // eslint-disable-next-line no-unused-vars
-    HIDDEN(f) {
-    }
-
-    // eslint-disable-next-line no-unused-vars
-    LEAVING(f) {
-    }
-
-    // eslint-disable-next-line no-unused-vars
-    WORLD(f) {
-    }
-
-}
-
-
 class Undine extends Card {
 
     CPRINT() {
@@ -3096,151 +2363,6 @@ class Undine extends Card {
     THIRD(f) {
         f.increase_stat(STAT.MAG);
         f.taint(ESSENCE.UNDINE);
-    }
-
-    // eslint-disable-next-line no-unused-vars
-    HIDDEN(f) {
-    }
-
-    // eslint-disable-next-line no-unused-vars
-    LEAVING(f) {
-    }
-
-    // eslint-disable-next-line no-unused-vars
-    WORLD(f) {
-    }
-
-}
-
-
-class Unicorn extends Card {
-
-
-    CPRINT() {
-        return "Unicorn";
-    }
-
-
-    PRICE(price) {
-        price += 2500;
-        return price;
-    }
-
-
-    FIRST(f) {
-        this.SECOND(f);
-    }
-
-
-    SECOND(f) {
-        this.THIRD(f);
-    }
-
-
-    THIRD(f) {
-        f.stat_limits(-3, 5, STAT.DEF);
-        f.stat_limits(-3, 5, STAT.MAG);
-        f.stat_min(3, STAT.DEF);
-        f.stat_min(3, STAT.MAG);
-        if (f.RING() || f.PENDANT()) {
-            if ((f.first instanceof Spring || f.second instanceof Spring
-                || f.third instanceof Spring) && !(f.hidden instanceof Spring)) {
-                f.setSpecial(SPECIAL.Fast_Revive);
-            }
-        }
-    }
-
-    // eslint-disable-next-line no-unused-vars
-    HIDDEN(f) {
-    }
-
-    // eslint-disable-next-line no-unused-vars
-    LEAVING(f) {
-    }
-
-    // eslint-disable-next-line no-unused-vars
-    WORLD(f) {
-    }
-
-}
-
-
-class Volcano extends Card {
-
-    CPRINT() {
-        return "Volcano";
-    }
-
-    PRICE(price) {
-        price += 1300;
-        return price;
-    }
-
-    FIRST(f) {
-        this.SECOND(f);
-    }
-
-    SECOND(f) {
-        this.THIRD(f);
-    }
-
-    THIRD(f) {
-        f.setForce(f.perc150(f.getForce()));
-        f.setTech(f.perc50(f.getTech()));
-        if (f.HAMMER()) {
-            f.setPlunge3(PLUNGE3.Magma_Hammer);
-        }
-        if (f.HAUBERK()) {
-            f.setImmunity(f.getImmunity() | IMMUNITY.Freeze.value);
-        }
-    }
-
-    // eslint-disable-next-line no-unused-vars
-    HIDDEN(f) {
-    }
-
-    // eslint-disable-next-line no-unused-vars
-    LEAVING(f) {
-    }
-
-    // eslint-disable-next-line no-unused-vars
-    WORLD(f) {
-    }
-
-}
-
-
-class Wanderer extends Card {
-
-
-    CPRINT() {
-        return "Wanderer";
-    }
-
-
-    PRICE(price) {
-        price += 1000;
-        return price;
-    }
-
-
-    FIRST(f) {
-        this.SECOND(f);
-    }
-
-
-    SECOND(f) {
-        this.THIRD(f);
-    }
-
-
-    THIRD(f) {
-        f.stat_limits(-3, 5, STAT.ALL);
-        f.increase_stat(STAT.SKL);
-        f.increase_stat(STAT.SPR);
-        if (f.AXE()) {
-            f.setPlunge3(PLUNGE3.Woodchopper);
-        }
     }
 
     // eslint-disable-next-line no-unused-vars
@@ -3413,44 +2535,6 @@ class Wisdom_Goddess extends Card {
 }
 
 
-class Wisp extends Card {
-
-    CPRINT() {
-        return "Wisp";
-    }
-
-    PRICE(price) {
-        price += 250;
-        return price;
-    }
-
-    FIRST(f) {
-        this.SECOND(f);
-    }
-
-    SECOND(f) {
-        this.THIRD(f);
-    }
-
-    THIRD(f) {
-        f.increase_stat(STAT.CHM);
-        f.taint(ESSENCE.WISP);
-    }
-
-    // eslint-disable-next-line no-unused-vars
-    HIDDEN(f) {
-    }
-
-    // eslint-disable-next-line no-unused-vars
-    LEAVING(f) {
-    }
-
-    // eslint-disable-next-line no-unused-vars
-    WORLD(f) {
-    }
-}
-
-
 class Witch extends Card {
 
     CPRINT() {
@@ -3619,72 +2703,61 @@ class Wolf extends Card {
 
 }
 
-
-class Yggdrasil extends Card {
-
-
-    CPRINT() {
-        return "Yggdrasil";
+class No_Card extends Card {
+    constructor() {
+        super();
     }
 
+    // eslint-disable-next-line no-unused-vars
+    CPRINT(language = '') {
+        return "--";
+    }
 
+    /**
+     *
+     * @param price : int
+     * @constructor
+     */
     PRICE(price) {
-        price += 3000;
+        price += 0;
         return price;
     }
 
-
+    // eslint-disable-next-line no-unused-vars
     FIRST(f) {
-        this.SECOND(f);
     }
 
-
+    // eslint-disable-next-line no-unused-vars
     SECOND(f) {
-        this.THIRD(f);
     }
 
-
+    // eslint-disable-next-line no-unused-vars
     THIRD(f) {
-        if (f.STAFF()) {
-            f.stat_limits(-3, 9, STAT.ALL);
-        } else {
-            f.stat_limits(-5, 10, STAT.ALL);
-        }
-        f.increase_stat(STAT.ALL);
     }
 
-
+    // eslint-disable-next-line no-unused-vars
     HIDDEN(f) {
-        if (f.awc !== WORLD_CARD.NONE && f.awc !== WORLD_CARD.BED_OF_THORN) {
-            f.setHidden(new No_Card());
-        }
     }
 
     // eslint-disable-next-line no-unused-vars
     LEAVING(f) {
     }
 
-
+    // eslint-disable-next-line no-unused-vars
     WORLD(f) {
-        if (f.awc === WORLD_CARD.NONE) {
-            f.awc = WORLD_CARD.YGGDRASIL;
-        }
     }
-
 }
-
 
 export {
     Card,
-    Ancient_Moon,
-    Aura,
+    No_Card,
+    Metropolis,
+    Tower,
     Beast_Headed_God,
-    Bed_Of_Thorn,
     Blacksmith_God,
     Cleric,
     Clown,
     Dryad,
-    Dying_Earth,
     Enticed_Nymph,
     Fallen_Angel,
     Fertility_Goddess,
@@ -3692,21 +2765,16 @@ export {
     God_Of_Destruction,
     God_Of_War,
     Goddess_Of_Love,
-    Heavens_Scale,
     Jinn,
     King,
     Leviathan,
     Lord_Of_Flies,
-    Man_Of_Valor,
-    Metropolis,
-    Mirrored_World,
     Moon_Goddess,
     Mother_Of_Gods,
     Nymph_Of_Dawn,
     Nymph_Of_Orchards,
     Nymph_Of_The_Sky,
     Ocean_God,
-    Phoenix,
     Pixie_Of_Gluttony,
     Pixie_Of_Greed,
     Pixie_Of_Jealousy,
@@ -3715,11 +2783,9 @@ export {
     Pixie_Of_Pride,
     Pixie_Of_Rage,
     Princess,
-    Ragnarok,
     Raven,
     Ruler_Of_The_Sky,
     Sacrificed_Nymph,
-    Sage,
     Sala,
     Shade,
     Sorcerer,
@@ -3728,21 +2794,132 @@ export {
     Spirit_Of_Mountain,
     Spirit_Of_Ocean,
     Spirit_Of_Shoes,
-    Spring,
     Sun_God,
     Thunder_God,
-    Tower,
     Undine,
-    Unicorn,
-    Volcano,
-    Wanderer,
     Wind_God,
     Wings_Of_Darkness,
     Wisdom_Goddess,
-    Wisp,
     Witch,
     Witch_Of_Moon,
-    Wolf,
-    Yggdrasil,
-    No_Card
+    Wolf
 }
+
+class Metropolis extends Card {
+    constructor() {
+        super();
+    }
+
+    CPRINT(language = '') {
+        switch (language) {
+            case 'classic':
+                return "Metropolis"
+            case 'jp':
+                return "都市"
+            default:
+                return "Metropolis"
+        }
+    }
+
+    /**
+     * @param price : int
+     * @returns int
+     * @constructor
+     */
+    PRICE(price) {
+        price += 1500;
+        return price;
+    }
+
+    /**
+     * @param f : ForgedItem
+     * @constructor
+     */
+    FIRST(f) {
+        this.SECOND(f);
+    }
+
+    /**
+     * @param f : ForgedItem
+     * @constructor
+     */
+    SECOND(f) {
+        this.THIRD(f);
+    }
+
+    /**
+     * @param f : ForgedItem
+     * @constructor
+     */
+    THIRD(f) {
+        if (f.ROBE()) {
+            f.setMagic(f.perc150(f.getMagic()));
+            f.setImmunity(f.getImmunity() | IMMUNITY.Confusion.value);
+        } else {
+            f.setMagic(f.perc125(f.getMagic()));
+        }
+    }
+
+    // eslint-disable-next-line no-unused-vars
+    HIDDEN(f) {
+    }
+
+    // eslint-disable-next-line no-unused-vars
+    LEAVING(f) {
+    }
+
+    // eslint-disable-next-line no-unused-vars
+    WORLD(f) {
+    }
+}
+
+
+
+class Tower extends Card {
+    constructor() {
+        super();
+    }
+
+    CPRINT(language = '') {
+        switch (language) {
+            case 'classic':
+                return "Tower"
+            case 'jp':
+                return "塔"
+            default:
+                return "Tower"
+        }
+    }
+
+    PRICE(price) {
+        price += 1500;
+        return price;
+    }
+
+    FIRST(f) {
+        this.SECOND(f);
+    }
+
+    SECOND(f) {
+        this.THIRD(f);
+    }
+
+    THIRD(f) {
+        f.stat_limits(-3, 5, STAT.ALL);
+    }
+
+    // eslint-disable-next-line no-unused-vars
+    HIDDEN(f) {
+    }
+
+    // eslint-disable-next-line no-unused-vars
+    LEAVING(f) {
+    }
+
+    // eslint-disable-next-line no-unused-vars
+    WORLD(f) {
+    }
+
+}
+
+

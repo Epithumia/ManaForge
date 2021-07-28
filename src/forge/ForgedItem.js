@@ -1,17 +1,16 @@
 import {ESSENCE, PLUNGE1, PLUNGE2, PLUNGE3, SPECIAL, STAT, STICKY_F, WORLD_CARD, IMMUNITY} from "@/forge/enums";
 import {
-    Dryad,
-    No_Card,
-    Phoenix, Pixie_Of_Gluttony, Pixie_Of_Greed,
+    Dryad, No_Card, Pixie_Of_Gluttony, Pixie_Of_Greed,
     Pixie_Of_Jealousy,
     Pixie_Of_Laziness,
     Pixie_Of_Lust, Pixie_Of_Pride, Pixie_Of_Rage,
     Raven,
     Witch,
     Wolf
-} from "@/forge/cards";
+} from "@/forge/card";
 import {No_Item} from "@/forge/items";
 import {equip_props, if_array, mat_props, power2} from "@/forge/lists";
+import {Phoenix} from "@/forge/cards/beast_gods/Phoenix";
 
 // TODO: https://github.com/aberonni/nightwatch-test-coverage-example
 
@@ -309,6 +308,21 @@ class ForgedItem {
     highlight_item = null
     highlight_price = null
 
+    // Explanations
+    explain_init_stat_limits = null
+    explain_sub_init_cards = null
+    explain_material_init = null
+    explain_set_active_world_card = null
+    explain_item_energy = null
+    explain_material_code = null
+    explain_item_code = null
+    explain_push_cards = null
+    explain_activate_cards = null
+    explain_check_type_effects = null
+    explain_increase_essences = null
+    explain_calculate_stats = null
+    explain_details = null
+
     reset_highlights() {
         // Stats
         this.highlight_sharp = this.highlight_heavy = this.highlight_force = this.highlight_tech = null
@@ -384,6 +398,22 @@ class ForgedItem {
         this.highlight_price = null
     }
 
+    reset_explanations() {
+        this.explain_init_stat_limits = null
+        this.explain_sub_init_cards = null
+        this.explain_material_init = null
+        this.explain_set_active_world_card = null
+        this.explain_item_energy = null
+        this.explain_material_code = null
+        this.explain_item_code = null
+        this.explain_push_cards = null
+        this.explain_activate_cards = null
+        this.explain_check_type_effects = null
+        this.explain_increase_essences = null
+        this.explain_calculate_stats = null
+        this.explain_details = null
+    }
+
     // INITS
 
     init_item() {
@@ -399,8 +429,15 @@ class ForgedItem {
 
     sub_init_cards() {
         this.reset_highlights()
-        this.prehidden = new No_Card();
-        this.leaving = new No_Card();
+        this.explain_sub_init_cards =
+            "<div>This small step does three things:<ul>" +
+            "<li>Empty the prehidden slot</li>" +
+            "<li>Empty the leaving slot</li>" +
+            "<li>Reset the STICKY flag so that Pixies, if there are any, misbehave again.</li>" +
+            "</ul>" +
+            "</div>"
+        this.setPrehidden(new No_Card());
+        this.setLeaving(new No_Card());
         this.sticky = STICKY_F.STICKY;
     }
 
@@ -437,6 +474,13 @@ class ForgedItem {
 
     init_stat_limits() {
         this.reset_highlights()
+        this.explain_init_stat_limits =
+            "<div>At this step, the stat limits (upper and lower bounds) are reset." +
+            "The lower bounds for Power, Skill, Defense, Magic, Constitution (HP), Spirit, Charm and Luck " +
+            "are reset to -1, the upper bounds are set to 1.</div>" +
+            "<div>The minima for the same stats are set to -10.</div>" +
+            "<div>Later calculations will update these bounds and minima and then use them to calculate stats. " +
+            "This doesn't change the current stats, these bounds will be applied during the upcomings steps.</div>"
         this.lpwr = -1;
         this.lskl = -1;
         this.ldef = -1;
@@ -465,6 +509,30 @@ class ForgedItem {
 
     material_init() {
         this.reset_highlights()
+        this.explain_material_init =
+            "<div>This step resets some properties based on the material's basic properties.</div>" +
+            "<div>First, it fetches Sharp (" + mat_props[this.material][1] +
+            "), Heavy (" + mat_props[this.material][2] +
+            "), Force (" + mat_props[this.material][3] +
+            ") and Tech (" + mat_props[this.material][4] +
+            ") for weapons, Strike (" + mat_props[this.material][5] +
+            "), Slash (" + mat_props[this.material][6] +
+            "), Thrust (" + mat_props[this.material][7] +
+            ") and Magic (" + mat_props[this.material][8] +
+            ") for armors." +
+            "</div><div>" +
+            "After that, it resets the elemental resistances based on the material's natural resistances:" +
+            "Wisp (" + mat_props[this.material][9] +
+            "), Shade (" + mat_props[this.material][10] +
+            "), Dryad (" + mat_props[this.material][11] +
+            "), Aura (" + mat_props[this.material][12] +
+            "), Salamander (" + mat_props[this.material][13] +
+            "), Gnome (" + mat_props[this.material][14] +
+            "), Jinn (" + mat_props[this.material][15] +
+            ") and Undine (" + mat_props[this.material][16] +
+            ")" +
+            "</div>"
+        this.explain_details = ""
         this.setSharp(mat_props[this.material][1]);
         this.setHeavy(mat_props[this.material][2]);
         this.setForce(mat_props[this.material][3]);
@@ -482,6 +550,7 @@ class ForgedItem {
         this.setJiR(mat_props[this.material][15]);
         this.setUnR(mat_props[this.material][16]);
 
+        this.explain_material_init += this.explain_details
     }
 
     check_type_effects() {
@@ -821,6 +890,23 @@ class ForgedItem {
         }
     }
 
+    get_explanations() {
+        return {
+            'explain_init_stat_limits': this.explain_init_stat_limits,
+            'explain_sub_init_cards': this.explain_sub_init_cards,
+            'explain_material_init': this.explain_material_init,
+            'explain_set_active_world_card': this.explain_set_active_world_card,
+            'explain_item_energy': this.explain_item_energy,
+            'explain_material_code': this.explain_material_code,
+            'explain_item_code': this.explain_item_code,
+            'explain_push_cards': this.explain_push_cards,
+            'explain_activate_cards': this.explain_activate_cards,
+            'explain_check_type_effects': this.explain_check_type_effects,
+            'explain_increase_essences': this.explain_increase_essences,
+            'explain_calculate_stats': this.explain_calculate_stats
+        }
+    }
+
     // Setters
 
     /**
@@ -831,12 +917,16 @@ class ForgedItem {
     }
 
     set_item(item_code) {
+        this.reset_explanations()
         this.reset_highlights()
         this.item = if_array[item_code];
     }
 
     set_active_world_card() {
         this.reset_highlights()
+        this.explain_set_active_world_card =
+            "<div>The Forge has to check which of the current cards will be used as the active world card." +
+            "<br>By default, there are none.</div>"
         this.awc = WORLD_CARD.NONE;
         this.third.WORLD(this);
         this.second.WORLD(this);
@@ -889,32 +979,14 @@ class ForgedItem {
         this.plunge3 = plunge3;
     }
 
-    setMagic(magic) {
-        if (magic > this.magic) {
-            this.highlight_magic = 'highlight-up'
-        }
-        if (magic < this.magic) {
-            this.highlight_magic = 'highlight-down'
-        }
-        this.magic = magic;
-    }
-
-    setForce(force) {
-        if (force > this.force) {
-            this.highlight_force = 'highlight-up'
-        }
-        if (force < this.force) {
-            this.highlight_force = 'highlight-down'
-        }
-        this.force = force;
-    }
-
     setSharp(sharp) {
         if (sharp > this.sharp) {
             this.highlight_sharp = 'highlight-up'
+            this.explain_details += "<br>Sharpness raised from " + this.sharp + " to " + sharp
         }
         if (sharp < this.sharp) {
             this.highlight_sharp = 'highlight-down'
+            this.explain_details += "<br>Sharpness lowered from " + this.sharp + " to " + sharp
         }
         this.sharp = sharp;
     }
@@ -922,19 +994,47 @@ class ForgedItem {
     setHeavy(heavy) {
         if (heavy > this.heavy) {
             this.highlight_heavy = 'highlight-up'
+            this.explain_details += "<br>Heavy raised from " + this.heavy + " to " + heavy
         }
         if (heavy < this.heavy) {
             this.highlight_heavy = 'highlight-down'
+            this.explain_details += "<br>Heavy lowered from " + this.sharp + " to " + heavy
         }
         this.heavy = heavy;
+    }
+
+    setForce(force) {
+        if (force > this.force) {
+            this.highlight_force = 'highlight-up'
+            this.explain_details += "<br>Force raised from " + this.force + " to " + force
+        }
+        if (force < this.force) {
+            this.highlight_force = 'highlight-down'
+            this.explain_details += "<br>Force lowered from " + this.force + " to " + force
+        }
+        this.force = force;
+    }
+
+    setTech(tech) {
+        if (tech > this.tech) {
+            this.highlight_tech = 'highlight-up'
+            this.explain_details += "<br>Tech raised from " + this.tech + " to " + tech
+        }
+        if (tech < this.tech) {
+            this.highlight_tech = 'highlight-down'
+            this.explain_details += "<br>Tech lowered from " + this.tech + " to " + tech
+        }
+        this.tech = tech;
     }
 
     setStrike(strike) {
         if (strike > this.strike) {
             this.highlight_strike = 'highlight-up'
+            this.explain_details += "<br>Strike raised from " + this.strike + " to " + strike
         }
         if (strike < this.strike) {
             this.highlight_strike = 'highlight-down'
+            this.explain_details += "<br>Strike lowered from " + this.strike + " to " + strike
         }
         this.strike = strike;
     }
@@ -942,9 +1042,11 @@ class ForgedItem {
     setSlash(slash) {
         if (slash > this.slash) {
             this.highlight_slash = 'highlight-up'
+            this.explain_details += "<br>Slash raised from " + this.slash + " to " + slash
         }
         if (slash < this.slash) {
             this.highlight_slash = 'highlight-down'
+            this.explain_details += "<br>Slash lowered from " + this.slash + " to " + slash
         }
         this.slash = slash;
     }
@@ -952,11 +1054,53 @@ class ForgedItem {
     setThrust(thrust) {
         if (thrust > this.thrust) {
             this.highlight_thrust = 'highlight-up'
+            this.explain_details += "<br>Thrust raised from " + this.thrust + " to " + thrust
         }
         if (thrust < this.thrust) {
             this.highlight_thrust = 'highlight-down'
+            this.explain_details += "<br>Thrust lowered from " + this.thrust + " to " + thrust
         }
         this.thrust = thrust;
+    }
+
+    setMagic(magic) {
+        if (magic > this.magic) {
+            this.highlight_magic = 'highlight-up'
+            this.explain_details += "<br>Magic raised from " + this.magic + " to " + magic
+        }
+        if (magic < this.magic) {
+            this.highlight_magic = 'highlight-down'
+            this.explain_details += "<br>Magic lowered from " + this.magic + " to " + magic
+        }
+        this.magic = magic;
+    }
+
+    /**
+     * @param wiR : int
+     */
+    setWiR(wiR) {
+        if (this.wiR > 0 && Math.trunc(wiR) > this.wiR) {
+            this.highlight_wiR = 'highlight-down'
+            this.explain_details += "<br>Wisp resistance raised from " + this.wiR + " to " + wiR
+        }
+        if (Math.trunc(wiR) < this.wiR) {
+            this.highlight_wiR = 'highlight-up'
+            this.explain_details += "<br>Wisp resistance lowered from " + this.wiR + " to " + wiR
+        }
+        this.wiR = Math.trunc(wiR);
+    }
+
+    /**
+     * @param shR : int
+     */
+    setShR(shR) {
+        if (this.shR > 0 && Math.trunc(shR) > this.shR) {
+            this.highlight_shR = 'highlight-down'
+        }
+        if (Math.trunc(shR) < this.shR) {
+            this.highlight_shR = 'highlight-up'
+        }
+        this.shR = Math.trunc(shR);
     }
 
     /**
@@ -986,6 +1130,19 @@ class ForgedItem {
     }
 
     /**
+     * @param saR : int
+     */
+    setSaR(saR) {
+        if (this.saR > 0 && Math.trunc(saR) > this.saR) {
+            this.highlight_saR = 'highlight-down'
+        }
+        if (Math.trunc(saR) < this.saR) {
+            this.highlight_saR = 'highlight-up'
+        }
+        this.saR = Math.trunc(saR);
+    }
+
+    /**
      * @param gnR : int
      */
     setGnR(gnR) {
@@ -1012,32 +1169,6 @@ class ForgedItem {
     }
 
     /**
-     * @param saR : int
-     */
-    setSaR(saR) {
-        if (this.saR > 0 && Math.trunc(saR) > this.saR) {
-            this.highlight_saR = 'highlight-down'
-        }
-        if (Math.trunc(saR) < this.saR) {
-            this.highlight_saR = 'highlight-up'
-        }
-        this.saR = Math.trunc(saR);
-    }
-
-    /**
-     * @param shR : int
-     */
-    setShR(shR) {
-        if (this.shR > 0 && Math.trunc(shR) > this.shR) {
-            this.highlight_shR = 'highlight-down'
-        }
-        if (Math.trunc(shR) < this.shR) {
-            this.highlight_shR = 'highlight-up'
-        }
-        this.shR = Math.trunc(shR);
-    }
-
-    /**
      * @param unR : int
      */
     setUnR(unR) {
@@ -1050,18 +1181,6 @@ class ForgedItem {
         this.unR = Math.trunc(unR);
     }
 
-    /**
-     * @param wiR : int
-     */
-    setWiR(wiR) {
-        if (this.wiR > 0 && Math.trunc(wiR) > this.wiR) {
-            this.highlight_wiR = 'highlight-down'
-        }
-        if (Math.trunc(wiR) < this.wiR) {
-            this.highlight_wiR = 'highlight-up'
-        }
-        this.wiR = Math.trunc(wiR);
-    }
 
     setWi(wi) {
         if (wi > this.wi) {
@@ -1278,16 +1397,6 @@ class ForgedItem {
         this.lck = lck;
     }
 
-    setTech(tech) {
-        if (tech > this.tech) {
-            this.highlight_tech = 'highlight-up'
-        }
-        if (tech < this.tech) {
-            this.highlight_tech = 'highlight-down'
-        }
-        this.tech = tech;
-    }
-
     unsticky() {
         this.sticky = STICKY_F.UNSTICKY;
     }
@@ -1350,6 +1459,14 @@ class ForgedItem {
 
         }
         this.immunity = immunity;
+    }
+
+    /**
+     * @param c : Card
+     */
+    setPrehidden(c) {
+        this.highlight_prehidden = 'highlight-change'
+        this.prehidden = c
     }
 
     /**
