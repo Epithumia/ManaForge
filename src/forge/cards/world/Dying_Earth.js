@@ -1,7 +1,7 @@
 import {STAT, WORLD_CARD} from "@/forge/enums";
-import {Enticed_Nymph} from "@/forge/card";
 import {Card} from "@/forge/cards/Card";
 import {No_Card} from "@/forge/cards/No_Card";
+import {Enticed_Nymph} from "@/forge/cards/maidens";
 
 class Dying_Earth extends Card {
     constructor() {

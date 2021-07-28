@@ -1,6 +1,6 @@
 import {Card} from "@/forge/cards/Card";
 import {PLUNGE3, STAT} from "@/forge/enums";
-import {Sacrificed_Nymph} from "@/forge/card";
+import {Sacrificed_Nymph} from "@/forge/cards/maidens";
 
 class Leviathan extends Card {
     constructor() {
