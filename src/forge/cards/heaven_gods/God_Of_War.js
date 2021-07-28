@@ -1,5 +1,6 @@
 import {Card} from "@/forge/cards/Card";
-import {PLUNGE2, STAT} from "@/forge/enums";
+import {STAT} from "@/forge/enums";
+import {PLUNGE2} from "@/forge/plunges/enums";
 
 class God_Of_War extends Card {
     constructor() {

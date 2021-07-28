@@ -1,6 +1,7 @@
 import {Card} from "@/forge/cards/Card";
 import {Metropolis} from "@/forge/cards/stage";
-import {PLUNGE2, STAT} from "@/forge/enums";
+import {STAT} from "@/forge/enums";
+import {PLUNGE2} from "@/forge/plunges/enums";
 
 class King extends Card {
     constructor() {

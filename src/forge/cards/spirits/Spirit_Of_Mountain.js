@@ -1,5 +1,6 @@
 import {Card} from "@/forge/cards/Card";
-import {PLUNGE3, STAT} from "@/forge/enums";
+import {STAT} from "@/forge/enums";
+import {PLUNGE3} from "@/forge/plunges/enums";
 
 class Spirit_Of_Mountain extends Card {
     constructor() {

@@ -1,6 +1,7 @@
 import {Card} from "@/forge/cards/Card";
 import {Metropolis} from "@/forge/cards/stage";
-import {PLUNGE3, STAT} from "@/forge/enums";
+import {STAT} from "@/forge/enums";
+import {PLUNGE3} from "@/forge/plunges/enums";
 
 class Cleric extends Card {
     constructor() {

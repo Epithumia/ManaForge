@@ -1,6 +1,7 @@
-import {PLUNGE3, WORLD_CARD} from "@/forge/enums";
+import {WORLD_CARD} from "@/forge/enums";
 import {Card} from "@/forge/cards/Card";
 import {No_Card} from "@/forge/cards/No_Card";
+import {PLUNGE3} from "@/forge/plunges/enums";
 
 class Ragnarok extends Card {
     constructor() {

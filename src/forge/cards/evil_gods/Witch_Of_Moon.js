@@ -1,6 +1,7 @@
 import {Card} from "@/forge/cards/Card";
-import {PLUNGE2, STAT} from "@/forge/enums";
+import {STAT} from "@/forge/enums";
 import {Sacrificed_Nymph} from "@/forge/cards/maidens";
+import {PLUNGE2} from "@/forge/plunges/enums";
 
 class Witch_Of_Moon extends Card {
     constructor() {

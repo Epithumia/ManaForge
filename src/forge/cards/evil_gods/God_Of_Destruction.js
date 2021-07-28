@@ -1,6 +1,7 @@
 import {Card} from "@/forge/cards/Card";
-import {IMMUNITY, PLUNGE2, STAT} from "@/forge/enums";
+import {IMMUNITY, STAT} from "@/forge/enums";
 import {Sacrificed_Nymph} from "@/forge/cards/maidens";
+import {PLUNGE2} from "@/forge/plunges/enums";
 
 class God_Of_Destruction extends Card {
     constructor() {

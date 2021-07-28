@@ -1,5 +1,6 @@
 import {Card} from "@/forge/cards/Card";
-import {IMMUNITY, PLUNGE1, STAT} from "@/forge/enums";
+import {IMMUNITY, STAT} from "@/forge/enums";
+import {PLUNGE1} from "@/forge/plunges/enums";
 
 class Ocean_God extends Card {
     constructor() {

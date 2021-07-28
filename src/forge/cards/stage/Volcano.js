@@ -1,5 +1,6 @@
-import {IMMUNITY, PLUNGE3} from "@/forge/enums";
+import {IMMUNITY} from "@/forge/enums";
 import {Card} from "@/forge/cards/Card";
+import {PLUNGE3} from "@/forge/plunges/enums";
 
 class Volcano extends Card {
     constructor() {

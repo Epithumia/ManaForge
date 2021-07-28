@@ -1,4 +1,4 @@
-import {ESSENCE, PLUNGE1, PLUNGE2, PLUNGE3, SPECIAL, STAT, STICKY_F, WORLD_CARD, IMMUNITY} from "@/forge/enums";
+import {ESSENCE, SPECIAL, STAT, STICKY_F, WORLD_CARD, IMMUNITY} from "@/forge/enums";
 import {Raven, Wolf, Witch} from "@/forge/cards/other"
 import {No_Item} from "@/forge/items";
 import {equip_props, if_array, mat_props, power2} from "@/forge/lists";
@@ -14,6 +14,7 @@ import {
     Pixie_Of_Gluttony
 } from "@/forge/cards/pixies";
 import {No_Card} from "@/forge/cards/No_Card";
+import {PLUNGE1, PLUNGE2, PLUNGE3} from "@/forge/plunges/enums";
 
 // TODO: https://github.com/aberonni/nightwatch-test-coverage-example
 

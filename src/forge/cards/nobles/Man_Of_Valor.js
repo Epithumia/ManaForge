@@ -1,5 +1,6 @@
-import {PLUNGE1, STAT} from "@/forge/enums";
+import {STAT} from "@/forge/enums";
 import {Card} from "@/forge/cards/Card";
+import {PLUNGE1} from "@/forge/plunges/enums";
 
 class Man_Of_Valor extends Card {
     constructor() {
