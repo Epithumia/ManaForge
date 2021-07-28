@@ -1,10 +1,10 @@
-import {Pixie_Of_Pride} from "@/forge/card";
-import {Pixie_Of_Laziness} from "@/forge/card";
-import {Pixie_Of_Jealousy} from "@/forge/card";
-import {Pixie_Of_Lust} from "@/forge/card";
-import {Pixie_Of_Rage} from "@/forge/card";
-import {Pixie_Of_Greed} from "@/forge/card";
-import {Pixie_Of_Gluttony} from "@/forge/card";
+import {Pixie_Of_Rage} from "@/forge/cards/pixies/Pixie_Of_Rage";
+import {Pixie_Of_Laziness} from "@/forge/cards/pixies/Pixie_Of_Laziness";
+import {Pixie_Of_Lust} from "@/forge/cards/pixies/Pixie_Of_Lust";
+import {Pixie_Of_Pride} from "@/forge/cards/pixies/Pixie_Of_Pride";
+import {Pixie_Of_Gluttony} from "@/forge/cards/pixies/Pixie_Of_Gluttony";
+import {Pixie_Of_Jealousy} from "@/forge/cards/pixies/Pixie_Of_Jealousy";
+import {Pixie_Of_Greed} from "@/forge/cards/pixies/Pixie_Of_Greed";
 
 export {
     Pixie_Of_Pride,
