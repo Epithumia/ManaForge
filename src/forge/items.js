@@ -1,72 +1,65 @@
 import {ESSENCE, IMMUNITY, STAT} from "@/forge/enums";
 import {
-    Beast_Headed_God,
-    Blacksmith_God,
     Cleric,
     Clown,
-    Dryad,
-    Enticed_Nymph,
-    Fallen_Angel,
-    Fertility_Goddess,
-    Gnome,
-    God_Of_Destruction,
-    God_Of_War,
-    Goddess_Of_Love,
-    Jinn,
     King,
-    Leviathan,
-    Lord_Of_Flies, Metropolis,
-    Moon_Goddess,
-    Mother_Of_Gods,
-    Nymph_Of_Dawn,
-    Nymph_Of_Orchards,
-    Nymph_Of_The_Sky,
-    Ocean_God,
-    Pixie_Of_Gluttony,
-    Pixie_Of_Greed,
-    Pixie_Of_Jealousy,
-    Pixie_Of_Laziness,
-    Pixie_Of_Lust,
-    Pixie_Of_Pride,
-    Pixie_Of_Rage,
     Princess,
     Raven,
-    Ruler_Of_The_Sky,
-    Sacrificed_Nymph,
-    Sala,
-    Shade,
     Sorcerer,
-    Spirit_Of_Forest,
-    Spirit_Of_Housework,
-    Spirit_Of_Mountain,
-    Spirit_Of_Ocean,
-    Spirit_Of_Shoes,
-    Sun_God,
-    Thunder_God, Tower,
-    Undine,
-    Wind_God,
-    Wings_Of_Darkness,
-    Wisdom_Goddess,
     Witch,
-    Witch_Of_Moon,
     Wolf
-} from "@/forge/card";
-import {Yggdrasil} from "@/forge/cards/world/Yggdrasil";
-import {Ancient_Moon} from "@/forge/cards/world/Ancient_Moon";
-import {Mirrored_World} from "@/forge/cards/world/Mirrored_World";
-import {Heavens_Scale} from "@/forge/cards/world/Heavens_Scale";
-import {Dying_Earth} from "@/forge/cards/world/Dying_Earth";
-import {Ragnarok} from "@/forge/cards/world/Ragnarok";
-import {Unicorn} from "@/forge/cards/beast_gods/Unicorn";
-import {Phoenix} from "@/forge/cards/beast_gods/Phoenix";
-import {Sage} from "@/forge/cards/nobles/Sage";
-import {Wanderer} from "@/forge/cards/nobles/Wanderer";
-import {Man_Of_Valor} from "@/forge/cards/nobles/Man_Of_Valor";
-import {Bed_Of_Thorn} from "@/forge/cards/stage/Bed_Of_Thorn";
-import {Volcano} from "@/forge/cards/stage/Volcano";
-import {Spring} from "@/forge/cards/stage/Spring";
-import {Aura} from "@/forge/cards/elemental_spirits/Aura";
-import {Wisp} from "@/forge/cards/elemental_spirits/Wisp";
+} from "@/forge/cards/other";
+import {Yggdrasil, Ancient_Moon, Mirrored_World, Heavens_Scale, Dying_Earth, Ragnarok} from "@/forge/cards/world";
+import {Phoenix, Unicorn} from "@/forge/cards/beast_gods";
+import {Man_Of_Valor, Sage, Wanderer} from "@/forge/cards/nobles";
+import {Bed_Of_Thorn, Volcano, Metropolis, Tower, Spring} from "@/forge/cards/stage";
+import {Wisp, Shade, Dryad, Aura, Salamander, Gnome, Jinn, Undine} from "@/forge/cards/elemental_spirits";
+import {
+    Fallen_Angel,
+    Witch_Of_Moon,
+    Lord_Of_Flies,
+    Wings_Of_Darkness,
+    God_Of_Destruction,
+    Beast_Headed_God,
+    Leviathan
+} from "@/forge/cards/evil_gods"
+import {
+    Ruler_Of_The_Sky,
+    Mother_Of_Gods,
+    Sun_God,
+    Moon_Goddess,
+    Thunder_God,
+    Goddess_Of_Love,
+    Fertility_Goddess,
+    Ocean_God,
+    Wind_God,
+    Wisdom_Goddess,
+    Blacksmith_God,
+    God_Of_War
+} from "@/forge/cards/heaven_gods"
+import {
+    Sacrificed_Nymph,
+    Enticed_Nymph,
+    Nymph_Of_The_Sky,
+    Nymph_Of_Orchards,
+    Nymph_Of_Dawn
+} from "@/forge/cards/maidens"
+import {
+    Spirit_Of_Ocean,
+    Spirit_Of_Forest,
+    Spirit_Of_Mountain,
+    Spirit_Of_Shoes,
+    Spirit_Of_Housework
+} from "@/forge/cards/spirits"
+import {
+    Pixie_Of_Pride,
+    Pixie_Of_Laziness,
+    Pixie_Of_Jealousy,
+    Pixie_Of_Lust,
+    Pixie_Of_Rage,
+    Pixie_Of_Greed,
+    Pixie_Of_Gluttony
+} from "@/forge/cards/pixies"
 
 class Item {
     constructor() {
@@ -958,7 +951,7 @@ class Fire_Stone extends Item {
     CODE(f) {
         f.taint(ESSENCE.SALA);
         if (f.getEnergy() >= 8) {
-            f.prehidden = new Sala();
+            f.prehidden = new Salamander();
         }
     }
 
@@ -2057,7 +2050,7 @@ class Sala_Gold extends Item {
     CODE(f) {
         f.taint(ESSENCE.SALA);
         if (f.getEnergy() >= 8) {
-            f.prehidden = new Sala();
+            f.prehidden = new Salamander();
         }
     }
 
@@ -2077,7 +2070,7 @@ class Sala_Silver extends Item {
     CODE(f) {
         f.taint(ESSENCE.SALA);
         if (f.getEnergy() >= 8) {
-            f.prehidden = new Sala();
+            f.prehidden = new Salamander();
         }
     }
 

@@ -1,41 +1,45 @@
-import {PLUNGE3, STAT} from "@/forge/enums";
 import {Card} from "@/forge/cards/Card";
+import {PLUNGE1, PLUNGE2, STAT} from "@/forge/enums";
 
-class Wanderer extends Card {
+class Sun_God extends Card {
     constructor() {
         super();
     }
 
     CPRINT(language = '') {
-        switch(language) {
+        switch (language) {
             case 'classic':
-                return "Wanderer"
+                return "Sun God"
             case 'jp':
-                return "探索者"
+                return "太陽神"
             default:
-                return "Wanderer"
+                return "Sun God"
         }
     }
 
     PRICE(price) {
-        price += 1000;
+        price += 3000;
         return price;
     }
+
 
     FIRST(f) {
         this.SECOND(f);
     }
 
+
     SECOND(f) {
         this.THIRD(f);
     }
 
+
     THIRD(f) {
-        f.stat_limits(-3, 5, STAT.ALL);
-        f.increase_stat(STAT.SKL);
-        f.increase_stat(STAT.SPR);
-        if (f.AXE()) {
-            f.setPlunge3(PLUNGE3.Woodchopper);
+        f.stat_limits(-5, 10, STAT.CHM);
+        f.stat_min(10, STAT.CHM);
+        if (f.SWORD()) {
+            f.setPlunge2(PLUNGE2.Sunlight);
+        } else if (f.BOW()) {
+            f.setPlunge1(PLUNGE1.Solar_Flare);
         }
     }
 
@@ -53,4 +57,4 @@ class Wanderer extends Card {
 
 }
 
-export {Wanderer};
+export {Sun_God};

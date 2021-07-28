@@ -1,41 +1,47 @@
-import {PLUNGE1, STAT} from "@/forge/enums";
 import {Card} from "@/forge/cards/Card";
+import {PLUNGE1, PLUNGE3, STAT} from "@/forge/enums";
 
-class Man_Of_Valor extends Card {
+class Ruler_Of_The_Sky extends Card {
     constructor() {
         super();
     }
 
     CPRINT(language = '') {
-        switch(language) {
+        switch (language) {
             case 'classic':
-                return "Man of Valor"
+                return "Ruler of the Sky"
             case 'jp':
-                return "勇者"
+                return "天上の支配者"
             default:
-                return "Man of Valor"
+                return "Ruler of the Sky"
         }
     }
 
     PRICE(price) {
-        price += 1000;
+        price += 5000;
         return price;
     }
+
 
     FIRST(f) {
         this.SECOND(f);
     }
 
+
     SECOND(f) {
         this.THIRD(f);
     }
 
+
     THIRD(f) {
-        f.stat_limits(-3, 5, STAT.ALL);
-        f.increase_stat(STAT.PWR);
-        f.increase_stat(STAT.HP);
+        f.stat_limits(-3, 9, STAT.PWR);
+        f.stat_limits(-3, 9, STAT.MAG);
+        f.stat_min(9, STAT.PWR);
+        f.stat_min(9, STAT.MAG);
         if (f.SPEAR()) {
-            f.setPlunge1(PLUNGE1.Spear_of_Light);
+            f.setPlunge1(PLUNGE1.Gungnir);
+        } else if (f.STAFF()) {
+            f.setPlunge3(PLUNGE3.Electrosceptre);
         }
     }
 
@@ -50,6 +56,7 @@ class Man_Of_Valor extends Card {
     // eslint-disable-next-line no-unused-vars
     WORLD(f) {
     }
+
 }
 
-export {Man_Of_Valor};
+export {Ruler_Of_The_Sky};

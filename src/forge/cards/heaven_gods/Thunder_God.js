@@ -1,24 +1,24 @@
-import {PLUNGE3, STAT} from "@/forge/enums";
 import {Card} from "@/forge/cards/Card";
+import {PLUNGE3, STAT} from "@/forge/enums";
 
-class Wanderer extends Card {
+class Thunder_God extends Card {
     constructor() {
         super();
     }
 
     CPRINT(language = '') {
-        switch(language) {
+        switch (language) {
             case 'classic':
-                return "Wanderer"
+                return "Thunder God"
             case 'jp':
-                return "探索者"
+                return "雷神"
             default:
-                return "Wanderer"
+                return "Thunder God"
         }
     }
 
     PRICE(price) {
-        price += 1000;
+        price += 4000;
         return price;
     }
 
@@ -31,11 +31,14 @@ class Wanderer extends Card {
     }
 
     THIRD(f) {
-        f.stat_limits(-3, 5, STAT.ALL);
-        f.increase_stat(STAT.SKL);
-        f.increase_stat(STAT.SPR);
-        if (f.AXE()) {
-            f.setPlunge3(PLUNGE3.Woodchopper);
+        f.stat_limits(-3, 5, STAT.PWR);
+        f.stat_limits(-3, 5, STAT.SKL);
+        f.stat_limits(-3, 5, STAT.DEF);
+        f.stat_min(5, STAT.PWR);
+        f.stat_min(5, STAT.SKL);
+        f.stat_min(5, STAT.DEF);
+        if (f.HAMMER()) {
+            f.setPlunge3(PLUNGE3.Mjolnir);
         }
     }
 
@@ -50,7 +53,6 @@ class Wanderer extends Card {
     // eslint-disable-next-line no-unused-vars
     WORLD(f) {
     }
-
 }
 
-export {Wanderer};
+export {Thunder_God};

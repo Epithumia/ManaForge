@@ -1,7 +1,7 @@
-import {PLUNGE3, STAT} from "@/forge/enums";
 import {Card} from "@/forge/cards/Card";
+import {ESSENCE, STAT} from "@/forge/enums";
 
-class Wanderer extends Card {
+class Gnome extends Card {
     constructor() {
         super();
     }
@@ -9,16 +9,16 @@ class Wanderer extends Card {
     CPRINT(language = '') {
         switch(language) {
             case 'classic':
-                return "Wanderer"
+                return "Gnome"
             case 'jp':
-                return "探索者"
+                return "ノーム"
             default:
-                return "Wanderer"
+                return "Gnome"
         }
     }
 
     PRICE(price) {
-        price += 1000;
+        price += 250;
         return price;
     }
 
@@ -31,12 +31,8 @@ class Wanderer extends Card {
     }
 
     THIRD(f) {
-        f.stat_limits(-3, 5, STAT.ALL);
-        f.increase_stat(STAT.SKL);
-        f.increase_stat(STAT.SPR);
-        if (f.AXE()) {
-            f.setPlunge3(PLUNGE3.Woodchopper);
-        }
+        f.increase_stat(STAT.DEF);
+        f.taint(ESSENCE.GNOME);
     }
 
     // eslint-disable-next-line no-unused-vars
@@ -50,7 +46,6 @@ class Wanderer extends Card {
     // eslint-disable-next-line no-unused-vars
     WORLD(f) {
     }
-
 }
 
-export {Wanderer};
+export {Gnome};

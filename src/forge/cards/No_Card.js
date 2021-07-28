@@ -1,38 +1,35 @@
-import {ESSENCE, STAT} from "@/forge/enums";
 import {Card} from "@/forge/cards/Card";
 
-class Wisp extends Card {
+class No_Card extends Card {
     constructor() {
         super();
     }
 
+    // eslint-disable-next-line no-unused-vars
     CPRINT(language = '') {
-        switch(language) {
-            case 'classic':
-                return "Wisp"
-            case 'jp':
-                return "ウィスプ"
-            default:
-                return "Wisp"
-        }
+        return "--";
     }
 
+    /**
+     *
+     * @param price : int
+     * @constructor
+     */
     PRICE(price) {
-        price += 250;
+        price += 0;
         return price;
     }
 
+    // eslint-disable-next-line no-unused-vars
     FIRST(f) {
-        this.SECOND(f);
     }
 
+    // eslint-disable-next-line no-unused-vars
     SECOND(f) {
-        this.THIRD(f);
     }
 
+    // eslint-disable-next-line no-unused-vars
     THIRD(f) {
-        f.increase_stat(STAT.CHM);
-        f.taint(ESSENCE.WISP);
     }
 
     // eslint-disable-next-line no-unused-vars
@@ -48,4 +45,4 @@ class Wisp extends Card {
     }
 }
 
-export {Wisp};
+export {No_Card};

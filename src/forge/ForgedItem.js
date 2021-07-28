@@ -1,16 +1,19 @@
 import {ESSENCE, PLUNGE1, PLUNGE2, PLUNGE3, SPECIAL, STAT, STICKY_F, WORLD_CARD, IMMUNITY} from "@/forge/enums";
-import {
-    Dryad, No_Card, Pixie_Of_Gluttony, Pixie_Of_Greed,
-    Pixie_Of_Jealousy,
-    Pixie_Of_Laziness,
-    Pixie_Of_Lust, Pixie_Of_Pride, Pixie_Of_Rage,
-    Raven,
-    Witch,
-    Wolf
-} from "@/forge/card";
+import {Raven, Wolf, Witch} from "@/forge/cards/other"
 import {No_Item} from "@/forge/items";
 import {equip_props, if_array, mat_props, power2} from "@/forge/lists";
-import {Phoenix} from "@/forge/cards/beast_gods/Phoenix";
+import {Phoenix} from "@/forge/cards/beast_gods";
+import {Dryad} from "@/forge/cards/elemental_spirits";
+import {
+    Pixie_Of_Pride,
+    Pixie_Of_Laziness,
+    Pixie_Of_Jealousy,
+    Pixie_Of_Lust,
+    Pixie_Of_Rage,
+    Pixie_Of_Greed,
+    Pixie_Of_Gluttony
+} from "@/forge/cards/pixies";
+import {No_Card} from "@/forge/cards/No_Card";
 
 // TODO: https://github.com/aberonni/nightwatch-test-coverage-example
 

@@ -1,6 +1,6 @@
 import {SPECIAL, STAT} from "@/forge/enums";
-import {Card} from "@/forge/card";
 import {Spring} from "@/forge/cards/stage/Spring";
+import {Card} from "@/forge/cards/Card";
 
 class Unicorn extends Card {
     constructor() {

@@ -1,24 +1,24 @@
-import {PLUNGE3, STAT} from "@/forge/enums";
 import {Card} from "@/forge/cards/Card";
+import {SPECIAL, STAT} from "@/forge/enums";
 
-class Wanderer extends Card {
+class Goddess_Of_Love extends Card {
     constructor() {
         super();
     }
 
     CPRINT(language = '') {
-        switch(language) {
+        switch (language) {
             case 'classic':
-                return "Wanderer"
+                return "Goddess of Love"
             case 'jp':
-                return "探索者"
+                return "愛の女神"
             default:
-                return "Wanderer"
+                return "Love Goddess"
         }
     }
 
     PRICE(price) {
-        price += 1000;
+        price += 3000;
         return price;
     }
 
@@ -26,16 +26,19 @@ class Wanderer extends Card {
         this.SECOND(f);
     }
 
+
     SECOND(f) {
         this.THIRD(f);
     }
 
+
     THIRD(f) {
-        f.stat_limits(-3, 5, STAT.ALL);
-        f.increase_stat(STAT.SKL);
-        f.increase_stat(STAT.SPR);
-        if (f.AXE()) {
-            f.setPlunge3(PLUNGE3.Woodchopper);
+        f.stat_limits(-3, 9, STAT.SPR);
+        f.stat_limits(-3, 9, STAT.CHM);
+        f.stat_min(7, STAT.SPR);
+        f.stat_min(7, STAT.CHM);
+        if (f.PENDANT()) {
+            f.setSpecial(SPECIAL.Extra_Lucre);
         }
     }
 
@@ -53,4 +56,4 @@ class Wanderer extends Card {
 
 }
 
-export {Wanderer};
+export {Goddess_Of_Love};

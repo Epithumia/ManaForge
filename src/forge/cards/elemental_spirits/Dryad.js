@@ -1,7 +1,7 @@
-import {PLUNGE3, STAT} from "@/forge/enums";
 import {Card} from "@/forge/cards/Card";
+import {ESSENCE, STAT} from "@/forge/enums";
 
-class Wanderer extends Card {
+class Dryad extends Card {
     constructor() {
         super();
     }
@@ -9,34 +9,47 @@ class Wanderer extends Card {
     CPRINT(language = '') {
         switch(language) {
             case 'classic':
-                return "Wanderer"
+                return "Dryad"
             case 'jp':
-                return "探索者"
+                return "ドリアード"
             default:
-                return "Wanderer"
+                return "Dryad"
         }
     }
 
+    /**
+     * @param price : int
+     * @return int
+     * @constructor
+     */
     PRICE(price) {
-        price += 1000;
+        price += 250;
         return price;
     }
 
+    /**
+     * @param f : ForgedItem
+     * @constructor
+     */
     FIRST(f) {
         this.SECOND(f);
     }
 
+    /**
+     * @param f : ForgedItem
+     * @constructor
+     */
     SECOND(f) {
         this.THIRD(f);
     }
 
+    /**
+     * @param f : ForgedItem
+     * @constructor
+     */
     THIRD(f) {
-        f.stat_limits(-3, 5, STAT.ALL);
-        f.increase_stat(STAT.SKL);
-        f.increase_stat(STAT.SPR);
-        if (f.AXE()) {
-            f.setPlunge3(PLUNGE3.Woodchopper);
-        }
+        f.increase_stat(STAT.HP);
+        f.taint(ESSENCE.DRYAD);
     }
 
     // eslint-disable-next-line no-unused-vars
@@ -50,7 +63,6 @@ class Wanderer extends Card {
     // eslint-disable-next-line no-unused-vars
     WORLD(f) {
     }
-
 }
 
-export {Wanderer};
+export {Dryad};

@@ -1,7 +1,8 @@
-import {ESSENCE, STAT} from "@/forge/enums";
 import {Card} from "@/forge/cards/Card";
+import {PLUNGE2, STAT} from "@/forge/enums";
+import {Sacrificed_Nymph} from "@/forge/card";
 
-class Aura extends Card {
+class Beast_Headed_God extends Card {
     constructor() {
         super();
     }
@@ -9,11 +10,11 @@ class Aura extends Card {
     CPRINT(language = '') {
         switch (language) {
             case 'classic':
-                return "Aura"
+                return "Beast-headed God"
             case 'jp':
-                return "アウラ"
+                return "獣頭神"
             default:
-                return "Aura"
+                return "Beast-Headed God"
         }
     }
 
@@ -23,7 +24,7 @@ class Aura extends Card {
      * @constructor
      */
     PRICE(price) {
-        price += 250;
+        price += 6660;
         return price;
     }
 
@@ -43,6 +44,7 @@ class Aura extends Card {
      */
     SECOND(f) {
         this.THIRD(f);
+
     }
 
     /**
@@ -51,21 +53,37 @@ class Aura extends Card {
      * @constructor
      */
     THIRD(f) {
-        f.increase_stat(STAT.LCK);
-        f.taint(ESSENCE.AURA);
+        f.stat_limits(-10, 20, STAT.ALL);
+        f.stat_min(15, STAT.HP);
+        f.decrease_stat(STAT.ALL);
+        if (f.KNIFE()) {
+            f.setPlunge2(PLUNGE2.Poison_Blade);
+        }
     }
 
     // eslint-disable-next-line no-unused-vars
     HIDDEN(f) {
     }
 
-    // eslint-disable-next-line no-unused-vars
+    /**
+     *
+     * @param f : ForgedItem
+     * @constructor
+     */
     LEAVING(f) {
+        if (f.third instanceof Sacrificed_Nymph) {
+            f.setThird(this);
+        } else if (f.second instanceof Sacrificed_Nymph) {
+            f.setSecond(this);
+        } else if (f.first instanceof Sacrificed_Nymph) {
+            f.setFirst(this);
+        }
     }
 
     // eslint-disable-next-line no-unused-vars
     WORLD(f) {
     }
+
 }
 
-export {Aura};
+export {Beast_Headed_God};

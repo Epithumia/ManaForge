@@ -1,41 +1,43 @@
-import {PLUNGE3, STAT} from "@/forge/enums";
 import {Card} from "@/forge/cards/Card";
+import {PLUNGE2, STAT} from "@/forge/enums";
 
-class Wanderer extends Card {
+class God_Of_War extends Card {
     constructor() {
         super();
     }
 
     CPRINT(language = '') {
-        switch(language) {
+        switch (language) {
             case 'classic':
-                return "Wanderer"
+                return "God of War"
             case 'jp':
-                return "探索者"
+                return "軍神"
             default:
-                return "Wanderer"
+                return "God of War"
         }
     }
 
     PRICE(price) {
-        price += 1000;
+        price += 3000;
         return price;
     }
+
 
     FIRST(f) {
         this.SECOND(f);
     }
 
+
     SECOND(f) {
         this.THIRD(f);
     }
 
+
     THIRD(f) {
-        f.stat_limits(-3, 5, STAT.ALL);
-        f.increase_stat(STAT.SKL);
-        f.increase_stat(STAT.SPR);
+        f.stat_limits(-5, 10, STAT.PWR);
+        f.stat_min(10, STAT.PWR);
         if (f.AXE()) {
-            f.setPlunge3(PLUNGE3.Woodchopper);
+            f.setPlunge2(PLUNGE2.Dragonslayer);
         }
     }
 
@@ -53,4 +55,4 @@ class Wanderer extends Card {
 
 }
 
-export {Wanderer};
+export {God_Of_War};

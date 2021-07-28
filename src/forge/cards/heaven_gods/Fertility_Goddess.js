@@ -1,24 +1,24 @@
-import {PLUNGE3, STAT} from "@/forge/enums";
 import {Card} from "@/forge/cards/Card";
+import {IMMUNITY, SPECIAL, STAT} from "@/forge/enums";
 
-class Wanderer extends Card {
+class Fertility_Goddess extends Card {
     constructor() {
         super();
     }
 
     CPRINT(language = '') {
-        switch(language) {
+        switch (language) {
             case 'classic':
-                return "Wanderer"
+                return "Fertility Goddess"
             case 'jp':
-                return "探索者"
+                return "豊饒の女神"
             default:
-                return "Wanderer"
+                return "Harvest Goddess"
         }
     }
 
     PRICE(price) {
-        price += 1000;
+        price += 3000;
         return price;
     }
 
@@ -31,11 +31,11 @@ class Wanderer extends Card {
     }
 
     THIRD(f) {
-        f.stat_limits(-3, 5, STAT.ALL);
-        f.increase_stat(STAT.SKL);
-        f.increase_stat(STAT.SPR);
-        if (f.AXE()) {
-            f.setPlunge3(PLUNGE3.Woodchopper);
+        f.stat_limits(-5, 10, STAT.HP);
+        f.stat_min(10, STAT.HP);
+        f.setImmunity(f.getImmunity() | IMMUNITY.Petrify.value);
+        if (f.RING()) {
+            f.setSpecial(SPECIAL.Share_Exp);
         }
     }
 
@@ -53,4 +53,4 @@ class Wanderer extends Card {
 
 }
 
-export {Wanderer};
+export {Fertility_Goddess};

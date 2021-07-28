@@ -1,7 +1,7 @@
-import {ESSENCE, STAT} from "@/forge/enums";
 import {Card} from "@/forge/cards/Card";
+import {IMMUNITY} from "@/forge/enums";
 
-class Aura extends Card {
+class Metropolis extends Card {
     constructor() {
         super();
     }
@@ -9,26 +9,25 @@ class Aura extends Card {
     CPRINT(language = '') {
         switch (language) {
             case 'classic':
-                return "Aura"
+                return "Metropolis"
             case 'jp':
-                return "アウラ"
+                return "都市"
             default:
-                return "Aura"
+                return "Metropolis"
         }
     }
 
     /**
-     *
      * @param price : int
+     * @returns int
      * @constructor
      */
     PRICE(price) {
-        price += 250;
+        price += 1500;
         return price;
     }
 
     /**
-     *
      * @param f : ForgedItem
      * @constructor
      */
@@ -37,7 +36,6 @@ class Aura extends Card {
     }
 
     /**
-     *
      * @param f : ForgedItem
      * @constructor
      */
@@ -46,13 +44,16 @@ class Aura extends Card {
     }
 
     /**
-     *
      * @param f : ForgedItem
      * @constructor
      */
     THIRD(f) {
-        f.increase_stat(STAT.LCK);
-        f.taint(ESSENCE.AURA);
+        if (f.ROBE()) {
+            f.setMagic(f.perc150(f.getMagic()));
+            f.setImmunity(f.getImmunity() | IMMUNITY.Confusion.value);
+        } else {
+            f.setMagic(f.perc125(f.getMagic()));
+        }
     }
 
     // eslint-disable-next-line no-unused-vars
@@ -68,4 +69,4 @@ class Aura extends Card {
     }
 }
 
-export {Aura};
+export {Metropolis};

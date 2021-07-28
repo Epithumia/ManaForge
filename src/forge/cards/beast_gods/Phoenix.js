@@ -1,6 +1,6 @@
-import {Card} from "@/forge/card";
 import {SPECIAL, STAT} from "@/forge/enums";
 import {Volcano} from "@/forge/cards/stage/Volcano";
+import {Card} from "@/forge/cards/Card";
 
 class Phoenix extends Card {
     constructor() {

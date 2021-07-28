@@ -1,5 +1,5 @@
 import {IMMUNITY, STAT} from "@/forge/enums";
-import {Card} from "@/forge/card";
+import {Card} from "@/forge/cards/Card";
 
 class Spring extends Card {
     constructor() {

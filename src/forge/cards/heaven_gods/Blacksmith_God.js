@@ -1,7 +1,7 @@
-import {ESSENCE, STAT} from "@/forge/enums";
 import {Card} from "@/forge/cards/Card";
+import {PLUNGE3, STAT} from "@/forge/enums";
 
-class Aura extends Card {
+class Blacksmith_God extends Card {
     constructor() {
         super();
     }
@@ -9,11 +9,11 @@ class Aura extends Card {
     CPRINT(language = '') {
         switch (language) {
             case 'classic':
-                return "Aura"
+                return "Blacksmith God"
             case 'jp':
-                return "アウラ"
+                return "鍛冶の神"
             default:
-                return "Aura"
+                return "Blacksmith God"
         }
     }
 
@@ -23,7 +23,7 @@ class Aura extends Card {
      * @constructor
      */
     PRICE(price) {
-        price += 250;
+        price += 2800;
         return price;
     }
 
@@ -51,8 +51,11 @@ class Aura extends Card {
      * @constructor
      */
     THIRD(f) {
-        f.increase_stat(STAT.LCK);
-        f.taint(ESSENCE.AURA);
+        f.stat_limits(-5, 10, STAT.DEF);
+        f.stat_min(10, STAT.DEF);
+        if (f.HAMMER()) {
+            f.setPlunge3(PLUNGE3.Sledge_Hammer);
+        }
     }
 
     // eslint-disable-next-line no-unused-vars
@@ -66,6 +69,7 @@ class Aura extends Card {
     // eslint-disable-next-line no-unused-vars
     WORLD(f) {
     }
+
 }
 
-export {Aura};
+export {Blacksmith_God};

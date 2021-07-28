@@ -1,5 +1,5 @@
 import {PLUNGE1, STAT} from "@/forge/enums";
-import {Card} from "@/forge/card";
+import {Card} from "@/forge/cards/Card";
 
 class Sage extends Card {
     constructor() {

@@ -1,5 +1,6 @@
 import {WORLD_CARD} from "@/forge/enums";
-import {Card, No_Card} from "@/forge/card";
+import {Card} from "@/forge/cards/Card";
+import {No_Card} from "@/forge/cards/No_Card";
 
 class Ancient_Moon extends Card {
     constructor() {

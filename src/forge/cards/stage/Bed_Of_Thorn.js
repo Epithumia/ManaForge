@@ -1,5 +1,5 @@
 import {SPECIAL, STAT, WORLD_CARD} from "@/forge/enums";
-import {Card} from "@/forge/card";
+import {Card} from "@/forge/cards/Card";
 
 class Bed_Of_Thorn extends Card {
     constructor() {
