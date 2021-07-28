@@ -1,6 +1,5 @@
 import {IMMUNITY, PLUNGE2, PLUNGE3, SPECIAL, STAT, WORLD_CARD} from "@/forge/enums";
 import {Card} from "@/forge/cards/Card";
-import {Metropolis, Tower} from "@/forge/cards/stage";
 import {
     Beast_Headed_God,
     Fallen_Angel,
@@ -12,152 +11,6 @@ import {
 } from "@/forge/cards/evil_gods";
 import {No_Card} from "@/forge/cards/No_Card";
 
-
-class Cleric extends Card {
-    constructor() {
-        super();
-    }
-
-    CPRINT() {
-        return "Cleric";
-    }
-
-    /**
-     * @param price : int
-     * @return int
-     * @constructor
-     */
-    PRICE(price) {
-        price += 500;
-        return price;
-    }
-
-    /**
-     *
-     * @param f : ForgedItem
-     * @constructor
-     */
-    FIRST(f) {
-        this.SECOND(f);
-
-    }
-
-    /**
-     *
-     * @param f : ForgedItem
-     * @constructor
-     */
-    SECOND(f) {
-        this.THIRD(f);
-    }
-
-    /**
-     * @param f : ForgedItem
-     * @constructor
-     */
-    THIRD(f) {
-        if ((f.first instanceof Metropolis || f.second instanceof Metropolis
-            || f.third instanceof Metropolis) && !(f.hidden instanceof Metropolis)) {
-            f.stat_limits(-3, 5, STAT.ALL);
-            f.increase_stat(STAT.MAG);
-            f.increase_stat(STAT.SPR);
-            f.increase_stat(STAT.CHM);
-        } else {
-            f.stat_limits(-1, 3, STAT.ALL);
-            f.increase_stat(STAT.SPR);
-        }
-        if (f.STAFF()) {
-            f.setPlunge3(PLUNGE3.Demonicide);
-        }
-        f.setSharp(f.perc50(f.getSharp()));
-        f.setHeavy(f.perc150(f.getHeavy()));
-        f.setSlash(f.perc50(f.getSlash()));
-        f.setStrike(f.perc150(f.getStrike()));
-    }
-
-    // eslint-disable-next-line no-unused-vars
-    HIDDEN(f) {
-    }
-
-    // eslint-disable-next-line no-unused-vars
-    LEAVING(f) {
-    }
-
-    // eslint-disable-next-line no-unused-vars
-    WORLD(f) {
-    }
-
-}
-
-class Clown extends Card {
-    constructor() {
-        super();
-    }
-
-    CPRINT() {
-        return "Clown";
-    }
-
-    /**
-     * @param price : int
-     * @return int
-     * @constructor
-     */
-    PRICE(price) {
-        price += 250;
-        return price;
-    }
-
-    /**
-     * @param f : ForgedItem
-     * @constructor
-     */
-    FIRST(f) {
-        this.SECOND(f);
-
-    }
-
-    /**
-     * @param f : ForgedItem
-     * @constructor
-     */
-    SECOND(f) {
-        this.THIRD(f);
-    }
-
-    /**
-     * @param f : ForgedItem
-     * @constructor
-     */
-    THIRD(f) {
-        if ((f.first instanceof Metropolis || f.second instanceof Metropolis
-            || f.third instanceof Metropolis) && !(f.hidden instanceof Metropolis)) {
-            f.stat_limits(-5, 12, STAT.ALL);
-        } else {
-            f.stat_limits(-3, 9, STAT.ALL);
-        }
-        if (f.KNIFE()) {
-            f.setPlunge2(PLUNGE2.Quick_Blade);
-        }
-        f.setSharp(f.perc150(f.getSharp()));
-        f.setHeavy(f.perc50(f.getHeavy()));
-        f.setThrust(f.perc150(f.getThrust()));
-        f.setStrike(f.perc50(f.getStrike()));
-    }
-
-    // eslint-disable-next-line no-unused-vars
-    HIDDEN(f) {
-    }
-
-    // eslint-disable-next-line no-unused-vars
-    LEAVING(f) {
-    }
-
-    // eslint-disable-next-line no-unused-vars
-    WORLD(f) {
-    }
-
-}
 
 class Enticed_Nymph extends Card {
     constructor() {
@@ -188,56 +41,6 @@ class Enticed_Nymph extends Card {
 
     // eslint-disable-next-line no-unused-vars
     THIRD(f) {
-    }
-
-    // eslint-disable-next-line no-unused-vars
-    HIDDEN(f) {
-    }
-
-    // eslint-disable-next-line no-unused-vars
-    LEAVING(f) {
-    }
-
-    // eslint-disable-next-line no-unused-vars
-    WORLD(f) {
-    }
-
-}
-
-
-class King extends Card {
-
-    CPRINT() {
-        return "King";
-    }
-
-    PRICE(price) {
-        price += 1500;
-        return price;
-    }
-
-    FIRST(f) {
-        this.SECOND(f);
-    }
-
-    SECOND(f) {
-        this.THIRD(f);
-
-    }
-
-    THIRD(f) {
-        if ((f.first instanceof Metropolis || f.second instanceof Metropolis
-            || f.third instanceof Metropolis) && !(f.hidden instanceof Metropolis)) {
-            f.stat_limits(-3, 5, STAT.ALL);
-            f.increase_stat(STAT.PWR);
-        } else {
-            f.stat_limits(-1, 3, STAT.ALL);
-            f.increase_stat(STAT.PWR);
-        }
-
-        if (f.GLOVE()) {
-            f.setPlunge2(PLUNGE2.Hand_of_Midas);
-        }
     }
 
     // eslint-disable-next-line no-unused-vars
@@ -779,95 +582,6 @@ class Pixie_Of_Rage extends Card {
 }
 
 
-class Princess extends Card {
-
-    CPRINT() {
-        return "Princess";
-    }
-
-    PRICE(price) {
-        price += 1500;
-        return price;
-    }
-
-    FIRST(f) {
-        this.SECOND(f);
-    }
-
-    SECOND(f) {
-        this.THIRD(f);
-
-    }
-
-    THIRD(f) {
-        if ((f.first instanceof Metropolis || f.second instanceof Metropolis
-            || f.third instanceof Metropolis) && !(f.hidden instanceof Metropolis)) {
-            f.stat_limits(-3, 5, STAT.ALL);
-            f.increase_stat(STAT.DEF);
-        } else {
-            f.stat_limits(-1, 3, STAT.ALL);
-            f.increase_stat(STAT.DEF);
-        }
-    }
-
-    // eslint-disable-next-line no-unused-vars
-    HIDDEN(f) {
-    }
-
-    // eslint-disable-next-line no-unused-vars
-    LEAVING(f) {
-    }
-
-    // eslint-disable-next-line no-unused-vars
-    WORLD(f) {
-    }
-
-}
-
-
-class Raven extends Card {
-
-    CPRINT() {
-        return "Raven";
-    }
-
-    PRICE(price) {
-        price += 300;
-        return price;
-    }
-
-
-    FIRST(f) {
-        this.SECOND(f);
-    }
-
-
-    SECOND(f) {
-        this.THIRD(f);
-    }
-
-    THIRD(f) {
-        f.stat_limits(-3, 5, STAT.MAG);
-        f.stat_limits(-3, 5, STAT.CHM);
-        f.stat_min(3, STAT.MAG);
-        f.stat_min(3, STAT.CHM);
-    }
-
-    // eslint-disable-next-line no-unused-vars
-    HIDDEN(f) {
-    }
-
-    // eslint-disable-next-line no-unused-vars
-    LEAVING(f) {
-    }
-
-    // eslint-disable-next-line no-unused-vars
-    WORLD(f) {
-    }
-
-}
-
-
 class Sacrificed_Nymph extends Card {
     constructor() {
         super();
@@ -904,77 +618,6 @@ class Sacrificed_Nymph extends Card {
     THIRD(f) {
         if (f.PENDANT()) {
             f.setImmunity(f.getImmunity() | IMMUNITY.Petrify.value);
-        }
-    }
-
-    // eslint-disable-next-line no-unused-vars
-    HIDDEN(f) {
-    }
-
-    // eslint-disable-next-line no-unused-vars
-    LEAVING(f) {
-    }
-
-    // eslint-disable-next-line no-unused-vars
-    WORLD(f) {
-    }
-
-}
-
-
-class Sorcerer extends Card {
-
-    CPRINT() {
-        return "Sorcerer";
-    }
-
-    PRICE(price) {
-        price += 300;
-        return price;
-    }
-
-    FIRST(f) {
-        this.SECOND(f);
-    }
-
-    SECOND(f) {
-        this.THIRD(f);
-    }
-
-    THIRD(f) {
-        if ((f.first instanceof Tower || f.second instanceof Tower
-            || f.third instanceof Tower) && !(f.hidden instanceof Tower)) {
-            f.stat_limits(-3, 5, STAT.ALL);
-            f.increase_stat(STAT.MAG);
-            f.increase_stat(STAT.SPR);
-            f.increase_stat(STAT.CHM);
-            f.setWiR(Math.trunc(f.getWiR() / 2));
-            if (f.getWiR() < 1)
-                f.setWiR(1);
-            f.setDrR(Math.trunc(f.getDrR() / 2));
-            if (f.getDrR() < 1)
-                f.setDrR(1);
-            f.setSaR(Math.trunc(f.getSaR() / 2));
-            if (f.getSaR() < 1)
-                f.setSaR(1);
-            f.setGnR(Math.trunc(f.getGnR() / 2));
-            if (f.getGnR() < 1)
-                f.setGnR(1);
-        } else {
-            f.stat_limits(-1, 3, STAT.ALL);
-            f.increase_stat(STAT.MAG);
-            f.setWiR(Math.trunc(f.getWiR() / 4) * 3);
-            if (f.getWiR() < 1)
-                f.setWiR(1);
-            f.setDrR(Math.trunc(f.getDrR() / 4) * 3);
-            if (f.getDrR() < 1)
-                f.setDrR(1);
-            f.setSaR(Math.trunc(f.getSaR() / 4) * 3);
-            if (f.getSaR() < 1)
-                f.setSaR(1);
-            f.setGnR(Math.trunc(f.getGnR() / 4) * 3);
-            if (f.getGnR() < 1)
-                f.setGnR(1);
         }
     }
 
@@ -1231,124 +874,8 @@ class Spirit_Of_Shoes extends Card {
 }
 
 
-class Witch extends Card {
-
-    CPRINT() {
-        return ("Witch");
-    }
-
-    PRICE(price) {
-        price += 300;
-        return price;
-    }
-
-    FIRST(f) {
-        this.SECOND(f);
-    }
-
-    SECOND(f) {
-        this.THIRD(f);
-    }
-
-    THIRD(f) {
-        if ((f.first instanceof Tower || f.second instanceof Tower
-            || f.third instanceof Tower) && !(f.hidden instanceof Tower)) {
-            f.stat_limits(-3, 5, STAT.ALL);
-            f.increase_stat(STAT.MAG);
-            f.increase_stat(STAT.SPR);
-            f.increase_stat(STAT.CHM);
-            f.setShR(Math.trunc(f.getShR() / 2));
-            if (f.getShR() < 1)
-                f.setShR(1);
-            f.setAuR(f.getAuR() / 2);
-            if (f.getAuR() < 1)
-                f.setAuR(1);
-            f.setJiR(f.getJiR() / 2);
-            if (f.getJiR() < 1)
-                f.setJiR(1);
-            f.setUnR(f.getUnR() / 2);
-            if (f.getUnR() < 1)
-                f.setUnR(1);
-        } else {
-            f.stat_limits(-1, 3, STAT.ALL);
-            f.increase_stat(STAT.MAG);
-            f.setShR(Math.trunc(f.getShR() / 4) * 3);
-            if (f.getShR() < 1)
-                f.setShR(1);
-            f.setAuR(Math.trunc(f.getAuR() / 4) * 3);
-            if (f.getAuR() < 1)
-                f.setAuR(1);
-            f.setJiR(Math.trunc(f.getJiR() / 4) * 3);
-            if (f.getJiR() < 1)
-                f.setJiR(1);
-            f.setUnR(Math.trunc(f.getUnR() / 4) * 3);
-            if (f.getUnR() < 1)
-                f.setUnR(1);
-        }
-    }
-
-    // eslint-disable-next-line no-unused-vars
-    HIDDEN(f) {
-    }
-
-    // eslint-disable-next-line no-unused-vars
-    LEAVING(f) {
-    }
-
-    // eslint-disable-next-line no-unused-vars
-    WORLD(f) {
-    }
-
-}
-
-
-class Wolf extends Card {
-
-    CPRINT() {
-        return "Wolf";
-    }
-
-    PRICE(price) {
-        price += 300;
-        return price;
-    }
-
-
-    FIRST(f) {
-        this.SECOND(f);
-    }
-
-
-    SECOND(f) {
-        this.THIRD(f);
-    }
-
-    THIRD(f) {
-        f.stat_limits(-3, 5, STAT.SKL);
-        f.stat_limits(-3, 5, STAT.HP);
-        f.stat_min(3, STAT.SKL);
-        f.stat_min(3, STAT.HP);
-    }
-
-    // eslint-disable-next-line no-unused-vars
-    HIDDEN(f) {
-    }
-
-    // eslint-disable-next-line no-unused-vars
-    LEAVING(f) {
-    }
-
-    // eslint-disable-next-line no-unused-vars
-    WORLD(f) {
-    }
-
-}
-
 export {
-    Cleric,
-    Clown,
     Enticed_Nymph,
-    King,
     Nymph_Of_Dawn,
     Nymph_Of_Orchards,
     Nymph_Of_The_Sky,
@@ -1359,17 +886,12 @@ export {
     Pixie_Of_Lust,
     Pixie_Of_Pride,
     Pixie_Of_Rage,
-    Princess,
-    Raven,
     Sacrificed_Nymph,
-    Sorcerer,
     Spirit_Of_Forest,
     Spirit_Of_Housework,
     Spirit_Of_Mountain,
     Spirit_Of_Ocean,
-    Spirit_Of_Shoes,
-    Witch,
-    Wolf
+    Spirit_Of_Shoes
 }
 
 
