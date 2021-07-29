@@ -7,6 +7,17 @@ import {Chaotic_Avenger, Ragnarok} from "@/forge/plunges/2h_sword";
 import {Magma_Hammer, Mjolnir, Quake_Hammer, Sledgehammer} from "@/forge/plunges/hammer";
 import {Gungnir, Spear_Of_Light, Trident} from "@/forge/plunges/spear";
 import {Caduceus, Demonicide, Electrosceptre, Golden_Touch} from "@/forge/plunges/staff";
+import {Hand_Of_Midas} from "@/forge/plunges/glove";
+import {Game_Of_Death, Green_Princess, Red_Dream} from "@/forge/plunges/flail";
+import {
+        Elven_Archer,
+        Flaming_Arrow,
+        Icicle, Lunar_Shot,
+        Magical_Shot,
+        Medusas_Arrow,
+        Phoenix_Falling,
+        Solar_Flare
+} from "@/forge/plunges/bow";
 
 const PLUNGE1 = Object.freeze(
     {
@@ -14,16 +25,16 @@ const PLUNGE1 = Object.freeze(
         Double_Shot: new Double_Shot(),
         Caduceus: new Caduceus(),
         Chaotic_Avenger: new Chaotic_Avenger(),
-        Green_Princess: {text: 'Green Princess', value: 5, psxtext: 'Green Princess'},
+        Green_Princess: new Green_Princess(),
         Gungnir: new Gungnir(),
-        Magical_Shot: {text: 'Magical Shot', value: 7, psxtext: 'Magical Shot'},
-        Phoenix_Falling: {text: 'Phoenix Falling', value: 8, psxtext: 'Phoenix Falling'},
-        Solar_Flare: {text: 'Solar Flare', value: 9, pstext: 'Solar Flare'},
+        Magical_Shot: new Magical_Shot(),
+        Phoenix_Falling: new Phoenix_Falling(),
+        Solar_Flare: new Solar_Flare(),
         Spear_of_Light: new Spear_Of_Light(),
         Trident: new Trident(),
-        Flaming_Arrow: {text: 'Flaming Arrow', value: 101, psxtext: 'Flaming Arrow'},    // Premade bow only
-        Medusas_Arrow: {text: 'Medusa’s Arrow', value: 102, psxtext: 'Medusa’s Arrow'},  // Premade bow only
-        Icicle: {text: 'Icicle', value: 103, psxtext: 'Icicle'}                          // Premade bow only
+        Flaming_Arrow: new Flaming_Arrow(),  // Premade bow only
+        Medusas_Arrow: new Medusas_Arrow(),  // Premade bow only
+        Icicle: new Icicle()                 // Premade bow only
     }
 )
 const PLUNGE2 = Object.freeze(
@@ -31,11 +42,11 @@ const PLUNGE2 = Object.freeze(
         Uppercut: new Uppercut(),
         Shot: new Shot(),
         Dragonslayer: new Dragonslayer(),
-        Elven_Archer: {text: 'Elven Archer', value: 4, psxtext: 'Elven Archer'},
+        Elven_Archer: new Elven_Archer(),
         Flame_Tongue: new Flame_Tongue(),
-        Game_of_Death: {text: 'Game of Death', value: 6, psxtext: 'Game of Death'},
-        Hand_of_Midas: {text: 'Hand of Midas', value: 7, psxtext: 'Hand of Midas'},
-        Lunar_Shot: {text: 'Lunar Shot', value: 8, psxtext: 'Lunar Shot'},
+        Game_of_Death: new Game_Of_Death(),
+        Hand_of_Midas: new Hand_Of_Midas(),
+        Lunar_Shot: new Lunar_Shot(),
         Poison_Blade: new Poison_Blade(),
         Quick_Blade: new Quick_Blade(),
         Sunlight: new Sunlight(),
@@ -53,7 +64,7 @@ const PLUNGE3 = Object.freeze(
         Moonlight: new Moonlight(),
         Quake_Hammer: new Quake_Hammer(),
         Ragnarok: new Ragnarok(),
-        Red_Dream: {text: 'Red Dream', value: 10, psxtext: 'Red Dream'},
+        Red_Dream: new Red_Dream(),
         Sinister_Blade: new Sinister_Blade(),
         Sledge_Hammer: new Sledgehammer(),
         Treefeller: new Treefeller(),
