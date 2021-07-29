@@ -7,19 +7,30 @@ class Shade_Gold extends Item {
         super()
     }
 
-    IPRINT() {
-        return "Shade Gold";
+    text(language) {
+        switch(language) {
+            case 'classic':
+                return "Shade Gold"
+            case 'jp':
+                return "[Shade Silver]"
+            default:
+                return "Shade Gold"
+        }
     }
 
-    ENERGY() {
+    energy() {
         return 64;
     }
 
-    CODE(f) {
+    code(f) {
         f.taint(ESSENCE.SHADE);
         if (f.getEnergy() >= 8) {
             f.prehidden = new Shade();
         }
+    }
+
+    source() {
+        return ["Collected"];
     }
 
 }

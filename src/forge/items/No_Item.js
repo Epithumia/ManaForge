@@ -5,16 +5,21 @@ class No_Item extends Item {
         super();
     }
 
-    IPRINT() {
-        return "No Item";
+    // eslint-disable-next-line no-unused-vars
+    text(language) {
+        return "No Item"
     }
 
-    ENERGY() {
+    energy() {
         return 0;
     }
 
     // eslint-disable-next-line no-unused-vars
-    CODE(f) {
+    code(f) {
+    }
+
+    source() {
+        return [];
     }
 }
 

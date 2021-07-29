@@ -7,19 +7,30 @@ class Gnome_Gold extends Item {
         super()
     }
 
-    IPRINT() {
-        return "Gnome Gold";
+    text(language) {
+        switch(language) {
+            case 'classic':
+                return "Gnome Gold"
+            case 'jp':
+                return "[Gnome Gold]"
+            default:
+                return "Gnome Gold"
+        }
     }
 
-    ENERGY() {
-        return 64;
+    energy() {
+        return 64
     }
 
-    CODE(f) {
+    code(f) {
         f.taint(ESSENCE.GNOME);
         if (f.getEnergy() >= 8) {
             f.prehidden = new Gnome();
         }
+    }
+
+    source() {
+        return ["Collected"];
     }
 
 }

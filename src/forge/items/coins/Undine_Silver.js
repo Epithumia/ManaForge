@@ -7,19 +7,30 @@ class Undine_Silver extends Item {
         super()
     }
 
-    IPRINT() {
-        return "Undine Silver";
+    text(language) {
+        switch(language) {
+            case 'classic':
+                return "Undine Silver"
+            case 'jp':
+                return "[Undine Silver]"
+            default:
+                return "Undine Silver"
+        }
     }
 
-    ENERGY() {
+    energy() {
         return 48;
     }
 
-    CODE(f) {
+    code(f) {
         f.taint(ESSENCE.UNDINE);
         if (f.getEnergy() >= 8) {
             f.prehidden = new Undine();
         }
+    }
+
+    source() {
+        return ["Collected"]
     }
 
 }

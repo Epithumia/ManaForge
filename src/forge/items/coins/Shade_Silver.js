@@ -7,21 +7,31 @@ class Shade_Silver extends Item {
         super()
     }
 
-    IPRINT() {
-        return "Shade Silver";
+    text(language) {
+        switch(language) {
+            case 'classic':
+                return "Shade Silver"
+            case 'jp':
+                return "[Shade Silver]"
+            default:
+                return "Shade Silver"
+        }
     }
 
-    ENERGY() {
+    energy() {
         return 48;
     }
 
-    CODE(f) {
+    code(f) {
         f.taint(ESSENCE.SHADE);
         if (f.getEnergy() >= 8) {
             f.prehidden = new Shade();
         }
     }
 
+    source() {
+        return ["Collected"];
+    }
 }
 
 export {Shade_Silver};

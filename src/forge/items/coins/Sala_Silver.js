@@ -7,19 +7,30 @@ class Sala_Silver extends Item {
         super()
     }
 
-    IPRINT() {
-        return "Salamander Silver";
+    text(language) {
+        switch(language) {
+            case 'classic':
+                return "Sala Silver"
+            case 'jp':
+                return "[Sala Silver]"
+            default:
+                return "Salamander Silver"
+        }
     }
 
-    ENERGY() {
-        return 48;
+    energy() {
+        return 48
     }
 
-    CODE(f) {
+    code(f) {
         f.taint(ESSENCE.SALA);
         if (f.getEnergy() >= 8) {
             f.prehidden = new Salamander();
         }
+    }
+
+    source() {
+        return ["Collected"];
     }
 
 }

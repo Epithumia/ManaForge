@@ -7,19 +7,30 @@ class Wisp_Gold extends Item {
         super()
     }
 
-    IPRINT() {
-        return "Wisp Gold";
+    text(language) {
+        switch(language) {
+            case 'classic':
+                return "Wisp Gold"
+            case 'jp':
+                return "[Wisp Gold]"
+            default:
+                return "Wisp Gold"
+        }
     }
 
-    ENERGY() {
+    energy() {
         return 64;
     }
 
-    CODE(f) {
+    code(f) {
         f.taint(ESSENCE.WISP);
         if (f.getEnergy() >= 8) {
             f.prehidden = new Wisp();
         }
+    }
+
+    source() {
+        return ["Collected"];
     }
 
 }

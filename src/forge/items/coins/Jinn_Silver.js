@@ -7,19 +7,30 @@ class Jinn_Silver extends Item {
         super()
     }
 
-    IPRINT() {
-        return "Jinn Silver";
+    text(language) {
+        switch(language) {
+            case 'classic':
+                return "Jinn Silver"
+            case 'jp':
+                return "[Jinn Silver]"
+            default:
+                return "Jinn Silver"
+        }
     }
 
-    ENERGY() {
-        return 48;
+    energy() {
+        return 48
     }
 
-    CODE(f) {
+    code(f) {
         f.taint(ESSENCE.JINN);
         if (f.getEnergy() >= 8) {
             f.prehidden = new Jinn();
         }
+    }
+
+    source() {
+        return ["Collected"];
     }
 
 }

@@ -7,19 +7,30 @@ class Wisp_Silver extends Item {
         super()
     }
 
-    IPRINT() {
-        return "Wisp Silver";
+    text(language) {
+        switch(language) {
+            case 'classic':
+                return "Wisp Silver"
+            case 'jp':
+                return "[Wisp Silver]"
+            default:
+                return "Wisp Silver"
+        }
     }
 
-    ENERGY() {
+    energy() {
         return 48;
     }
 
-    CODE(f) {
+    code(f) {
         f.taint(ESSENCE.WISP);
         if (f.getEnergy() >= 8) {
             f.prehidden = new Wisp();
         }
+    }
+
+    source() {
+        return ["Collected"];
     }
 
 }

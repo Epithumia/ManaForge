@@ -7,21 +7,31 @@ class Sala_Gold extends Item {
         super()
     }
 
-    IPRINT() {
-        return "Salamander Gold";
+    text(language) {
+        switch(language) {
+            case 'classic':
+                return "Sala Gold"
+            case 'jp':
+                return "[Sala Gold]"
+            default:
+                return "Salamander Gold"
+        }
     }
 
-    ENERGY() {
-        return 64;
+    energy() {
+        return 64
     }
 
-    CODE(f) {
+    code(f) {
         f.taint(ESSENCE.SALA);
         if (f.getEnergy() >= 8) {
             f.prehidden = new Salamander();
         }
     }
 
+    source() {
+        return ["Collected"];
+    }
 }
 
 export {Sala_Gold};

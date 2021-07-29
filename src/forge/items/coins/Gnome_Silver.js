@@ -7,19 +7,30 @@ class Gnome_Silver extends Item {
         super()
     }
 
-    IPRINT() {
-        return "Gnome Silver";
+    text(language) {
+        switch(language) {
+            case 'classic':
+                return "Gnome Silver"
+            case 'jp':
+                return "[Gnome Silver]"
+            default:
+                return "Gnome Silver"
+        }
     }
 
-    ENERGY() {
-        return 48;
+    energy() {
+        return 48
     }
 
-    CODE(f) {
+    code(f) {
         f.taint(ESSENCE.GNOME);
         if (f.getEnergy() >= 8) {
             f.prehidden = new Gnome();
         }
+    }
+
+    source() {
+        return ["Collected"];
     }
 
 }

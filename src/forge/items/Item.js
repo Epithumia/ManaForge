@@ -5,29 +5,63 @@ class Item {
             throw new TypeError("Can not construct abstract class.");
         }
         // Check if all instance methods are implemented.
-        if (this.IPRINT === Item.prototype.IPRINT) {
+        if (this.text === Item.prototype.text) {
             // Error: Child has not implemented this abstract method.
-            throw new TypeError("Please implement abstract method IPRINT.");
+            throw new TypeError("Please implement abstract method text(language).");
         }
-        if (this.ENERGY === Item.prototype.ENERGY) {
+        if (this.energy === Item.prototype.energy) {
             // Error: Child has not implemented this abstract method.
             throw new TypeError("Please implement abstract method ENERGY.");
         }
-        if (this.CODE === Item.prototype.CODE) {
+        if (this.code === Item.prototype.code) {
+            // Error: Child has not implemented this abstract method.
+            throw new TypeError("Please implement abstract method CODE.");
+        }
+        if (this.source === Item.prototype.source) {
             // Error: Child has not implemented this abstract method.
             throw new TypeError("Please implement abstract method CODE.");
         }
     }
 
-    IPRINT() {
+    /**
+     * @param language: String
+     * @return String
+     * @constructor
+     */
+    text(language) {
+        switch(language) {
+            case 'classic':
+                return ""
+            case 'jp':
+                return ""
+            default:
+                return ""
+        }
     }
 
-    ENERGY() {
+    /**
+     * @return Number
+     * @constructor
+     */
+    energy() {
+        return null
     }
 
+    /**
+     * @param f: ForgedItem
+     * @constructor
+     */
     // eslint-disable-next-line no-unused-vars
-    CODE(f) {
-    } //f : ForgedItem
+    code(f) {
+    }
+
+    /**
+     * @return {*[]}
+     * @constructor
+     */
+    source() {
+        return null
+    }
 }
 
 export {Item};

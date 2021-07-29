@@ -7,19 +7,30 @@ class Aura_Silver extends Item {
         super()
     }
 
-    IPRINT() {
-        return "Aura Silver";
+    text(language) {
+        switch(language) {
+            case 'classic':
+                return "Aura Silver"
+            case 'jp':
+                return "[Aura Silver]"
+            default:
+                return "Aura Silver"
+        }
     }
 
-    ENERGY() {
+    energy() {
         return 48;
     }
 
-    CODE(f) {
+    code(f) {
         f.taint(ESSENCE.AURA);
         if (f.getEnergy() >= 8) {
             f.prehidden = new Aura();
         }
+    }
+
+    source() {
+        return ["Collected"];
     }
 
 }
