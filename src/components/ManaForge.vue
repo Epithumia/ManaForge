@@ -788,14 +788,7 @@ export default {
   props: {},
   data() {
     return {
-      mat_word: mat_word,
       stat: STAT.ALL,
-      card: new Ancient_Moon(),
-      /**
-       * @type Card
-       */
-      card2: new Sacrificed_Nymph(),
-
       /**
        * @type Item | No_Item
        */

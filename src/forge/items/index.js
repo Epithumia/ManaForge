@@ -1,64 +1,55 @@
 import {ESSENCE, IMMUNITY, STAT} from "@/forge/enums";
-import {
-    Cleric,
-    Clown,
-    King,
-    Princess,
-    Raven,
-    Sorcerer,
-    Witch,
-    Wolf
-} from "@/forge/cards/other";
-import {Yggdrasil, Ancient_Moon, Mirrored_World, Heavens_Scale, Dying_Earth, Ragnarok} from "@/forge/cards/world";
+import {Cleric, Clown, King, Princess, Raven, Sorcerer, Witch, Wolf} from "@/forge/cards/other";
+import {Ancient_Moon, Dying_Earth, Heavens_Scale, Mirrored_World, Ragnarok, Yggdrasil} from "@/forge/cards/world";
 import {Phoenix, Unicorn} from "@/forge/cards/beast_gods";
 import {Man_Of_Valor, Sage, Wanderer} from "@/forge/cards/nobles";
-import {Bed_Of_Thorn, Volcano, Metropolis, Tower, Spring} from "@/forge/cards/stage";
-import {Wisp, Shade, Dryad, Aura, Salamander, Gnome, Jinn, Undine} from "@/forge/cards/elemental_spirits";
+import {Bed_Of_Thorn, Metropolis, Spring, Tower, Volcano} from "@/forge/cards/stage";
+import {Dryad, Gnome, Jinn, Salamander, Undine} from "@/forge/cards/elemental_spirits";
 import {
+    Beast_Headed_God,
     Fallen_Angel,
-    Witch_Of_Moon,
+    God_Of_Destruction,
+    Leviathan,
     Lord_Of_Flies,
     Wings_Of_Darkness,
-    God_Of_Destruction,
-    Beast_Headed_God,
-    Leviathan
+    Witch_Of_Moon
 } from "@/forge/cards/evil_gods"
 import {
-    Ruler_Of_The_Sky,
-    Mother_Of_Gods,
-    Sun_God,
-    Moon_Goddess,
-    Thunder_God,
-    Goddess_Of_Love,
-    Fertility_Goddess,
-    Ocean_God,
-    Wind_God,
-    Wisdom_Goddess,
     Blacksmith_God,
-    God_Of_War
+    Fertility_Goddess,
+    God_Of_War,
+    Goddess_Of_Love,
+    Moon_Goddess,
+    Mother_Of_Gods,
+    Ocean_God,
+    Ruler_Of_The_Sky,
+    Sun_God,
+    Thunder_God,
+    Wind_God,
+    Wisdom_Goddess
 } from "@/forge/cards/heaven_gods"
 import {
-    Sacrificed_Nymph,
     Enticed_Nymph,
-    Nymph_Of_The_Sky,
+    Nymph_Of_Dawn,
     Nymph_Of_Orchards,
-    Nymph_Of_Dawn
+    Nymph_Of_The_Sky,
+    Sacrificed_Nymph
 } from "@/forge/cards/maidens"
 import {
-    Spirit_Of_Ocean,
     Spirit_Of_Forest,
+    Spirit_Of_Housework,
     Spirit_Of_Mountain,
-    Spirit_Of_Shoes,
-    Spirit_Of_Housework
+    Spirit_Of_Ocean,
+    Spirit_Of_Shoes
 } from "@/forge/cards/spirits"
 import {
-    Pixie_Of_Pride,
-    Pixie_Of_Laziness,
-    Pixie_Of_Jealousy,
-    Pixie_Of_Lust,
-    Pixie_Of_Rage,
+    Pixie_Of_Gluttony,
     Pixie_Of_Greed,
-    Pixie_Of_Gluttony
+    Pixie_Of_Jealousy,
+    Pixie_Of_Laziness,
+    Pixie_Of_Lust,
+    Pixie_Of_Pride,
+    Pixie_Of_Rage
 } from "@/forge/cards/pixies"
 
 class Item {
@@ -70,15 +61,15 @@ class Item {
         // Check if all instance methods are implemented.
         if (this.IPRINT === Item.prototype.IPRINT) {
             // Error: Child has not implemented this abstract method.
-            throw new TypeError("Please implement abstract method CPRINT.");
+            throw new TypeError("Please implement abstract method IPRINT.");
         }
         if (this.ENERGY === Item.prototype.ENERGY) {
             // Error: Child has not implemented this abstract method.
-            throw new TypeError("Please implement abstract method CPRINT.");
+            throw new TypeError("Please implement abstract method ENERGY.");
         }
         if (this.CODE === Item.prototype.CODE) {
             // Error: Child has not implemented this abstract method.
-            throw new TypeError("Please implement abstract method CPRINT.");
+            throw new TypeError("Please implement abstract method CODE.");
         }
     }
 
@@ -287,46 +278,6 @@ class Ash extends Item {
     CODE(f) {
         if (f.getEnergy() >= 8) {
             f.prehidden = new Volcano();
-        }
-    }
-
-}
-
-
-class Aura_Gold extends Item {
-
-    IPRINT() {
-        return "Aura Gold";
-    }
-
-    ENERGY() {
-        return 64;
-    }
-
-    CODE(f) {
-        f.taint(ESSENCE.AURA);
-        if (f.getEnergy() >= 8) {
-            f.prehidden = new Aura();
-        }
-    }
-
-}
-
-
-class Aura_Silver extends Item {
-
-    IPRINT() {
-        return "Aura Silver";
-    }
-
-    ENERGY() {
-        return 48;
-    }
-
-    CODE(f) {
-        f.taint(ESSENCE.AURA);
-        if (f.getEnergy() >= 8) {
-            f.prehidden = new Aura();
         }
     }
 
@@ -808,46 +759,6 @@ class Dragons_Breath extends Item {
 }
 
 
-class Dryad_Gold extends Item {
-
-    IPRINT() {
-        return "Dryad Gold";
-    }
-
-    ENERGY() {
-        return 64;
-    }
-
-    CODE(f) {
-        f.taint(ESSENCE.DRYAD);
-        if (f.getEnergy() >= 8) {
-            f.prehidden = new Dryad();
-        }
-    }
-
-}
-
-
-class Dryad_Silver extends Item {
-
-    IPRINT() {
-        return "Dryad Silver";
-    }
-
-    ENERGY() {
-        return 48;
-    }
-
-    CODE(f) {
-        f.taint(ESSENCE.DRYAD);
-        if (f.getEnergy() >= 8) {
-            f.prehidden = new Dryad();
-        }
-    }
-
-}
-
-
 class Ear_Of_Wheat extends Item {
 
 
@@ -1117,46 +1028,6 @@ class Glow_Crystal extends Item {
 }
 
 
-class Gnome_Gold extends Item {
-
-    IPRINT() {
-        return "Gnome Gold";
-    }
-
-    ENERGY() {
-        return 64;
-    }
-
-    CODE(f) {
-        f.taint(ESSENCE.GNOME);
-        if (f.getEnergy() >= 8) {
-            f.prehidden = new Gnome();
-        }
-    }
-
-}
-
-
-class Gnome_Silver extends Item {
-
-    IPRINT() {
-        return "Gnome Silver";
-    }
-
-    ENERGY() {
-        return 48;
-    }
-
-    CODE(f) {
-        f.taint(ESSENCE.GNOME);
-        if (f.getEnergy() >= 8) {
-            f.prehidden = new Gnome();
-        }
-    }
-
-}
-
-
 class Gold_Clover extends Item {
 
 
@@ -1332,45 +1203,6 @@ class Honey_Onion extends Item {
             f.prehidden = new Princess();
         }
         f.taint(ESSENCE.DRYAD);
-    }
-
-}
-
-class Jinn_Gold extends Item {
-
-    IPRINT() {
-        return "Jinn Gold";
-    }
-
-    ENERGY() {
-        return 64;
-    }
-
-    CODE(f) {
-        f.taint(ESSENCE.JINN);
-        if (f.getEnergy() >= 8) {
-            f.prehidden = new Jinn();
-        }
-    }
-
-}
-
-
-class Jinn_Silver extends Item {
-
-    IPRINT() {
-        return "Jinn Silver";
-    }
-
-    ENERGY() {
-        return 48;
-    }
-
-    CODE(f) {
-        f.taint(ESSENCE.JINN);
-        if (f.getEnergy() >= 8) {
-            f.prehidden = new Jinn();
-        }
     }
 
 }
@@ -2037,46 +1869,6 @@ class Rust extends Item {
 }
 
 
-class Sala_Gold extends Item {
-
-    IPRINT() {
-        return "Salamander Gold";
-    }
-
-    ENERGY() {
-        return 64;
-    }
-
-    CODE(f) {
-        f.taint(ESSENCE.SALA);
-        if (f.getEnergy() >= 8) {
-            f.prehidden = new Salamander();
-        }
-    }
-
-}
-
-
-class Sala_Silver extends Item {
-
-    IPRINT() {
-        return "Salamander Silver";
-    }
-
-    ENERGY() {
-        return 48;
-    }
-
-    CODE(f) {
-        f.taint(ESSENCE.SALA);
-        if (f.getEnergy() >= 8) {
-            f.prehidden = new Salamander();
-        }
-    }
-
-}
-
-
 class Scissors extends Item {
 
 
@@ -2093,46 +1885,6 @@ class Scissors extends Item {
     CODE(f) {
         f.setForce(f.perc150(f.getForce()));
         f.setTech(f.perc50(f.getTech()));
-    }
-
-}
-
-
-class Shade_Gold extends Item {
-
-    IPRINT() {
-        return "Shade Gold";
-    }
-
-    ENERGY() {
-        return 64;
-    }
-
-    CODE(f) {
-        f.taint(ESSENCE.SHADE);
-        if (f.getEnergy() >= 8) {
-            f.prehidden = new Shade();
-        }
-    }
-
-}
-
-
-class Shade_Silver extends Item {
-
-    IPRINT() {
-        return "Shade Silver";
-    }
-
-    ENERGY() {
-        return 48;
-    }
-
-    CODE(f) {
-        f.taint(ESSENCE.SHADE);
-        if (f.getEnergy() >= 8) {
-            f.prehidden = new Shade();
-        }
     }
 
 }
@@ -2498,46 +2250,6 @@ class Toadstoolshed extends Item {
 }
 
 
-class Undine_Gold extends Item {
-
-    IPRINT() {
-        return "Undine Gold";
-    }
-
-    ENERGY() {
-        return 64;
-    }
-
-    CODE(f) {
-        f.taint(ESSENCE.UNDINE);
-        if (f.getEnergy() >= 8) {
-            f.prehidden = new Undine();
-        }
-    }
-
-}
-
-
-class Undine_Silver extends Item {
-
-    IPRINT() {
-        return "Undine Silver";
-    }
-
-    ENERGY() {
-        return 48;
-    }
-
-    CODE(f) {
-        f.taint(ESSENCE.UNDINE);
-        if (f.getEnergy() >= 8) {
-            f.prehidden = new Undine();
-        }
-    }
-
-}
-
-
 class Vampire_Fang extends Item {
 
 
@@ -2717,46 +2429,6 @@ class Wind_Stone extends Item {
 }
 
 
-class Wisp_Gold extends Item {
-
-    IPRINT() {
-        return "Wisp Gold";
-    }
-
-    ENERGY() {
-        return 64;
-    }
-
-    CODE(f) {
-        f.taint(ESSENCE.WISP);
-        if (f.getEnergy() >= 8) {
-            f.prehidden = new Wisp();
-        }
-    }
-
-}
-
-
-class Wisp_Silver extends Item {
-
-    IPRINT() {
-        return "Wisp Silver";
-    }
-
-    ENERGY() {
-        return 48;
-    }
-
-    CODE(f) {
-        f.taint(ESSENCE.WISP);
-        if (f.getEnergy() >= 8) {
-            f.prehidden = new Wisp();
-        }
-    }
-
-}
-
-
 class Zombie_Claw extends Item {
 
 
@@ -2789,8 +2461,6 @@ export {
     Apricat,
     Aroma_Oil,
     Ash,
-    Aura_Gold,
-    Aura_Silver,
     Baked_Roach,
     Bellgrapes,
     Big_Seed,
@@ -2812,8 +2482,6 @@ export {
     Diceberry,
     Dragon_Blood,
     Dragons_Breath,
-    Dryad_Gold,
-    Dryad_Silver,
     Ear_Of_Wheat,
     Earth_Stone,
     Electricity,
@@ -2826,8 +2494,6 @@ export {
     Ghosts_Howl,
     Giants_Horn,
     Glow_Crystal,
-    Gnome_Gold,
-    Gnome_Silver,
     Gold_Clover,
     Grave_Dirt,
     Greenball_Bun,
@@ -2836,8 +2502,6 @@ export {
     Heart_Mint,
     Holy_Water,
     Honey_Onion,
-    Jinn_Gold,
-    Jinn_Silver,
     Knockout_Dust,
     Lilipods,
     Little_Eye,
@@ -2867,11 +2531,7 @@ export {
     Rocket_Papaya,
     Round_Seed,
     Rust,
-    Sala_Gold,
-    Sala_Silver,
     Scissors,
-    Shade_Gold,
-    Shade_Silver,
     Sharp_Claw,
     Silly_Eye,
     Sleepy_Eye,
@@ -2888,8 +2548,6 @@ export {
     Sweet_Moai,
     Tako_Bug,
     Toadstoolshed,
-    Undine_Gold,
-    Undine_Silver,
     Vampire_Fang,
     Virgins_Sigh,
     Wad_Of_Wool,
@@ -2898,8 +2556,133 @@ export {
     White_Feather,
     Wicked_Eye,
     Wind_Stone,
-    Wisp_Gold,
-    Wisp_Silver,
     Zombie_Claw,
     No_Item
 }
+
+const ITEM = Object.freeze(
+    {
+        NoItem: {text: 'No Item', value: 0, source: null, psxtext: 'No Item'},
+        WispGold: {text: 'Wisp Gold', value: 1, source: ['Collected'], psxtext: 'Wisp Gold'},
+        ShadeGold: {text: 'Shade Gold', value: 2, source: ['Collected'], psxtext: 'Shade Gold'},
+        DryadGold: {text: 'Dryad Gold', value: 3, source: ['Collected'], psxtext: 'Dryad Gold'},
+        AuraGold: {text: 'Aura Gold', value: 4, source: ['Collected'], psxtext: 'Aura Gold'},
+        SalaGold: {text: 'Salamander Gold', value: 5, source: ['Collected'], psxtext: 'Sala Gold'},
+        GnomeGold: {text: 'Gnome Gold', value: 6, source: ['Collected'], psxtext: 'Gnome Gold'},
+        JinnGold: {text: 'Jinn Gold', value: 7, source: ['Collected'], psxtext: 'Jinn Gold'},
+        UndineGold: {text: 'Undine Gold', value: 8, source: ['Collected'], psxtext: 'Undine Gold'},
+        WispSilver: {text: 'Wisp Silver', value: 9, source: ['Collected'], psxtext: 'Wisp Silver'},
+        ShadeSilver: {text: 'Shade Silver', value: 10, source: ['Collected'], psxtext: 'Shade Silver'},
+        DryadSilver: {text: 'Dryad Silver', value: 11, source: ['Collected'], psxtext: 'Dryad Silver'},
+        AuraSilver: {text: 'Aura Silver', value: 12, source: ['Collected'], psxtext: 'Aura Silver'},
+        SalaSilver: {text: 'Salamander Silver', value: 13, source: ['Collected'], psxtext: 'Sala Silver'},
+        GnomeSilver: {text: 'Gnome Silver', value: 14, source: ['Collected'], psxtext: 'Gnome Silver'},
+        JinnSilver: {text: 'Jinn Silver', value: 15, source: ['Collected'], psxtext: 'Jinn Silver'},
+        UndineSilver: {text: 'Undine Silver', value: 16, source: ['Collected'], psxtext: 'Undine Silver'},
+        FireStone: {text: 'Firestone', value: 17, source: ['Store'], psxtext: 'Firestone'},
+        EarthStone: {text: 'Earthstone', value: 18, source: ['Store'], psxtext: 'Earthstone'},
+        WindStone: {text: 'Windstone', value: 19, source: ['Store'], psxtext: 'Windstone'},
+        WaterStone: {text: 'Waterstone', value: 20, source: ['Store'], psxtext: 'Waterstone'},
+        SunCrystal: {text: 'Sun Crystal', value: 21, source: ['Store'], psxtext: 'Sun Crystal'},
+        MoonCrystal: {text: 'Moon Crystal', value: 22, source: ['Store'], psxtext: 'Moon Crystal'},
+        GlowCrystal: {text: 'Glow Crystal', value: 23, source: ['Store'], psxtext: 'Glow Crystal'},
+        ChaosCrystal: {text: 'Chaos Crystal', value: 24, source: ['Store'], psxtext: 'Chaos Crystal'},
+        RoundSeed: {text: 'Round Seed', value: 25, psxtext: 'Round Seed'},
+        OblongSeed: {text: 'Oblong Seed', value: 26, psxtext: 'Oblong Seed'},
+        CrookedSeed: {text: 'Crooked Seed', value: 27, psxtext: 'Crooked Seed'},
+        BigSeed: {text: 'Big Seed', value: 28, psxtext: 'Big Seed'},
+        SmallSeed: {text: 'Small Seed', value: 29, psxtext: 'Small Seed'},
+        LongSeed: {text: 'Long Seed', value: 30, psxtext: 'Long Seed'},
+        FlatSeed: {text: 'Flat Seed', value: 31, psxtext: 'Flat Seed'},
+        SpinySeed: {text: 'Spiny Seed', value: 32, psxtext: 'Spiny Seed'},
+        Bellgrapes: {text: 'Bellgrapes', value: 33, source: ['Orchard'], psxtext: 'Bellgrapes'},
+        Diceberry: {text: 'Diceberry', value: 34, source: ['Orchard'], psxtext: 'Diceberry'},
+        Mangoelephant: {text: 'Mangolephant', value: 35, source: ['Orchard'], psxtext: 'Mangolephant'},
+        LoquatShoes: {text: 'Loquat-Shoe', value: 36, source: ['Orchard'], psxtext: 'Loquat-Shoes'},
+        PearOheels: {text: 'Pear o\'Heels', value: 37, source: ['Orchard'], psxtext: 'Pear o\'Heels'},
+        Squalphin: {text: 'Squalphin', value: 38, source: ['Orchard'], psxtext: 'Squalphin'},
+        Citrisquid: {text: 'Citrisquid', value: 39, source: ['Orchard'], psxtext: 'Citrisquid'},
+        Springanana: {text: 'Springanana', value: 40, source: ['Orchard'], psxtext: 'Springanana'},
+        PeachPuppy: {text: 'Peach Puppy', value: 41, source: ['Orchard'], psxtext: 'Peach Puppy'},
+        Apricat: {text: 'Apricat', value: 42, source: ['Orchard'], psxtext: 'Apricat'},
+        Applesocks: {text: 'Applesock', value: 43, source: ['Orchard'], psxtext: 'Applesocks'},
+        Whalamato: {text: 'Whalamato', value: 44, source: ['Orchard'], psxtext: 'Whalamato'},
+        PineOclock: {text: 'Pine o\'Clock', value: 45, source: ['Orchard'], psxtext: 'Pine o\'Clock'},
+        FishyFruit: {text: 'Fishy Fruit', value: 46, source: ['Orchard'], psxtext: 'Fishy Fruit'},
+        Boarmelon: {text: 'Boarmelon', value: 47, source: ['Orchard'], psxtext: 'Boarmelon'},
+        Rhinoloupe: {text: 'Rhinoloupe', value: 48, source: ['Orchard'], psxtext: 'Rhinoloupe'},
+        Orcaplant: {text: 'Orcaplant', value: 49, source: ['Orchard'], psxtext: 'Orcaplant'},
+        Garlicrown: {text: 'Garlicrown', value: 50, source: ['Orchard'], psxtext: 'Garlicrown'},
+        HoneyOnion: {text: 'Honey Onion', value: 51, source: ['Orchard'], psxtext: 'Honey Onion'},
+        SweetMoai: {text: 'Sweet Moai', value: 52, source: ['Orchard'], psxtext: 'Sweet Moai'},
+        SpinyCarrot: {text: 'Spiny Carrot', value: 53, source: ['Orchard'], psxtext: 'Spiny Carrot'},
+        Conchurnip: {text: 'Conchurnip', value: 54, source: ['Orchard'], psxtext: 'Conchurnip'},
+        Cornflower: {text: 'Cornflower', value: 55, source: ['Orchard'], psxtext: 'Cornflower'},
+        Cabadillo: {text: 'Cabadillo', value: 56, source: ['Orchard'], psxtext: 'Cabadillo'},
+        Needlettuce: {text: 'Needlettuce', value: 57, source: ['Orchard'], psxtext: 'Needlettuce'},
+        CherryBombs: {text: 'Cherry Bombs', value: 58, source: ['Orchard'], psxtext: 'Cherry Bombs'},
+        MaskedPotato: {text: 'Masked Potato', value: 59, source: ['Orchard'], psxtext: 'Masked Potato'},
+        Lilipods: {text: 'Lilipods', value: 60, source: ['Orchard'], psxtext: 'Lilipods'},
+        RocketPapaya: {text: 'Rocket Papaya', value: 61, source: ['Orchard'], psxtext: 'Rocket Papaya'},
+        Orangeopus: {text: 'Orange\'opus', value: 62, source: ['Orchard'], psxtext: 'Orange\'opus'},
+        Bumpkin: {text: 'Bumpkin', value: 63, source: ['Orchard'], psxtext: 'Bumpkin'},
+        HeartMint: {text: 'Heart Mint', value: 64, source: ['Store', 'Orchard'], psxtext: 'Heart Mint'},
+        SpadeBasil: {text: 'Spade Basil', value: 65, source: ['Store', 'Orchard'], psxtext: 'Spade Basil'},
+        Dialaurel: {text: 'Dialaurel', value: 66, source: ['Store', 'Orchard'], psxtext: 'Dialaurel'},
+        GoldClover: {text: 'Gold Clover', value: 67, source: ['Store', 'Orchard'], psxtext: 'Gold Clover'},
+        MushInABox: {text: 'Mush-in-a-Box', value: 68, source: ['Orchard'], psxtext: 'Mush-in-a-Box'},
+        Toadstoolshed: {text: 'Toadstoolshed', value: 69, source: ['Orchard'], psxtext: 'Toadstoolshed'},
+        AllMeat: {text: 'All Meat', value: 70, psxtext: 'All Meat'},
+        SharpClaw: {text: 'Sharp Claw', value: 71, psxtext: 'Sharp Claw'},
+        PoisonFang: {text: 'Poison Fang', value: 72, psxtext: 'Poison Fang'},
+        GiantsHorn: {text: 'Giant\'s Horn', value: 73, psxtext: 'Giant\'s Horn'},
+        Scissors: {text: 'Pincer', value: 74, psxtext: 'Scissors'},
+        HealingClaw: {text: 'Healing Claw', value: 75, psxtext: '\'Healing Claw'},
+        ZombieClaw: {text: 'Zombie Claw', value: 76, psxtext: 'Zombie Claw'},
+        VampireFang: {text: 'Vampire Fang', value: 77, psxtext: 'Vampire Fang'},
+        LittleEye: {text: 'Little Eye', value: 78, psxtext: 'Little Eye'},
+        SleepyEye: {text: 'Sleepy Eye', value: 79, psxtext: 'Sleepy Eye'},
+        SillyEye: {text: 'Silly Eye', value: 80, psxtext: 'Silly Eye'},
+        DangerousEye: {text: 'Dangerous Eye', value: 81, psxtext: 'Dangerous Eye'},
+        AngryEye: {text: 'Angry Eye', value: 82, psxtext: 'Angry Eye'},
+        BlankEye: {text: 'Blank Eye', value: 83, psxtext: 'Blank Eye'},
+        WickedEye: {text: 'Wicked Eye', value: 84, psxtext: 'Wicked Eye'},
+        CreepyEye: {text: 'Creepy Eye', value: 85, psxtext: 'Creepy Eye'},
+        AngelFeather: {text: 'Angel Feather', value: 86, psxtext: 'Angel Feather'},
+        RavenFeather: {text: 'Raven Feather', value: 87, psxtext: 'Raven Feather'},
+        ClearFeather: {text: 'Clear Feather', value: 88, psxtext: 'Clear Feather'},
+        MothWing: {text: 'Moth Wing', value: 89, psxtext: 'Moth Wing'},
+        FlamingQuill: {text: 'Flaming Quill', value: 90, psxtext: 'Flaming Quill'},
+        WhiteFeather: {text: 'White Feather', value: 91, psxtext: 'White Feather'},
+        AromaOil: {text: 'Aroma Oil', value: 92, psxtext: 'Aroma Oil'},
+        DragonBlood: {text: 'Dragon Blood', value: 93, psxtext: 'Dragon Blood'},
+        Acid: {text: 'Acid', value: 94, psxtext: 'Acid'},
+        HolyWater: {text: 'Holy Water', value: 95, psxtext: 'Holy Water'},
+        Ether: {text: 'Ether', value: 96, psxtext: 'Ether'},
+        Mercury: {text: 'Mercury', value: 97, psxtext: 'Mercury'},
+        StinkyBreath: {text: 'Stinky Breath', value: 98, psxtext: 'Stinky Breath'},
+        GhostsHowl: {text: 'Ghosts Howl', value: 99, psxtext: 'Ghosts Howl'},
+        DragonsBreath: {text: 'Dragon Breath', value: 100, psxtext: 'Dragon Breath'},
+        VirginsSigh: {text: 'Damsel\'s Sigh', value: 101, psxtext: 'Virgin\'s Sigh'},
+        Electricity: {text: 'Electricity', value: 102, psxtext: 'Electricity'},
+        Moss: {text: 'Moss', value: 103, psxtext: 'Moss'},
+        EarOfWheat: {text: 'Ear Of Wheat', value: 104, psxtext: 'Ear Of Wheat'},
+        BakedRoach: {text: 'Baked Roach', value: 105, psxtext: 'Baked Roach'},
+        BlackenedBat: {text: 'Blackened Bat', value: 106, psxtext: 'Blackened Bat'},
+        Sulpher: {text: 'Sulphur', value: 107, psxtext: 'Sulpher'},
+        PoisonPowder: {text: 'Poison Powder', value: 108, psxtext: 'Poison Powder'},
+        SleepyPowder: {text: 'Sleepy Powder', value: 109, psxtext: 'Sleepy Powder'},
+        KnockoutDust: {text: 'Knockout Dust', value: 110, psxtext: 'Knockout Dust'},
+        Rust: {text: 'Rust', value: 111, psxtext: 'Rust'},
+        GraveDirt: {text: 'Grave Dirt', value: 112, psxtext: 'Grave Dirt'},
+        Ash: {text: 'Ash', value: 113, psxtext: 'Ash'},
+        Hairball: {text: 'Hairball', value: 114, psxtext: 'Hairball'},
+        Needle: {text: 'Needle', value: 115, psxtext: 'Needle'},
+        MirrorPiece: {text: 'Mirror Piece', value: 116, psxtext: 'Mirror Piece'},
+        WadOfWool: {text: 'Wad Of Wool', value: 117, psxtext: 'Wad Of Wool'},
+        MessyScroll: {text: 'Messy Scroll', value: 118, psxtext: 'Messy Scroll'},
+        GreenballBun: {text: 'Greenball Bun', value: 119, psxtext: 'Greenball Bun'},
+        TakoBug: {text: 'Tako Bug', value: 120, psxtext: 'Tako Bug'}
+    }
+)
+export {ITEM};

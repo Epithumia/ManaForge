@@ -1,7 +1,7 @@
 import {ESSENCE, SPECIAL, STAT, STICKY_F, WORLD_CARD, IMMUNITY} from "@/forge/enums";
 import {Raven, Wolf, Witch} from "@/forge/cards/other"
 import {No_Item} from "@/forge/items";
-import {equip_props, if_array, mat_props, power2} from "@/forge/lists";
+import {equip_props, mat_props, power2} from "@/forge/lists";
 import {Phoenix} from "@/forge/cards/beast_gods";
 import {Dryad} from "@/forge/cards/elemental_spirits";
 import {
@@ -15,6 +15,7 @@ import {
 } from "@/forge/cards/pixies";
 import {No_Card} from "@/forge/cards/No_Card";
 import {PLUNGE1, PLUNGE2, PLUNGE3} from "@/forge/plunges/enums";
+import {item_list} from "@/forge/items/list";
 
 // TODO: https://github.com/aberonni/nightwatch-test-coverage-example
 
@@ -923,7 +924,7 @@ class ForgedItem {
     set_item(item_code) {
         this.reset_explanations()
         this.reset_highlights()
-        this.item = if_array[item_code];
+        this.item = item_list[item_code];
     }
 
     set_active_world_card() {
