@@ -5,11 +5,11 @@ class Plunge {
             throw new TypeError("Can not construct abstract class.");
         }
         // Check if all instance methods are implemented.
-        if (this.CPRINT === Plunge.prototype.text()) {
+        if (this.text === Plunge.prototype.text()) {
             // Error: Child has not implemented this abstract method.
-            throw new TypeError("Please implement abstract method get_text().");
+            throw new TypeError("Please implement abstract method text().");
         }
-        if (this.PRICE === Plunge.prototype.value()) {
+        if (this.value === Plunge.prototype.value()) {
             // Error: Child has not implemented this abstract method.
             throw new TypeError("Please implement abstract method value.");
         }
