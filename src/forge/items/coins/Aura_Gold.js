@@ -1,6 +1,6 @@
 import {ESSENCE} from "@/forge/enums";
 import {Aura} from "@/forge/cards/elemental_spirits";
-import {Item} from "@/forge/items";
+import {Item} from "@/forge/items/Item";
 
 class Aura_Gold extends Item {
     constructor() {

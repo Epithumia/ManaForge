@@ -1,6 +1,6 @@
 import {ESSENCE} from "@/forge/enums";
 import {Jinn} from "@/forge/cards/elemental_spirits";
-import {Item} from "@/forge/items";
+import {Item} from "@/forge/items/Item";
 
 class Jinn_Silver extends Item {
     constructor() {

@@ -1,6 +1,6 @@
 import {ESSENCE} from "@/forge/enums";
 import {Wisp} from "@/forge/cards/elemental_spirits";
-import {Item} from "@/forge/items";
+import {Item} from "@/forge/items/Item";
 
 class Wisp_Gold extends Item {
     constructor() {

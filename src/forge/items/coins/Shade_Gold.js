@@ -1,6 +1,6 @@
 import {ESSENCE} from "@/forge/enums";
 import {Shade} from "@/forge/cards/elemental_spirits";
-import {Item} from "@/forge/items";
+import {Item} from "@/forge/items/Item";
 
 class Shade_Gold extends Item {
     constructor() {

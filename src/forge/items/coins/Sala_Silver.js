@@ -1,6 +1,6 @@
 import {ESSENCE} from "@/forge/enums";
 import {Salamander} from "@/forge/cards/elemental_spirits";
-import {Item} from "@/forge/items";
+import {Item} from "@/forge/items/Item";
 
 class Sala_Silver extends Item {
     constructor() {

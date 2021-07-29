@@ -1,6 +1,6 @@
 import {ESSENCE} from "@/forge/enums";
 import {Gnome} from "@/forge/cards/elemental_spirits";
-import {Item} from "@/forge/items";
+import {Item} from "@/forge/items/Item";
 
 class Gnome_Silver extends Item {
     constructor() {

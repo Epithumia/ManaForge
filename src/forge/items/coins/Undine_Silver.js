@@ -1,6 +1,6 @@
 import {ESSENCE} from "@/forge/enums";
 import {Undine} from "@/forge/cards/elemental_spirits";
-import {Item} from "@/forge/items";
+import {Item} from "@/forge/items/Item";
 
 class Undine_Silver extends Item {
     constructor() {

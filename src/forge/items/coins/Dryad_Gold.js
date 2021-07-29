@@ -1,6 +1,6 @@
 import {ESSENCE} from "@/forge/enums";
 import {Dryad} from "@/forge/cards/elemental_spirits";
-import {Item} from "@/forge/items";
+import {Item} from "@/forge/items/Item";
 
 class Dryad_Gold extends Item {
     constructor() {
