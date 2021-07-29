@@ -3,20 +3,34 @@ import {ESSENCE} from "@/forge/enums";
 import {Jinn} from "@/forge/cards/elemental_spirits";
 
 class Wind_Stone extends Item {
-
-    IPRINT() {
-        return "Wind Stone";
+    constructor() {
+        super();
     }
 
-    ENERGY() {
+    text(language) {
+        switch(language) {
+            case 'classic':
+                return "Wind Stone"
+            case 'jp':
+                return "[Wind Stone]"
+            default:
+                return "Wind Stone"
+        }
+    }
+
+    energy() {
         return 24;
     }
 
-    CODE(f) {
+    code(f) {
         f.taint(ESSENCE.JINN);
         if (f.getEnergy() >= 8) {
             f.prehidden = new Jinn();
         }
+    }
+
+    source() {
+        return ["Store"];
     }
 
 }

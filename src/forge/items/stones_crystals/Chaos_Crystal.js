@@ -2,22 +2,33 @@ import {Ancient_Moon} from "@/forge/cards/world";
 import {Item} from "@/forge/items/Item";
 
 class Chaos_Crystal extends Item {
-
-
-    IPRINT() {
-        return "Chaos Crystal";
+    constructor() {
+        super();
     }
 
+    text(language) {
+        switch(language) {
+            case 'classic':
+                return "Chaos Crystal"
+            case 'jp':
+                return "[Chaos Crystal]"
+            default:
+                return "Chaos Crystal"
+        }
+    }
 
-    ENERGY() {
+    energy() {
         return 24;
     }
 
-
-    CODE(f) {
+    code(f) {
         if (f.getEnergy() >= 16) {
             f.prehidden = new Ancient_Moon();
         }
+    }
+
+    source() {
+        return ["Store"];
     }
 
 }

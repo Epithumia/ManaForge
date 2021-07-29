@@ -3,20 +3,34 @@ import {Gnome} from "@/forge/cards/elemental_spirits";
 import {Item} from "@/forge/items/Item";
 
 class Earth_Stone extends Item {
-
-    IPRINT() {
-        return "Earth Stone";
+    constructor() {
+        super();
     }
 
-    ENERGY() {
+    text(language) {
+        switch(language) {
+            case 'classic':
+                return "Earth Stone"
+            case 'jp':
+                return "[Earth Stone]"
+            default:
+                return "Earth Stone"
+        }
+    }
+
+    energy() {
         return 24;
     }
 
-    CODE(f) {
+    code(f) {
         f.taint(ESSENCE.GNOME);
         if (f.getEnergy() >= 8) {
             f.prehidden = new Gnome();
         }
+    }
+
+    source() {
+        return ["Store"];
     }
 
 }
