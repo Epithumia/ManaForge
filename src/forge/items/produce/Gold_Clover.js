@@ -1,20 +1,31 @@
 import {Item} from "@/forge/items/Item";
 
 class Gold_Clover extends Item {
-
-
-    IPRINT() {
-        return "Gold Clover";
+    constructor() {
+        super();
     }
 
+    text(language) {
+        switch(language) {
+            case 'classic':
+                return "Gold Clover"
+            case 'jp':
+                return "ゴールドクローバー"
+            default:
+                return "Gold Clover"
+        }
+    }
 
-    ENERGY() {
+    energy() {
         return 64;
     }
 
-
-    CODE(f) {
+    code(f) {
         f.setHeavy(f.perc125(f.getHeavy()));
+    }
+
+    source() {
+        return ["Store", "Orchard"];
     }
 
 }

@@ -2,19 +2,26 @@ import {Spirit_Of_Shoes} from "@/forge/cards/spirits";
 import {Item} from "@/forge/items/Item";
 
 class Loquat_Shoes extends Item {
-
-
-    IPRINT() {
-        return "Loquat shoes";
+    constructor() {
+        super();
     }
 
+    text(language) {
+        switch(language) {
+            case 'classic':
+                return "Loquat-Shoes"
+            case 'jp':
+                return "シューズビワ"
+            default:
+                return "Loquat-Shoe"
+        }
+    }
 
-    ENERGY() {
+    energy() {
         return 16;
     }
 
-
-    CODE(f) {
+    code(f) {
         if (f.BOOTS() || f.SHOES()) {
             f.setStrike(f.perc125(f.getStrike()));
             f.setSlash(f.perc125(f.getSlash()));
@@ -23,6 +30,10 @@ class Loquat_Shoes extends Item {
         if (f.getEnergy() >= 16) {
             f.prehidden = new Spirit_Of_Shoes();
         }
+    }
+
+    source() {
+        return ["Orchard"];
     }
 
 }

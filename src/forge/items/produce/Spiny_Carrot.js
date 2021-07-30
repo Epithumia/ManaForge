@@ -2,22 +2,33 @@ import {ESSENCE} from "@/forge/enums";
 import {Item} from "@/forge/items/Item";
 
 class Spiny_Carrot extends Item {
-
-
-    IPRINT() {
-        return "Spiny Carrot";
+    constructor() {
+        super();
     }
 
+    text(language) {
+        switch(language) {
+            case 'classic':
+                return "Spiny Carrot"
+            case 'jp':
+                return "ツノガイニンジン"
+            default:
+                return "Spiny Carrot"
+        }
+    }
 
-    ENERGY() {
+    energy() {
         return 8;
     }
 
-
-    CODE(f) {
+    code(f) {
         f.setSharp(f.perc125(f.getSharp()));
         f.setHeavy(f.perc75(f.getHeavy()));
         f.taint(ESSENCE.UNDINE);
+    }
+
+    source() {
+        return ["Orchard"];
     }
 
 }

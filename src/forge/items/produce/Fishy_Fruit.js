@@ -3,23 +3,34 @@ import {ESSENCE, STAT} from "@/forge/enums";
 import {Item} from "@/forge/items/Item";
 
 class Fishy_Fruit extends Item {
-
-
-    IPRINT() {
-        return "Fishy Fruit";
+    constructor() {
+        super();
     }
 
+    text(language) {
+        switch(language) {
+            case 'classic':
+                return "Fishy Fruit"
+            case 'jp':
+                return "フィッシュフルーツ"
+            default:
+                return "Fishy Fruit"
+        }
+    }
 
-    ENERGY() {
+    energy() {
         return 32;
     }
 
-
-    CODE(f) {
+    code(f) {
         f.prehidden = new Spring();
         f.stat_limits(-1, 3, STAT.MAG);
         f.increase_stat(STAT.MAG);
         f.taint(ESSENCE.UNDINE);
+    }
+
+    source() {
+        return ["Orchard"];
     }
 
 }

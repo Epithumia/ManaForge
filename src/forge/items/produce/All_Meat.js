@@ -1,19 +1,31 @@
 import {Item} from "@/forge/items/Item";
 
 class All_Meat extends Item {
-
-
-    IPRINT() {
-        return "Any Meat";
+    constructor() {
+        super();
     }
 
+    text(language) {
+        switch(language) {
+            case 'classic':
+                return "Any Meat"
+            case 'jp':
+                return "肉"
+            default:
+                return "Any Meat"
+        }
+    }
 
-    ENERGY() {
+    energy() {
         return 16;
     }
 
     // eslint-disable-next-line no-unused-vars
-    CODE(f) {
+    code(f) {
+    }
+
+    source() {
+        return ["Drop"];
     }
 
 }

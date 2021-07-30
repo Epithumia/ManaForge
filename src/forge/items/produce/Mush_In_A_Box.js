@@ -2,20 +2,31 @@ import {ESSENCE} from "@/forge/enums";
 import {Item} from "@/forge/items/Item";
 
 class Mush_In_A_Box extends Item {
-
-
-    IPRINT() {
-        return "Mush-In-A-Box";
+    constructor() {
+        super();
     }
 
+    text(language) {
+        switch(language) {
+            case 'classic':
+                return "Mush-In-A-Box"
+            case 'jp':
+                return "ドッキリマッシュ"
+            default:
+                return "Mush-In-A-Box"
+        }
+    }
 
-    ENERGY() {
+    energy() {
         return 32;
     }
 
-
-    CODE(f) {
+    code(f) {
         f.taint(ESSENCE.SHADE);
+    }
+
+    source() {
+        return ["Store", "Orchard"];
     }
 
 }

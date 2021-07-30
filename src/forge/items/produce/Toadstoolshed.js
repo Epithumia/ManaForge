@@ -2,21 +2,32 @@ import {Item} from "@/forge/items/Item";
 import {ESSENCE, STAT} from "@/forge/enums";
 
 class Toadstoolshed extends Item {
-
-
-    IPRINT() {
-        return "Toadstoolshed";
+    constructor() {
+        super();
     }
 
+    text(language) {
+        switch(language) {
+            case 'classic':
+                return "Toadstoolshed"
+            case 'jp':
+                return "小屋ダケ"
+            default:
+                return "Toadstoolshed"
+        }
+    }
 
-    ENERGY() {
+    energy() {
         return 64;
     }
 
-
-    CODE(f) {
+    code(f) {
         f.increase_stat(STAT.ALL);
         f.taint(ESSENCE.SHADE);
+    }
+
+    source() {
+        return ["Orchard"];
     }
 
 }

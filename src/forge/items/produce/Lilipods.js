@@ -3,24 +3,35 @@ import {Enticed_Nymph} from "@/forge/cards/maidens";
 import {Item} from "@/forge/items/Item";
 
 class Lilipods extends Item {
-
-
-    IPRINT() {
-        return "Lilipods";
+    constructor() {
+        super();
     }
 
+    text(language) {
+        switch(language) {
+            case 'classic':
+                return "Lilipods"
+            case 'jp':
+                return "ユリグリンピース"
+            default:
+                return "Lilipods"
+        }
+    }
 
-    ENERGY() {
+    energy() {
         return 8;
     }
 
-
-    CODE(f) {
+    code(f) {
         f.stat_limits(-1, 3, STAT.SPR);
         f.increase_stat(STAT.SPR);
         if (f.getEnergy() >= 8) {
             f.prehidden = new Enticed_Nymph();
         }
+    }
+
+    source() {
+        return ["Orchard"];
     }
 
 }

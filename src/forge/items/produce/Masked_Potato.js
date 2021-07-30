@@ -1,21 +1,32 @@
 import {Item} from "@/forge/items/Item";
 
 class Masked_Potato extends Item {
-
-
-    IPRINT() {
-        return "Masked Potato";
+    constructor() {
+        super();
     }
 
+    text(language) {
+        switch(language) {
+            case 'classic':
+                return "Masked Potato"
+            case 'jp':
+                return "マスクイモ"
+            default:
+                return "Masked Potato"
+        }
+    }
 
-    ENERGY() {
+    energy() {
         return 24;
     }
 
-
-    CODE(f) {
+    code(f) {
         f.setSharp(f.perc75(f.getSharp()));
         f.setHeavy(f.perc125(f.getHeavy()));
+    }
+
+    source() {
+        return ["OrchardF"]
     }
 
 }

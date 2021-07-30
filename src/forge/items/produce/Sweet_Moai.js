@@ -1,19 +1,26 @@
 import {Item} from "@/forge/items/Item";
 
 class Sweet_Moai extends Item {
-
-
-    IPRINT() {
-        return "Sweet Moai";
+    constructor() {
+        super();
     }
 
+    text(language) {
+        switch(language) {
+            case 'classic':
+                return "Sweet Moai"
+            case 'jp':
+                return "スウィートモアイ"
+            default:
+                return "Sweet Moai"
+        }
+    }
 
-    ENERGY() {
+    energy() {
         return 32;
     }
 
-
-    CODE(f) {
+    code(f) {
         if (f.HELM()) {
             f.setStrike(f.perc125(f.getStrike()));
             f.setSlash(f.perc125(f.getSlash()));
@@ -23,6 +30,10 @@ class Sweet_Moai extends Item {
             f.setSlash(f.perc150(f.getSlash()));
             f.setThrust(f.perc150(f.getThrust()));
         }
+    }
+
+    source() {
+        return ["Orchard"];
     }
 
 }

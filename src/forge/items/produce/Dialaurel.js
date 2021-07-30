@@ -2,22 +2,34 @@ import {Metropolis} from "@/forge/cards/stage";
 import {Item} from "@/forge/items/Item";
 
 class Dialaurel extends Item {
-
-
-    IPRINT() {
-        return "Dialaurel";
+    constructor() {
+        super();
     }
 
+    text(language) {
+        switch(language) {
+            case 'classic':
+                return "Dialaurel"
+            case 'jp':
+                return "ダイヤローレル"
+            default:
+                return "Dialaurel"
+        }
+    }
 
-    ENERGY() {
+    energy() {
         return 64;
     }
 
-
-    CODE(f) {
+    code(f) {
         if (0 === f.getSa() && f.getSh() > 0 && f.getEnergy() >= 8) {
-            f.prehidden = new Metropolis();
-        }
+        f.prehidden = new Metropolis();
+    }
+
+    }
+
+    source() {
+        return ["Store", "Orchard"];
     }
 
 }

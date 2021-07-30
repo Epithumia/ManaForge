@@ -2,21 +2,32 @@ import {STAT} from "@/forge/enums";
 import {Item} from "@/forge/items/Item";
 
 class Bellgrapes extends Item {
-
-
-    IPRINT() {
-        return "Bellgrapes";
+    constructor() {
+        super();
     }
 
+    text(language) {
+        switch(language) {
+            case 'classic':
+                return "Bellgrapes"
+            case 'jp':
+                return "すずぶどう"
+            default:
+                return "Bellgrapes"
+        }
+    }
 
-    ENERGY() {
+    energy() {
         return 64;
     }
 
-
-    CODE(f) {
+    code(f) {
         f.stat_limits(-5, 10, STAT.MAG);
         f.increase_stat(STAT.MAG);
+    }
+
+    source() {
+        return ["Orchard"];
     }
 
 }

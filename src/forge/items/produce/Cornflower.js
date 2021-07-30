@@ -2,20 +2,31 @@ import {ESSENCE} from "@/forge/enums";
 import {Item} from "@/forge/items/Item";
 
 class Cornflower extends Item {
-
-
-    IPRINT() {
-        return "Cornflower";
+    constructor() {
+        super();
     }
 
+    text(language) {
+        switch(language) {
+            case 'classic':
+                return "Cornflower"
+            case 'jp':
+                return "ひまわりとうもろこし"
+            default:
+                return "Cornflower"
+        }
+    }
 
-    ENERGY() {
+    energy() {
         return 24;
     }
 
-
-    CODE(f) {
+    code(f) {
         f.taint(ESSENCE.WISP);
+    }
+
+    source() {
+        return ["Orchard"];
     }
 
 }

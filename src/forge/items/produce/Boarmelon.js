@@ -2,21 +2,32 @@ import {STAT} from "@/forge/enums";
 import {Item} from "@/forge/items/Item";
 
 class Boarmelon extends Item {
-
-
-    IPRINT() {
-        return "Boarmelon";
+    constructor() {
+        super();
     }
 
+    text(language) {
+        switch(language) {
+            case 'classic':
+                return "Boarmelon"
+            case 'jp':
+                return "ウリぼうスイカ"
+            default:
+                return "Boarmelon"
+        }
+    }
 
-    ENERGY() {
+    energy() {
         return 32;
     }
 
-
-    CODE(f) {
+    code(f) {
         f.stat_limits(-1, 3, STAT.PWR);
         f.increase_stat(STAT.PWR);
+    }
+
+    source() {
+        return ["Orchard"];
     }
 
 }

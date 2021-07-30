@@ -2,19 +2,26 @@ import {Spirit_Of_Shoes} from "@/forge/cards/spirits";
 import {Item} from "@/forge/items/Item";
 
 class Pear_Oheels extends Item {
-
-
-    IPRINT() {
-        return "Pear O'Heels";
+    constructor() {
+        super();
     }
 
+    text(language) {
+        switch(language) {
+            case 'classic':
+                return "Pear o'Heels"
+            case 'jp':
+                return "ハイピールペア"
+            default:
+                return "Pear o'Heels"
+        }
+    }
 
-    ENERGY() {
+    energy() {
         return 32;
     }
 
-
-    CODE(f) {
+    code(f) {
         if (f.BOOTS() || f.SHOES()) {
             f.setStrike(f.perc125(f.getStrike()));
             f.setSlash(f.perc125(f.getSlash()));
@@ -23,6 +30,10 @@ class Pear_Oheels extends Item {
         if (f.getEnergy() >= 16) {
             f.prehidden = new Spirit_Of_Shoes();
         }
+    }
+
+    source() {
+        return ["Orchard"];
     }
 
 }
