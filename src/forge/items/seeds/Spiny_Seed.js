@@ -3,20 +3,34 @@ import {ESSENCE} from "@/forge/enums";
 import {Item} from "@/forge/items/Item";
 
 class Spiny_Seed extends Item {
-
-    IPRINT() {
-        return "Spiny Seed";
+    constructor() {
+        super();
     }
 
-    ENERGY() {
+    text(language) {
+        switch(language) {
+            case 'classic':
+                return "Spiny Seed"
+            case 'jp':
+                return "とげとげの種"
+            default:
+                return "Spiny Seed"
+        }
+    }
+
+    energy() {
         return 48;
     }
 
-    CODE(f) {
+    code(f) {
         if (f.getDr() >= 5 && f.getEnergy() >= 8) {
             f.prehidden = new Yggdrasil();
         }
         f.taint(ESSENCE.DRYAD);
+    }
+
+    source() {
+        return ["Drop", "Treant"];
     }
 
 }
