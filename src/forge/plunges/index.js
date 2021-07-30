@@ -33,7 +33,7 @@ class Thrust extends Plunge {
             case 'classic':
                 return "Thrust"
             case 'jp':
-                return "[Thrust]"
+                return "コマンドスラスト"
             default:
                 return "Thrust"
         }
@@ -54,7 +54,7 @@ class Double_Shot extends Plunge {
             case 'classic':
                 return "Double Shot"
             case 'jp':
-                return "[Double Shot]"
+                return "コマンドダブル"
             default:
                 return "Double Shot"
         }
@@ -75,7 +75,7 @@ class Uppercut extends Plunge {
             case 'classic':
                 return "Uppercut"
             case 'jp':
-                return "[Uppercut]"
+                return "コマンドアッパー"
             default:
                 return "Uppercut"
         }
@@ -96,7 +96,7 @@ class Shot extends Plunge {
             case 'classic':
                 return "Shot"
             case 'jp':
-                return "[Shot]"
+                return "コマンドショット"
             default:
                 return "Shot"
         }
@@ -117,7 +117,7 @@ class Jump extends Plunge {
             case 'classic':
                 return "Jump"
             case 'jp':
-                return "[Jump]"
+                return "コマンドジャンプ"
             default:
                 return "Jump"
         }
