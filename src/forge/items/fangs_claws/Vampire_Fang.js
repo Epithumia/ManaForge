@@ -3,19 +3,26 @@ import {STAT} from "@/forge/enums";
 import {Witch_Of_Moon} from "@/forge/cards/evil_gods";
 
 class Vampire_Fang extends Item {
-
-
-    IPRINT() {
-        return "Vampire Fang";
+    constructor() {
+        super();
     }
 
+    text(language) {
+        switch(language) {
+            case 'classic':
+                return "Vampire Fang"
+            case 'jp':
+                return "吸血牙"
+            default:
+                return "Vampire Fang"
+        }
+    }
 
-    ENERGY() {
+    energy() {
         return 24;
     }
 
-
-    CODE(f) {
+    code(f) {
         f.stat_limits(-3, 5, STAT.CHM);
         f.stat_limits(-3, 5, STAT.SPR);
         f.increase_stat(STAT.CHM);
@@ -23,6 +30,10 @@ class Vampire_Fang extends Item {
         if (0 === f.getJi() && f.getUn() >= 5 && f.getEnergy() >= 8) {
             f.prehidden = new Witch_Of_Moon();
         }
+    }
+
+    source() {
+        return [];
     }
 
 }

@@ -1,21 +1,32 @@
 import {Item} from "@/forge/items/Item";
 
 class Scissors extends Item {
-
-
-    IPRINT() {
-        return "Scissors";
+    constructor() {
+        super();
     }
 
+    text(language) {
+        switch(language) {
+            case 'classic':
+                return "Scissors"
+            case 'jp':
+                return "ハサミ"
+            default:
+                return "Pincer"
+        }
+    }
 
-    ENERGY() {
+    energy() {
         return 16;
     }
 
-
-    CODE(f) {
+    code(f) {
         f.setForce(f.perc150(f.getForce()));
         f.setTech(f.perc50(f.getTech()));
+    }
+
+    source() {
+        return [];
     }
 
 }
