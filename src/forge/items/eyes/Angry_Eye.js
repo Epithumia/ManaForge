@@ -2,23 +2,34 @@ import {Pixie_Of_Rage} from "@/forge/cards/pixies";
 import {Item} from "@/forge/items/Item";
 
 class Angry_Eye extends Item {
-
-
-    IPRINT() {
-        return "Angry Eye";
+    constructor() {
+        super();
     }
 
+    text(language) {
+        switch(language) {
+            case 'classic':
+                return "Angry Eye"
+            case 'jp':
+                return "けわしい瞳"
+            default:
+                return "Angry Eye"
+        }
+    }
 
-    ENERGY() {
+    energy() {
         return 32;
     }
 
-
-    CODE(f) {
+    code(f) {
         f.setForce(f.perc125(f.getForce()));
         if (f.getEnergy() >= 4) {
             f.prehidden = new Pixie_Of_Rage();
         }
+    }
+
+    source() {
+        return [];
     }
 
 }

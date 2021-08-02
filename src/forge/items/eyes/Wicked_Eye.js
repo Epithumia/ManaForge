@@ -1,20 +1,31 @@
 import {Item} from "@/forge/items/Item";
 
 class Wicked_Eye extends Item {
-
-
-    IPRINT() {
-        return "Wicked Eye";
+    constructor() {
+        super();
     }
 
+    text(language) {
+        switch(language) {
+            case 'classic':
+                return "Wicked Eye"
+            case 'jp':
+                return "よこしまな瞳"
+            default:
+                return "Wicked Eye"
+        }
+    }
 
-    ENERGY() {
+    energy() {
         return 48;
     }
 
-
-    CODE(f) {
+    code(f) {
         f.setSharp(f.perc125(f.getSharp()));
+    }
+
+    source() {
+        return [];
     }
 
 }

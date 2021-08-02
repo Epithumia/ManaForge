@@ -2,19 +2,26 @@ import {Spirit_Of_Forest} from "@/forge/cards/spirits";
 import {Item} from "@/forge/items/Item";
 
 class Moth_Wing extends Item {
-
-
-    IPRINT() {
-        return "Moth Wing";
+    constructor() {
+        super();
     }
 
+    text(language) {
+        switch(language) {
+            case 'classic':
+                return "Moth Wing"
+            case 'jp':
+                return "蝶のはね"
+            default:
+                return "Moth Wing"
+        }
+    }
 
-    ENERGY() {
+    energy() {
         return 32;
     }
 
-
-    CODE(f) {
+    code(f) {
         f.setStrike(f.perc75(f.getStrike()));
         f.setSlash(f.perc75(f.getSlash()));
         f.setThrust(f.perc75(f.getThrust()));
@@ -22,6 +29,10 @@ class Moth_Wing extends Item {
         if (f.getEnergy() >= 8) {
             f.prehidden = new Spirit_Of_Forest();
         }
+    }
+
+    source() {
+        return [];
     }
 
 }
