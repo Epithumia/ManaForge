@@ -6,6 +6,8 @@ class Mush_In_A_Box extends Item {
         super();
     }
 
+    value = 68
+
     text(language) {
         switch(language) {
             case 'classic':

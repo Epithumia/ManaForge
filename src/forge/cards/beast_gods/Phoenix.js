@@ -7,7 +7,7 @@ class Phoenix extends Card {
         super();
     }
 
-    CPRINT(language = '') {
+    text(language = '') {
         switch(language) {
             case 'classic':
                 return "Phoenix"
@@ -18,7 +18,7 @@ class Phoenix extends Card {
         }
     }
 
-    PRICE(price) {
+    price(price) {
         price += 2500;
         return price;
     }

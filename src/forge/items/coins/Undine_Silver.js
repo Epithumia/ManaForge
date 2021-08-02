@@ -7,12 +7,14 @@ class Undine_Silver extends Item {
         super()
     }
 
+    value = 16
+
     text(language) {
         switch(language) {
             case 'classic':
                 return "Undine Silver"
             case 'jp':
-                return "[Undine Silver]"
+                return "ウンディーネの銀貨"
             default:
                 return "Undine Silver"
         }

@@ -6,6 +6,8 @@ class Springanana extends Item {
         super();
     }
 
+    value = 40
+
     text(language) {
         switch(language) {
             case 'classic':

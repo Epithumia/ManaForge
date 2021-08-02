@@ -7,12 +7,14 @@ class Earth_Stone extends Item {
         super();
     }
 
+    value = 18
+
     text(language) {
         switch(language) {
             case 'classic':
                 return "Earth Stone"
             case 'jp':
-                return "[Earth Stone]"
+                return "土のマナストーン"
             default:
                 return "Earth Stone"
         }

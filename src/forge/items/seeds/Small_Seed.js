@@ -7,6 +7,8 @@ class Small_Seed extends Item {
         super();
     }
 
+    value = 29
+
     text(language) {
         switch(language) {
             case 'classic':

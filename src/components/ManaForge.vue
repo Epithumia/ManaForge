@@ -119,37 +119,37 @@
               <span>Click/tap to open</span>
             </div>
             <div class="btnfield16" v-else>
-              <ItemButton v-bind:item="ITEM.WispGold" v-bind:classic="classic"
+              <ItemButton v-bind:item="ITEM.WispGold" v-bind:language="lang"
                           v-on:add-item="add_item($event)"></ItemButton>
-              <ItemButton v-bind:item="ITEM.WispSilver" v-bind:classic="classic"
+              <ItemButton v-bind:item="ITEM.WispSilver" v-bind:language="lang"
                           v-on:add-item="add_item($event)"></ItemButton>
-              <ItemButton v-bind:item="ITEM.ShadeGold" v-bind:classic="classic"
+              <ItemButton v-bind:item="ITEM.ShadeGold" v-bind:language="lang"
                           v-on:add-item="add_item($event)"></ItemButton>
-              <ItemButton v-bind:item="ITEM.ShadeSilver" v-bind:classic="classic"
+              <ItemButton v-bind:item="ITEM.ShadeSilver" v-bind:language="lang"
                           v-on:add-item="add_item($event)"></ItemButton>
-              <ItemButton v-bind:item="ITEM.DryadGold" v-bind:classic="classic"
+              <ItemButton v-bind:item="ITEM.DryadGold" v-bind:language="lang"
                           v-on:add-item="add_item($event)"></ItemButton>
-              <ItemButton v-bind:item="ITEM.DryadSilver" v-bind:classic="classic"
+              <ItemButton v-bind:item="ITEM.DryadSilver" v-bind:language="lang"
                           v-on:add-item="add_item($event)"></ItemButton>
-              <ItemButton v-bind:item="ITEM.AuraGold" v-bind:classic="classic"
+              <ItemButton v-bind:item="ITEM.AuraGold" v-bind:language="lang"
                           v-on:add-item="add_item($event)"></ItemButton>
-              <ItemButton v-bind:item="ITEM.AuraSilver" v-bind:classic="classic"
+              <ItemButton v-bind:item="ITEM.AuraSilver" v-bind:language="lang"
                           v-on:add-item="add_item($event)"></ItemButton>
-              <ItemButton v-bind:item="ITEM.SalaGold" v-bind:classic="classic"
+              <ItemButton v-bind:item="ITEM.SalaGold" v-bind:language="lang"
                           v-on:add-item="add_item($event)"></ItemButton>
-              <ItemButton v-bind:item="ITEM.SalaSilver" v-bind:classic="classic"
+              <ItemButton v-bind:item="ITEM.SalaSilver" v-bind:language="lang"
                           v-on:add-item="add_item($event)"></ItemButton>
-              <ItemButton v-bind:item="ITEM.GnomeGold" v-bind:classic="classic"
+              <ItemButton v-bind:item="ITEM.GnomeGold" v-bind:language="lang"
                           v-on:add-item="add_item($event)"></ItemButton>
-              <ItemButton v-bind:item="ITEM.GnomeSilver" v-bind:classic="classic"
+              <ItemButton v-bind:item="ITEM.GnomeSilver" v-bind:language="lang"
                           v-on:add-item="add_item($event)"></ItemButton>
-              <ItemButton v-bind:item="ITEM.JinnGold" v-bind:classic="classic"
+              <ItemButton v-bind:item="ITEM.JinnGold" v-bind:language="lang"
                           v-on:add-item="add_item($event)"></ItemButton>
-              <ItemButton v-bind:item="ITEM.JinnSilver" v-bind:classic="classic"
+              <ItemButton v-bind:item="ITEM.JinnSilver" v-bind:language="lang"
                           v-on:add-item="add_item($event)"></ItemButton>
-              <ItemButton v-bind:item="ITEM.UndineGold" v-bind:classic="classic"
+              <ItemButton v-bind:item="ITEM.UndineGold" v-bind:language="lang"
                           v-on:add-item="add_item($event)"></ItemButton>
-              <ItemButton v-bind:item="ITEM.UndineSilver" v-bind:classic="classic"
+              <ItemButton v-bind:item="ITEM.UndineSilver" v-bind:language="lang"
                           v-on:add-item="add_item($event)"></ItemButton>
             </div>
           </fieldset>
@@ -159,21 +159,21 @@
               <span>Click/tap to open</span>
             </div>
             <div class="btnfield8" v-else>
-              <ItemButton v-bind:item="ITEM.FireStone" v-bind:classic="classic"
+              <ItemButton v-bind:item="ITEM.FireStone" v-bind:language="lang"
                           v-on:add-item="add_item($event)"></ItemButton>
-              <ItemButton v-bind:item="ITEM.EarthStone" v-bind:classic="classic"
+              <ItemButton v-bind:item="ITEM.EarthStone" v-bind:language="lang"
                           v-on:add-item="add_item($event)"></ItemButton>
-              <ItemButton v-bind:item="ITEM.WindStone" v-bind:classic="classic"
+              <ItemButton v-bind:item="ITEM.WindStone" v-bind:language="lang"
                           v-on:add-item="add_item($event)"></ItemButton>
-              <ItemButton v-bind:item="ITEM.WaterStone" v-bind:classic="classic"
+              <ItemButton v-bind:item="ITEM.WaterStone" v-bind:language="lang"
                           v-on:add-item="add_item($event)"></ItemButton>
-              <ItemButton v-bind:item="ITEM.SunCrystal" v-bind:classic="classic"
+              <ItemButton v-bind:item="ITEM.SunCrystal" v-bind:language="lang"
                           v-on:add-item="add_item($event)"></ItemButton>
-              <ItemButton v-bind:item="ITEM.MoonCrystal" v-bind:classic="classic"
+              <ItemButton v-bind:item="ITEM.MoonCrystal" v-bind:language="lang"
                           v-on:add-item="add_item($event)"></ItemButton>
-              <ItemButton v-bind:item="ITEM.GlowCrystal" v-bind:classic="classic"
+              <ItemButton v-bind:item="ITEM.GlowCrystal" v-bind:language="lang"
                           v-on:add-item="add_item($event)"></ItemButton>
-              <ItemButton v-bind:item="ITEM.ChaosCrystal" v-bind:classic="classic"
+              <ItemButton v-bind:item="ITEM.ChaosCrystal" v-bind:language="lang"
                           v-on:add-item="add_item($event)"></ItemButton>
             </div>
           </fieldset>
@@ -183,21 +183,21 @@
               <span>Click/tap to open</span>
             </div>
             <div class="btnfield8" v-else>
-              <ItemButton v-bind:item="ITEM.RoundSeed" v-bind:classic="classic"
+              <ItemButton v-bind:item="ITEM.RoundSeed" v-bind:language="lang"
                           v-on:add-item="add_item($event)"></ItemButton>
-              <ItemButton v-bind:item="ITEM.OblongSeed" v-bind:classic="classic"
+              <ItemButton v-bind:item="ITEM.OblongSeed" v-bind:language="lang"
                           v-on:add-item="add_item($event)"></ItemButton>
-              <ItemButton v-bind:item="ITEM.CrookedSeed" v-bind:classic="classic"
+              <ItemButton v-bind:item="ITEM.CrookedSeed" v-bind:language="lang"
                           v-on:add-item="add_item($event)"></ItemButton>
-              <ItemButton v-bind:item="ITEM.BigSeed" v-bind:classic="classic"
+              <ItemButton v-bind:item="ITEM.BigSeed" v-bind:language="lang"
                           v-on:add-item="add_item($event)"></ItemButton>
-              <ItemButton v-bind:item="ITEM.SmallSeed" v-bind:classic="classic"
+              <ItemButton v-bind:item="ITEM.SmallSeed" v-bind:language="lang"
                           v-on:add-item="add_item($event)"></ItemButton>
-              <ItemButton v-bind:item="ITEM.LongSeed" v-bind:classic="classic"
+              <ItemButton v-bind:item="ITEM.LongSeed" v-bind:language="lang"
                           v-on:add-item="add_item($event)"></ItemButton>
-              <ItemButton v-bind:item="ITEM.FlatSeed" v-bind:classic="classic"
+              <ItemButton v-bind:item="ITEM.FlatSeed" v-bind:language="lang"
                           v-on:add-item="add_item($event)"></ItemButton>
-              <ItemButton v-bind:item="ITEM.SpinySeed" v-bind:classic="classic"
+              <ItemButton v-bind:item="ITEM.SpinySeed" v-bind:language="lang"
                           v-on:add-item="add_item($event)"></ItemButton>
             </div>
           </fieldset>
@@ -207,81 +207,81 @@
               <span>Click/tap to open</span>
             </div>
             <div class="btnfield40" v-else>
-              <ItemButton v-bind:item="ITEM.Bellgrapes" v-bind:classic="classic"
+              <ItemButton v-bind:item="ITEM.Bellgrapes" v-bind:language="lang"
                           v-on:add-item="add_item($event)"></ItemButton>
-              <ItemButton v-bind:item="ITEM.Diceberry" v-bind:classic="classic"
+              <ItemButton v-bind:item="ITEM.Diceberry" v-bind:language="lang"
                           v-on:add-item="add_item($event)"></ItemButton>
-              <ItemButton v-bind:item="ITEM.Mangoelephant" v-bind:classic="classic"
+              <ItemButton v-bind:item="ITEM.Mangoelephant" v-bind:language="lang"
                           v-on:add-item="add_item($event)"></ItemButton>
-              <ItemButton v-bind:item="ITEM.LoquatShoes" v-bind:classic="classic"
+              <ItemButton v-bind:item="ITEM.LoquatShoes" v-bind:language="lang"
                           v-on:add-item="add_item($event)"></ItemButton>
-              <ItemButton v-bind:item="ITEM.PearOheels" v-bind:classic="classic"
+              <ItemButton v-bind:item="ITEM.PearOheels" v-bind:language="lang"
                           v-on:add-item="add_item($event)"></ItemButton>
-              <ItemButton v-bind:item="ITEM.Squalphin" v-bind:classic="classic"
+              <ItemButton v-bind:item="ITEM.Squalphin" v-bind:language="lang"
                           v-on:add-item="add_item($event)"></ItemButton>
-              <ItemButton v-bind:item="ITEM.Citrisquid" v-bind:classic="classic"
+              <ItemButton v-bind:item="ITEM.Citrisquid" v-bind:language="lang"
                           v-on:add-item="add_item($event)"></ItemButton>
-              <ItemButton v-bind:item="ITEM.Springanana" v-bind:classic="classic"
+              <ItemButton v-bind:item="ITEM.Springanana" v-bind:language="lang"
                           v-on:add-item="add_item($event)"></ItemButton>
-              <ItemButton v-bind:item="ITEM.PeachPuppy" v-bind:classic="classic"
+              <ItemButton v-bind:item="ITEM.PeachPuppy" v-bind:language="lang"
                           v-on:add-item="add_item($event)"></ItemButton>
-              <ItemButton v-bind:item="ITEM.Apricat" v-bind:classic="classic"
+              <ItemButton v-bind:item="ITEM.Apricat" v-bind:language="lang"
                           v-on:add-item="add_item($event)"></ItemButton>
-              <ItemButton v-bind:item="ITEM.Applesocks" v-bind:classic="classic"
+              <ItemButton v-bind:item="ITEM.Applesocks" v-bind:language="lang"
                           v-on:add-item="add_item($event)"></ItemButton>
-              <ItemButton v-bind:item="ITEM.Whalamato" v-bind:classic="classic"
+              <ItemButton v-bind:item="ITEM.Whalamato" v-bind:language="lang"
                           v-on:add-item="add_item($event)"></ItemButton>
-              <ItemButton v-bind:item="ITEM.PineOclock" v-bind:classic="classic"
+              <ItemButton v-bind:item="ITEM.PineOclock" v-bind:language="lang"
                           v-on:add-item="add_item($event)"></ItemButton>
-              <ItemButton v-bind:item="ITEM.FishyFruit" v-bind:classic="classic"
+              <ItemButton v-bind:item="ITEM.FishyFruit" v-bind:language="lang"
                           v-on:add-item="add_item($event)"></ItemButton>
-              <ItemButton v-bind:item="ITEM.Boarmelon" v-bind:classic="classic"
+              <ItemButton v-bind:item="ITEM.Boarmelon" v-bind:language="lang"
                           v-on:add-item="add_item($event)"></ItemButton>
-              <ItemButton v-bind:item="ITEM.Rhinoloupe" v-bind:classic="classic"
+              <ItemButton v-bind:item="ITEM.Rhinoloupe" v-bind:language="lang"
                           v-on:add-item="add_item($event)"></ItemButton>
-              <ItemButton v-bind:item="ITEM.Orcaplant" v-bind:classic="classic"
+              <ItemButton v-bind:item="ITEM.Orcaplant" v-bind:language="lang"
                           v-on:add-item="add_item($event)"></ItemButton>
-              <ItemButton v-bind:item="ITEM.Garlicrown" v-bind:classic="classic"
+              <ItemButton v-bind:item="ITEM.Garlicrown" v-bind:language="lang"
                           v-on:add-item="add_item($event)"></ItemButton>
-              <ItemButton v-bind:item="ITEM.HoneyOnion" v-bind:classic="classic"
+              <ItemButton v-bind:item="ITEM.HoneyOnion" v-bind:language="lang"
                           v-on:add-item="add_item($event)"></ItemButton>
-              <ItemButton v-bind:item="ITEM.SweetMoai" v-bind:classic="classic"
+              <ItemButton v-bind:item="ITEM.SweetMoai" v-bind:language="lang"
                           v-on:add-item="add_item($event)"></ItemButton>
-              <ItemButton v-bind:item="ITEM.SpinyCarrot" v-bind:classic="classic"
+              <ItemButton v-bind:item="ITEM.SpinyCarrot" v-bind:language="lang"
                           v-on:add-item="add_item($event)"></ItemButton>
-              <ItemButton v-bind:item="ITEM.Conchurnip" v-bind:classic="classic"
+              <ItemButton v-bind:item="ITEM.Conchurnip" v-bind:language="lang"
                           v-on:add-item="add_item($event)"></ItemButton>
-              <ItemButton v-bind:item="ITEM.Cornflower" v-bind:classic="classic"
+              <ItemButton v-bind:item="ITEM.Cornflower" v-bind:language="lang"
                           v-on:add-item="add_item($event)"></ItemButton>
-              <ItemButton v-bind:item="ITEM.Cabadillo" v-bind:classic="classic"
+              <ItemButton v-bind:item="ITEM.Cabadillo" v-bind:language="lang"
                           v-on:add-item="add_item($event)"></ItemButton>
-              <ItemButton v-bind:item="ITEM.Needlettuce" v-bind:classic="classic"
+              <ItemButton v-bind:item="ITEM.Needlettuce" v-bind:language="lang"
                           v-on:add-item="add_item($event)"></ItemButton>
-              <ItemButton v-bind:item="ITEM.CherryBombs" v-bind:classic="classic"
+              <ItemButton v-bind:item="ITEM.CherryBombs" v-bind:language="lang"
                           v-on:add-item="add_item($event)"></ItemButton>
-              <ItemButton v-bind:item="ITEM.MaskedPotato" v-bind:classic="classic"
+              <ItemButton v-bind:item="ITEM.MaskedPotato" v-bind:language="lang"
                           v-on:add-item="add_item($event)"></ItemButton>
-              <ItemButton v-bind:item="ITEM.Lilipods" v-bind:classic="classic"
+              <ItemButton v-bind:item="ITEM.Lilipods" v-bind:language="lang"
                           v-on:add-item="add_item($event)"></ItemButton>
-              <ItemButton v-bind:item="ITEM.RocketPapaya" v-bind:classic="classic"
+              <ItemButton v-bind:item="ITEM.RocketPapaya" v-bind:language="lang"
                           v-on:add-item="add_item($event)"></ItemButton>
-              <ItemButton v-bind:item="ITEM.Orangeopus" v-bind:classic="classic"
+              <ItemButton v-bind:item="ITEM.Orangeopus" v-bind:language="lang"
                           v-on:add-item="add_item($event)"></ItemButton>
-              <ItemButton v-bind:item="ITEM.Bumpkin" v-bind:classic="classic"
+              <ItemButton v-bind:item="ITEM.Bumpkin" v-bind:language="lang"
                           v-on:add-item="add_item($event)"></ItemButton>
-              <ItemButton v-bind:item="ITEM.HeartMint" v-bind:classic="classic"
+              <ItemButton v-bind:item="ITEM.HeartMint" v-bind:language="lang"
                           v-on:add-item="add_item($event)"></ItemButton>
-              <ItemButton v-bind:item="ITEM.SpadeBasil" v-bind:classic="classic"
+              <ItemButton v-bind:item="ITEM.SpadeBasil" v-bind:language="lang"
                           v-on:add-item="add_item($event)"></ItemButton>
-              <ItemButton v-bind:item="ITEM.Dialaurel" v-bind:classic="classic"
+              <ItemButton v-bind:item="ITEM.Dialaurel" v-bind:language="lang"
                           v-on:add-item="add_item($event)"></ItemButton>
-              <ItemButton v-bind:item="ITEM.GoldClover" v-bind:classic="classic"
+              <ItemButton v-bind:item="ITEM.GoldClover" v-bind:language="lang"
                           v-on:add-item="add_item($event)"></ItemButton>
-              <ItemButton v-bind:item="ITEM.MushInABox" v-bind:classic="classic"
+              <ItemButton v-bind:item="ITEM.MushInABox" v-bind:language="lang"
                           v-on:add-item="add_item($event)"></ItemButton>
-              <ItemButton v-bind:item="ITEM.Toadstoolshed" v-bind:classic="classic"
+              <ItemButton v-bind:item="ITEM.Toadstoolshed" v-bind:language="lang"
                           v-on:add-item="add_item($event)"></ItemButton>
-              <ItemButton v-bind:item="ITEM.AllMeat" v-bind:classic="classic"
+              <ItemButton v-bind:item="ITEM.AllMeat" v-bind:language="lang"
                           v-on:add-item="add_item($event)"></ItemButton>
             </div>
           </fieldset>
@@ -291,19 +291,19 @@
               <span>Click/tap to open</span>
             </div>
             <div class="btnfield8" v-else>
-              <ItemButton v-bind:item="ITEM.SharpClaw" v-bind:classic="classic"
+              <ItemButton v-bind:item="ITEM.SharpClaw" v-bind:language="lang"
                           v-on:add-item="add_item($event)"></ItemButton>
-              <ItemButton v-bind:item="ITEM.PoisonFang" v-bind:classic="classic"
+              <ItemButton v-bind:item="ITEM.PoisonFang" v-bind:language="lang"
                           v-on:add-item="add_item($event)"></ItemButton>
-              <ItemButton v-bind:item="ITEM.GiantsHorn" v-bind:classic="classic"
+              <ItemButton v-bind:item="ITEM.GiantsHorn" v-bind:language="lang"
                           v-on:add-item="add_item($event)"></ItemButton>
-              <ItemButton v-bind:item="ITEM.Scissors" v-bind:classic="classic"
+              <ItemButton v-bind:item="ITEM.Scissors" v-bind:language="lang"
                           v-on:add-item="add_item($event)"></ItemButton>
-              <ItemButton v-bind:item="ITEM.HealingClaw" v-bind:classic="classic"
+              <ItemButton v-bind:item="ITEM.HealingClaw" v-bind:language="lang"
                           v-on:add-item="add_item($event)"></ItemButton>
-              <ItemButton v-bind:item="ITEM.ZombieClaw" v-bind:classic="classic"
+              <ItemButton v-bind:item="ITEM.ZombieClaw" v-bind:language="lang"
                           v-on:add-item="add_item($event)"></ItemButton>
-              <ItemButton v-bind:item="ITEM.VampireFang" v-bind:classic="classic"
+              <ItemButton v-bind:item="ITEM.VampireFang" v-bind:language="lang"
                           v-on:add-item="add_item($event)"></ItemButton>
             </div>
           </fieldset>
@@ -313,21 +313,21 @@
               <span>Click/tap to open</span>
             </div>
             <div class="btnfield8" v-else>
-              <ItemButton v-bind:item="ITEM.LittleEye" v-bind:classic="classic"
+              <ItemButton v-bind:item="ITEM.LittleEye" v-bind:language="lang"
                           v-on:add-item="add_item($event)"></ItemButton>
-              <ItemButton v-bind:item="ITEM.SleepyEye" v-bind:classic="classic"
+              <ItemButton v-bind:item="ITEM.SleepyEye" v-bind:language="lang"
                           v-on:add-item="add_item($event)"></ItemButton>
-              <ItemButton v-bind:item="ITEM.SillyEye" v-bind:classic="classic"
+              <ItemButton v-bind:item="ITEM.SillyEye" v-bind:language="lang"
                           v-on:add-item="add_item($event)"></ItemButton>
-              <ItemButton v-bind:item="ITEM.DangerousEye" v-bind:classic="classic"
+              <ItemButton v-bind:item="ITEM.DangerousEye" v-bind:language="lang"
                           v-on:add-item="add_item($event)"></ItemButton>
-              <ItemButton v-bind:item="ITEM.AngryEye" v-bind:classic="classic"
+              <ItemButton v-bind:item="ITEM.AngryEye" v-bind:language="lang"
                           v-on:add-item="add_item($event)"></ItemButton>
-              <ItemButton v-bind:item="ITEM.BlankEye" v-bind:classic="classic"
+              <ItemButton v-bind:item="ITEM.BlankEye" v-bind:language="lang"
                           v-on:add-item="add_item($event)"></ItemButton>
-              <ItemButton v-bind:item="ITEM.WickedEye" v-bind:classic="classic"
+              <ItemButton v-bind:item="ITEM.WickedEye" v-bind:language="lang"
                           v-on:add-item="add_item($event)"></ItemButton>
-              <ItemButton v-bind:item="ITEM.CreepyEye" v-bind:classic="classic"
+              <ItemButton v-bind:item="ITEM.CreepyEye" v-bind:language="lang"
                           v-on:add-item="add_item($event)"></ItemButton>
             </div>
           </fieldset>
@@ -337,17 +337,17 @@
               <span>Click/tap to open</span>
             </div>
             <div class="btnfield8" v-else>
-              <ItemButton v-bind:item="ITEM.AngelFeather" v-bind:classic="classic"
+              <ItemButton v-bind:item="ITEM.AngelFeather" v-bind:language="lang"
                           v-on:add-item="add_item($event)"></ItemButton>
-              <ItemButton v-bind:item="ITEM.RavenFeather" v-bind:classic="classic"
+              <ItemButton v-bind:item="ITEM.RavenFeather" v-bind:language="lang"
                           v-on:add-item="add_item($event)"></ItemButton>
-              <ItemButton v-bind:item="ITEM.ClearFeather" v-bind:classic="classic"
+              <ItemButton v-bind:item="ITEM.ClearFeather" v-bind:language="lang"
                           v-on:add-item="add_item($event)"></ItemButton>
-              <ItemButton v-bind:item="ITEM.MothWing" v-bind:classic="classic"
+              <ItemButton v-bind:item="ITEM.MothWing" v-bind:language="lang"
                           v-on:add-item="add_item($event)"></ItemButton>
-              <ItemButton v-bind:item="ITEM.FlamingQuill" v-bind:classic="classic"
+              <ItemButton v-bind:item="ITEM.FlamingQuill" v-bind:language="lang"
                           v-on:add-item="add_item($event)"></ItemButton>
-              <ItemButton v-bind:item="ITEM.WhiteFeather" v-bind:classic="classic"
+              <ItemButton v-bind:item="ITEM.WhiteFeather" v-bind:language="lang"
                           v-on:add-item="add_item($event)"></ItemButton>
             </div>
           </fieldset>
@@ -357,62 +357,63 @@
               <span>Click/tap to open</span>
             </div>
             <div class="btnfield32" v-else>
-              <ItemButton v-bind:item="ITEM.AromaOil" v-bind:classic="classic"
+              <ItemButton v-bind:item="ITEM.AromaOil" v-bind:language="lang"
                           v-on:add-item="add_item($event)"></ItemButton>
-              <ItemButton v-bind:item="ITEM.DragonBlood" v-bind:classic="classic"
+              <ItemButton v-bind:item="ITEM.DragonBlood" v-bind:language="lang"
                           v-on:add-item="add_item($event)"></ItemButton>
-              <ItemButton v-bind:item="ITEM.Acid" v-bind:classic="classic"
+              <ItemButton v-bind:item="ITEM.Acid" v-bind:language="lang"
                           v-on:add-item="add_item($event)"></ItemButton>
-              <ItemButton v-bind:item="ITEM.HolyWater" v-bind:classic="classic"
+              <ItemButton v-bind:item="ITEM.HolyWater" v-bind:language="lang"
                           v-on:add-item="add_item($event)"></ItemButton>
-              <ItemButton v-bind:item="ITEM.Ether" v-bind:classic="classic"
+              <ItemButton v-bind:item="ITEM.Ether" v-bind:language="lang"
                           v-on:add-item="add_item($event)"></ItemButton>
-              <ItemButton v-bind:item="ITEM.Mercury" v-bind:classic="classic"
+              <ItemButton v-bind:item="ITEM.Mercury" v-bind:language="lang"
                           v-on:add-item="add_item($event)"></ItemButton>
-              <ItemButton v-bind:item="ITEM.StinkyBreath" v-bind:classic="classic"
+              <ItemButton v-bind:item="ITEM.StinkyBreath" v-bind:language="lang"
                           v-on:add-item="add_item($event)"></ItemButton>
-              <ItemButton v-bind:item="ITEM.GhostsHowl" v-bind:classic="classic"
+              <ItemButton v-bind:item="ITEM.GhostsHowl" v-bind:language="lang"
                           v-on:add-item="add_item($event)"></ItemButton>
-              <ItemButton v-bind:item="ITEM.DragonsBreath" v-bind:classic="classic"
+              <ItemButton v-bind:item="ITEM.DragonBreath" v-bind:language="lang"
                           v-on:add-item="add_item($event)"></ItemButton>
-              <ItemButton v-bind:item="ITEM.VirginsSigh" v-bind:classic="classic"
+              <ItemButton v-bind:item="ITEM.VirginsSigh" v-bind:language="lang"
                           v-on:add-item="add_item($event)"></ItemButton>
-              <ItemButton v-bind:item="ITEM.Electricity" v-bind:classic="classic"
+              <ItemButton v-bind:item="ITEM.Electricity" v-bind:language="lang"
                           v-on:add-item="add_item($event)"></ItemButton>
-              <ItemButton v-bind:item="ITEM.Moss" v-bind:classic="classic"
+              <ItemButton v-bind:item="ITEM.Moss" v-bind:language="lang"
                           v-on:add-item="add_item($event)"></ItemButton>
-              <ItemButton v-bind:item="ITEM.EarOfWheat" v-bind:classic="classic"
+              <ItemButton v-bind:item="ITEM.EarOfWheat" v-bind:language="lang"
                           v-on:add-item="add_item($event)"></ItemButton>
-              <ItemButton v-bind:item="ITEM.BakedRoach" v-bind:classic="classic"
+              <ItemButton v-bind:item="ITEM.BakedRoach" v-bind:language="lang"
                           v-on:add-item="add_item($event)"></ItemButton>
-              <ItemButton v-bind:item="ITEM.BlackenedBat" v-bind:classic="classic"
+              <ItemButton v-bind:item="ITEM.BlackenedBat" v-bind:language="lang"
                           v-on:add-item="add_item($event)"></ItemButton>
-              <ItemButton v-bind:item="ITEM.Sulpher" v-bind:classic="classic"
+              <ItemButton v-bind:item="ITEM.Sulpher" v-bind:language="lang"
                           v-on:add-item="add_item($event)"></ItemButton>
-              <ItemButton v-bind:item="ITEM.PoisonPowder" v-bind:classic="classic"
+              <ItemButton v-bind:item="ITEM.PoisonPowder" v-bind:language="lang"
                           v-on:add-item="add_item($event)"></ItemButton>
-              <ItemButton v-bind:item="ITEM.SleepyPowder" v-bind:classic="classic"
+              <ItemButton v-bind:item="ITEM.SleepyPowder" v-bind:language="lang"
                           v-on:add-item="add_item($event)"></ItemButton>
-              <ItemButton v-bind:item="ITEM.KnockoutDust" v-bind:classic="classic"
+              <ItemButton v-bind:item="ITEM.KnockoutDust" v-bind:language="lang"
                           v-on:add-item="add_item($event)"></ItemButton>
-              <ItemButton v-bind:item="ITEM.Rust" v-bind:classic="classic"
+              <ItemButton v-bind:item="ITEM.Rust" v-bind:language="lang"
                           v-on:add-item="add_item($event)"></ItemButton>
-              <ItemButton v-bind:item="ITEM.GraveDirt" v-bind:classic="classic"
+              <ItemButton v-bind:item="ITEM.GraveDirt" v-bind:language="lang"
                           v-on:add-item="add_item($event)"></ItemButton>
-              <ItemButton v-bind:item="ITEM.Ash" v-bind:classic="classic" v-on:add-item="add_item($event)"></ItemButton>
-              <ItemButton v-bind:item="ITEM.Hairball" v-bind:classic="classic"
+              <ItemButton v-bind:item="ITEM.Ash" v-bind:language="lang"
                           v-on:add-item="add_item($event)"></ItemButton>
-              <ItemButton v-bind:item="ITEM.Needle" v-bind:classic="classic"
+              <ItemButton v-bind:item="ITEM.Hairball" v-bind:language="lang"
                           v-on:add-item="add_item($event)"></ItemButton>
-              <ItemButton v-bind:item="ITEM.MirrorPiece" v-bind:classic="classic"
+              <ItemButton v-bind:item="ITEM.Needle" v-bind:language="lang"
                           v-on:add-item="add_item($event)"></ItemButton>
-              <ItemButton v-bind:item="ITEM.WadOfWool" v-bind:classic="classic"
+              <ItemButton v-bind:item="ITEM.MirrorPiece" v-bind:language="lang"
                           v-on:add-item="add_item($event)"></ItemButton>
-              <ItemButton v-bind:item="ITEM.MessyScroll" v-bind:classic="classic"
+              <ItemButton v-bind:item="ITEM.WadOfWool" v-bind:language="lang"
                           v-on:add-item="add_item($event)"></ItemButton>
-              <ItemButton v-bind:item="ITEM.GreenballBun" v-bind:classic="classic"
+              <ItemButton v-bind:item="ITEM.MessyScroll" v-bind:language="lang"
                           v-on:add-item="add_item($event)"></ItemButton>
-              <ItemButton v-bind:item="ITEM.TakoBug" v-bind:classic="classic"
+              <ItemButton v-bind:item="ITEM.GreenballBun" v-bind:language="lang"
+                          v-on:add-item="add_item($event)"></ItemButton>
+              <ItemButton v-bind:item="ITEM.TakoBug" v-bind:language="lang"
                           v-on:add-item="add_item($event)"></ItemButton>
             </div>
           </fieldset>
@@ -505,7 +506,7 @@
                   </svg>
                 </i>
 
-                <span class="text text-xxs md:text-sm xl:text-xxs 2xl:text-xs">{{ get_text(element) }}</span>
+                <span class="text text-xxs md:text-sm xl:text-xxs 2xl:text-xs">{{ element.text(lang) }}</span>
 
                 <i class="close z-50" @click="removeAt(idx)">
                   <svg class="flex-shrink-0 mr-1.5 h-5 w-5 text-gray-400 dark:text-night-300"
@@ -585,7 +586,7 @@
                   <div>Dex</div>
                   <div>Def</div>
                   <div>Mag</div>
-                  <div>{{ classic ? 'HP' : 'Con' }}</div>
+                  <div>{{ lang === 'classic' ? 'HP' : 'Con' }}</div>
                   <div>Mnd</div>
                   <div>Chm</div>
                   <div>Lck</div>
@@ -752,14 +753,15 @@
                 </button>
               </div>
               <div class="bg-white dark:bg-night-700 px-4 py-2 grid grid-cols-12 items-center sm:gap-4 sm:px-6">
-                <div class="flex w-10 z-0 self-center items-center" @click="classic = !classic">
-                  <div class="w-16 h-4 flex items-center bg-gray-300 rounded-full p-1 duration-300 ease-in-out"
-                       :class="{ 'bg-green-400': classic}">
-                    <div class="bg-white w-4 h-4 rounded-full shadow-md transform duration-300 ease-in-out"
-                         :class="{ 'translate-x-4': classic,}"></div>
-                  </div>
-                </div>
-                <div class="z-10 col-span-11 text-sm text-gray-900 dark:text-night-100">Switch back to classic names
+                <div class="col-span-12">
+                  <label for="lang_select">Language: </label>
+                  <select v-model="lang"
+                          id="lang_select"
+                          class="dark:bg-night-900 dark:text-night-100 text-xs mt-1 py-1 px-2 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
+                    <option v-for="option in languages" v-bind:key="option.key" v-bind:value="option.key">
+                      {{ option.text }}
+                    </option>
+                  </select>
                 </div>
               </div>
             </dl>
@@ -810,7 +812,12 @@ export default {
        */
       history: [],
       recipe: '',
-      classic: false,
+      languages: [
+        { text:'English (remaster)', key: 'remaster'},
+        { text: 'English (PSX)', key: 'classic'},
+        { text: 'Japanese', key: 'jp'}
+      ],
+      lang: 'remaster',
       debug_step: 0,
       show_materials: true,
       explanation: "You need to select one of the sub-steps below.",
@@ -875,7 +882,6 @@ export default {
       if (ds >= 11) item.increase_essences()
       if (ds >= 12) item.calculate_stats()
     },
-
     add_item(i) {
       if (i > 0) {
         this.history.splice(this.step, 0, this.find_item_by_val(i))
@@ -911,7 +917,7 @@ export default {
     },
     /**
      * @param i
-     * @return ITEM | NoItem
+     * @return Item | NoItem
      */
     find_item_by_val(i) {
       for (const [, item] of Object.entries(ITEM)) {
@@ -934,26 +940,28 @@ export default {
     copy_text() {
       let src = ''
       const cart = new Map();
+      const source = new Map();
       src += this.get_text(this.selected_object)
       src += '\n' + this.get_text(this.selected_material)
       let buffer = ''
       let count = 0
       for (let i = 0; i < this.history.length; i++) {
-        if (cart.has(this.get_text(this.history[i]))) {
-          cart.set(this.get_text(this.history[i]), cart.get(this.get_text(this.history[i])) + 1)
+        if (!source.has(this.history[i].text(this.lang))) source.set(this.history[i].text(this.lang), this.history[i].source())
+        if (cart.has(this.history[i].text(this.lang))) {
+          cart.set(this.history[i].text(this.lang), cart.get(this.history[i].text(this.lang)) + 1)
         } else {
-          cart.set(this.get_text(this.history[i]), 1)
+          cart.set(this.history[i].text(this.lang), 1)
         }
         if (buffer === '') {
-          buffer = this.get_text(this.history[i])
+          buffer = this.history[i].text(this.lang)
           count++
-        } else if (buffer === this.get_text(this.history[i])) {
+        } else if (buffer === this.history[i].text(this.lang)) {
           count++
         } else {
           src += '\n' + buffer
           if (count > 1) src += ' x' + count
           count = 1
-          buffer = this.get_text(this.history[i])
+          buffer = this.history[i].text(this.lang)
         }
       }
       if (buffer) {
@@ -1020,7 +1028,7 @@ export default {
       return result;
     },
     get_text(o) {
-      if (this.classic && 'psxtext' in o) {
+      if (this.lang === 'classic' && 'psxtext' in o) {
         return o.psxtext
       }
       return o.text

@@ -8,7 +8,7 @@ class Lord_Of_Flies extends Card {
         super();
     }
 
-    CPRINT(language = '') {
+    text(language = '') {
         switch(language) {
             case 'classic':
                 return "Lord of Flies"
@@ -19,7 +19,7 @@ class Lord_Of_Flies extends Card {
         }
     }
 
-    PRICE(price) {
+    price(price) {
         price += 6660;
         return price;
     }

@@ -3,14 +3,11 @@ import {Dryad} from "@/forge/cards/elemental_spirits";
 import {Item} from "@/forge/items/Item";
 
 class Crooked_Seed extends Item {
-
-    IPRINT() {
-        return "Crooked Seed";
-    }
-
     constructor() {
         super();
     }
+
+    value = 27
 
     text(language) {
         switch(language) {

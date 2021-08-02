@@ -7,6 +7,8 @@ class Conchurnip extends Item {
         super();
     }
 
+    value = 54
+
     text(language) {
         switch(language) {
             case 'classic':

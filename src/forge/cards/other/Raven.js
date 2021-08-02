@@ -6,7 +6,7 @@ class Raven extends Card {
         super();
     }
 
-    CPRINT(language = '') {
+    text(language = '') {
         switch (language) {
             case 'classic':
                 return "Raven"
@@ -17,7 +17,7 @@ class Raven extends Card {
         }
     }
 
-    PRICE(price) {
+    price(price) {
         price += 300;
         return price;
     }

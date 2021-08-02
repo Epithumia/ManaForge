@@ -7,12 +7,14 @@ class Jinn_Silver extends Item {
         super()
     }
 
+    value = 15
+
     text(language) {
         switch(language) {
             case 'classic':
                 return "Jinn Silver"
             case 'jp':
-                return "[Jinn Silver]"
+                return "ジンの銀貨"
             default:
                 return "Jinn Silver"
         }

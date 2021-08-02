@@ -6,6 +6,8 @@ class Needlettuce extends Item {
         super();
     }
 
+    value = 57
+
     text(language) {
         switch(language) {
             case 'classic':

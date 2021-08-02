@@ -7,7 +7,7 @@ class Mother_Of_Gods extends Card {
         super();
     }
 
-    CPRINT(language = '') {
+    text(language = '') {
         switch (language) {
             case 'classic':
                 return "Mother of Gods"
@@ -18,7 +18,7 @@ class Mother_Of_Gods extends Card {
         }
     }
 
-    PRICE(price) {
+    price(price) {
         price += 4000;
         return price;
     }

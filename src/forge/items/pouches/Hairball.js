@@ -6,6 +6,8 @@ class Hairball extends Item {
         super();
     }
 
+    value = 114
+
     text(language) {
         switch(language) {
             case 'classic':

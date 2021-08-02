@@ -7,6 +7,8 @@ class Stinky_Breath extends Item {
         super();
     }
 
+    value = 98
+
     text(language) {
         switch(language) {
             case 'classic':

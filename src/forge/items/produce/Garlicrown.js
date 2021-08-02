@@ -7,6 +7,8 @@ class Garlicrown extends Item {
         super();
     }
 
+    value = 50
+
     text(language) {
         switch(language) {
             case 'classic':

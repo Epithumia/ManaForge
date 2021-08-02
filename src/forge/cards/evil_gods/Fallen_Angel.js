@@ -8,7 +8,7 @@ class Fallen_Angel extends Card {
         super();
     }
 
-    CPRINT(language = '') {
+    text(language = '') {
         switch(language) {
             case 'classic':
                 return "Fallen Angel"
@@ -24,7 +24,7 @@ class Fallen_Angel extends Card {
      * @return int
      * @constructor
      */
-    PRICE(price) {
+    price(price) {
         price += 6660;
         return price;
     }

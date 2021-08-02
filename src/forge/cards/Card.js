@@ -5,13 +5,13 @@ class Card {
             throw new TypeError("Can not construct abstract class.");
         }
         // Check if all instance methods are implemented.
-        if (this.CPRINT === Card.prototype.CPRINT) {
+        if (this.text === Card.prototype.text) {
             // Error: Child has not implemented this abstract method.
-            throw new TypeError("Please implement abstract method CPRINT.");
+            throw new TypeError("Please implement abstract method text(language).");
         }
-        if (this.PRICE === Card.prototype.PRICE) {
+        if (this.price === Card.prototype.price) {
             // Error: Child has not implemented this abstract method.
-            throw new TypeError("Please implement abstract method PRICE.");
+            throw new TypeError("Please implement abstract method price.");
         }
         if (this.FIRST === Card.prototype.FIRST) {
             // Error: Child has not implemented this abstract method.
@@ -40,11 +40,11 @@ class Card {
     }
 
     // eslint-disable-next-line no-unused-vars
-    CPRINT(language) {
+    text(language) {
     }
 
     // eslint-disable-next-line no-unused-vars
-    PRICE(price) {
+    price(price) {
     } //price: int
 
     // eslint-disable-next-line no-unused-vars

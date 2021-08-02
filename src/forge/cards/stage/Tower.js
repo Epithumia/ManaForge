@@ -6,7 +6,7 @@ class Tower extends Card {
         super();
     }
 
-    CPRINT(language = '') {
+    text(language = '') {
         switch (language) {
             case 'classic':
                 return "Tower"
@@ -17,7 +17,7 @@ class Tower extends Card {
         }
     }
 
-    PRICE(price) {
+    price(price) {
         price += 1500;
         return price;
     }

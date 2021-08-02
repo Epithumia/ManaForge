@@ -7,12 +7,14 @@ class Sala_Gold extends Item {
         super()
     }
 
+    value = 5
+
     text(language) {
         switch(language) {
             case 'classic':
                 return "Sala Gold"
             case 'jp':
-                return "[Sala Gold]"
+                return "サラマンダーの金貨"
             default:
                 return "Salamander Gold"
         }

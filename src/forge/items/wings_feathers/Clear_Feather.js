@@ -6,6 +6,8 @@ class Clear_Feather extends Item {
         super();
     }
 
+    value = 88
+
     text(language) {
         switch(language) {
             case 'classic':

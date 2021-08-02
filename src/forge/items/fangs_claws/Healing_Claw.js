@@ -7,6 +7,8 @@ class Healing_Claw extends Item {
         super();
     }
 
+    value = 75
+
     text(language) {
         switch(language) {
             case 'classic':

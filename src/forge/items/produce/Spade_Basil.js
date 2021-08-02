@@ -6,6 +6,8 @@ class Spade_Basil extends Item {
         super();
     }
 
+    value = 65
+
     text(language) {
         switch(language) {
             case 'classic':

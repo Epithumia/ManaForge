@@ -7,7 +7,7 @@ class Moon_Goddess extends Card {
         super();
     }
 
-    CPRINT(language = '') {
+    text(language = '') {
         switch (language) {
             case 'classic':
                 return "Moon Goddess"
@@ -18,7 +18,7 @@ class Moon_Goddess extends Card {
         }
     }
 
-    PRICE(price) {
+    price(price) {
         price += 3000;
         return price;
     }

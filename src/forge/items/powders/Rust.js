@@ -6,6 +6,8 @@ class Rust extends Item {
         super();
     }
 
+    value = 111
+
     text(language) {
         switch(language) {
             case 'classic':

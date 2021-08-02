@@ -7,12 +7,14 @@ class Sun_Crystal extends Item {
         super();
     }
 
+    value = 21
+
     text(language) {
         switch(language) {
             case 'classic':
                 return "Sun Crystal"
             case 'jp':
-                return "[Sun Crystal]"
+                return "陽光のクリスタル"
             default:
                 return "Sun Crystal"
         }

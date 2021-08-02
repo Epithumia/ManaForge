@@ -5,6 +5,8 @@ class Apricat extends Item {
         super();
     }
 
+    value = 42
+
     text(language) {
         switch(language) {
             case 'classic':

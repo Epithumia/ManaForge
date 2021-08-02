@@ -14,8 +14,8 @@ import {
 } from "@/forge/cards/pixies";
 import {No_Card} from "@/forge/cards/No_Card";
 import {PLUNGE1, PLUNGE2, PLUNGE3} from "@/forge/plunges/enums";
-import {item_list} from "@/forge/items/list";
 import {No_Item} from "@/forge/items/No_Item";
+import {ITEM} from "@/forge/items/list";
 
 // TODO: https://github.com/aberonni/nightwatch-test-coverage-example
 
@@ -823,10 +823,10 @@ class ForgedItem {
     card_price() {
         let price = 0
 
-        price = this.hidden.PRICE(price)
-        price = this.first.PRICE(price)
-        price = this.second.PRICE(price)
-        price = this.third.PRICE(price)
+        price = this.hidden.price(price)
+        price = this.first.price(price)
+        price = this.second.price(price)
+        price = this.third.price(price)
 
         this.price = price
         return price
@@ -924,7 +924,9 @@ class ForgedItem {
     set_item(item_code) {
         this.reset_explanations()
         this.reset_highlights()
-        this.item = item_list[item_code];
+        for (const [, item] of Object.entries(ITEM)) {
+            if (item.value === item_code) this.item = item
+        }
     }
 
     set_active_world_card() {
@@ -1528,12 +1530,12 @@ class ForgedItem {
 
     item_code() {
         this.reset_highlights()
-        this.item.CODE(this);
+        this.item.code(this);
     }
 
     item_energy() {
         this.reset_highlights()
-        this.setEnergy(this.item.ENERGY());
+        this.setEnergy(this.item.energy());
     }
 
     push_cards() {

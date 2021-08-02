@@ -7,6 +7,8 @@ class Heart_Mint extends Item {
         super();
     }
 
+    value = 64
+
     text(language) {
         switch(language) {
             case 'classic':

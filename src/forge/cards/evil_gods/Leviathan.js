@@ -8,7 +8,7 @@ class Leviathan extends Card {
         super();
     }
 
-    CPRINT(language = '') {
+    text(language = '') {
         switch (language) {
             case 'classic':
                 return "Leviathan"
@@ -19,7 +19,7 @@ class Leviathan extends Card {
         }
     }
 
-    PRICE(price) {
+    price(price) {
         price += 6660;
         return price;
     }

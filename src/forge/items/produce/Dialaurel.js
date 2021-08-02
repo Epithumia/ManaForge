@@ -6,6 +6,8 @@ class Dialaurel extends Item {
         super();
     }
 
+    value = 66
+
     text(language) {
         switch(language) {
             case 'classic':

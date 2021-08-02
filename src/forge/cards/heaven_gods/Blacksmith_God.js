@@ -7,7 +7,7 @@ class Blacksmith_God extends Card {
         super();
     }
 
-    CPRINT(language = '') {
+    text(language = '') {
         switch (language) {
             case 'classic':
                 return "Blacksmith God"
@@ -23,7 +23,7 @@ class Blacksmith_God extends Card {
      * @param price : int
      * @constructor
      */
-    PRICE(price) {
+    price(price) {
         price += 2800;
         return price;
     }

@@ -6,6 +6,8 @@ class Messy_Scroll extends Item {
         super();
     }
 
+    value = 118
+
     text(language) {
         switch(language) {
             case 'classic':

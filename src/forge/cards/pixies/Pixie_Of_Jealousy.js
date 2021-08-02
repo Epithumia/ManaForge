@@ -7,7 +7,7 @@ class Pixie_Of_Jealousy extends Card {
         super();
     }
 
-    CPRINT(language = '') {
+    text(language = '') {
         switch (language) {
             case 'classic':
                 return "Pixie (Yellow Hat) [Envy]"
@@ -18,7 +18,7 @@ class Pixie_Of_Jealousy extends Card {
         }
     }
 
-    PRICE(price) {
+    price(price) {
         price += 150;
         return price;
     }

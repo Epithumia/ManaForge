@@ -6,6 +6,8 @@ class Sleepy_Eye extends Item {
         super();
     }
 
+    value = 79
+
     text(language) {
         switch(language) {
             case 'classic':

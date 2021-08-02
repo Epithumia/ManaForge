@@ -6,6 +6,8 @@ class Boarmelon extends Item {
         super();
     }
 
+    value = 47
+
     text(language) {
         switch(language) {
             case 'classic':

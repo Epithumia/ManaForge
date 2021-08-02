@@ -7,12 +7,14 @@ class Undine_Gold extends Item {
         super()
     }
 
+    value = 8
+
     text(language) {
         switch(language) {
             case 'classic':
                 return "Undine Gold"
             case 'jp':
-                return "[Undine Gold]"
+                return "ウンディーネの金貨"
             default:
                 return "Undine Gold"
         }

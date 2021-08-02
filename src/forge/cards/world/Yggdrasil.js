@@ -7,7 +7,7 @@ class Yggdrasil extends Card {
         super();
     }
 
-    CPRINT(language = '') {
+    text(language = '') {
         switch(language) {
             case 'classic':
                 return "Yggdrasil"
@@ -19,7 +19,7 @@ class Yggdrasil extends Card {
     }
 
 
-    PRICE(price) {
+    price(price) {
         price += 3000;
         return price;
     }

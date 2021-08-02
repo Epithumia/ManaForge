@@ -5,6 +5,8 @@ class Gold_Clover extends Item {
         super();
     }
 
+    value = 67
+
     text(language) {
         switch(language) {
             case 'classic':

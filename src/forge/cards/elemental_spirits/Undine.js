@@ -6,7 +6,7 @@ class Undine extends Card {
         super();
     }
 
-    CPRINT(language = '') {
+    text(language = '') {
         switch(language) {
             case 'classic':
                 return "Undine"
@@ -17,7 +17,7 @@ class Undine extends Card {
         }
     }
 
-    PRICE(price) {
+    price(price) {
         price += 250;
         return price;
     }

@@ -7,6 +7,8 @@ class Fishy_Fruit extends Item {
         super();
     }
 
+    value = 46
+
     text(language) {
         switch(language) {
             case 'classic':

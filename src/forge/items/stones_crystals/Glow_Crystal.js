@@ -6,12 +6,14 @@ class Glow_Crystal extends Item {
         super();
     }
 
+    value = 23
+
     text(language) {
         switch(language) {
             case 'classic':
                 return "Glow Crystal"
             case 'jp':
-                return "[Glow Crystal]"
+                return "輝きのクリスタル"
             default:
                 return "Glow Crystal"
         }

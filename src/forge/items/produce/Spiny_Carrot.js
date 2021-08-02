@@ -6,6 +6,8 @@ class Spiny_Carrot extends Item {
         super();
     }
 
+    value = 53
+
     text(language) {
         switch(language) {
             case 'classic':

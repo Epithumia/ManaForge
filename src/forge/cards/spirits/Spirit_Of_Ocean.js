@@ -6,7 +6,7 @@ class Spirit_Of_Ocean extends Card {
         super();
     }
 
-    CPRINT(language = '') {
+    text(language = '') {
         switch (language) {
             case 'classic':
                 return "Spirit (Ocean)"
@@ -17,7 +17,7 @@ class Spirit_Of_Ocean extends Card {
         }
     }
 
-    PRICE(price) {
+    price(price) {
         price += 800;
         return price;
     }

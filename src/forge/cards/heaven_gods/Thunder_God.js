@@ -7,7 +7,7 @@ class Thunder_God extends Card {
         super();
     }
 
-    CPRINT(language = '') {
+    text(language = '') {
         switch (language) {
             case 'classic':
                 return "Thunder God"
@@ -18,7 +18,7 @@ class Thunder_God extends Card {
         }
     }
 
-    PRICE(price) {
+    price(price) {
         price += 4000;
         return price;
     }

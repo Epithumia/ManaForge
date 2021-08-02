@@ -7,6 +7,8 @@ class Vampire_Fang extends Item {
         super();
     }
 
+    value = 77
+
     text(language) {
         switch(language) {
             case 'classic':

@@ -6,6 +6,8 @@ class Orcaplant extends Item {
         super();
     }
 
+    value = 49
+
     text(language) {
         switch(language) {
             case 'classic':

@@ -7,7 +7,7 @@ class Heavens_Scale extends Card {
         super();
     }
 
-    CPRINT(language = '') {
+    text(language = '') {
         switch (language) {
             case 'classic':
                 return "Heaven's Scale"
@@ -18,7 +18,7 @@ class Heavens_Scale extends Card {
         }
     }
 
-    PRICE(price) {
+    price(price) {
         price += 1800;
         return price;
     }

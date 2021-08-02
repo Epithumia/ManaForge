@@ -7,6 +7,8 @@ class Rocket_Papaya extends Item {
         super();
     }
 
+    value = 61
+
     text(language) {
         switch(language) {
             case 'classic':

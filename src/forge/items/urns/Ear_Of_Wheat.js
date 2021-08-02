@@ -6,6 +6,8 @@ class Ear_Of_Wheat extends Item {
         super();
     }
 
+    value = 104
+
     text(language) {
         switch(language) {
             case 'classic':

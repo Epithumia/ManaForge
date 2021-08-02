@@ -8,7 +8,7 @@ class Dying_Earth extends Card {
         super();
     }
 
-    CPRINT(language = '') {
+    text(language = '') {
         switch(language) {
             case 'classic':
                 return "Dying Earth"
@@ -24,7 +24,7 @@ class Dying_Earth extends Card {
      * @return int
      * @constructor
      */
-    PRICE(price) {
+    price(price) {
         price += 2600;
         return price;
     }

@@ -7,6 +7,8 @@ class Applesocks extends Item {
         super();
     }
 
+    value = 43
+
     text(language) {
         switch(language) {
             case 'classic':

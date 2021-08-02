@@ -6,6 +6,8 @@ class Giants_Horn extends Item {
         super();
     }
 
+    value = 73
+
     text(language) {
         switch(language) {
             case 'classic':

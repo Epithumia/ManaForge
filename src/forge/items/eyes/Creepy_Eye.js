@@ -6,6 +6,8 @@ class Creepy_Eye extends Item {
         super();
     }
 
+    value = 85
+
     text(language) {
         switch(language) {
             case 'classic':

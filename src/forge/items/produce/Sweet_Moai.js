@@ -5,6 +5,8 @@ class Sweet_Moai extends Item {
         super();
     }
 
+    value = 52
+
     text(language) {
         switch(language) {
             case 'classic':

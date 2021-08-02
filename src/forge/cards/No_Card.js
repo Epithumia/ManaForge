@@ -6,7 +6,7 @@ class No_Card extends Card {
     }
 
     // eslint-disable-next-line no-unused-vars
-    CPRINT(language = '') {
+    text(language = '') {
         return "--";
     }
 
@@ -15,7 +15,7 @@ class No_Card extends Card {
      * @param price : int
      * @constructor
      */
-    PRICE(price) {
+    price(price) {
         price += 0;
         return price;
     }

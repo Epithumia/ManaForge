@@ -6,7 +6,7 @@ class Spirit_Of_Shoes extends Card {
         super();
     }
 
-    CPRINT(language = '') {
+    text(language = '') {
         switch (language) {
             case 'classic':
                 return "Spirit (Shoes)"
@@ -17,7 +17,7 @@ class Spirit_Of_Shoes extends Card {
         }
     }
 
-    PRICE(price) {
+    price(price) {
         price += 800;
         return price;
     }

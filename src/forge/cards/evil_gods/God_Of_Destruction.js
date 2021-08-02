@@ -8,7 +8,7 @@ class God_Of_Destruction extends Card {
         super();
     }
 
-    CPRINT(language = '') {
+    text(language = '') {
         switch (language) {
             case 'classic':
                 return "God of Destruction"
@@ -19,7 +19,7 @@ class God_Of_Destruction extends Card {
         }
     }
 
-    PRICE(price) {
+    price(price) {
         price += 6660;
         return price;
     }

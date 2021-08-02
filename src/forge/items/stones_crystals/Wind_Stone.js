@@ -7,12 +7,14 @@ class Wind_Stone extends Item {
         super();
     }
 
+    value = 19
+
     text(language) {
         switch(language) {
             case 'classic':
                 return "Wind Stone"
             case 'jp':
-                return "[Wind Stone]"
+                return "風のマナストーン"
             default:
                 return "Wind Stone"
         }

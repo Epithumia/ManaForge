@@ -6,6 +6,8 @@ class Mercury extends Item {
         super();
     }
 
+    value = 97
+
     text(language) {
         switch(language) {
             case 'classic':
@@ -28,7 +30,7 @@ class Mercury extends Item {
     }
 
     source() {
-        return super.source();
+        return [];
     }
 
 }

@@ -6,6 +6,8 @@ class Silly_Eye extends Item {
         super();
     }
 
+    value = 80
+
     text(language) {
         switch(language) {
             case 'classic':

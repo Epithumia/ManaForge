@@ -6,6 +6,8 @@ class Angry_Eye extends Item {
         super();
     }
 
+    value = 82
+
     text(language) {
         switch(language) {
             case 'classic':

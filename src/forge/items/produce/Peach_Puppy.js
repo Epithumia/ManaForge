@@ -6,6 +6,8 @@ class Peach_Puppy extends Item {
         super();
     }
 
+    value = 41
+
     text(language) {
         switch(language) {
             case 'classic':

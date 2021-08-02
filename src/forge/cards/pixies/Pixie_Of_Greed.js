@@ -7,7 +7,7 @@ class Pixie_Of_Greed extends Card {
         super();
     }
 
-    CPRINT(language = '') {
+    text(language = '') {
         switch (language) {
             case 'classic':
                 return "Pixie (No Hat) [Greed]"
@@ -18,7 +18,7 @@ class Pixie_Of_Greed extends Card {
         }
     }
 
-    PRICE(price) {
+    price(price) {
         price += 150;
         return price;
     }

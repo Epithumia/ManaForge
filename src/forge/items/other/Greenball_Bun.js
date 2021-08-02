@@ -6,6 +6,8 @@ class Greenball_Bun extends Item {
         super();
     }
 
+    value = 119
+
     text(language) {
         switch(language) {
             case 'classic':

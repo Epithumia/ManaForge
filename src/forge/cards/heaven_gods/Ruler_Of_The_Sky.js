@@ -7,7 +7,7 @@ class Ruler_Of_The_Sky extends Card {
         super();
     }
 
-    CPRINT(language = '') {
+    text(language = '') {
         switch (language) {
             case 'classic':
                 return "Ruler of the Sky"
@@ -18,7 +18,7 @@ class Ruler_Of_The_Sky extends Card {
         }
     }
 
-    PRICE(price) {
+    price(price) {
         price += 5000;
         return price;
     }

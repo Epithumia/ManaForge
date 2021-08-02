@@ -7,7 +7,7 @@ class Unicorn extends Card {
         super();
     }
 
-    CPRINT(language = '') {
+    text(language = '') {
         switch(language) {
             case 'classic':
                 return "Unicorn"
@@ -18,7 +18,7 @@ class Unicorn extends Card {
         }
     }
 
-    PRICE(price) {
+    price(price) {
         price += 2500;
         return price;
     }

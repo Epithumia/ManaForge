@@ -6,7 +6,7 @@ class Dryad extends Card {
         super();
     }
 
-    CPRINT(language = '') {
+    text(language = '') {
         switch(language) {
             case 'classic':
                 return "Dryad"
@@ -22,7 +22,7 @@ class Dryad extends Card {
      * @return int
      * @constructor
      */
-    PRICE(price) {
+    price(price) {
         price += 250;
         return price;
     }

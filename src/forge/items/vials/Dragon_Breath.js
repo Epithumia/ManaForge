@@ -6,6 +6,8 @@ class Dragon_Breath extends Item {
         super();
     }
 
+    value = 100
+
     text(language) {
         switch(language) {
             case 'classic':

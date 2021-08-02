@@ -7,12 +7,14 @@ class Wisp_Silver extends Item {
         super()
     }
 
+    value = 9
+
     text(language) {
         switch(language) {
             case 'classic':
                 return "Wisp Silver"
             case 'jp':
-                return "[Wisp Silver]"
+                return "ウィスプの銀貨"
             default:
                 return "Wisp Silver"
         }

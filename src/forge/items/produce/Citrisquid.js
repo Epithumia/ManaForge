@@ -5,6 +5,8 @@ class Citrisquid extends Item {
         super();
     }
 
+    value = 39
+
     text(language) {
         switch(language) {
             case 'classic':

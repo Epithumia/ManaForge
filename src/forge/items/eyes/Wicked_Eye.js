@@ -5,6 +5,8 @@ class Wicked_Eye extends Item {
         super();
     }
 
+    value = 84
+
     text(language) {
         switch(language) {
             case 'classic':

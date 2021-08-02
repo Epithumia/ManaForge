@@ -6,6 +6,8 @@ class Pear_Oheels extends Item {
         super();
     }
 
+    value = 37
+
     text(language) {
         switch(language) {
             case 'classic':

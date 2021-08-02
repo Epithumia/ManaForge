@@ -6,7 +6,7 @@ class Jinn extends Card {
         super();
     }
 
-    CPRINT(language = '') {
+    text(language = '') {
         switch(language) {
             case 'classic':
                 return "Jinn"
@@ -17,7 +17,7 @@ class Jinn extends Card {
         }
     }
 
-    PRICE(price) {
+    price(price) {
         price += 250;
         return price;
     }

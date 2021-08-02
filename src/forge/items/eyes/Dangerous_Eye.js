@@ -6,6 +6,8 @@ class Dangerous_Eye extends Item {
         super();
     }
 
+    value = 81
+
     text(language) {
         switch(language) {
             case 'classic':

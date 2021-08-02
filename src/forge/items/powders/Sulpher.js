@@ -6,6 +6,8 @@ class Sulpher extends Item {
         super();
     }
 
+    value = 107
+
     text(language) {
         switch(language) {
             case 'classic':

@@ -6,6 +6,8 @@ class Bellgrapes extends Item {
         super();
     }
 
+    value = 33
+
     text(language) {
         switch(language) {
             case 'classic':

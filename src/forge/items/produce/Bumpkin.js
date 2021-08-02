@@ -7,6 +7,8 @@ class Bumpkin extends Item {
         super();
     }
 
+    value = 63
+
     text(language) {
         switch(language) {
             case 'classic':

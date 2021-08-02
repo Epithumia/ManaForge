@@ -6,6 +6,8 @@ class Blank_Eye extends Item {
         super();
     }
 
+    value = 83
+
     text(language) {
         switch(language) {
             case 'classic':

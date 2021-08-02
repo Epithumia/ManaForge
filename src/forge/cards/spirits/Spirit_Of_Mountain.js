@@ -7,7 +7,7 @@ class Spirit_Of_Mountain extends Card {
         super();
     }
 
-    CPRINT(language = '') {
+    text(language = '') {
         switch (language) {
             case 'classic':
                 return "Spirit (Mountain)"
@@ -18,7 +18,7 @@ class Spirit_Of_Mountain extends Card {
         }
     }
 
-    PRICE(price) {
+    price(price) {
         price += 800;
         return price;
     }

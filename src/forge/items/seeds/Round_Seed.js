@@ -7,6 +7,8 @@ class Round_Seed extends Item {
         super();
     }
 
+    value = 25
+
     text(language) {
         switch(language) {
             case 'classic':

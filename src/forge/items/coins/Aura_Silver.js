@@ -7,12 +7,14 @@ class Aura_Silver extends Item {
         super()
     }
 
+    value = 12
+
     text(language) {
         switch(language) {
             case 'classic':
                 return "Aura Silver"
             case 'jp':
-                return "[Aura Silver]"
+                return "アウラの銀貨"
             default:
                 return "Aura Silver"
         }

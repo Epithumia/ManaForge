@@ -6,7 +6,7 @@ class Metropolis extends Card {
         super();
     }
 
-    CPRINT(language = '') {
+    text(language = '') {
         switch (language) {
             case 'classic':
                 return "Metropolis"
@@ -22,7 +22,7 @@ class Metropolis extends Card {
      * @returns int
      * @constructor
      */
-    PRICE(price) {
+    price(price) {
         price += 1500;
         return price;
     }

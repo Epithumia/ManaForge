@@ -6,6 +6,8 @@ class Little_Eye extends Item {
         super();
     }
 
+    value = 78
+
     text(language) {
         switch(language) {
             case 'classic':

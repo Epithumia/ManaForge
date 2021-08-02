@@ -8,7 +8,7 @@ class Wings_Of_Darkness extends Card {
         super();
     }
 
-    CPRINT(language = '') {
+    text(language = '') {
         switch (language) {
             case 'classic':
                 return "Wings of Darkness"
@@ -19,7 +19,7 @@ class Wings_Of_Darkness extends Card {
         }
     }
 
-    PRICE(price) {
+    price(price) {
         price += 6660;
         return price;
     }

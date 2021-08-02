@@ -7,7 +7,7 @@ class Ancient_Moon extends Card {
         super();
     }
 
-    CPRINT(language = '') {
+    text(language = '') {
         switch (language) {
             case 'classic':
                 return "Ancient Moon"
@@ -23,7 +23,7 @@ class Ancient_Moon extends Card {
      * @param price : int
      * @constructor
      */
-    PRICE(price) {
+    price(price) {
         price += 2200;
         return price;
     }

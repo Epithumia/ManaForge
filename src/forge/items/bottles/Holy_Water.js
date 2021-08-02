@@ -6,6 +6,8 @@ class Holy_Water extends Item {
         super();
     }
 
+    value = 95
+
     text(language) {
         switch(language) {
             case 'classic':

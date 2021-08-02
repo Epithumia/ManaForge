@@ -6,6 +6,8 @@ class Moth_Wing extends Item {
         super();
     }
 
+    value = 89
+
     text(language) {
         switch(language) {
             case 'classic':

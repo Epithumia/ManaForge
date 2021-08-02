@@ -6,6 +6,8 @@ class Poison_Fang extends Item {
         super();
     }
 
+    value = 72
+
     text(language) {
         switch(language) {
             case 'classic':

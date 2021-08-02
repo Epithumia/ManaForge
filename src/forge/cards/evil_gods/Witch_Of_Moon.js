@@ -8,7 +8,7 @@ class Witch_Of_Moon extends Card {
         super();
     }
 
-    CPRINT(language = '') {
+    text(language = '') {
         switch(language) {
             case 'classic':
                 return "Witch of Moon"
@@ -19,7 +19,7 @@ class Witch_Of_Moon extends Card {
         }
     }
 
-    PRICE(price) {
+    price(price) {
         price += 6660;
         return price;
     }

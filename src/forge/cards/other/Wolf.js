@@ -6,7 +6,7 @@ class Wolf extends Card {
         super();
     }
 
-    CPRINT(language = '') {
+    text(language = '') {
         switch (language) {
             case 'classic':
                 return "Wolf"
@@ -17,7 +17,7 @@ class Wolf extends Card {
         }
     }
 
-    PRICE(price) {
+    price(price) {
         price += 300;
         return price;
     }

@@ -7,6 +7,8 @@ class Pine_Oclock extends Item {
         super();
     }
 
+    value = 45
+
     text(language) {
         switch(language) {
             case 'classic':

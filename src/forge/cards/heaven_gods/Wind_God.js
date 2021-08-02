@@ -7,7 +7,7 @@ class Wind_God extends Card {
         super();
     }
 
-    CPRINT(language = '') {
+    text(language = '') {
         switch (language) {
             case 'classic':
                 return "Wind God"
@@ -18,7 +18,7 @@ class Wind_God extends Card {
         }
     }
 
-    PRICE(price) {
+    price(price) {
         price += 3000;
         return price;
     }

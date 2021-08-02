@@ -6,6 +6,8 @@ class Rhinoloupe extends Item {
         super();
     }
 
+    value = 48
+
     text(language) {
         switch(language) {
             case 'classic':

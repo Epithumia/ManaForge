@@ -6,6 +6,8 @@ class Aroma_Oil extends Item {
         super();
     }
 
+    value = 92
+
     text(language) {
         switch(language) {
             case 'classic':

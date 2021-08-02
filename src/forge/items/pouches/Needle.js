@@ -6,6 +6,8 @@ class Needle extends Item {
         super();
     }
 
+    value = 115
+
     text(language) {
         switch(language) {
             case 'classic':

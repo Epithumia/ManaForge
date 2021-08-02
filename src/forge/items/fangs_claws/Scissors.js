@@ -5,6 +5,8 @@ class Scissors extends Item {
         super();
     }
 
+    value = 74
+
     text(language) {
         switch(language) {
             case 'classic':

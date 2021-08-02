@@ -6,6 +6,8 @@ class Electricity extends Item {
         super();
     }
 
+    value = 102
+
     text(language) {
         switch(language) {
             case 'classic':

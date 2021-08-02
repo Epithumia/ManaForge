@@ -6,6 +6,8 @@ class Ghosts_Howl extends Item {
         super();
     }
 
+    value = 99
+
     text(language) {
         switch(language) {
             case 'classic':

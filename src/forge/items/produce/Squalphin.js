@@ -7,6 +7,8 @@ class Squalphin extends Item {
         super();
     }
 
+    value = 38
+
     text(language) {
         switch(language) {
             case 'classic':

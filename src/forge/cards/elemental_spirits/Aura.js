@@ -6,7 +6,7 @@ class Aura extends Card {
         super();
     }
 
-    CPRINT(language = '') {
+    text(language = '') {
         switch (language) {
             case 'classic':
                 return "Aura"
@@ -22,7 +22,7 @@ class Aura extends Card {
      * @param price : int
      * @constructor
      */
-    PRICE(price) {
+    price(price) {
         price += 250;
         return price;
     }

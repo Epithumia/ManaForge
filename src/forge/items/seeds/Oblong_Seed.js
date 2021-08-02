@@ -7,6 +7,8 @@ class Oblong_Seed extends Item {
         super();
     }
 
+    value = 26
+
     text(language) {
         switch(language) {
             case 'classic':

@@ -6,6 +6,8 @@ class Baked_Roach extends Item {
         super();
     }
 
+    value = 105
+
     text(language) {
         switch(language) {
             case 'classic':

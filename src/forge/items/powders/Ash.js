@@ -6,6 +6,8 @@ class Ash extends Item {
         super();
     }
 
+    value = 113
+
     text(language) {
         switch(language) {
             case 'classic':

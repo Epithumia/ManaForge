@@ -7,6 +7,8 @@ class Whalamato extends Item {
         super();
     }
 
+    value = 44
+
     text(language) {
         switch(language) {
             case 'classic':

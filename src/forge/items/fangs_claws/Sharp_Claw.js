@@ -6,6 +6,8 @@ class Sharp_Claw extends Item {
         super();
     }
 
+    value = 71
+
     text(language) {
         switch(language) {
             case 'classic':

@@ -11,15 +11,15 @@ class Item {
         }
         if (this.energy === Item.prototype.energy) {
             // Error: Child has not implemented this abstract method.
-            throw new TypeError("Please implement abstract method ENERGY.");
+            throw new TypeError("Please implement abstract method energy.");
         }
         if (this.code === Item.prototype.code) {
             // Error: Child has not implemented this abstract method.
-            throw new TypeError("Please implement abstract method CODE.");
+            throw new TypeError("Please implement abstract method code.");
         }
         if (this.source === Item.prototype.source) {
             // Error: Child has not implemented this abstract method.
-            throw new TypeError("Please implement abstract method CODE.");
+            throw new TypeError("Please implement abstract method source.");
         }
     }
 

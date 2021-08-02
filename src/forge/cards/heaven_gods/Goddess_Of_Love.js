@@ -6,7 +6,7 @@ class Goddess_Of_Love extends Card {
         super();
     }
 
-    CPRINT(language = '') {
+    text(language = '') {
         switch (language) {
             case 'classic':
                 return "Goddess of Love"
@@ -17,7 +17,7 @@ class Goddess_Of_Love extends Card {
         }
     }
 
-    PRICE(price) {
+    price(price) {
         price += 3000;
         return price;
     }

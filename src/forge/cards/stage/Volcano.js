@@ -7,7 +7,7 @@ class Volcano extends Card {
         super();
     }
 
-    CPRINT(language = '') {
+    text(language = '') {
         switch(language) {
             case 'classic':
                 return "Volcano"
@@ -18,7 +18,7 @@ class Volcano extends Card {
         }
     }
 
-    PRICE(price) {
+    price(price) {
         price += 1300;
         return price;
     }

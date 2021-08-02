@@ -6,6 +6,8 @@ class Grave_Dirt extends Item {
         super();
     }
 
+    value = 112
+
     text(language) {
         switch(language) {
             case 'classic':

@@ -5,6 +5,8 @@ class Masked_Potato extends Item {
         super();
     }
 
+    value = 59
+
     text(language) {
         switch(language) {
             case 'classic':
@@ -26,7 +28,7 @@ class Masked_Potato extends Item {
     }
 
     source() {
-        return ["OrchardF"]
+        return ["Orchard"]
     }
 
 }

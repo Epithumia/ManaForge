@@ -5,6 +5,8 @@ class All_Meat extends Item {
         super();
     }
 
+    value = 70
+
     text(language) {
         switch(language) {
             case 'classic':

@@ -8,7 +8,7 @@ class Clown extends Card {
         super();
     }
 
-    CPRINT(language = '') {
+    text(language = '') {
         switch (language) {
             case 'classic':
                 return "Clown"
@@ -24,7 +24,7 @@ class Clown extends Card {
      * @return int
      * @constructor
      */
-    PRICE(price) {
+    price(price) {
         price += 250;
         return price;
     }

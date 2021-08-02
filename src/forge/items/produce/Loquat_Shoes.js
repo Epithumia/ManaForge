@@ -6,6 +6,8 @@ class Loquat_Shoes extends Item {
         super();
     }
 
+    value = 36
+
     text(language) {
         switch(language) {
             case 'classic':

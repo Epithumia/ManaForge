@@ -6,7 +6,7 @@ class Fertility_Goddess extends Card {
         super();
     }
 
-    CPRINT(language = '') {
+    text(language = '') {
         switch (language) {
             case 'classic':
                 return "Fertility Goddess"
@@ -17,7 +17,7 @@ class Fertility_Goddess extends Card {
         }
     }
 
-    PRICE(price) {
+    price(price) {
         price += 3000;
         return price;
     }

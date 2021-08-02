@@ -6,6 +6,8 @@ class Moss extends Item {
         super();
     }
 
+    value = 103
+
     text(language) {
         switch(language) {
             case 'classic':

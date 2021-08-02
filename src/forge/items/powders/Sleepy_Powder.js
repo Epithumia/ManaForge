@@ -6,6 +6,8 @@ class Sleepy_Powder extends Item {
         super();
     }
 
+    value = 109
+
     text(language) {
         switch(language) {
             case 'classic':

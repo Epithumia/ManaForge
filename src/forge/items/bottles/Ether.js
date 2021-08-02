@@ -7,6 +7,8 @@ class Ether extends Item {
         super();
     }
 
+    value = 96
+
     text(language) {
         switch(language) {
             case 'classic':

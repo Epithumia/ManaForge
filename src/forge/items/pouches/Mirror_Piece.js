@@ -6,6 +6,8 @@ class Mirror_Piece extends Item {
         super();
     }
 
+    value = 116
+
     text(language) {
         switch(language) {
             case 'classic':
@@ -28,7 +30,7 @@ class Mirror_Piece extends Item {
     }
 
     source() {
-        return [];
+        return ["Chest", "Ring Ring Land"];
     }
 }
 

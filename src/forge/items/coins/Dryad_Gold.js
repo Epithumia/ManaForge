@@ -7,12 +7,14 @@ class Dryad_Gold extends Item {
         super()
     }
 
+    value = 3
+
     text(language) {
         switch(language) {
             case 'classic':
                 return "Dryad Gold"
             case 'jp':
-                return "[Dryad Gold]"
+                return "ドリアードの金貨"
             default:
                 return "Dryad Gold"
         }

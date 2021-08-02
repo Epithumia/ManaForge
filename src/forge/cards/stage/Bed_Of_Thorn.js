@@ -6,7 +6,7 @@ class Bed_Of_Thorn extends Card {
         super();
     }
 
-    CPRINT(language = '') {
+    text(language = '') {
         switch(language) {
             case 'classic':
                 return "Bed of Thorn"
@@ -22,7 +22,7 @@ class Bed_Of_Thorn extends Card {
      * @param price : int
      * @constructor
      */
-    PRICE(price) {
+    price(price) {
         price += 1500;
         return price;
     }

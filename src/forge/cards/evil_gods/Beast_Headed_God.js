@@ -8,7 +8,7 @@ class Beast_Headed_God extends Card {
         super();
     }
 
-    CPRINT(language = '') {
+    text(language = '') {
         switch (language) {
             case 'classic':
                 return "Beast-headed God"
@@ -24,7 +24,7 @@ class Beast_Headed_God extends Card {
      * @param price : int
      * @constructor
      */
-    PRICE(price) {
+    price(price) {
         price += 6660;
         return price;
     }

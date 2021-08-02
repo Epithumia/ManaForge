@@ -7,6 +7,8 @@ class Lilipods extends Item {
         super();
     }
 
+    value = 60
+
     text(language) {
         switch(language) {
             case 'classic':

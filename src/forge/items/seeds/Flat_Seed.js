@@ -7,6 +7,8 @@ class Flat_Seed extends Item {
         super();
     }
 
+    value = 31
+
     text(language) {
         switch(language) {
             case 'classic':

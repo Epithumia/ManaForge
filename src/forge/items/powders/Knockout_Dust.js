@@ -6,6 +6,8 @@ class Knockout_Dust extends Item {
         super();
     }
 
+    value = 110
+
     text(language) {
         switch(language) {
             case 'classic':

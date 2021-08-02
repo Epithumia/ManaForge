@@ -6,6 +6,8 @@ class Virgins_Sigh extends Item {
         super();
     }
 
+    value = 101
+
     text(language) {
         switch(language) {
             case 'classic':

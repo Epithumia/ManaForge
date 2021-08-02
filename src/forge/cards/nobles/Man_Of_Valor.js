@@ -7,7 +7,7 @@ class Man_Of_Valor extends Card {
         super();
     }
 
-    CPRINT(language = '') {
+    text(language = '') {
         switch(language) {
             case 'classic':
                 return "Man of Valor"
@@ -18,7 +18,7 @@ class Man_Of_Valor extends Card {
         }
     }
 
-    PRICE(price) {
+    price(price) {
         price += 1000;
         return price;
     }

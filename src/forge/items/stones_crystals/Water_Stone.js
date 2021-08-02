@@ -7,12 +7,14 @@ class Water_Stone extends Item {
         super();
     }
 
+    value = 20
+
     text(language) {
         switch(language) {
             case 'classic':
                 return "Water Stone"
             case 'jp':
-                return "[Water Stone]"
+                return "水のマナストーン"
             default:
                 return "Water Stone"
         }

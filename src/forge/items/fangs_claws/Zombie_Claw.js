@@ -6,6 +6,8 @@ class Zombie_Claw extends Item {
         super();
     }
 
+    value = 76
+
     text(language) {
         switch(language) {
             case 'classic':

@@ -7,12 +7,14 @@ class Gnome_Gold extends Item {
         super()
     }
 
+    value = 6
+
     text(language) {
         switch(language) {
             case 'classic':
                 return "Gnome Gold"
             case 'jp':
-                return "[Gnome Gold]"
+                return "ノームの金貨"
             default:
                 return "Gnome Gold"
         }

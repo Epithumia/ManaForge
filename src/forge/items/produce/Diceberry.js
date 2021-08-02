@@ -7,6 +7,8 @@ class Diceberry extends Item {
         super();
     }
 
+    value = 34
+
     text(language) {
         switch(language) {
             case 'classic':

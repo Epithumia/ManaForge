@@ -6,6 +6,8 @@ class Toadstoolshed extends Item {
         super();
     }
 
+    value = 69
+
     text(language) {
         switch(language) {
             case 'classic':

@@ -6,12 +6,14 @@ class Chaos_Crystal extends Item {
         super();
     }
 
+    value = 24
+
     text(language) {
         switch(language) {
             case 'classic':
                 return "Chaos Crystal"
             case 'jp':
-                return "[Chaos Crystal]"
+                return "カオスのクリスタル"
             default:
                 return "Chaos Crystal"
         }

@@ -6,6 +6,8 @@ class Cherry_Bombs extends Item {
         super();
     }
 
+    value = 58
+
     text(language) {
         switch(language) {
             case 'classic':

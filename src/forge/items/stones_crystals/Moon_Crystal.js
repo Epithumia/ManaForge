@@ -7,12 +7,14 @@ class Moon_Crystal extends Item {
         super();
     }
 
+    value = 22
+
     text(language) {
         switch(language) {
             case 'classic':
                 return "Moon Crystal"
             case 'jp':
-                return "[Moon Crystal]"
+                return "月光のクリスタル"
             default:
                 return "Moon Crystal"
         }

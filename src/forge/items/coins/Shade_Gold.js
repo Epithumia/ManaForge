@@ -7,12 +7,14 @@ class Shade_Gold extends Item {
         super()
     }
 
+    value = 2
+
     text(language) {
         switch(language) {
             case 'classic':
                 return "Shade Gold"
             case 'jp':
-                return "[Shade Silver]"
+                return "シェイドの金貨"
             default:
                 return "Shade Gold"
         }

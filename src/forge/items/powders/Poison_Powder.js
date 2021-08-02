@@ -6,6 +6,8 @@ class Poison_Powder extends Item {
         super();
     }
 
+    value = 108
+
     text(language) {
         switch(language) {
             case 'classic':

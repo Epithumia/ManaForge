@@ -5,6 +5,8 @@ class Acid extends Item {
         super();
     }
 
+    value = 94
+
     text(language) {
         switch(language) {
             case 'classic':

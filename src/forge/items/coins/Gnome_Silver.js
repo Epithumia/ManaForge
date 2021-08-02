@@ -7,12 +7,14 @@ class Gnome_Silver extends Item {
         super()
     }
 
+    value = 14
+
     text(language) {
         switch(language) {
             case 'classic':
                 return "Gnome Silver"
             case 'jp':
-                return "[Gnome Silver]"
+                return "ノームの銀貨"
             default:
                 return "Gnome Silver"
         }

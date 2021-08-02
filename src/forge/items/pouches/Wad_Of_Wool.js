@@ -6,6 +6,8 @@ class Wad_Of_Wool extends Item {
         super();
     }
 
+    value = 117
+
     text(language) {
         switch(language) {
             case 'classic':

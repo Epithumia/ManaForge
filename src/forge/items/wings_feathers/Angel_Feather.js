@@ -7,6 +7,8 @@ class Angel_Feather extends Item {
         super();
     }
 
+    value = 86
+
     text(language) {
         switch(language) {
             case 'classic':

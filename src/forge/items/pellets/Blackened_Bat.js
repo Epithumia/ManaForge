@@ -7,6 +7,8 @@ class Blackened_Bat extends Item {
         super();
     }
 
+    value = 106
+
     text(language) {
         switch(language) {
             case 'classic':

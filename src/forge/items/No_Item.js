@@ -5,6 +5,8 @@ class No_Item extends Item {
         super();
     }
 
+    value = 0
+
     // eslint-disable-next-line no-unused-vars
     text(language) {
         return "No Item"

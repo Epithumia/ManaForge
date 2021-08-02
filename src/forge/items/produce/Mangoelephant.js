@@ -6,6 +6,8 @@ class Mangoelephant extends Item {
         super();
     }
 
+    value = 35
+
     text(language) {
         switch(language) {
             case 'classic':

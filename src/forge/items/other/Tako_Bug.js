@@ -6,6 +6,8 @@ class Tako_Bug extends Item {
         super();
     }
 
+    value = 120
+
     text(language) {
         switch(language) {
             case 'classic':

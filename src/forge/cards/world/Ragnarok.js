@@ -8,7 +8,7 @@ class Ragnarok extends Card {
         super();
     }
 
-    CPRINT(language = '') {
+    text(language = '') {
         switch(language) {
             case 'classic':
                 return "Ragnarok"
@@ -19,7 +19,7 @@ class Ragnarok extends Card {
         }
     }
 
-    PRICE(price) {
+    price(price) {
         price += 10000;
         return price;
     }

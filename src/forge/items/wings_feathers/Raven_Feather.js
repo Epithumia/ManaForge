@@ -7,6 +7,8 @@ class Raven_Feather extends Item {
         super();
     }
 
+    value = 87
+
     text(language) {
         switch(language) {
             case 'classic':

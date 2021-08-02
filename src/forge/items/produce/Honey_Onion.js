@@ -7,6 +7,8 @@ class Honey_Onion extends Item {
         super();
     }
 
+    value = 51
+
     text(language) {
         switch(language) {
             case 'classic':

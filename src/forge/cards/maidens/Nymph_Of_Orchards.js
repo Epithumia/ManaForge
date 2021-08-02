@@ -6,7 +6,7 @@ class Nymph_Of_Orchards extends Card {
         super();
     }
 
-    CPRINT(language = '') {
+    text(language = '') {
         switch (language) {
             case 'classic':
                 return "Nymph of Orchards"
@@ -17,7 +17,7 @@ class Nymph_Of_Orchards extends Card {
         }
     }
 
-    PRICE(price) {
+    price(price) {
         price += 1000;
         return price;
     }

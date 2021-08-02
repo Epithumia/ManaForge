@@ -6,7 +6,7 @@ class Sacrificed_Nymph extends Card {
         super();
     }
 
-    CPRINT(language = '') {
+    text(language = '') {
         switch (language) {
             case 'classic':
                 return "Sacrificed Nymph"
@@ -22,7 +22,7 @@ class Sacrificed_Nymph extends Card {
      * @param price : int
      * @constructor
      */
-    PRICE(price) {
+    price(price) {
         price += 1000;
         return price;
     }

@@ -7,7 +7,7 @@ class Mirrored_World extends Card {
         super();
     }
 
-    CPRINT(language = '') {
+    text(language = '') {
         switch(language) {
             case 'classic':
                 return "Mirrored World"
@@ -18,7 +18,7 @@ class Mirrored_World extends Card {
         }
     }
 
-    PRICE(price) {
+    price(price) {
         price += 2200;
         return price;
     }

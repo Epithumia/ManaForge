@@ -7,6 +7,8 @@ class White_Feather extends Item {
         super();
     }
 
+    value = 91
+
     text(language) {
         switch(language) {
             case 'classic':

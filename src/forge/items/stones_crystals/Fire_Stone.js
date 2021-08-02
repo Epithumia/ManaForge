@@ -7,12 +7,14 @@ class Fire_Stone extends Item {
         super();
     }
 
+    value = 17
+
     text(language) {
         switch(language) {
             case 'classic':
                 return "Fire Stone"
             case 'jp':
-                return "[Fire Stone]"
+                return "火のマナストーン"
             default:
                 return "Fire Stone"
         }

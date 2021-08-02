@@ -5,6 +5,8 @@ class Cabadillo extends Item {
         super();
     }
 
+    value = 56
+
     text(language) {
         switch(language) {
             case 'classic':

@@ -5,7 +5,7 @@ class Enticed_Nymph extends Card {
         super();
     }
 
-    CPRINT(language = '') {
+    text(language = '') {
         switch (language) {
             case 'classic':
                 return "Enticed Nymph"
@@ -21,7 +21,7 @@ class Enticed_Nymph extends Card {
      * @return int
      * @constructor
      */
-    PRICE(price) {
+    price(price) {
         price += 1000;
         return price;
     }

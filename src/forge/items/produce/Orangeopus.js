@@ -7,6 +7,8 @@ class Orangeopus extends Item {
         super();
     }
 
+    value = 62
+
     text(language) {
         switch(language) {
             case 'classic':

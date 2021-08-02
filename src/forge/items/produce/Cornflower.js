@@ -6,6 +6,8 @@ class Cornflower extends Item {
         super();
     }
 
+    value = 55
+
     text(language) {
         switch(language) {
             case 'classic':

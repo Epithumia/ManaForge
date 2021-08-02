@@ -7,6 +7,8 @@ class Flaming_Quill extends Item {
         super();
     }
 
+    value = 90
+
     text(language) {
         switch(language) {
             case 'classic':

@@ -7,6 +7,8 @@ class Dragon_Blood extends Item {
         super();
     }
 
+    value = 93
+
     text(language) {
         switch(language) {
             case 'classic':
