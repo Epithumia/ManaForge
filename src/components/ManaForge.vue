@@ -783,15 +783,14 @@
 </template>
 
 <script>
-import {EQUIP, MATERIAL, STAT, ESSENCE, ITEM, IMMUNITY, DEBUG_STEPS} from '@/forge/enums'
-import {mat_word} from '@/forge/lists'
-import {Ancient_Moon, Sacrificed_Nymph} from "@/forge/cards";
-import {No_Item} from "@/forge/items";
+import {EQUIP, MATERIAL, STAT, ESSENCE, IMMUNITY, DEBUG_STEPS} from '@/forge/enums'
+import {No_Item} from "@/forge/items/No_Item";
 import {ForgedItem} from "@/forge/ForgedItem";
 import ItemButton from "@/components/ItemButton";
 import copy from 'copy-text-to-clipboard';
 import draggable from "vuedraggable";
 import importModal from '@/components/importModal'
+import {ITEM} from "@/forge/items/list";
 
 export default {
   name: 'ManaForge',
@@ -817,7 +816,7 @@ export default {
       selected_object: EQUIP.Knife,
       itemForged: new ForgedItem([EQUIP.Pendant.value, MATERIAL.MenosBronze.value]),
       /**
-       * @type [ITEM]
+       * @type [Item]
        */
       history: [],
       recipe: '',
