@@ -46,11 +46,23 @@
   - Fix price calculation/display
   - Fix order of operations in import.
   
-### v0.1.7
+### v1.0.0
 
 - New features:
-  - Toggle between remaster and classic names
+  - Toggle between remaster, classic and Japanese item names/terms
+  - Add energy display
+  - Add sub-steps
+  - Show the pre-hidden slot when using sub-steps
+  - Add highlights during sub-steps
 
 - Improvements:
   - Source export is more compact
   - Text export is compact (uses multipliers when you use the same item multiple times in a row)
+  - Text export has a shopping list at the end
+  - More remake terms
+  - Japanese items, cards and master moves!
+  
+- Bug Fixes:
+  - Fixes stat calculations (minimum values)
+  - Fixes attack calculation (rounding error in attack stats calculations) 
+  - The plunge attacks/master moves "Shot" and "Double Shot" had their slot exchanged
