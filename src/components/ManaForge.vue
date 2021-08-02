@@ -5,23 +5,12 @@
     <div class="grid sm:grid-cols-8 flex-1 space-x-1 h-full">
       <div
           class="flex flex-col bg-white dark:bg-night-900 dark:text-night-100 shadow overflow-hidden sm:rounded-lg"
-          v-bind:class="{'xl:col-span-5 col-span-3': showRecipe, 'xl:col-span-6 col-span-4': !showRecipe}"
+          v-bind:class="{'xl:col-span-5 sm:col-span-3 col-span-4': showRecipe, 'xl:col-span-6 col-span-4': !showRecipe}"
           v-if='!show_materials'>
         <div class="px-4 py-2 dark:bg-night-700">
           <h3 class="xl:text-lg leading-4 font-medium text-gray-900 dark:text-night-100">
             Explanations
           </h3>
-        </div>
-        <div class="flex flex-col xl:flex-row dark:bg-night-700 px-4 py-2">
-          <div class="flex-auto">
-
-          </div>
-          <div class="flex-auto">
-
-          </div>
-        </div>
-        <div class="px-4 py-2">
-          {{explanation}}
         </div>
         <div class="flex-0 flex flex-col justify-center">
           <div class="self-center flex flex-0">
@@ -82,6 +71,12 @@
             </div>
           </div>
         </div>
+        <div class="flex flex-col xl:flex-row dark:bg-night-700 px-4 py-2">
+          <div class="px-4 py-2" v-if="debug_step===0">
+            You need to select one of the sub-steps above.
+          </div>
+          <ExplanationSheet :explanations="itemForged.get_explanations()" v-else></ExplanationSheet>
+        </div>
       </div>
       <div
           class="flex flex-col bg-white dark:bg-night-900 dark:text-night-100 shadow overflow-hidden sm:rounded-lg"
@@ -97,7 +92,8 @@
             <label for="material" class="block text-sm font-medium text-gray-700 dark:text-night-100">Material</label>
             <select v-model="selected_material" id="material" name="material" autocomplete="material"
                     class="mt-1 block w-full py-1 px-2 border border-gray-300 dark:border-night-100 bg-white dark:bg-night-900 dark:text-night-100 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
-              <option v-for="option in MATERIAL" v-bind:value="option" v-bind:key="option.value">{{ get_text(option) }}
+              <option v-for="option in MATERIAL" v-bind:value="option" v-bind:key="option.value">
+                {{ get_text(option) }}
               </option>
             </select>
           </div>
@@ -105,9 +101,8 @@
             <label for="equip" class="block text-sm font-medium text-gray-700 dark:text-night-100">Equipment</label>
             <select v-model="selected_object" id="equip" name="equip" autocomplete="equip"
                     class="mt-1 block w-full py-1 px-2 border border-gray-300 dark:border-night-100 bg-white dark:bg-night-900 dark:text-night-100 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
-              <option v-for="option in EQUIP" v-bind:value="option" v-bind:key="option.value">{{
-                  get_text(option)
-                }}
+              <option v-for="option in EQUIP" v-bind:value="option" v-bind:key="option.value">
+                {{ get_text(option) }}
               </option>
             </select>
           </div>
@@ -478,7 +473,8 @@
           </div>
         </div>
       </div>
-      <div class="flex flex-col h-auto overflow-hidden shadow sm:rounded-lg col-span-4 sm:col-span-2 xl:col-span-1" v-if="showRecipe">
+      <div class="flex flex-col h-auto overflow-hidden shadow sm:rounded-lg col-span-4 sm:col-span-2 xl:col-span-1"
+           v-if="showRecipe">
         <div
             class="flex flex-col bg-white h-auto overflow-hidden dark:bg-night-700 dark:text-night-100">
           <div class="px-4 py-5 sm:px-6 items-center flex flex-col">
@@ -490,7 +486,7 @@
           overflow-auto overflow-x-hidden dark:border-night-700
           dark:bg-night-900">
             <draggable tag="ul" v-model="history" class="list-group" id="drag_list" ref="drag_list"
-            :delay="250" :delay-on-touch-only="true">
+                       :delay="250" :delay-on-touch-only="true">
               <li
                   class="list-group-item border-2 rounded-full border-solid"
                   v-for="(element, idx) in history"
@@ -572,10 +568,14 @@
                 </dt>
                 <dd class="mt-1 text-xs md:text-sm text-gray-900 dark:text-night-100 sm:mt-0 sm:col-span-2"
                     v-if="selected_object.value<=11">
-                  <span class="inline-block" :class="debug_step ? itemForged.highlight_sharp:null">{{ itemForged.getSharp() }}</span> /
-                  <span class="inline-block" :class="debug_step ? itemForged.highlight_heavy:null">{{ itemForged.getHeavy() }}</span> /
-                  <span class="inline-block" :class="debug_step ? itemForged.highlight_force:null">{{ itemForged.getForce() }}</span> /
-                  <span class="inline-block" :class="debug_step ? itemForged.highlight_tech:null">{{ itemForged.getTech() }}</span>
+                  <span class="inline-block"
+                        :class="debug_step ? itemForged.highlight_sharp:null">{{ itemForged.getSharp() }}</span> /
+                  <span class="inline-block"
+                        :class="debug_step ? itemForged.highlight_heavy:null">{{ itemForged.getHeavy() }}</span> /
+                  <span class="inline-block"
+                        :class="debug_step ? itemForged.highlight_force:null">{{ itemForged.getForce() }}</span> /
+                  <span class="inline-block"
+                        :class="debug_step ? itemForged.highlight_tech:null">{{ itemForged.getTech() }}</span>
                 </dd>
               </div>
               <div class="text-xs md:text-sm bg-gray-50 dark:bg-night-500 px-4 py-2 flex flex-col">
@@ -665,14 +665,30 @@
 
                   <!-- Immunities -->
                   <div class="col-span-2">Immunity</div>
-                  <div :class="debug_step ? itemForged.highlight_immunity_sleep:null">{{ itemForged.getShortImmunity(IMMUNITY.Sleep) }}</div>
-                  <div :class="debug_step ? itemForged.highlight_immunity_poison:null">{{ itemForged.getShortImmunity(IMMUNITY.Poison) }}</div>
-                  <div :class="debug_step ? itemForged.highlight_immunity_paralysis:null">{{ itemForged.getShortImmunity(IMMUNITY.Paralysis) }}</div>
-                  <div :class="debug_step ? itemForged.highlight_immunity_confusion:null">{{ itemForged.getShortImmunity(IMMUNITY.Confusion) }}</div>
-                  <div :class="debug_step ? itemForged.highlight_immunity_darkness:null">{{ itemForged.getShortImmunity(IMMUNITY.Darkness) }}</div>
-                  <div :class="debug_step ? itemForged.highlight_immunity_petrify:null">{{ itemForged.getShortImmunity(IMMUNITY.Petrify) }}</div>
-                  <div :class="debug_step ? itemForged.highlight_immunity_flameburst:null">{{ itemForged.getShortImmunity(IMMUNITY.Flameburst) }}</div>
-                  <div :class="debug_step ? itemForged.highlight_immunity_freeze:null">{{ itemForged.getShortImmunity(IMMUNITY.Freeze) }}</div>
+                  <div :class="debug_step ? itemForged.highlight_immunity_sleep:null">
+                    {{ itemForged.getShortImmunity(IMMUNITY.Sleep) }}
+                  </div>
+                  <div :class="debug_step ? itemForged.highlight_immunity_poison:null">
+                    {{ itemForged.getShortImmunity(IMMUNITY.Poison) }}
+                  </div>
+                  <div :class="debug_step ? itemForged.highlight_immunity_paralysis:null">
+                    {{ itemForged.getShortImmunity(IMMUNITY.Paralysis) }}
+                  </div>
+                  <div :class="debug_step ? itemForged.highlight_immunity_confusion:null">
+                    {{ itemForged.getShortImmunity(IMMUNITY.Confusion) }}
+                  </div>
+                  <div :class="debug_step ? itemForged.highlight_immunity_darkness:null">
+                    {{ itemForged.getShortImmunity(IMMUNITY.Darkness) }}
+                  </div>
+                  <div :class="debug_step ? itemForged.highlight_immunity_petrify:null">
+                    {{ itemForged.getShortImmunity(IMMUNITY.Petrify) }}
+                  </div>
+                  <div :class="debug_step ? itemForged.highlight_immunity_flameburst:null">
+                    {{ itemForged.getShortImmunity(IMMUNITY.Flameburst) }}
+                  </div>
+                  <div :class="debug_step ? itemForged.highlight_immunity_freeze:null">
+                    {{ itemForged.getShortImmunity(IMMUNITY.Freeze) }}
+                  </div>
                 </div>
               </div>
               <div class="bg-white dark:bg-night-700 px-4 py-2 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
@@ -680,7 +696,8 @@
                   Energy
                 </dt>
                 <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2 dark:text-night-100">
-                  <div ><span class="inline-block" :class="debug_step ? itemForged.highlight_energy:null">{{ itemForged.energy }}</span></div>
+                  <div><span class="inline-block"
+                             :class="debug_step ? itemForged.highlight_energy:null">{{ itemForged.energy }}</span></div>
                 </dd>
                 <dt class="text-xs md:text-sm font-medium text-gray-500 dark:text-night-100">
                   Cards
@@ -709,12 +726,23 @@
                 <dd class="mt-1 text-xs md:text-sm text-gray-900 sm:mt-0 sm:col-span-2 dark:text-night-100"
                     style="text-align: left"
                     v-if="selected_object.value<=11">
-                  {{ classic ? 'Plunge Attack' : 'Master Move' }} 1 : <span class="inline-block" :class="debug_step ? itemForged.highlight_plunge1:null">{{ get_text(itemForged.getPlunge1()) }}</span><br>
-                  {{ classic ? 'Plunge Attack' : 'Master Move' }} 2 : <span class="inline-block" :class="debug_step ? itemForged.highlight_plunge2:null">{{ get_text(itemForged.getPlunge2()) }}</span><br>
-                  {{ classic ? 'Plunge Attack' : 'Master Move' }} 3 : <span class="inline-block" :class="debug_step ? itemForged.highlight_plunge3:null">{{ get_text(itemForged.getPlunge3()) }}</span><br>
+                  {{ lang === 'classic' ? 'Plunge Attack' : 'Master Move' }} 1 : <span class="inline-block"
+                                                                            :class="debug_step ? itemForged.highlight_plunge1:null">{{
+                    itemForged.getPlunge1().text(lang)
+                  }}</span><br>
+                  {{ lang === 'classic' ? 'Plunge Attack' : 'Master Move' }} 2 : <span class="inline-block"
+                                                                            :class="debug_step ? itemForged.highlight_plunge2:null">{{
+                    itemForged.getPlunge2().text(lang)
+                  }}</span><br>
+                  {{ lang === 'classic' ? 'Plunge Attack' : 'Master Move' }} 3 : <span class="inline-block"
+                                                                            :class="debug_step ? itemForged.highlight_plunge3:null">{{
+                    itemForged.getPlunge3().text(lang)
+                  }}</span><br>
                 </dd>
                 <dd class="mt-1 text-xs md:text-sm text-gray-900 sm:mt-0 sm:col-span-2 dark:text-night-100" v-else>
-                  Special : <span class="inline-block" :class="debug_step ? itemForged.highlight_special:null">{{ get_text(itemForged.getSpecial()) }}</span>
+                  Special : <span class="inline-block" :class="debug_step ? itemForged.highlight_special:null">{{
+                    get_text(itemForged.getSpecial())
+                  }}</span>
                 </dd>
               </div>
             </dl>
@@ -755,7 +783,7 @@
               <div class="bg-gray-50 dark:bg-night-500 px-4 py-2 sm:grid sm:grid-cols-1 sm:gap-4 sm:px-6">
                 <button class="mt-1 text-sm text-gray-900 sm:mt-0 dark:text-night-100" v-if="show_materials"
                         @click="toggle_materials">
-                  What's going on?
+                  What's going on? (coming soon)
                 </button>
                 <button class="mt-1 text-sm text-gray-900 sm:mt-0 dark:text-night-100" v-else @click="toggle_materials">
                   Show materials
@@ -783,19 +811,19 @@
 </template>
 
 <script>
-import {EQUIP, MATERIAL, STAT, ESSENCE, ITEM, IMMUNITY, DEBUG_STEPS} from '@/forge/enums'
-import {mat_word} from '@/forge/lists'
-import {Ancient_Moon, Sacrificed_Nymph} from "@/forge/cards";
-import {No_Item} from "@/forge/items";
+import {EQUIP, MATERIAL, STAT, ESSENCE, IMMUNITY, DEBUG_STEPS} from '@/forge/enums'
 import {ForgedItem} from "@/forge/ForgedItem";
 import ItemButton from "@/components/ItemButton";
 import copy from 'copy-text-to-clipboard';
 import draggable from "vuedraggable";
 import importModal from '@/components/importModal'
+import ExplanationSheet from "@/components/ExplanationSheet";
+import {No_Item} from "@/forge/items/No_Item";
+import {ITEM} from "@/forge/items/list";
 
 export default {
   name: 'ManaForge',
-  components: {ItemButton, draggable, importModal},
+  components: {ExplanationSheet, ItemButton, draggable, importModal},
   props: {},
   data() {
     return {
@@ -981,7 +1009,9 @@ export default {
 
       src += '\n\n\nShopping Cart\n-------------'
       src += '\n' + this.get_text(this.selected_material) + '\n'
-      cart.forEach((val, key) => {src+= '\n' + key.padEnd(20) + ' -> ' + val;})
+      cart.forEach((val, key) => {
+        src += '\n' + key.padEnd(20) + ' x' + val.toString().padEnd(5) + ' -> ' + source.get(key);
+      })
 
       if (copy(src)) {
         this.flashSuccess('Copied to clipboard!')
