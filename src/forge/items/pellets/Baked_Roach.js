@@ -28,7 +28,7 @@ class Baked_Roach extends Item {
     }
 
     source() {
-        return super.source();
+        return [];
     }
 
 }

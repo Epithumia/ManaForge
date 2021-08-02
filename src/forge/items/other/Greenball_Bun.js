@@ -1,0 +1,34 @@
+import {Item} from "@/forge/items/Item";
+import {STAT} from "@/forge/enums";
+
+class Greenball_Bun extends Item {
+    constructor() {
+        super();
+    }
+
+    text(language) {
+        switch(language) {
+            case 'classic':
+                return "Greenball Bun"
+            case 'jp':
+                return "草ムシまんじゅう"
+            default:
+                return "Greenball Bun"
+        }
+    }
+
+    energy() {
+        return 8;
+    }
+
+    code(f) {
+        f.increase_stat(STAT.HP);
+    }
+
+    source() {
+        return [];
+    }
+
+}
+
+export {Greenball_Bun};

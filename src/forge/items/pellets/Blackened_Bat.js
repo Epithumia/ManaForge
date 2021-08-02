@@ -32,7 +32,7 @@ class Blackened_Bat extends Item {
     }
 
     source() {
-        return super.source();
+        return [];
     }
 
 }
