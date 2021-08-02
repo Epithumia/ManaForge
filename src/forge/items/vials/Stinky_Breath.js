@@ -3,24 +3,35 @@ import {IMMUNITY} from "@/forge/enums";
 import {Pixie_Of_Lust} from "@/forge/cards/pixies";
 
 class Stinky_Breath extends Item {
-
-
-    IPRINT() {
-        return "Stinky Breath";
+    constructor() {
+        super();
     }
 
+    text(language) {
+        switch(language) {
+            case 'classic':
+                return "Stinky Breath"
+            case 'jp':
+                return "臭い息"
+            default:
+                return "Stinky Breath"
+        }
+    }
 
-    ENERGY() {
+    energy() {
         return 16;
     }
 
-
-    CODE(f) {
+    code(f) {
         f.setImmunity(IMMUNITY.Poison.value
             | IMMUNITY.Confusion.value);
         if (f.getEnergy() >= 4) {
             f.prehidden = new Pixie_Of_Lust();
         }
+    }
+
+    source() {
+        return [];
     }
 
 }

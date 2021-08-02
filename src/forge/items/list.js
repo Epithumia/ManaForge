@@ -17,29 +17,6 @@ import {
     Wisp_Silver
 } from "@/forge/items/coins"
 import {
-    Acid,
-    Aroma_Oil,
-    Ash,
-    Baked_Roach,
-    Blackened_Bat,
-    Dragons_Breath,
-    Ear_Of_Wheat,
-    Ether,
-    Ghosts_Howl,
-    Grave_Dirt,
-    Greenball_Bun,
-    Hairball,
-    Holy_Water,
-    Knockout_Dust,
-    Mercury,
-    Messy_Scroll,
-    Mirror_Piece,
-    Moss,
-    Needle,
-    Poison_Powder,
-    Rust, Sleepy_Powder, Stinky_Breath, Sulpher, Tako_Bug, Virgins_Sigh, Wad_Of_Wool
-} from "@/forge/items/misc";
-import {
     All_Meat,
     Applesocks,
     Apricat,
@@ -104,7 +81,6 @@ import {
     Moon_Crystal,
     Sun_Crystal, Water_Stone, Wind_Stone
 } from "@/forge/items/stones_crystals";
-import {Electricity} from "@/forge/items/misc/Electricity";
 import {
     Giants_Horn,
     Healing_Claw,
@@ -115,8 +91,16 @@ import {
     Zombie_Claw
 } from "@/forge/items/fangs_claws";
 import {No_Item} from "@/forge/items/No_Item";
-import {Dragon_Blood} from "@/forge/items/misc/Dragon_Blood";
 import {White_Feather} from "@/forge/items/wings_feathers/White_Feather";
+import {Acid, Aroma_Oil, Ether, Holy_Water} from "@/forge/items/bottles";
+import {Dragon_Blood} from "@/forge/items/bottles/Dragon_Blood";
+import {Dragon_Breath, Ghosts_Howl, Mercury, Stinky_Breath, Virgins_Sigh} from "@/forge/items/vials";
+import {Electricity} from "@/forge/items/urns/Electricity";
+import {Ear_Of_Wheat, Moss} from "@/forge/items/urns";
+import {Baked_Roach, Blackened_Bat} from "@/forge/items/pellets";
+import {Greenball_Bun, Tako_Bug} from "@/forge/items/other";
+import {Ash, Grave_Dirt, Knockout_Dust, Poison_Powder, Rust, Sleepy_Powder, Sulpher} from "@/forge/items/powders";
+import {Hairball, Messy_Scroll, Mirror_Piece, Needle, Wad_Of_Wool} from "@/forge/items/pouches";
 
 const item_list = [new No_Item(), new Wisp_Gold(),
     new Shade_Gold(), new Dryad_Gold(), new Aura_Gold(),
@@ -151,7 +135,7 @@ const item_list = [new No_Item(), new Wisp_Gold(),
     new Moth_Wing(), new Flaming_Quill(), new White_Feather(),
     new Aroma_Oil(), new Dragon_Blood(), new Acid(), new Holy_Water(),
     new Ether(), new Mercury(), new Stinky_Breath(), new Ghosts_Howl(),
-    new Dragons_Breath(), new Virgins_Sigh(), new Electricity(),
+    new Dragon_Breath(), new Virgins_Sigh(), new Electricity(),
     new Moss(), new Ear_Of_Wheat(), new Baked_Roach(),
     new Blackened_Bat(), new Sulpher(), new Poison_Powder(),
     new Sleepy_Powder(), new Knockout_Dust(), new Rust(),
