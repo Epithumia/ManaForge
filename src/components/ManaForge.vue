@@ -709,9 +709,9 @@
                 <dd class="mt-1 text-xs md:text-sm text-gray-900 sm:mt-0 sm:col-span-2 dark:text-night-100"
                     style="text-align: left"
                     v-if="selected_object.value<=11">
-                  {{ classic ? 'Plunge Attack' : 'Master Move' }} 1 : <span class="inline-block" :class="debug_step ? itemForged.highlight_plunge1:null">{{ get_text(itemForged.getPlunge1()) }}</span><br>
-                  {{ classic ? 'Plunge Attack' : 'Master Move' }} 2 : <span class="inline-block" :class="debug_step ? itemForged.highlight_plunge2:null">{{ get_text(itemForged.getPlunge2()) }}</span><br>
-                  {{ classic ? 'Plunge Attack' : 'Master Move' }} 3 : <span class="inline-block" :class="debug_step ? itemForged.highlight_plunge3:null">{{ get_text(itemForged.getPlunge3()) }}</span><br>
+                  {{ lang === 'classic' ? 'Plunge Attack' : 'Master Move' }} 1 : <span class="inline-block" :class="debug_step ? itemForged.highlight_plunge1:null">{{ get_text(itemForged.getPlunge1()) }}</span><br>
+                  {{ lang === 'classic' ? 'Plunge Attack' : 'Master Move' }} 2 : <span class="inline-block" :class="debug_step ? itemForged.highlight_plunge2:null">{{ get_text(itemForged.getPlunge2()) }}</span><br>
+                  {{ lang === 'classic' ? 'Plunge Attack' : 'Master Move' }} 3 : <span class="inline-block" :class="debug_step ? itemForged.highlight_plunge3:null">{{ get_text(itemForged.getPlunge3()) }}</span><br>
                 </dd>
                 <dd class="mt-1 text-xs md:text-sm text-gray-900 sm:mt-0 sm:col-span-2 dark:text-night-100" v-else>
                   Special : <span class="inline-block" :class="debug_step ? itemForged.highlight_special:null">{{ get_text(itemForged.getSpecial()) }}</span>
