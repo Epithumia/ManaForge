@@ -1543,18 +1543,22 @@ class ForgedItem {
         if (!(this.prehidden instanceof No_Card)) {
             if (this.hidden instanceof No_Card) {
                 this.setHidden(this.prehidden);
+                this.setPrehidden(new No_Card());
             } else if (this.first instanceof No_Card) {
                 this.setFirst(this.hidden);
                 this.setHidden(this.prehidden);
+                this.setPrehidden(new No_Card());
             } else if (this.second instanceof No_Card) {
                 this.setSecond(this.first);
                 this.setFirst(this.hidden);
                 this.setHidden(this.prehidden);
+                this.setPrehidden(new No_Card());
             } else if (this.third instanceof No_Card) {
                 this.setThird(this.second);
                 this.setSecond(this.first);
                 this.setFirst(this.hidden);
                 this.setHidden(this.prehidden);
+                this.setPrehidden(new No_Card());
             } else if (STICKY_F.STICKY === this.sticky) {
                 if (this.PIXIE(this.third)) {
                     this.highlight_third = 'highlight-sticky'
@@ -1564,16 +1568,19 @@ class ForgedItem {
                             this.highlight_first = 'highlight-sticky'
                             this.setLeaving(this.hidden);
                             this.setHidden(this.prehidden);
+                            this.setPrehidden(new No_Card());
                         } else {
                             this.setLeaving(this.first);
                             this.setFirst(this.hidden);
                             this.setHidden(this.prehidden);
+                            this.setPrehidden(new No_Card());
                         }
                     } else {
                         this.setLeaving(this.second);
                         this.setSecond(this.first);
                         this.setFirst(this.hidden);
                         this.setHidden(this.prehidden);
+                        this.setPrehidden(new No_Card());
                     }
                 } else {
                     this.setLeaving(this.third);
@@ -1581,6 +1588,7 @@ class ForgedItem {
                     this.setSecond(this.first);
                     this.setFirst(this.hidden);
                     this.setHidden(this.prehidden);
+                    this.setPrehidden(new No_Card());
                 }
             } else {
                 this.setLeaving(this.third);
@@ -1588,6 +1596,7 @@ class ForgedItem {
                 this.setSecond(this.first);
                 this.setFirst(this.hidden);
                 this.setHidden(this.prehidden);
+                this.setPrehidden(new No_Card());
             }
         }
     }

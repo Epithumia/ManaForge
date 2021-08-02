@@ -686,11 +686,20 @@
                   Cards
                 </dt>
                 <dd class="mt-1 text-xs md:text-sm text-gray-900 sm:mt-0 sm:col-span-2 dark:text-night-100">
-                  (<span class="inline-block" :class="debug_step ? itemForged.highlight_hidden:null">{{ itemForged.hidden.CPRINT() }}</span>)<br>
-                  <span class="inline-block" :class="debug_step ? itemForged.highlight_first:null">{{ itemForged.first.CPRINT() }}</span><br>
-                  <span class="inline-block" :class="debug_step ? itemForged.highlight_second:null">{{ itemForged.second.CPRINT() }}</span><br>
-                  <span class="inline-block" :class="debug_step ? itemForged.highlight_third:null">{{ itemForged.third.CPRINT() }}</span><br>
-                  &nbsp;&nbsp;&nbsp;<span class="inline-block" :class="debug_step ? itemForged.highlight_leaving:null">{{ itemForged.leaving.CPRINT() }}</span>-->
+                  <span class="inline-block" v-if="debug_step"
+                         :class="debug_step ? itemForged.highlight_prehidden:null">&gt;&gt;{{ itemForged.prehidden.text(lang) }}&lt;&lt;</span><br v-if="debug_step">
+                  (<span class="inline-block"
+                         :class="debug_step ? itemForged.highlight_hidden:null">{{ itemForged.hidden.text(lang) }}</span>)<br>
+                  <span class="inline-block"
+                        :class="debug_step ? itemForged.highlight_first:null">{{ itemForged.first.text(lang) }}</span><br>
+                  <span class="inline-block" :class="debug_step ? itemForged.highlight_second:null">{{
+                      itemForged.second.text(lang)
+                    }}</span><br>
+                  <span class="inline-block"
+                        :class="debug_step ? itemForged.highlight_third:null">{{ itemForged.third.text(lang) }}</span><br>
+                  &nbsp;&nbsp;&nbsp;<span class="inline-block" :class="debug_step ? itemForged.highlight_leaving:null">{{
+                    itemForged.leaving.text(lang)
+                  }}</span>-->
                 </dd>
               </div>
               <div class="bg-gray-50 dark:bg-night-500 px-4 py-2 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
