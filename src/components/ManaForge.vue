@@ -47,7 +47,7 @@
             </div>
           </div>
           <div class="self-center flex flex-0">
-            <div class="self-center" @click="debug_step--">
+            <div class="self-center" @click="debug_step !== 1 ? debug_step-- : null">
               <svg class="flex-shrink-0 mr-1.5 h-5 w-5 text-gray-400" xmlns="http://www.w3.org/2000/svg" fill="none"
                    viewBox="0 0 24 24" stroke="currentColor">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/>
@@ -63,7 +63,7 @@
                 </option>
               </select>
             </div>
-            <div class="self-center" @click="debug_step++">
+            <div class="self-center" @click="debug_step ? debug_step++ : null">
               <svg class="flex-shrink-0 mr-1.5 h-5 w-5 text-gray-400" xmlns="http://www.w3.org/2000/svg" fill="none"
                    viewBox="0 0 24 24" stroke="currentColor">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
@@ -448,7 +448,7 @@
             </div>
           </div>
           <div class="self-center flex flex-0">
-            <div class="self-center" @click="debug_step--">
+            <div class="self-center" @click="debug_step !== 1 ? debug_step-- : null">
               <svg class="flex-shrink-0 mr-1.5 h-5 w-5 text-gray-400" xmlns="http://www.w3.org/2000/svg" fill="none"
                    viewBox="0 0 24 24" stroke="currentColor">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/>
@@ -464,7 +464,7 @@
                 </option>
               </select>
             </div>
-            <div class="self-center" @click="debug_step++">
+            <div class="self-center" @click="debug_step ? debug_step++ : null">
               <svg class="flex-shrink-0 mr-1.5 h-5 w-5 text-gray-400" xmlns="http://www.w3.org/2000/svg" fill="none"
                    viewBox="0 0 24 24" stroke="currentColor">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
