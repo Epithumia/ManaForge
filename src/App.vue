@@ -7,7 +7,7 @@
       <ManaForge/>
     </main>
     <footer class="py-4 bg-gray-700 dark:bg-night-700 text-center text-white">
-      v1.0.0 - Epithumia with thanks to biqutS and Myst Erik Ery for the original code and sim, MarcusMajarra for tests and corrections, Sevon for translations.
+      v1.0.0 - Epithumia with thanks to Terrence, biqutS and Myst Erik Ery for the original code and sim, MarcusMajarra for tests and corrections, Sevon for translations. <a href="https://github.com/Epithumia/ManaForge/blob/main/CHANGELOG.md" target="_blank" class="underline">Changelog</a>
     </footer>
   </div>
 </template>

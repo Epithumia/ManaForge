@@ -769,7 +769,7 @@
         <div class="bg-white dark:bg-night-700 dark:text-night-100 shadow overflow-hidden sm:rounded-lg align-bottom">
           <div class="px-4 py-5 sm:px-6 items-center flex flex-col">
             <h3 class="xl:text-lg leading-4 font-medium text-gray-900 dark:text-night-100">
-              Menu
+              <!--Menu-->
             </h3>
           </div>
           <div class="border-t border-gray-200 dark:border-night-700 dark:bg-night-700">
