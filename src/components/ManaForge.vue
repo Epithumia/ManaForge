@@ -80,7 +80,7 @@
       </div>
       <div
           class="flex flex-col bg-white dark:bg-night-900 dark:text-night-100 shadow overflow-hidden sm:rounded-lg"
-          v-bind:class="{'xl:col-span-5 sm:col-span-3 col-span-4': showRecipe, 'xl:col-span-6 col-span-4': !showRecipe}"
+          v-bind:class="{'xl:col-span-5 sm:col-span-3 col-span-4': showRecipe, 'xl:col-span-6 col-span-4 sm:col-span-5': !showRecipe}"
           v-if='show_materials'>
         <div class="px-4 py-2 dark:bg-night-700">
           <h3 class="xl:text-lg leading-4 font-medium text-gray-900 dark:text-night-100">
