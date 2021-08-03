@@ -10,11 +10,11 @@ class Pixie_Of_Laziness extends Card {
     text(language = '') {
         switch (language) {
             case 'classic':
-                return "Pixie (Blue Hat) [Sloth]"
+                return "Pixie (Sloth)"
             case 'jp':
                 return "小悪魔(怠惰)"
             default:
-                return "Pixie (Blue Hat) [Sloth]"
+                return "Pixie (Blue Hat)"
         }
     }
 

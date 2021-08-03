@@ -10,11 +10,11 @@ class Pixie_Of_Gluttony extends Card {
     text(language = '') {
         switch (language) {
             case 'classic':
-                return "Pixie (Purple Hat) [Gluttony]"
+                return "Pixie (Gluttony)"
             case 'jp':
                 return "小悪魔(大食)"
             default:
-                return "Pixie (Purple Hat) [Gluttony]"
+                return "Pixie (Purple Hat)"
         }
     }
 

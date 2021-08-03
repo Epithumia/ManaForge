@@ -10,11 +10,11 @@ class Pixie_Of_Rage extends Card {
     text(language = '') {
         switch (language) {
             case 'classic':
-                return "Pixie (Light Blue Hat) [Wrath]"
+                return "Pixie (Wrath)"
             case 'jp':
                 return "小悪魔(憤怒)"
             default:
-                return "Pixie (Light Blue Hat) [Wrath]"
+                return "Pixie (Light Blue Hat)"
         }
     }
 

@@ -127,15 +127,15 @@ class ForgedItem {
     mlck;
 
     /**
-     * @type PLUNGE1
+     * @type Plunge
      */
     plunge1 // Slot 1 plunge attack
     /**
-     * @type PLUNGE2
+     * @type Plunge
      */
     plunge2 // Slot 1 plunge attack
     /**
-     * @type PLUNGE3
+     * @type Plunge
      */
     plunge3 // Slot 1 plunge attack
     /**
@@ -190,7 +190,7 @@ class ForgedItem {
      */
     leaving = null
     /**
-     * @type Item | No_Item
+     * @type Item
      */
     item = null
 
@@ -942,13 +942,7 @@ class ForgedItem {
     }
 
     /**
-     * @typedef PLUNGE1
-     * @type {object}
-     * @property {string} text - name
-     * @property {int} value - ID
-     */
-    /**
-     * @param plunge1 : PLUNGE1
+     * @param plunge1 : Plunge
      * @constructor
      */
     setPlunge1(plunge1) {
@@ -957,13 +951,7 @@ class ForgedItem {
     }
 
     /**
-     * @typedef PLUNGE2
-     * @type {object}
-     * @property {string} text - name
-     * @property {int} value - ID
-     */
-    /**
-     * @param plunge2 : PLUNGE2
+     * @param plunge2 : Plunge
      * @constructor
      */
     setPlunge2(plunge2) {
@@ -972,13 +960,7 @@ class ForgedItem {
     }
 
     /**
-     * @typedef PLUNGE3
-     * @type {object}
-     * @property {string} text - name
-     * @property {int} value - ID
-     */
-    /**
-     * @param plunge3 : PLUNGE3
+     * @param plunge3 : Plunge
      * @constructor
      */
     setPlunge3(plunge3) {

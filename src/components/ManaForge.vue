@@ -56,7 +56,7 @@
             <div class="self-center">
               <label for="debug_step" class="text-xs dark:bg-night-900 dark:text-night-100">Sub-step:</label>
               <select id="debug_step"
-                      class="dark:bg-night-900 dark:text-night-100 text-xs mt-1 py-1 px-2 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+                      class="dark:bg-night-900 dark:text-night-100 text-xs mt-1 py-1 px-6 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
                       v-model="debug_step">
                 <option v-for="option in DEBUG_STEPS" v-bind:value="option.value" v-bind:key="option.value">
                   {{ option.text }}
@@ -457,7 +457,7 @@
             <div class="self-center">
               <label for="debug_step_ex" class="text-xs dark:bg-night-900 dark:text-night-100">Sub-step:</label>
               <select id="debug_step_ex"
-                      class="dark:bg-night-900 dark:text-night-100 text-xs mt-1 py-1 px-2 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+                      class="dark:bg-night-900 dark:text-night-100 text-xs mt-1 py-1 px-6 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
                       v-model="debug_step">
                 <option v-for="option in DEBUG_STEPS" v-bind:value="option.value" v-bind:key="option.value">
                   {{ option.text }}
@@ -642,15 +642,27 @@
                   <div :class="debug_step ? itemForged.highlight_un:null">{{ itemForged.getUn() }}</div>
 
                   <!-- Taint points -->
-                  <div class="col-span-2">T. Points</div>
-                  <div></div>
-                  <div></div>
-                  <div :class="debug_step ? itemForged.highlight_drLR:null">{{ itemForged.getDrLR() }}</div>
-                  <div :class="debug_step ? itemForged.highlight_auLR:null">{{ itemForged.getAuLR() }}</div>
-                  <div :class="debug_step ? itemForged.highlight_saLR:null">{{ itemForged.getSaLR() }}</div>
-                  <div :class="debug_step ? itemForged.highlight_gnLR:null">{{ itemForged.getGnLR() }}</div>
-                  <div :class="debug_step ? itemForged.highlight_jiLR:null">{{ itemForged.getJiLR() }}</div>
-                  <div :class="debug_step ? itemForged.highlight_unLR:null">{{ itemForged.getUnLR() }}</div>
+                  <div class="col-span-2" v-if="debug_step">T. Points</div>
+                  <div v-if="debug_step"></div>
+                  <div v-if="debug_step"></div>
+                  <div v-if="debug_step" :class="debug_step ? itemForged.highlight_drLR:null">
+                    {{ itemForged.getDrLR() }}
+                  </div>
+                  <div v-if="debug_step" :class="debug_step ? itemForged.highlight_auLR:null">
+                    {{ itemForged.getAuLR() }}
+                  </div>
+                  <div v-if="debug_step" :class="debug_step ? itemForged.highlight_saLR:null">
+                    {{ itemForged.getSaLR() }}
+                  </div>
+                  <div v-if="debug_step" :class="debug_step ? itemForged.highlight_gnLR:null">
+                    {{ itemForged.getGnLR() }}
+                  </div>
+                  <div v-if="debug_step" :class="debug_step ? itemForged.highlight_jiLR:null">
+                    {{ itemForged.getJiLR() }}
+                  </div>
+                  <div v-if="debug_step" :class="debug_step ? itemForged.highlight_unLR:null">
+                    {{ itemForged.getUnLR() }}
+                  </div>
 
                   <!-- Markers -->
                   <div class="col-span-2">Markers</div>
@@ -692,10 +704,10 @@
                 </div>
               </div>
               <div class="bg-white dark:bg-night-700 px-4 py-2 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
-                <dt class="text-xs md:text-sm font-medium text-gray-500 dark:text-night-100">
+                <dt class="text-xs md:text-sm font-medium text-gray-500 dark:text-night-100" v-if="debug_step">
                   Energy
                 </dt>
-                <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2 dark:text-night-100">
+                <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2 dark:text-night-100" v-if="debug_step">
                   <div><span class="inline-block"
                              :class="debug_step ? itemForged.highlight_energy:null">{{ itemForged.energy }}</span></div>
                 </dd>
@@ -720,7 +732,7 @@
                     {{ itemForged.third.text(lang) }}
                   </span><br>
                   <span class="inline-block" :class="debug_step ? itemForged.highlight_leaving:null">
-                  &nbsp;&nbsp;&nbsp;{{ itemForged.leaving.text(lang) }}-->
+                  &nbsp;&nbsp;&nbsp;&nbsp;{{ itemForged.leaving.text(lang) }}-->
                   </span>
                 </dd>
               </div>
@@ -800,7 +812,7 @@
                   <label for="lang_select">Language: </label>
                   <select v-model="lang"
                           id="lang_select"
-                          class="dark:bg-night-900 dark:text-night-100 text-xs mt-1 py-1 px-2 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
+                          class="dark:bg-night-900 dark:text-night-100 text-xs mt-1 py-1 px-6 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
                     <option v-for="option in languages" v-bind:key="option.key" v-bind:value="option.key">
                       {{ option.text }}
                     </option>

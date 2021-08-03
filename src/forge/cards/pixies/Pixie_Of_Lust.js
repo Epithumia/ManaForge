@@ -10,11 +10,11 @@ class Pixie_Of_Lust extends Card {
     text(language = '') {
         switch (language) {
             case 'classic':
-                return "Pixie (Black Hat) [Lust]"
+                return "Pixie (Lust)"
             case 'jp':
                 return "小悪魔(好色)"
             default:
-                return "Pixie (Black Hat) [Lust]"
+                return "Pixie (Black Hat)"
         }
     }
 
