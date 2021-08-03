@@ -164,7 +164,6 @@ const EQUIP = Object.freeze(
 
 const DEBUG_STEPS = Object.freeze(
     {
-            NODEBUG: {text: '--', value: 0},
             INITSTATITEM: {text: 'Initialize item stats', value: 1},
             INITCARDS: {text: 'Initialize cards', value: 2},
             MATERIALINIT: {text: 'Initialize material', value: 3},
@@ -176,7 +175,8 @@ const DEBUG_STEPS = Object.freeze(
             ACTIVATECARDS: {text: 'Activate cards', value: 9},
             CHECKTYPEEFFECTS: {text: 'Check type effects', value: 10},
             INCREASEESSENCES: {text: 'Increase essences', value: 11},
-            CALCULATESTATS: {text: 'Calculate stats', value: 12}
+            CALCULATESTATS: {text: 'Calculate stats', value: 12},
+            NODEBUG: {text: '--', value: 0},
     }
 )
 

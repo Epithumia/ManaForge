@@ -1110,9 +1110,9 @@ export default {
     },
     debug_step: function (newV) {
       if (newV > DEBUG_STEPS.CALCULATESTATS.value) {
-        this.debug_step = DEBUG_STEPS.CALCULATESTATS.value
-      } else if (newV < 0) {
         this.debug_step = 0
+      } else if (newV < 0) {
+        this.debug_step = DEBUG_STEPS.CALCULATESTATS.value
       } else {
         this.debug_step = newV
       }
