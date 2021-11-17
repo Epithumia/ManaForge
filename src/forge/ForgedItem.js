@@ -880,16 +880,16 @@ class ForgedItem {
                     if (this.dr >= level) return "au"
                     return ""
                 case ESSENCE.SALA:
-                    if (this.gn >= level) return "sa"
+                    if (this.un >= level) return "sa"
                     return ""
                 case ESSENCE.GNOME:
-                    if (this.ji >= level) return "gn"
+                    if (this.sa >= level) return "gn"
                     return ""
                 case ESSENCE.JINN:
-                    if (this.un >= level) return "ji"
+                    if (this.gn >= level) return "ji"
                     return ""
                 case ESSENCE.UNDINE:
-                    if (this.sa >= level) return "un"
+                    if (this.ji >= level) return "un"
                     return ""
             }
         }

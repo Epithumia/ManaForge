@@ -677,11 +677,11 @@
 
                   <!-- Immunities -->
                   <div class="col-span-2">Immunity</div>
-                  <div :class="debug_step ? itemForged.highlight_immunity_sleep:null">
-                    {{ itemForged.getShortImmunity(IMMUNITY.Sleep) }}
-                  </div>
                   <div :class="debug_step ? itemForged.highlight_immunity_poison:null">
                     {{ itemForged.getShortImmunity(IMMUNITY.Poison) }}
+                  </div>
+                  <div :class="debug_step ? itemForged.highlight_immunity_darkness:null">
+                    {{ itemForged.getShortImmunity(IMMUNITY.Darkness) }}
                   </div>
                   <div :class="debug_step ? itemForged.highlight_immunity_paralysis:null">
                     {{ itemForged.getShortImmunity(IMMUNITY.Paralysis) }}
@@ -689,14 +689,14 @@
                   <div :class="debug_step ? itemForged.highlight_immunity_confusion:null">
                     {{ itemForged.getShortImmunity(IMMUNITY.Confusion) }}
                   </div>
-                  <div :class="debug_step ? itemForged.highlight_immunity_darkness:null">
-                    {{ itemForged.getShortImmunity(IMMUNITY.Darkness) }}
+                  <div :class="debug_step ? itemForged.highlight_immunity_flameburst:null">
+                    {{ itemForged.getShortImmunity(IMMUNITY.Flameburst) }}
+                  </div>
+                  <div :class="debug_step ? itemForged.highlight_immunity_sleep:null">
+                    {{ itemForged.getShortImmunity(IMMUNITY.Sleep) }}
                   </div>
                   <div :class="debug_step ? itemForged.highlight_immunity_petrify:null">
                     {{ itemForged.getShortImmunity(IMMUNITY.Petrify) }}
-                  </div>
-                  <div :class="debug_step ? itemForged.highlight_immunity_flameburst:null">
-                    {{ itemForged.getShortImmunity(IMMUNITY.Flameburst) }}
                   </div>
                   <div :class="debug_step ? itemForged.highlight_immunity_freeze:null">
                     {{ itemForged.getShortImmunity(IMMUNITY.Freeze) }}
