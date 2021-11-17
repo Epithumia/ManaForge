@@ -25,6 +25,7 @@ class Undine_Silver extends Item {
     }
 
     code(f) {
+        f.explain_item_code += "This item adds the Undine card, which goes in the pre-hidden slot. It also adds one Undine taint point.<br>"
         f.taint(ESSENCE.UNDINE);
         if (f.getEnergy() >= 8) {
             f.prehidden = new Undine();

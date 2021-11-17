@@ -24,6 +24,7 @@ class Greenball_Bun extends Item {
     }
 
     code(f) {
+        f.explain_item_code += "This item increases the HP/Con stat.<br>"
         f.increase_stat(STAT.HP);
     }
 

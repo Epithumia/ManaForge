@@ -24,6 +24,7 @@ class Acid extends Item {
 
     // eslint-disable-next-line no-unused-vars
     code(f) {
+        f.explain_item_code = "This item added energy and has no other effect."
         return null
     }
 

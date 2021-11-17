@@ -24,9 +24,13 @@ class Zombie_Claw extends Item {
     }
 
     code(f) {
+        f.explain_item_code += "On a Pendant, this will add immunity to the paralysis status effect. "
+        let type_check = "Since we are not tempering a Pendant, this item has no effect."
         if (f.PENDANT()) {
             f.setImmunity(f.getImmunity() | IMMUNITY.Paralysis.value);
+            type_check = "Since we are tempering a Shield, this adds the paralysis immunity to it."
         }
+        f.explain_item_code += type_check + "<br>"
     }
 
     source() {

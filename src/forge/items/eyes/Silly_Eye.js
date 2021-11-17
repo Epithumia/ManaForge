@@ -24,10 +24,13 @@ class Silly_Eye extends Item {
     }
 
     code(f) {
+        f.explain_item_code += "This item increases the Heavy stat by 25%. "
         f.setHeavy(f.perc125(f.getHeavy()));
         if (f.getEnergy() >= 4) {
+            f.explain_item_code += "This also also adds a Pixie (purple hat, Gluttony) card in the pre-hidden slot."
             f.prehidden = new Pixie_Of_Gluttony();
         }
+        f.explain_item_code += "<br>"
     }
 
     source() {

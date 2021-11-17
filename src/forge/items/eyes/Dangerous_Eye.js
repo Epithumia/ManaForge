@@ -24,10 +24,13 @@ class Dangerous_Eye extends Item {
     }
 
     code(f) {
+        f.explain_item_code += "This item increases the Strike stat by 25%. "
         f.setStrike(f.perc125(f.getStrike()));
         if (f.getEnergy() >= 4) {
+            f.explain_item_code += "This also also adds a Pixie (no hat, Greed) card in the pre-hidden slot."
             f.prehidden = new Pixie_Of_Greed();
         }
+        f.explain_item_code += "<br>"
     }
 
     source() {

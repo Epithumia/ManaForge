@@ -25,6 +25,7 @@ class Dryad_Gold extends Item {
     }
 
     code(f) {
+        f.explain_item_code += "This item adds the Dryad card, which goes in the pre-hidden slot. It also adds one Dryad taint point.<br>"
         f.taint(ESSENCE.DRYAD);
         if (f.getEnergy() >= 8) {
             f.prehidden = new Dryad();

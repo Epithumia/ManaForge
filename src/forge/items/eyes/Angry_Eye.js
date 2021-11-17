@@ -24,10 +24,13 @@ class Angry_Eye extends Item {
     }
 
     code(f) {
+        f.explain_item_code += "This item increases the Force stat by 25%. "
         f.setForce(f.perc125(f.getForce()));
         if (f.getEnergy() >= 4) {
+            f.explain_item_code += "This also also adds a Pixie (light-blue hat, Wrath) card in the pre-hidden slot."
             f.prehidden = new Pixie_Of_Rage();
         }
+        f.explain_item_code += "<br>"
     }
 
     source() {

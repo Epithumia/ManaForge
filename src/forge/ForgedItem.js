@@ -526,7 +526,7 @@ class ForgedItem {
             ") and Magic (" + mat_props[this.material][8] +
             ") for armors." +
             "</div><div>" +
-            "After that, it resets the elemental resistances based on the material's natural resistances:" +
+            "After that, it resets the elemental resistances based on the material's natural resistances: " +
             "Wisp (" + mat_props[this.material][9] +
             "), Shade (" + mat_props[this.material][10] +
             "), Dryad (" + mat_props[this.material][11] +
@@ -895,8 +895,10 @@ class ForgedItem {
         }
     }
 
-    get_explanations() {
+    get_explanations(lang) {
+        const item_added = this.item.text(lang)
         return {
+            'item_added': item_added,
             'explain_init_stat_limits': this.explain_init_stat_limits,
             'explain_sub_init_cards': this.explain_sub_init_cards,
             'explain_material_init': this.explain_material_init,

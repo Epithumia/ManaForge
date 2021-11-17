@@ -25,6 +25,8 @@ class Wisp_Silver extends Item {
     }
 
     code(f) {
+        f.explain_item_code += "This item adds the Shade card, which goes in the pre-hidden slot. " +
+            "Depending on the active world card, it will either immediately raise Shade, or cause it to drain.<br>"
         f.taint(ESSENCE.WISP);
         if (f.getEnergy() >= 8) {
             f.prehidden = new Wisp();

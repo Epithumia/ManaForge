@@ -25,6 +25,7 @@ class Aura_Gold extends Item {
     }
 
     code(f) {
+        f.explain_item_code += "This item adds the Aura card, which goes in the pre-hidden slot. It also adds one Aura taint point.<br>"
         f.taint(ESSENCE.AURA);
         if (f.getEnergy() >= 8) {
             f.prehidden = new Aura();

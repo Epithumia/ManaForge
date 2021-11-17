@@ -24,6 +24,7 @@ class Tako_Bug extends Item {
     }
 
     code(f) {
+        f.explain_item_code += "This item adds increases the Charm stat.<br>"
         f.increase_stat(STAT.CHM);
     }
 

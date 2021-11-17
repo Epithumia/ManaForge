@@ -25,6 +25,7 @@ class Jinn_Silver extends Item {
     }
 
     code(f) {
+        f.explain_item_code += "This item adds the Jinn card, which goes in the pre-hidden slot. It also adds one Jinn taint point.<br>"
         f.taint(ESSENCE.JINN);
         if (f.getEnergy() >= 8) {
             f.prehidden = new Jinn();

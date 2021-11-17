@@ -23,6 +23,7 @@ class Wicked_Eye extends Item {
     }
 
     code(f) {
+        f.explain_item_code += "This item increases the Sharp stat by 25%.<br>"
         f.setSharp(f.perc125(f.getSharp()));
     }
 

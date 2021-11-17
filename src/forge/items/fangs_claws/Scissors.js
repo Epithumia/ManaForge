@@ -23,6 +23,7 @@ class Scissors extends Item {
     }
 
     code(f) {
+        f.explain_item_code += "This item increases the Force stat by 50% and decreases the Tech stat by 50%.<br>"
         f.setForce(f.perc150(f.getForce()));
         f.setTech(f.perc50(f.getTech()));
     }

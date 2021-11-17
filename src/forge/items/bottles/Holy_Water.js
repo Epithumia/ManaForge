@@ -24,6 +24,7 @@ class Holy_Water extends Item {
     }
 
     code(f) {
+        f.explain_item_code += "This item adds the Cleric card, which goes in the pre-hidden slot. It also allows pixies to be pushed.<br>"
         if (f.getEnergy() > 8) {
             f.prehidden = new Cleric();
         }

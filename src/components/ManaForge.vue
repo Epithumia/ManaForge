@@ -75,7 +75,7 @@
           <div class="px-4 py-2" v-if="debug_step===0">
             You need to select one of the sub-steps above.
           </div>
-          <ExplanationSheet :explanations="itemForged.get_explanations()" v-else></ExplanationSheet>
+          <ExplanationSheet :explanations="itemForged.get_explanations(lang)" v-else></ExplanationSheet>
         </div>
       </div>
       <div
