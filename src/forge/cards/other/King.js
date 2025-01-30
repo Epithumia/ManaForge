@@ -43,7 +43,7 @@ class King extends Card {
             f.increase_stat(STAT.PWR);
         }
 
-        if (f.GLOVE()) {
+        if (f.GLOVE() && f.getAu() > 0) {
             f.setPlunge2(PLUNGE2.Hand_of_Midas);
         }
     }
